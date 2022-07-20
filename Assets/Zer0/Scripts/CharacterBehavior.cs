@@ -9,6 +9,7 @@ namespace Zer0
         private Animator _animator;
         
         private bool cursorLock;
+        private int _lastAttackIndex;
         private static readonly int AttackTrigger = Animator.StringToHash("Attack");
         private static readonly int ChainAttackTrigger = Animator.StringToHash("ChainAttack");
         private static readonly int AttackIndex = Animator.StringToHash("AttackIndex");
@@ -16,6 +17,7 @@ namespace Zer0
         private void Awake()
         {
             _animator = GetComponent<Animator>();
+            if (!_animator) Debug.LogError("CharacterBehavior is missing an Animator Component.");
         }
 
         private void Update()
@@ -42,11 +44,22 @@ namespace Zer0
 
         private void Attack()
         {
-            var randomAttackIndex = Random.Range(0, 3);
+            var randomAttackIndex = RandomAttackIndex();
+            
+            while (randomAttackIndex == _lastAttackIndex) 
+                randomAttackIndex = RandomAttackIndex();
+            
             _animator.SetTrigger(AttackTrigger);
             _animator.SetFloat(AttackIndex, randomAttackIndex);
+            _lastAttackIndex = randomAttackIndex;
+
         }
 
+        private int RandomAttackIndex()
+        {
+            return Random.Range(0, 3);
+        }
+        
         private void ChainAttack()
         {
             _animator.SetTrigger(ChainAttackTrigger);
