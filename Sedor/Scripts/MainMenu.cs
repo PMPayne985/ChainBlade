@@ -17,7 +17,7 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       Optionsbool = false;
+        Optionsbool = false;
     }
 
     // Update is called once per frame
@@ -32,6 +32,10 @@ public class MainMenu : MonoBehaviour
         {
             MainMain.SetActive(false);
             OptionsMain.SetActive(true);
+            Debug.Log("Rotation Speed: " + RotationSpeed.value);
+            Debug.Log("Music Sound: " + Music.value);
+            Debug.Log("SFX Sound: " + SFX.value);
+            Debug.Log("Master Sound: " + Master.value);
         }
     }
 
@@ -41,7 +45,7 @@ public class MainMenu : MonoBehaviour
     }
     public void Options()
     {
-        if (Optionsbool==false)
+        if (Optionsbool == false)
         {
             Optionsbool = true;
         }
@@ -49,7 +53,7 @@ public class MainMenu : MonoBehaviour
         {
             Debug.LogWarning("Options Button Clickable after deactivation");
         }
-        
+
     }
     public void QuitGame()
     {

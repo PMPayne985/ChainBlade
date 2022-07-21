@@ -391,7 +391,7 @@ GameObject:
   - component: {fileID: 201394526}
   - component: {fileID: 201394525}
   m_Layer: 5
-  m_Name: Return
+  m_Name: Main Pause
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -461,19 +461,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 201394526}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1330821290}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: UnOptions
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &201394526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -523,7 +511,7 @@ GameObject:
   - component: {fileID: 211086113}
   - component: {fileID: 211086114}
   m_Layer: 5
-  m_Name: RotationSpeedSlider
+  m_Name: MusicSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3183,7 +3171,7 @@ GameObject:
   - component: {fileID: 1306492617}
   - component: {fileID: 1306492618}
   m_Layer: 5
-  m_Name: RotationSpeedSlider
+  m_Name: MasterSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3422,6 +3410,11 @@ MonoBehaviour:
   Optionsbool: 0
   MainMain: {fileID: 1798849530}
   OptionsMain: {fileID: 1118932545}
+  RotationSpeed: {fileID: 1854513314}
+  RotateDirect: {fileID: 1562392666}
+  Music: {fileID: 211086114}
+  SFX: {fileID: 1963493796}
+  Master: {fileID: 1306492618}
 --- !u!1 &1361582540
 GameObject:
   m_ObjectHideFlags: 3
@@ -9743,7 +9736,7 @@ GameObject:
   - component: {fileID: 1963493795}
   - component: {fileID: 1963493796}
   m_Layer: 5
-  m_Name: RotationSpeedSlider
+  m_Name: SFXSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
