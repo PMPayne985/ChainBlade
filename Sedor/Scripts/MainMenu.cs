@@ -2,20 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
     public bool Optionsbool;
+    public GameObject MainMain;
+    public GameObject OptionsMain;
+    public Slider RotationSpeed;
+    public Toggle RotateDirect;
+    public Slider Music;
+    public Slider SFX;
+    public Slider Master;
     // Start is called before the first frame update
     void Start()
     {
-       bool Optionsbool = false;
+       Optionsbool = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Optionsbool == false)
+        {
+            MainMain.SetActive(true);
+            OptionsMain.SetActive(false);
+        }
+        else
+        {
+            MainMain.SetActive(false);
+            OptionsMain.SetActive(true);
+        }
     }
 
     public void GameRun()
@@ -26,12 +43,27 @@ public class MainMenu : MonoBehaviour
     {
         if (Optionsbool==false)
         {
-            bool Optionsbool = true;
+            Optionsbool = true;
+        }
+        else
+        {
+            Debug.LogWarning("Options Button Clickable after deactivation");
         }
         
     }
     public void QuitGame()
     {
         Application.Quit();
+    }
+    public void UnOptions()
+    {
+        if (Optionsbool == true)
+        {
+            Optionsbool = false;
+        }
+        else
+        {
+            Debug.LogWarning("Return Button Clickable after deactivation");
+        }
     }
 }
