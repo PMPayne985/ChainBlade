@@ -35,15 +35,6 @@ namespace Zer0
 
         private void Update()
         {
-            if (Input.GetMouseButtonDown(1) && _knife == null)
-            {
-                _knife = Instantiate(knifePrefab);
-                _knife.transform.position = transform.position + transform.forward * 0.3f;
-                _knife.transform.rotation = transform.rotation;
-                _velocity = _knife.transform.forward * knifeVelocity;
-                _pressed = true;
-            }
-
             if (Input.GetMouseButtonUp(1) && _knife != null)
             {
                 _dragging = true;
@@ -67,6 +58,17 @@ namespace Zer0
                 ChainsReturn();
         }
 
+        public void LaunchChain()
+        {
+            if (_knife) return;
+            
+            _knife = Instantiate(knifePrefab);
+            _knife.transform.position = transform.position + transform.forward * 0.3f;
+            _knife.transform.rotation = transform.rotation;
+            _velocity = _knife.transform.forward * knifeVelocity;
+            _pressed = true;
+        }
+        
         public void ChainsForward()
         {
             _velocity += Vector3.down * Time.deltaTime;
