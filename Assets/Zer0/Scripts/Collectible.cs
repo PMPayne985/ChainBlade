@@ -17,13 +17,13 @@ public class Collectible : MonoBehaviour
         
     }
 
-    void OnControlColliderHit(ControllerColliderHit hit)
+    void OnControllerColliderHit(ControllerColliderHit hit)
     {
         if (hit.collider.gameObject.tag == "collectible")
         {
             numCollected = numCollected + 1;
             Destroy(hit.collider.gameObject);
-            print(numCollected);
+            print("Links colected: " + numCollected);
         }
     }
 }
