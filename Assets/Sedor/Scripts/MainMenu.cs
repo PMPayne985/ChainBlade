@@ -1,22 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    public bool Optionsbool;
-    // Start is called before the first frame update
-    void Start()
-    {
-       bool Optionsbool = false;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public bool optionsBool;
+    public GameObject mainMain;
+    public GameObject optionsMain;
+    public Slider rotationSpeed;
+    public Toggle rotateDirect;
+    public Slider music;
+    public Slider sfx;
+    public Slider master;
 
     public void GameRun()
     {
@@ -24,11 +19,24 @@ public class MainMenu : MonoBehaviour
     }
     public void Options()
     {
-        if (Optionsbool==false)
-        {
-            bool Optionsbool = true;
-        }
+        optionsBool = !optionsBool;
         
+        if (!optionsBool)
+        {
+            mainMain.SetActive(true);
+            optionsMain.SetActive(false);
+        }
+        else
+        {
+            mainMain.SetActive(false);
+            optionsMain.SetActive(true);
+
+            Debug.Log($"Rotation Speed: {rotationSpeed.value}");
+            Debug.Log($"Music Sound: {music.value}");
+            Debug.Log($"SFX Sound: {sfx.value}");
+            Debug.Log($"Master Sound: {master.value}");
+        }
+
     }
     public void QuitGame()
     {

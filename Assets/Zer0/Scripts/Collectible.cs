@@ -1,29 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Collectible : MonoBehaviour
 {
-    int numCollected;
-    // Start is called before the first frame update
-    void Start()
+    private int _numCollected;
+    
+    private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        numCollected = 0;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        if (!hit.collider.CompareTag("collectible")) return;
         
-    }
-
-    void OnControllerColliderHit(ControllerColliderHit hit)
-    {
-        if (hit.collider.gameObject.tag == "collectible")
-        {
-            numCollected = numCollected + 1;
-            Destroy(hit.collider.gameObject);
-            print("Links colected: " + numCollected);
-        }
+        _numCollected ++;
+        Destroy(hit.collider.gameObject);
+        print($"Links collected: {_numCollected}");
     }
 }
