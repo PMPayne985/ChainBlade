@@ -15,7 +15,7 @@ public class MainMenu : MonoBehaviour
 
     public void GameRun()
     {
-        SceneManager.LoadScene("Sample Scene");
+        SceneManager.LoadScene("SampleScene");
     }
     
     public void Options()
