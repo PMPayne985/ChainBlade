@@ -17,6 +17,7 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Sample Scene");
     }
+    
     public void Options()
     {
         optionsBool = !optionsBool;
