@@ -523,7 +523,7 @@ GameObject:
   - component: {fileID: 211086113}
   - component: {fileID: 211086114}
   m_Layer: 5
-  m_Name: RotationSpeedSlider
+  m_Name: MusicVol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -597,9 +597,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1467420259}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
-  m_WholeNumbers: 0
-  m_Value: 0.5
+  m_MaxValue: 100
+  m_WholeNumbers: 1
+  m_Value: 50
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3183,7 +3183,7 @@ GameObject:
   - component: {fileID: 1306492617}
   - component: {fileID: 1306492618}
   m_Layer: 5
-  m_Name: RotationSpeedSlider
+  m_Name: MasterVol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3257,9 +3257,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 786913959}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
-  m_WholeNumbers: 0
-  m_Value: 0.5
+  m_MaxValue: 100
+  m_WholeNumbers: 1
+  m_Value: 50
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -9693,10 +9693,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 2133883653}
   m_HandleRect: {fileID: 1760252773}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
-  m_WholeNumbers: 0
-  m_Value: 0.5
+  m_MinValue: 50
+  m_MaxValue: 150
+  m_WholeNumbers: 1
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -9748,7 +9748,7 @@ GameObject:
   - component: {fileID: 1963493795}
   - component: {fileID: 1963493796}
   m_Layer: 5
-  m_Name: RotationSpeedSlider
+  m_Name: SFXVol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9822,9 +9822,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 307071441}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
-  m_WholeNumbers: 0
-  m_Value: 0.5
+  m_MaxValue: 100
+  m_WholeNumbers: 1
+  m_Value: 50
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
