@@ -13,13 +13,9 @@ public class MainMenu : MonoBehaviour
     public Slider music;
     public Slider sfx;
     public Slider master;
-<<<<<<< HEAD
     public int rotationSpeedFinal;
     public int RotationSpeedFinal;
     public AudioMixer TestMixer;
-=======
-    public int RotationSpeedFinal;
->>>>>>> parent of d10657e (Merge branch 'main' of https://github.com/PMPayne985/ChainBlade)
 
     public void GameRun()
     {
@@ -57,8 +53,9 @@ public class MainMenu : MonoBehaviour
         UnityEditor.EditorApplication.isPlaying = false;
 #endif        
     }
+    
     public void InverseRotate()
     {
-       RotationSpeedFinal = RotationSpeedFinal * -1;
+       rotationSpeedFinal = rotationSpeedFinal * -1;
     }
 }
