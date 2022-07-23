@@ -14,8 +14,7 @@ public class MainMenu : MonoBehaviour
     public Slider sfx;
     public Slider master;
     public int rotationSpeedFinal;
-    public int RotationSpeedFinal;
-    public AudioMixer TestMixer;
+    public AudioMixer testMixer;
 
     public void GameRun()
     {
