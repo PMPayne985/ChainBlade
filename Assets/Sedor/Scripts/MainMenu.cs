@@ -13,16 +13,9 @@ public class MainMenu : MonoBehaviour
     public Slider music;
     public Slider sfx;
     public Slider master;
-<<<<<<< Updated upstream
     public int rotationSpeedFinal;
-=======
-<<<<<<< HEAD
     public int RotationSpeedFinal;
     public AudioMixer TestMixer;
-=======
-    public int rotationSpeedFinal;
->>>>>>> 5ce1e750c9a3e1983458bc34086ff874e860b0a2
->>>>>>> Stashed changes
 
     public void GameRun()
     {
