@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class MainMenu : MonoBehaviour
 {
@@ -12,7 +13,16 @@ public class MainMenu : MonoBehaviour
     public Slider music;
     public Slider sfx;
     public Slider master;
+<<<<<<< Updated upstream
     public int rotationSpeedFinal;
+=======
+<<<<<<< HEAD
+    public int RotationSpeedFinal;
+    public AudioMixer TestMixer;
+=======
+    public int rotationSpeedFinal;
+>>>>>>> 5ce1e750c9a3e1983458bc34086ff874e860b0a2
+>>>>>>> Stashed changes
 
     public void GameRun()
     {
@@ -37,6 +47,8 @@ public class MainMenu : MonoBehaviour
             Debug.Log($"Music Sound: {music.value}");
             Debug.Log($"SFX Sound: {sfx.value}");
             Debug.Log($"Master Sound: {master.value}");
+
+            
         }
 
     }
