@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TestScript : MonoBehaviour
 {
-    public float theAnswer = 37;
+    public float theAnswer = 42;
     // Start is called before the first frame update
     void Start()
     {
