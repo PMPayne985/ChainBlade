@@ -12,7 +12,7 @@ public class MainMenu : MonoBehaviour
     public Slider music;
     public Slider sfx;
     public Slider master;
-    public int RotationSpeedFinal;
+    public int rotationSpeedFinal;
 
     public void GameRun()
     {
@@ -48,8 +48,9 @@ public class MainMenu : MonoBehaviour
         UnityEditor.EditorApplication.isPlaying = false;
 #endif        
     }
+    
     public void InverseRotate()
     {
-       RotationSpeedFinal = RotationSpeedFinal * -1;
+       rotationSpeedFinal = rotationSpeedFinal * -1;
     }
 }
