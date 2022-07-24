@@ -65,6 +65,14 @@ namespace Zer0
             _knife = Instantiate(knifePrefab);
             _knife.transform.position = transform.position + transform.forward * 0.3f;
             _knife.transform.rotation = transform.rotation;
+
+            var hitRay = new Ray(_knife.transform.position, _knife.transform.forward);
+            
+            if (Physics.Raycast(hitRay, out var hitPoint, maxChainsLength))
+            {
+                _knife.transform.LookAt(hitPoint.transform);
+            }
+
             _velocity = _knife.transform.forward * knifeVelocity;
             _pressed = true;
         }
