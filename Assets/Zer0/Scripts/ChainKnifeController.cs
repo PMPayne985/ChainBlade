@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Zer0
@@ -5,12 +6,22 @@ namespace Zer0
     public class ChainKnifeController : MonoBehaviour
     {
         
-        [SerializeField, Tooltip("Initial Knife velocity")] private float knifeVelocity = 20;
-        [SerializeField, Tooltip("Knife velocity while dragging an object")] private float dragVelocity = 25;
-        [SerializeField, Tooltip("The frequency that links are added to the chain")] private float emissionRate = 10;
-        [SerializeField, Tooltip("Distance in meters the knife will travel")] private int maxChainsLength = 50;
-        [SerializeField, Tooltip("The prefab that will appear at the end of the chain")] private GameObject knifePrefab;
-        [SerializeField, Tooltip("The prefab for each link of the chain")] private GameObject chainPrefab;
+        [SerializeField, Tooltip("Initial Knife velocity")] 
+        private float knifeVelocity = 20;
+        [SerializeField, Tooltip("Knife velocity while dragging an object")] 
+        private float dragVelocity = 25;
+        [SerializeField, Tooltip("The frequency that links are added to the chain")] 
+        private float emissionRate = 10;
+        [SerializeField, Tooltip("Distance in meters the knife will travel")] 
+        private int maxChainsLength = 50;
+        [SerializeField, Tooltip("The prefab that will appear at the end of the chain")] 
+        private GameObject knifePrefab;
+        [SerializeField, Tooltip("The prefab for each link of the chain")] 
+        private GameObject chainPrefab;
+        [SerializeField, Tooltip("The blade of the static knife to be deactivated when the chain knife is extended.")] 
+        private GameObject knifeBlade;
+        [SerializeField, Tooltip("They layers to be ignored by the Chain Knife")]
+        private string[] ignoreLayers;
         
         private float _distance;
         private float _emitAt;
@@ -20,12 +31,20 @@ namespace Zer0
 
         private GameObject _knife;
         private GameObject[] _chains;
+        private Camera _mainCamera;
         
         private bool _pressed;
         private bool _dragging;
         
         private int _chainLength;
         private int _firstLink;
+        private int _ignoreLayerMask;
+
+        private void Awake()
+        {
+            _mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+            _ignoreLayerMask = LayerMask.GetMask(ignoreLayers);
+        }
 
         private void Start()
         {
@@ -63,16 +82,21 @@ namespace Zer0
             if (_knife) return;
             
             _knife = Instantiate(knifePrefab);
+            knifeBlade.SetActive(false);
             _knife.transform.position = transform.position + transform.forward * 0.3f;
             _knife.transform.rotation = transform.rotation;
 
-            var hitRay = new Ray(_knife.transform.position, _knife.transform.forward);
-            
-            if (Physics.Raycast(hitRay, out var hitPoint, maxChainsLength))
-            {
-                _knife.transform.LookAt(hitPoint.transform);
-            }
+            var ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
 
+            if (Physics.Raycast(ray, out var hitPoint, maxChainsLength, _ignoreLayerMask))
+                _knife.transform.LookAt( hitPoint.point );
+            else
+            {
+                var endPoint = Input.mousePosition;
+                endPoint += new Vector3(0, 0, maxChainsLength);
+                
+                _knife.transform.LookAt(endPoint);
+            }
             _velocity = _knife.transform.forward * knifeVelocity;
             _pressed = true;
         }
@@ -107,6 +131,7 @@ namespace Zer0
         {
             if (_chainLength == 0)
             {
+                knifeBlade.SetActive(true);
                 DestroyChainPart(_knife);
                 return;
             }
@@ -116,10 +141,11 @@ namespace Zer0
                 RemoveLinks(gameObject, ref _knife);
                 if (!(Vector3.Distance(transform.position, _knife.transform.position) < 0.1f)) return;
                 
+                knifeBlade.SetActive(true);
                 DestroyChainPart(_knife);
+                _dragging = false;
                 _chainLength = 0;
                 _firstLink = 0;
-                _dragging = false;
             }
             else
             {

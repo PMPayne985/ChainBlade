@@ -19,7 +19,7 @@ namespace Zer0
         {
             _smoke = Instantiate(smokePrefab);
             _smoke.SetActive(false);
-            _emissionPoint = transform.Find("barrel");
+            _emissionPoint = transform.Find("EmissionPoint");
         }
 
         private void OnTriggerEnter(Collider col)
