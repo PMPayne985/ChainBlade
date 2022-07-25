@@ -36,14 +36,28 @@ public class MainMenu : MonoBehaviour
             optionsMain.SetActive(true);
 
             Debug.Log($"Rotation Speed: {rotationSpeed.value}");
-            Debug.Log($"Music Sound: {music.value}");
-            Debug.Log($"SFX Sound: {sfx.value}");
-            Debug.Log($"Master Sound: {master.value}");
-
-            
         }
 
     }
+
+    public void MasterVolume(Slider volume)
+    {
+        testMixer.SetFloat("MasterTest", master.value);
+        Debug.Log($"Master Sound: {volume.value}");
+    }
+
+    public void MusicVolume(Slider volume)
+    {
+        testMixer.SetFloat("MusicTest", music.value);
+        Debug.Log($"Music Sound: {volume.value}");
+    }
+
+    public void SFXVolume(Slider volume)
+    {
+        testMixer.SetFloat("SFXTest", sfx.value);
+        Debug.Log($"SFX Sound: {volume.value}");
+    }
+
     public void QuitGame()
     {
         Application.Quit();
