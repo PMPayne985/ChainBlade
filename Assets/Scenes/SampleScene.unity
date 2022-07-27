@@ -9330,6 +9330,7 @@ GameObject:
   - component: {fileID: 1991684579}
   - component: {fileID: 1991684578}
   - component: {fileID: 1991684577}
+  - component: {fileID: 1991684583}
   m_Layer: 3
   m_Name: Ground
   m_TagString: Untagged
@@ -9606,6 +9607,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1991684583
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1991684576}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &2055595880
 GameObject:
   m_ObjectHideFlags: 0
@@ -9710,6 +9727,7 @@ GameObject:
   - component: {fileID: 2058679180}
   - component: {fileID: 2058679179}
   - component: {fileID: 2058679178}
+  - component: {fileID: 2058679183}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -9808,6 +9826,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &2058679183
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2058679177}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &2107495702
 GameObject:
   m_ObjectHideFlags: 0
@@ -10152,7 +10186,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2704637234743998353}
   m_Layer: 6
-  m_Name: SM_Prop_Dagger_Hilt_01
+  m_Name: Hilt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10233,7 +10267,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4828318694945200032}
   m_LocalRotation: {x: -0.00000008195636, y: -0.0000000055879337, z: -0.000000059604623, w: 1}
-  m_LocalPosition: {x: 0, y: -0, z: 0.79800063}
+  m_LocalPosition: {x: 0.026, y: 0, z: 0.559}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10292,10 +10326,11 @@ MonoBehaviour:
   knifePrefab: {fileID: 2763560010028495797, guid: dd3c95f18801aa341943f2c34aa7cfc0, type: 3}
   chainPrefab: {fileID: 156422, guid: 73d172e661c6ff9469a4d40a0d9b018d, type: 3}
   knifeBlade: {fileID: 7322623044929740867}
-  ignoreLayers:
-  - Player
-  - Ground
-  - Ignore Raycast
+  detectionLayers:
+    serializedVersion: 2
+    m_Bits: 25
+  _pressed: 0
+  _dragging: 0
 --- !u!1 &7322623044929740867
 GameObject:
   m_ObjectHideFlags: 0
@@ -10309,7 +10344,7 @@ GameObject:
   - component: {fileID: 7986287797626485498}
   - component: {fileID: 7986287797626485499}
   m_Layer: 6
-  m_Name: SM_Prop_Dagger_Blade_01
+  m_Name: Blade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

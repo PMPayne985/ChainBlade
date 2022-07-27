@@ -12,7 +12,7 @@ namespace Zer0
 
         private Transform _emissionPoint;
         private GameObject _smoke;
-
+        
         [HideInInspector] public bool hit;
 
         private void Start()

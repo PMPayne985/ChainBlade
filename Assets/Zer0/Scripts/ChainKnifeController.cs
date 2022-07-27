@@ -20,9 +20,8 @@ namespace Zer0
         private GameObject chainPrefab;
         [SerializeField, Tooltip("The blade of the static knife to be deactivated when the chain knife is extended.")] 
         private GameObject knifeBlade;
-        [SerializeField, Tooltip("They layers to be ignored by the Chain Knife")]
-        private string[] ignoreLayers;
-        
+        [SerializeField, Tooltip("The layers to be detected by the Chain Knife aiming system")]
+        private LayerMask detectionLayers;
         private float _distance;
         private float _emitAt;
         
@@ -38,12 +37,11 @@ namespace Zer0
         
         private int _chainLength;
         private int _firstLink;
-        private int _ignoreLayerMask;
 
         private void Awake()
         {
             _mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-            _ignoreLayerMask = LayerMask.GetMask(ignoreLayers);
+            
         }
 
         private void Start()
@@ -88,15 +86,9 @@ namespace Zer0
 
             var ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
 
-            if (Physics.Raycast(ray, out var hitPoint, maxChainsLength, _ignoreLayerMask))
+            if (Physics.Raycast(ray, out var hitPoint, Mathf.Infinity, detectionLayers))
                 _knife.transform.LookAt( hitPoint.point );
-            else
-            {
-                var endPoint = Input.mousePosition;
-                endPoint += new Vector3(0, 0, maxChainsLength);
-                
-                _knife.transform.LookAt(endPoint);
-            }
+            
             _velocity = _knife.transform.forward * knifeVelocity;
             _pressed = true;
         }
@@ -122,9 +114,8 @@ namespace Zer0
                 }
             }
 
-            if (!_knife.GetComponent<ApplyForce>().hit) return;
-            _pressed = false;
-            _dragging = true;
+            if (_knife.GetComponent<ApplyForce>().hit)
+                EndExtension();
         }
 
         public void ChainsReturn()
@@ -196,6 +187,13 @@ namespace Zer0
             }
             
             DestroyImmediate(go);
+        }
+
+        public void EndExtension()
+        {
+            _pressed = false;
+            _dragging = true;
+            print("Ended on impact.");
         }
     }
 }
