@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Zer0
 {
-    public class ChainKnifeController : MonoBehaviour
+    public class ChainKnife : MonoBehaviour
     {
         
         [SerializeField, Tooltip("Initial Knife velocity")] 
@@ -114,7 +114,7 @@ namespace Zer0
                 }
             }
 
-            if (_knife.GetComponent<ApplyForce>().hit)
+            if (_knife.GetComponent<Impact>().hit)
                 EndExtension();
         }
 

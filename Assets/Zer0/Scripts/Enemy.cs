@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Zer0
 {
-    public class EnemyAI : CharacterBehavior, IDraggable
+    public class Enemy : Character, IDraggable
     {
         private Transform _transform;
         private Quaternion originalRotation;

@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
-
 namespace Zer0
 {
-    public class ApplyForce : MonoBehaviour
+    public class Impact : MonoBehaviour
     {
         [SerializeField, Tooltip("Force applied to objects struck")]
         private float force = 1f;

@@ -3,10 +3,10 @@ using Random = UnityEngine.Random;
 
 namespace Zer0
 {
-    public class PlayerBehavior : CharacterBehavior
+    public class Player : Character
     {
         private Animator _animator;
-        private ChainKnifeController _chainKnife;
+        private ChainKnife _chainKnife;
         
         private bool cursorLock;
         private bool _attacking;
@@ -20,7 +20,7 @@ namespace Zer0
             _animator = GetComponent<Animator>();
             if (!_animator) Debug.LogError("CharacterBehavior is missing an Animator Component.");
 
-            _chainKnife = GetComponentInChildren<ChainKnifeController>();
+            _chainKnife = GetComponentInChildren<ChainKnife>();
             if (!_chainKnife) Debug.LogError("CharacterBehavior is missing a Chain Knife.");
         }
 
