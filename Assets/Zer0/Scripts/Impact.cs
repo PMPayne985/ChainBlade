@@ -11,8 +11,9 @@ namespace Zer0
         private bool canPush;
         [SerializeField, Tooltip("Check if this weapon should drag, draggable objects.")]
         private bool canDrag;
-
-        private Transform _emissionPoint;
+        [SerializeField, Tooltip("The point at which the impact effect will spawn.")]
+        private Transform emissionPoint;
+       
         private GameObject _smoke;
         
         [HideInInspector] public bool hit;
@@ -21,14 +22,13 @@ namespace Zer0
         {
             _smoke = Instantiate(smokePrefab);
             _smoke.SetActive(false);
-            _emissionPoint = transform.Find("EmissionPoint");
         }
 
         private void OnTriggerEnter(Collider col)
         {
             print($"Impacted {col.name}");
             hit = true;
-            _smoke.transform.position = _emissionPoint.position;
+            _smoke.transform.position = emissionPoint.position;
             _smoke.transform.rotation = Quaternion.LookRotation(-transform.forward);
             _smoke.SetActive(true);
             
