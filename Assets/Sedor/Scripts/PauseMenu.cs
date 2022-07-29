@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Audio;
+using Zer0;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -15,17 +16,8 @@ public class PauseMenu : MonoBehaviour
     public Slider master;
     public bool rotationSpeedFlip;
     public AudioMixer testMixer;
-    public GameObject PlayerCharacter;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        Component cacScript = PlayerCharacter.GetComponent<Zer0.CharacterAnimatorController>();
-        if (!cacScript)
-            Debug.Log("Missing CACScript");
-    }
-
+    public CharacterAnimatorController cacScript;
+    
     public void GameLeave()
     {
         SceneManager.LoadScene("MainMenu");
@@ -33,14 +25,7 @@ public class PauseMenu : MonoBehaviour
 
     public void SpeedSlider(Slider speed)
     {
-        if (!rotationSpeedFlip)
-        {
-            Debug.Log($"RotationSpeed: {speed.value}");
-        }
-        else
-        {
-            Debug.Log($"RotationSpeed (Reversed): {speed.value}");
-        }
+        cacScript.SetRotationSettings(speed.value);
     }
 
     public void RotationFlip()

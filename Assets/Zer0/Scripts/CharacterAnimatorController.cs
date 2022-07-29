@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Zer0
@@ -16,6 +17,7 @@ namespace Zer0
         private float _vertical;
         private float _attackIndex;
         private float _rotateAngle;
+        private float _rotationSpeed;
         
         private static readonly int Speed = Animator.StringToHash("Speed");
         private static readonly int Direction = Animator.StringToHash("Direction");
@@ -28,6 +30,11 @@ namespace Zer0
             _controller = GetComponent<CharacterController>();
             if (!_controller)
                 Debug.LogError("CharacterAnimatorController is missing a CharacterController component!");
+        }
+
+        private void Start()
+        {
+            _rotationSpeed = rotationSpeed;
         }
 
         private void Update()
@@ -63,9 +70,14 @@ namespace Zer0
             _animator.SetFloat(Direction, _horizontal, directionDampTime, Time.deltaTime);
         }
 
+        public void SetRotationSettings(float value)
+        {
+            _rotationSpeed = value * rotationSpeed;
+        }
+        
         private void Rotation()
         {
-            _rotateAngle = rotationSpeed * Input.GetAxis("Mouse X") * Time.deltaTime;
+            _rotateAngle = _rotationSpeed * Input.GetAxis("Mouse X") * Time.deltaTime;
             var rotate = new Vector3(0, _rotateAngle, 0);
 
             transform.Rotate(rotate);
