@@ -5,9 +5,12 @@ namespace Zer0
     {
         [SerializeField, Tooltip("Force applied to objects struck")]
         private float force = 1f;
-
         [SerializeField, Tooltip("Particle effect displayed when an object is struck")]
         private GameObject smokePrefab;
+        [SerializeField, Tooltip("Check if this weapon should push, pushable objects.")]
+        private bool canPush;
+        [SerializeField, Tooltip("Check if this weapon should drag, draggable objects.")]
+        private bool canDrag;
 
         private Transform _emissionPoint;
         private GameObject _smoke;
@@ -28,13 +31,14 @@ namespace Zer0
             _smoke.transform.position = _emissionPoint.position;
             _smoke.transform.rotation = Quaternion.LookRotation(-transform.forward);
             _smoke.SetActive(true);
+            
             Destroy(_smoke, 3);
             _smoke = Instantiate(smokePrefab);
             _smoke.SetActive(false);
 
-            if (col.TryGetComponent(out IPushable pushable))
+            if (canPush && col.TryGetComponent(out IPushable pushable))
                 pushable.Push(transform, force);
-            else if (col.TryGetComponent(out IDraggable draggable))
+            else if (canDrag && col.TryGetComponent(out IDraggable draggable))
                 draggable.Drag(transform);
         }
 

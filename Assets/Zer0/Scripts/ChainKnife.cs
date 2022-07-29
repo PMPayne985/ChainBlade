@@ -22,6 +22,7 @@ namespace Zer0
         private GameObject knifeBlade;
         [SerializeField, Tooltip("The layers to be detected by the Chain Knife aiming system")]
         private LayerMask detectionLayers;
+        
         private float _distance;
         private float _emitAt;
         
@@ -41,7 +42,6 @@ namespace Zer0
         private void Awake()
         {
             _mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-            
         }
 
         private void Start()
@@ -79,15 +79,23 @@ namespace Zer0
         {
             if (_knife) return;
             
+            var t = transform;
+            var ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
+            
             _knife = Instantiate(knifePrefab);
             knifeBlade.SetActive(false);
-            _knife.transform.position = transform.position + transform.forward * 0.3f;
-            _knife.transform.rotation = transform.rotation;
+            
+            _knife.transform.position = t.position + t.forward * 0.3f;
+            _knife.transform.rotation = t.rotation;
 
-            var ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
+            var lookPoint = t.position + t.forward * maxChainsLength;
 
             if (Physics.Raycast(ray, out var hitPoint, Mathf.Infinity, detectionLayers))
-                _knife.transform.LookAt( hitPoint.point );
+                lookPoint = hitPoint.point;
+            
+            _knife.transform.LookAt(lookPoint);
+            
+            
             
             _velocity = _knife.transform.forward * knifeVelocity;
             _pressed = true;
