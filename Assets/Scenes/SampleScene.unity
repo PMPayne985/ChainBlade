@@ -395,7 +395,7 @@ GameObject:
   m_Component:
   - component: {fileID: 186426525}
   m_Layer: 5
-  m_Name: Settings
+  m_Name: OptionsPause
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3128,6 +3128,7 @@ GameObject:
   - component: {fileID: 1330821289}
   - component: {fileID: 1330821288}
   - component: {fileID: 1330821287}
+  - component: {fileID: 1330821290}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -3184,6 +3185,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1330821290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1330821286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 443e161f516d77742887f6a1dc79bc6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  optionsBool: 0
+  mainPause: {fileID: 30115450}
+  optionsPause: {fileID: 30115450}
+  rotationSpeed: {fileID: 244017380}
+  rotateDirect: {fileID: 1239573161}
+  music: {fileID: 1619664535}
+  sfx: {fileID: 2055595882}
+  master: {fileID: 1390944793}
+  rotationSpeedFlip: 0
+  testMixer: {fileID: 24100000, guid: 94eb08edb87d07a459d17916cfca9878, type: 2}
 --- !u!1 &1346887953
 GameObject:
   m_ObjectHideFlags: 0
@@ -10329,8 +10352,6 @@ MonoBehaviour:
   detectionLayers:
     serializedVersion: 2
     m_Bits: 25
-  _pressed: 0
-  _dragging: 0
 --- !u!1 &7322623044929740867
 GameObject:
   m_ObjectHideFlags: 0
