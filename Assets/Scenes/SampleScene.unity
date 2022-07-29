@@ -3207,6 +3207,7 @@ MonoBehaviour:
   master: {fileID: 1390944793}
   rotationSpeedFlip: 0
   testMixer: {fileID: 24100000, guid: 94eb08edb87d07a459d17916cfca9878, type: 2}
+  PlayerCharacter: {fileID: 1817656872}
 --- !u!1 &1346887953
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,11 +17,21 @@ public class PauseMenu : MonoBehaviour
     public Slider master;
     public bool rotationSpeedFlip;
     public AudioMixer testMixer;
+    public GameObject PlayerCharacter;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Component CACScript = PlayerCharacter.GetComponent<Zer0.CharacterAnimatorController>();
+        if (!CACScript)
+        {
+            Debug.Log("Missing CACScriipt");
+        }
+        else
+        {
+            Debug.Log("CACScript Assigned");
+        }
     }
 
     // Update is called once per frame
@@ -34,6 +44,19 @@ public class PauseMenu : MonoBehaviour
     public void GameLeave()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void SpeedSlider(Slider speed)
+    {
+        if (!rotationSpeedFlip)
+        {
+            
+        }
+        else
+        {
+
+        }
+        Debug.Log($"RotationSpeed: {speed.value}");
     }
 
     public void RotationFlip()
