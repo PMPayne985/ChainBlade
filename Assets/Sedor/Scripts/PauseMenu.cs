@@ -50,12 +50,12 @@ public class PauseMenu : MonoBehaviour
     {
         if (!rotationSpeedFlip)
         {
-            PlayerCharacter.GetComponent<Zer0.CharacterAnimatorController>().rotationSpeed = 1000 * speed.value;
+            //PlayerCharacter.GetComponent<Zer0.CharacterAnimatorController>().rotationSpeed = 1000 * speed.value;
             Debug.Log($"RotationSpeed: {speed.value}");
         }
         else
         {
-            PlayerCharacter.GetComponent<Zer0.CharacterAnimatorController>().rotationSpeed = 1000 * speed.value * -1;
+            //PlayerCharacter.GetComponent<Zer0.CharacterAnimatorController>().rotationSpeed = 1000 * speed.value * -1;
             Debug.Log($"RotationSpeed (Reversed): {speed.value}");
         }
     }
