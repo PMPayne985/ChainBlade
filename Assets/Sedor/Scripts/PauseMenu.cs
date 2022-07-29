@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -23,23 +21,10 @@ public class PauseMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Component CACScript = PlayerCharacter.GetComponent<Zer0.CharacterAnimatorController>();
-        if (!CACScript)
-        {
-            Debug.Log("Missing CACScriipt");
-        }
-        else
-        {
-            Debug.Log("CACScript Assigned");
-        }
+        Component cacScript = PlayerCharacter.GetComponent<Zer0.CharacterAnimatorController>();
+        if (!cacScript)
+            Debug.Log("Missing CACScript");
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
 
     public void GameLeave()
     {
@@ -50,12 +35,10 @@ public class PauseMenu : MonoBehaviour
     {
         if (!rotationSpeedFlip)
         {
-            //PlayerCharacter.GetComponent<Zer0.CharacterAnimatorController>().rotationSpeed = 1000 * speed.value;
             Debug.Log($"RotationSpeed: {speed.value}");
         }
         else
         {
-            //PlayerCharacter.GetComponent<Zer0.CharacterAnimatorController>().rotationSpeed = 1000 * speed.value * -1;
             Debug.Log($"RotationSpeed (Reversed): {speed.value}");
         }
     }

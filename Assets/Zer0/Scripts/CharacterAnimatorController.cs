@@ -8,14 +8,15 @@ namespace Zer0
         private Animator _animator;
         private CharacterController _controller;
 
-        private float _attackIndex;
-        
         [SerializeField] private float directionDampTime = 0.25f;
         [SerializeField] private float gravity = -9.31f;
-
         [SerializeField] private float rotationSpeed = 5;
-        //public float rotationSpeed;
-
+        
+        private float _horizontal;
+        private float _vertical;
+        private float _attackIndex;
+        private float _rotateAngle;
+        
         private static readonly int Speed = Animator.StringToHash("Speed");
         private static readonly int Direction = Animator.StringToHash("Direction");
 
@@ -31,9 +32,21 @@ namespace Zer0
 
         private void Update()
         {
+            PlayerInput();
+            Rotation();
+        }
+
+        private void FixedUpdate()
+        {
             Movement();
         }
 
+        private void PlayerInput()
+        {
+            _horizontal = Input.GetAxis("Horizontal");
+            _vertical = Input.GetAxis("Vertical");
+        }
+        
         private void Movement()
         {
             var speed = Vector3.zero;
@@ -46,17 +59,16 @@ namespace Zer0
             if (!_animator)
                 return;
             
-            var h = Input.GetAxis("Horizontal");
-            
-            var v = Input.GetAxis("Vertical");
+            _animator.SetFloat(Speed, _vertical, directionDampTime, Time.deltaTime);
+            _animator.SetFloat(Direction, _horizontal, directionDampTime, Time.deltaTime);
+        }
 
-            _animator.SetFloat(Speed, v, directionDampTime, Time.deltaTime);
-            _animator.SetFloat(Direction, h, directionDampTime, Time.deltaTime);
+        private void Rotation()
+        {
+            _rotateAngle = rotationSpeed * Input.GetAxis("Mouse X") * Time.deltaTime;
+            var rotate = new Vector3(0, _rotateAngle, 0);
 
-            var rotateAngle = rotationSpeed * Input.GetAxis("Mouse X") * Time.deltaTime;
-            var rotating = new Vector3(0, rotateAngle, 0);
-
-            transform.Rotate(rotating);
+            transform.Rotate(rotate);
         }
     }
 }

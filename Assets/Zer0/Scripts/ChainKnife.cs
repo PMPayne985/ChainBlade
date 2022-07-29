@@ -31,7 +31,8 @@ namespace Zer0
         private GameObject _knife;
         private GameObject[] _chains;
         private Camera _mainCamera;
-        
+        private Transform _character;
+
         private bool _pressed;
         private bool _dragging;
         
@@ -41,7 +42,7 @@ namespace Zer0
         private void Awake()
         {
             _mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-            
+            _character = transform.root;
         }
 
         private void Start()
@@ -79,16 +80,17 @@ namespace Zer0
         {
             if (_knife) return;
             
-            _knife = Instantiate(knifePrefab);
+            _knife = Instantiate(knifePrefab, transform, true);
             knifeBlade.SetActive(false);
-            _knife.transform.position = transform.position + transform.forward * 0.3f;
-            _knife.transform.rotation = transform.rotation;
+            _knife.transform.position = transform.position + _character.forward * 0.3f;
+            _knife.transform.rotation = _character.rotation;
 
             var ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
-
+            var lookPoint = transform.position + _character.forward * maxChainsLength;
             if (Physics.Raycast(ray, out var hitPoint, Mathf.Infinity, detectionLayers))
-                _knife.transform.LookAt( hitPoint.point );
+                lookPoint = hitPoint.point;
             
+            _knife.transform.LookAt(lookPoint);
             _velocity = _knife.transform.forward * knifeVelocity;
             _pressed = true;
         }
@@ -105,7 +107,7 @@ namespace Zer0
                 _lastPosition = _knife.transform.position;
                 if (_distance > _emitAt)
                 {
-                    var chain = Instantiate(chainPrefab);
+                    var chain = Instantiate(chainPrefab, _knife.transform, true);
                     chain.transform.position = _knife.transform.position - _knife.transform.forward;
                     chain.transform.rotation = _knife.transform.rotation;
                     _chains[_chainLength] = chain;
