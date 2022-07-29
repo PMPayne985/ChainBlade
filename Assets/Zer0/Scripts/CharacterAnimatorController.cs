@@ -14,6 +14,7 @@ namespace Zer0
         [SerializeField] private float gravity = -9.31f;
 
         [SerializeField] private float rotationSpeed = 5;
+        //public float rotationSpeed;
 
         private static readonly int Speed = Animator.StringToHash("Speed");
         private static readonly int Direction = Animator.StringToHash("Direction");
