@@ -1,5 +1,7 @@
 using System;
 using UnityEngine;
+using UnityEngine.Pool;
+using Object = System.Object;
 
 namespace Zer0
 {
@@ -22,6 +24,7 @@ namespace Zer0
         private GameObject knifeBlade;
         [SerializeField, Tooltip("The layers to be detected by the Chain Knife aiming system")]
         private LayerMask detectionLayers;
+       
         private float _distance;
         private float _emitAt;
         
@@ -30,7 +33,6 @@ namespace Zer0
 
         private GameObject _knife;
         private GameObject[] _chains;
-        private Camera _mainCamera;
         private Transform _character;
 
         private bool _pressed;
@@ -39,9 +41,10 @@ namespace Zer0
         private int _chainLength;
         private int _firstLink;
 
+        private ObjectPool<GameObject> _chainPool;
+
         private void Awake()
         {
-            _mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
             _character = transform.root;
         }
 
