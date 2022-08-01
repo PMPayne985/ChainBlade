@@ -84,12 +84,9 @@ namespace Zer0
             knifeBlade.SetActive(false);
             _knife.transform.position = transform.position + _character.forward * 0.3f;
             _knife.transform.rotation = _character.rotation;
-
-            var ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
-            var lookPoint = transform.position + _character.forward * maxChainsLength;
-            if (Physics.Raycast(ray, out var hitPoint, Mathf.Infinity, detectionLayers))
-                lookPoint = hitPoint.point;
             
+            var lookPoint = transform.position + _character.forward * maxChainsLength;
+
             _knife.transform.LookAt(lookPoint);
             _velocity = _knife.transform.forward * knifeVelocity;
             _pressed = true;
