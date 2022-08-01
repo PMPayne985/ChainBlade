@@ -132,10 +132,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 15
-  smokePrefab: {fileID: 149968, guid: 445c6254d5b057d4dbdc7de90be36519, type: 3}
-  canPush: 0
-  canDrag: 0
-  emissionPoint: {fileID: 5348722414987975892}
+  smokeSystem: {fileID: 19862844, guid: 445c6254d5b057d4dbdc7de90be36519, type: 3}
+  canPush: 1
+  canDrag: 1
   hit: 0
 --- !u!54 &8558450276630193163
 Rigidbody:
