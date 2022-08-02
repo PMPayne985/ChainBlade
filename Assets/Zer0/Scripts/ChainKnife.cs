@@ -12,9 +12,9 @@ namespace Zer0
         private float knifeVelocity = 20;
         [SerializeField, Tooltip("Knife velocity while dragging an object")] 
         private float dragVelocity = 25;
-        [SerializeField, Tooltip("The rate to add links to the chain.")] 
+        [SerializeField, Tooltip("The number of chain links per meter extended.")] 
         private float emissionRate = 10;
-        [SerializeField, Tooltip("Distance in meters the knife will travel")] 
+        [SerializeField, Tooltip("Total number of chain links the knife will travel.")] 
         private int maxChainsLength = 50;
         [SerializeField, Tooltip("The prefab that will appear at the end of the chain")] 
         private GameObject knifePrefab;
@@ -30,7 +30,7 @@ namespace Zer0
         private Vector3 _lastPosition;
 
         private GameObject _chainHead;
-        private GameObject[] _chains;
+        private GameObject[] _chain;
         private Transform _character;
 
         private bool _pressed;
@@ -45,12 +45,13 @@ namespace Zer0
         private void Awake()
         {
             _character = transform.root;
+            _chainPool = new ObjectPool<GameObject>(CreateLink, OnLinkGet, OnLinkReturn, OnLinkReturn, true, 5, 50);
         }
 
         private void Start()
         {
             _emitAt = 1 / emissionRate;
-            _chains = new GameObject[maxChainsLength];
+            _chain = new GameObject[maxChainsLength];
             _chainHead = Instantiate(knifePrefab, transform, true);
             _impact = _chainHead.GetComponent<Impact>();
             _chainHead.SetActive(false);
@@ -107,15 +108,9 @@ namespace Zer0
             {
                 _distance += Vector3.Distance(_lastPosition, _chainHead.transform.position);
                 _lastPosition = _chainHead.transform.position;
+               
                 if (_distance > _emitAt)
-                {
-                    var chain = Instantiate(chainPrefab, _chainHead.transform, true);
-                    chain.transform.position = _chainHead.transform.position - _chainHead.transform.forward;
-                    chain.transform.rotation = _chainHead.transform.rotation;
-                    _chains[_chainLength] = chain;
-                    _chainLength++;
-                    _distance = 0;
-                }
+                    AddChainPart();
             }
 
             if (_impact.hit)
@@ -131,9 +126,9 @@ namespace Zer0
                 return;
             }
 
-            if (!_chains[_chainLength - 1])
+            if (!_chain[_chainLength - 1])
             {
-                AlignChainPart(gameObject, ref _chainHead);
+                MoveChainParts(gameObject, ref _chainHead);
                 if (!(Vector3.Distance(transform.position, _chainHead.transform.position) < 0.1f)) return;
                 
                 knifeBlade.SetActive(true);
@@ -145,25 +140,25 @@ namespace Zer0
             else
             {
                 var first = gameObject;
-                if (Vector3.Distance(first.transform.position, _chains[_firstLink].transform.position) < 0.1f)
+                if (Vector3.Distance(first.transform.position, _chain[_firstLink].transform.position) < 0.1f)
                 {
-                    DisableChainPart(_chains[_firstLink]);
+                    DisableChainPart(_chain[_firstLink]);
                     _firstLink++;
                 }
 
                 for (int i = _firstLink; i < _chainLength; i++)
                 {
-                    if (!_chains[i]) continue;
-                    AlignChainPart(first, ref _chains[i]);
-                    first = _chains[i];
+                    if (!_chain[i]) continue;
+                    MoveChainParts(first, ref _chain[i]);
+                    first = _chain[i];
                 }
 
-                AlignChainPart(first, ref _chainHead);
+                MoveChainParts(first, ref _chainHead);
             }
 
         }
 
-        private void AlignChainPart(GameObject first, ref GameObject next)
+        private void MoveChainParts(GameObject first, ref GameObject next)
         {
             var direction = first.transform.position - next.transform.position;
             var mag = direction.magnitude;
@@ -196,12 +191,40 @@ namespace Zer0
             }
             else
                 DestroyImmediate(go);
+                //_chainPool.Release(go);
         }
 
+        private void AddChainPart()
+        {
+            var chain = Instantiate(chainPrefab, _chainHead.transform, true);
+            //var chain = _chainPool.Get();
+            chain.transform.position = _chainHead.transform.position - _chainHead.transform.forward;
+            chain.transform.rotation = _chainHead.transform.rotation;
+            _chain[_chainLength] = chain;
+            _chainLength++;
+            _distance = 0;
+        }
+        
         public void EndExtension()
         {
             _pressed = false;
             _dragging = true;
+        }
+
+        private GameObject CreateLink()
+        {
+            var chain = Instantiate(chainPrefab, _chainHead.transform, true);
+            return chain;
+        }
+
+        private void OnLinkGet(GameObject link)
+        {
+            link.SetActive(true);
+        }
+
+        private void OnLinkReturn(GameObject link)
+        {
+            link.SetActive(false);
         }
     }
 }

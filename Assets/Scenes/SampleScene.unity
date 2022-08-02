@@ -926,7 +926,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.2745292, y: 1}
+    m_SensorSize: {x: 0.6268657, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2461,7 +2461,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-63658
+  m_Name: pb_Mesh98610
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2626,18 +2626,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3450963156004871660, guid: a4349d53e16da24439d3e58faa8fed2e, type: 3}
-      propertyPath: emissionRate
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 3450963156004871660, guid: a4349d53e16da24439d3e58faa8fed2e, type: 3}
-      propertyPath: maxChainsLength
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6273800330140926321, guid: a4349d53e16da24439d3e58faa8fed2e, type: 3}
-      propertyPath: smokeSystem
-      value: 
-      objectReference: {fileID: 19862844, guid: 445c6254d5b057d4dbdc7de90be36519, type: 3}
     - target: {fileID: 8464534221708025186, guid: a4349d53e16da24439d3e58faa8fed2e, type: 3}
       propertyPath: m_RootOrder
       value: 1
