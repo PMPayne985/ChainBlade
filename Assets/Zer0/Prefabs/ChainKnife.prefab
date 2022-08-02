@@ -195,14 +195,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knifeVelocity: 20
   dragVelocity: 25
-  emissionRate: 0.1
-  maxChainsLength: 8
+  emissionRate: 100
+  maxChainsLength: 5
   knifePrefab: {fileID: 2763560010028495797, guid: dd3c95f18801aa341943f2c34aa7cfc0, type: 3}
   chainPrefab: {fileID: 156422, guid: 73d172e661c6ff9469a4d40a0d9b018d, type: 3}
   knifeBlade: {fileID: 9032715362724592812}
-  detectionLayers:
-    serializedVersion: 2
-    m_Bits: 9
 --- !u!1 &9032715362724592812
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,10 +299,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 15
-  smokePrefab: {fileID: 149968, guid: 445c6254d5b057d4dbdc7de90be36519, type: 3}
+  smokeSystem: {fileID: 0}
   canPush: 1
   canDrag: 0
-  emissionPoint: {fileID: 2399166461983294374}
   hit: 0
 --- !u!54 &5645760414043341020
 Rigidbody:
