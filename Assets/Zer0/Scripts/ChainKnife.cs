@@ -1,7 +1,6 @@
-using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
-using Object = System.Object;
 
 namespace Zer0
 {
@@ -30,14 +29,11 @@ namespace Zer0
         private Vector3 _lastPosition;
 
         private GameObject _chainHead;
-        private GameObject[] _chain;
+        private List<GameObject> _chain;
         private Transform _character;
 
         private bool _pressed;
         private bool _dragging;
-        
-        private int _chainLength;
-        private int _firstLink;
 
         private ObjectPool<GameObject> _chainPool;
         private Impact _impact;
@@ -45,16 +41,16 @@ namespace Zer0
         private void Awake()
         {
             _character = transform.root;
-            _chainPool = new ObjectPool<GameObject>(CreateLink, OnLinkGet, OnLinkReturn, OnLinkReturn, true, 5, 50);
+            _chainPool = new ObjectPool<GameObject>(CreateLink, OnGetLink, OnReleaseLink, OnDestroyLink, true, 5, 50);
         }
 
         private void Start()
         {
             _emitAt = 1 / emissionRate;
-            _chain = new GameObject[maxChainsLength];
             _chainHead = Instantiate(knifePrefab, transform, true);
             _impact = _chainHead.GetComponent<Impact>();
             _chainHead.SetActive(false);
+            _chain = new List<GameObject>();
         }
 
         private void Update()
@@ -65,7 +61,7 @@ namespace Zer0
                 _pressed = false;
             }
 
-            if (_pressed && (_chainLength >= maxChainsLength))
+            if (_pressed && (_chain.Count >= maxChainsLength))
             {
                 _dragging = true;
                 _pressed = false;
@@ -97,68 +93,53 @@ namespace Zer0
             _velocity = _chainHead.transform.forward * knifeVelocity;
             _pressed = true;
         }
-        
-        public void ChainExtend()
+
+        private void ChainExtend()
         {
             _velocity += Vector3.down * Time.deltaTime;
             _chainHead.transform.position += _velocity * Time.deltaTime;
             _chainHead.transform.rotation = Quaternion.LookRotation(_velocity);
             
-            if (_chainLength < maxChainsLength)
+            if (_chain.Count < maxChainsLength)
             {
                 _distance += Vector3.Distance(_lastPosition, _chainHead.transform.position);
                 _lastPosition = _chainHead.transform.position;
                
                 if (_distance > _emitAt)
-                    AddChainPart();
+                    _chainPool.Get();
             }
 
             if (_impact.hit)
                 EndExtension();
         }
 
-        public void ChainReturn()
+        private void ChainReturn()
         {
-            if (_chainLength == 0)
+            if (_chain.Count == 0)
             {
                 knifeBlade.SetActive(true);
                 DisableChainPart(_chainHead);
                 return;
             }
+            
+            var startPoint = this.gameObject;
+            
+            if (Vector3.Distance(startPoint.transform.position, _chain[0].transform.position) < 0.1f)
+                DisableChainPart(_chain[0]);
 
-            if (!_chain[_chainLength - 1])
+            if (_chain.Count == 0)
+                return;
+            
+            foreach (var link in _chain)
             {
-                MoveChainParts(gameObject, ref _chainHead);
-                if (!(Vector3.Distance(transform.position, _chainHead.transform.position) < 0.1f)) return;
-                
-                knifeBlade.SetActive(true);
-                DisableChainPart(_chainHead);
-                _dragging = false;
-                _chainLength = 0;
-                _firstLink = 0;
-            }
-            else
-            {
-                var first = gameObject;
-                if (Vector3.Distance(first.transform.position, _chain[_firstLink].transform.position) < 0.1f)
-                {
-                    DisableChainPart(_chain[_firstLink]);
-                    _firstLink++;
-                }
-
-                for (int i = _firstLink; i < _chainLength; i++)
-                {
-                    if (!_chain[i]) continue;
-                    MoveChainParts(first, ref _chain[i]);
-                    first = _chain[i];
-                }
-
-                MoveChainParts(first, ref _chainHead);
+                MoveChainParts(startPoint, link);
+                startPoint = link;
             }
 
+            MoveChainParts(startPoint,  _chainHead);
         }
 
-        private void MoveChainParts(GameObject first, ref GameObject next)
+        private void MoveChainParts(GameObject first, GameObject next)
         {
             var direction = first.transform.position - next.transform.position;
             var mag = direction.magnitude;
@@ -172,17 +153,17 @@ namespace Zer0
             }
         }
 
-        private void DisableChainPart(GameObject go)
+        private void DisableChainPart(GameObject chainPart)
         {
-            if (go == _chainHead)
+            if (chainPart == _chainHead)
             {
-                var allChildren = go.GetComponentsInChildren<Transform>();
+                var allChildren = chainPart.GetComponentsInChildren<Transform>();
 
                 if (allChildren.Length > 0)
                 {
-                    foreach (var obj in allChildren)
+                    foreach (var t in allChildren)
                     {
-                        if (obj.TryGetComponent(out IDraggable dragged))
+                        if (t.TryGetComponent(out IDraggable dragged))
                             dragged.ReleaseTarget();
                     }
                 }
@@ -190,21 +171,9 @@ namespace Zer0
                 _chainHead.SetActive(false);
             }
             else
-                DestroyImmediate(go);
-                //_chainPool.Release(go);
+                _chainPool.Release(chainPart);
         }
 
-        private void AddChainPart()
-        {
-            var chain = Instantiate(chainPrefab, _chainHead.transform, true);
-            //var chain = _chainPool.Get();
-            chain.transform.position = _chainHead.transform.position - _chainHead.transform.forward;
-            chain.transform.rotation = _chainHead.transform.rotation;
-            _chain[_chainLength] = chain;
-            _chainLength++;
-            _distance = 0;
-        }
-        
         public void EndExtension()
         {
             _pressed = false;
@@ -213,18 +182,28 @@ namespace Zer0
 
         private GameObject CreateLink()
         {
-            var chain = Instantiate(chainPrefab, _chainHead.transform, true);
-            return chain;
+            var link = Instantiate(chainPrefab, _chainHead.transform, true);
+            return link;
         }
 
-        private void OnLinkGet(GameObject link)
+        private void OnGetLink(GameObject link)
         {
+            _chain.Add(link);
+            link.transform.position = _chainHead.transform.position - _chainHead.transform.forward;
+            link.transform.rotation = _chainHead.transform.rotation;
+            _distance = 0;
             link.SetActive(true);
         }
 
-        private void OnLinkReturn(GameObject link)
+        private void OnReleaseLink(GameObject link)
         {
+            _chain.Remove(link);
             link.SetActive(false);
+        }
+
+        private void OnDestroyLink(GameObject link)
+        {
+            DestroyImmediate(link);
         }
     }
 }
