@@ -1,5 +1,5 @@
-using System;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace Zer0
 {
@@ -9,22 +9,19 @@ namespace Zer0
         private Quaternion originalRotation;
         private float _snapToHight;
         private CharacterController _controller;
-        private float _gravity = -9.31f;
+        private NavMeshAgent _agent;
 
         private void Awake()
         {
             _transform = transform;
             _controller = GetComponent<CharacterController>();
-        }
-
-        private void Update()
-        {
-            Movement();
+            _agent = GetComponent<NavMeshAgent>();
         }
 
         public void Drag(Transform dragger)
         {
             _controller.enabled = false;
+            _agent.enabled = false;
             originalRotation = _transform.rotation;
             _snapToHight = dragger.transform.position.y + 1;
             _transform.parent = dragger;
@@ -37,19 +34,7 @@ namespace Zer0
             var pos = _transform.position;
             _transform.position = new Vector3(pos.x, _snapToHight, pos.z);
             _controller.enabled = true;
+            _agent.enabled = true;
         }
-
-        private void Movement()
-        {
-            if (_controller.isGrounded) return;
-            
-            var speed = Vector3.zero;
-
-            if (!_controller.isGrounded)
-                speed = new Vector3(0, _gravity, 0);
-
-            _controller.Move(speed);
-        }
-        
     }
 }
