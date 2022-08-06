@@ -8,10 +8,12 @@ namespace Zer0
         private float force = 1f;
         [SerializeField, Tooltip("Particle effect displayed when an object is struck")]
         private ParticleSystem smokeSystem;
-        [SerializeField, Tooltip("Check if this weapon should push, pushable objects.")]
+        [SerializeField, Tooltip("Check if this weapon should push pushable objects.")]
         private bool canPush;
-        [SerializeField, Tooltip("Check if this weapon should drag, draggable objects.")]
+        [SerializeField, Tooltip("Check if this weapon should drag draggable objects.")]
         private bool canDrag;
+        [SerializeField, Tooltip("Check if this weapon should deal damage to damagable objects.")]
+        private bool canDamage;
 
         [HideInInspector] public bool hit;
         
@@ -25,6 +27,9 @@ namespace Zer0
                 pushable.Push(transform, force);
             else if (canDrag && col.TryGetComponent(out IDraggable draggable))
                 draggable.Drag(transform);
+            
+            if (canDamage && col.TryGetComponent(out IDamagable target))
+                target.TakeDamage(1);
         }
     }
 }
