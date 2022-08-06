@@ -41,6 +41,8 @@ namespace Zer0
 
         private void Movement()
         {
+            if (_controller.isGrounded) return;
+            
             var speed = Vector3.zero;
 
             if (!_controller.isGrounded)

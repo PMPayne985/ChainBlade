@@ -14,12 +14,12 @@ namespace Zer0
         private bool canDrag;
         [SerializeField, Tooltip("Check if this weapon should deal damage to damagable objects.")]
         private bool canDamage;
-
-        private ChainKnife _chainKnife;
+        [SerializeField, Tooltip("The Chain Knife script that will be used with this blade.")]
+        private ChainKnife chainKnife;
 
         public void SetChainKnife(ChainKnife newKnife)
         {
-            _chainKnife = newKnife;
+            chainKnife = newKnife;
         }
         
         private void OnTriggerEnter(Collider col)
@@ -27,7 +27,7 @@ namespace Zer0
             if (col.CompareTag("Player")) return;
             
             print($"Impacted {col.name}");
-            _chainKnife.EndExtension();
+            chainKnife.EndExtension();
             smokeSystem.Play();
 
             if (canPush && col.TryGetComponent(out IPushable pushable))
