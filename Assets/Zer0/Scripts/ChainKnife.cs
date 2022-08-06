@@ -36,7 +36,6 @@ namespace Zer0
         private bool _dragging;
 
         private ObjectPool<GameObject> _chainPool;
-        private Impact _impact;
 
         private void Awake()
         {
@@ -48,7 +47,7 @@ namespace Zer0
         {
             _emitAt = 1 / emissionRate;
             _chainHead = Instantiate(knifePrefab, transform, true);
-            _impact = _chainHead.GetComponent<Impact>();
+            _chainHead.GetComponent<Impact>().SetChainKnife(this);
             _chainHead.SetActive(false);
             _chain = new List<GameObject>();
         }
@@ -108,9 +107,6 @@ namespace Zer0
                 if (_distance > _emitAt)
                     _chainPool.Get();
             }
-
-            if (_impact.hit)
-                EndExtension();
         }
 
         private void ChainReturn()

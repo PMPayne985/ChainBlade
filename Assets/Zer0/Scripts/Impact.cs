@@ -1,5 +1,5 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
+
 namespace Zer0
 {
     public class Impact : MonoBehaviour
@@ -15,12 +15,17 @@ namespace Zer0
         [SerializeField, Tooltip("Check if this weapon should deal damage to damagable objects.")]
         private bool canDamage;
 
-        [HideInInspector] public bool hit;
+        private ChainKnife _chainKnife;
+
+        public void SetChainKnife(ChainKnife newKnife)
+        {
+            _chainKnife = newKnife;
+        }
         
         private void OnTriggerEnter(Collider col)
         {
             print($"Impacted {col.name}");
-            hit = true;
+            _chainKnife.EndExtension();
             smokeSystem.Play();
 
             if (canPush && col.TryGetComponent(out IPushable pushable))
