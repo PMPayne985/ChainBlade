@@ -24,6 +24,8 @@ namespace Zer0
         
         private void OnTriggerEnter(Collider col)
         {
+            if (col.CompareTag("Player")) return;
+            
             print($"Impacted {col.name}");
             _chainKnife.EndExtension();
             smokeSystem.Play();
