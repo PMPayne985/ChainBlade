@@ -108,6 +108,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: chainPickUp
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 570d3903c1e99944ea60c2f465d67452, type: 3}
+      propertyPath: m_TagString
+      value: collectible
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 570d3903c1e99944ea60c2f465d67452, type: 3}
 --- !u!4 &928633036767263439 stripped
@@ -125,6 +129,10 @@ PrefabInstance:
     - target: {fileID: 2856356677211290176, guid: 02d04ebdd3cc38b428d60aebec57e05a, type: 3}
       propertyPath: m_Name
       value: SmokeParticles
+      objectReference: {fileID: 0}
+    - target: {fileID: 2856356677211290176, guid: 02d04ebdd3cc38b428d60aebec57e05a, type: 3}
+      propertyPath: m_TagString
+      value: collectible
       objectReference: {fileID: 0}
     - target: {fileID: 6413371747704734394, guid: 02d04ebdd3cc38b428d60aebec57e05a, type: 3}
       propertyPath: ShapeModule.type
