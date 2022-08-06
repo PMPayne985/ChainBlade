@@ -3,17 +3,13 @@ using UnityEngine;
 
 namespace Zer0
 {
-    public class Enemy : Character, IDraggable, IDamagable
+    public class Enemy : Character, IDraggable
     {
         private Transform _transform;
         private Quaternion originalRotation;
         private float _snapToHight;
         private CharacterController _controller;
         private float _gravity = -9.31f;
-
-        [SerializeField, Tooltip("Character's maximum health.")]
-        private float maxHealth;
-        private float _health;
 
         private void Awake()
         {
@@ -41,30 +37,6 @@ namespace Zer0
             var pos = _transform.position;
             _transform.position = new Vector3(pos.x, _snapToHight, pos.z);
             _controller.enabled = true;
-        }
-
-        public void TakeDamage(float damageTaken)
-        {
-            if (damageTaken > 0)
-                _health -= damageTaken;
-            
-            if (_health <= 0)
-                Death();
-                
-        }
-
-        public void RecoverHealth(float healingDone)
-        {
-            if (healingDone > 0)
-                _health += healingDone;
-
-            if (_health > maxHealth)
-                _health = maxHealth;
-        }
-
-        public void Death()
-        {
-            gameObject.SetActive(false);
         }
 
         private void Movement()
