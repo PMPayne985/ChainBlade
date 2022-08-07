@@ -8,7 +8,8 @@ namespace Zer0
     {
         private Animator _animator;
         private ChainKnife _chainKnife;
-        private Collider _knifeCollider;
+        
+        [SerializeField] private Collider _knifeCollider;
         
         private bool cursorLock;
         private bool _attacking;
@@ -24,8 +25,6 @@ namespace Zer0
 
             _chainKnife = GetComponentInChildren<ChainKnife>();
             if (!_chainKnife) Debug.LogError("CharacterBehavior is missing a Chain Knife.");
-
-            _knifeCollider = _chainKnife.GetComponent<Collider>();
         }
 
         private void Start()

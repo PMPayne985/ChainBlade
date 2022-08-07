@@ -1876,6 +1876,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4626560046774758, guid: 22084b44ff77aa04b8d3f46ea47f9a17, type: 3}
   m_PrefabInstance: {fileID: 791859388}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &822682270 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 132494796451170974, guid: a4349d53e16da24439d3e58faa8fed2e, type: 3}
+  m_PrefabInstance: {fileID: 8464534223525208162}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &840611076
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2353,7 +2358,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.2972972, y: 1}
+    m_SensorSize: {x: 1.8855722, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -4112,6 +4117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smokeSystem: {fileID: 19862844, guid: 445c6254d5b057d4dbdc7de90be36519, type: 3}
   canDamage: 1
+  damage: 1
 --- !u!43 &2109544567
 Mesh:
   m_ObjectHideFlags: 0
@@ -4671,6 +4677,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 2072961504}
+    - target: {fileID: 6283065066431596111, guid: 94f0d43cb145327488e554f5d46d0761, type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 2075070910}
     m_RemovedComponents:
     - {fileID: 9192803378106896437, guid: 94f0d43cb145327488e554f5d46d0761, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 94f0d43cb145327488e554f5d46d0761, type: 3}
@@ -5101,6 +5111,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 8464534221717520007, guid: a4349d53e16da24439d3e58faa8fed2e, type: 3}
+      propertyPath: _knifeCollider
+      value: 
+      objectReference: {fileID: 822682270}
     - target: {fileID: 8464534223256526335, guid: a4349d53e16da24439d3e58faa8fed2e, type: 3}
       propertyPath: m_Layer
       value: 6
