@@ -33,6 +33,9 @@ public class AIMotor : MonoBehaviour
 
     private void Update()
     {
+        if (!target)
+            _agent.SetDestination(transform.position);
+        
         _worldDeltaPosition = _agent.nextPosition - transform.position;
 
         if (_worldDeltaPosition.magnitude > _agent.radius) 

@@ -42,16 +42,15 @@ namespace Zer0
                 }
             }
             
-            if (Input.GetKeyDown(KeyCode.Mouse0) && !_attacking)
-            {
-                _attacking = true;
-                Attack();
-            }
+            if (Input.GetKeyDown(KeyCode.Mouse0) && !_attacking) Attack();
+            
             if (Input.GetKeyDown(KeyCode.Mouse1)) ChainAttack();
         }
 
         private void Attack()
         {
+            _attacking = true;
+            
             var randomAttackIndex = RandomAttackIndex();
             
             while (randomAttackIndex == _lastAttackIndex) 

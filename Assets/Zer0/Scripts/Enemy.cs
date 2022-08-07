@@ -61,12 +61,14 @@ namespace Zer0
             
             var distance = Vector3.Distance(_transform.position, _target.position);
 
-            if (distance <= attackDistance)
+            if (!_attacking && distance <= attackDistance)
                 Attack();
         }
         
         private void Attack()
         {
+            _attacking = true;
+            
             var randomAttackIndex = RandomAttackIndex();
             
             while (randomAttackIndex == _lastAttackIndex) 
@@ -75,6 +77,7 @@ namespace Zer0
             _animator.SetTrigger(AttackTrigger);
             _animator.SetFloat(AttackIndex, randomAttackIndex);
             _lastAttackIndex = randomAttackIndex;
+            print("Attacking");
         }
 
         public void SendDamage(int amount)
