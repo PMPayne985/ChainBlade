@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -7,6 +8,7 @@ namespace Zer0
     {
         private Animator _animator;
         private ChainKnife _chainKnife;
+        private Collider _knifeCollider;
         
         private bool cursorLock;
         private bool _attacking;
@@ -22,6 +24,13 @@ namespace Zer0
 
             _chainKnife = GetComponentInChildren<ChainKnife>();
             if (!_chainKnife) Debug.LogError("CharacterBehavior is missing a Chain Knife.");
+
+            _knifeCollider = _chainKnife.GetComponent<Collider>();
+        }
+
+        private void Start()
+        {
+            _knifeCollider.enabled = false;
         }
 
         private void Update()
@@ -50,6 +59,7 @@ namespace Zer0
         private void Attack()
         {
             _attacking = true;
+            _knifeCollider.enabled = true;
             
             var randomAttackIndex = RandomAttackIndex();
             
@@ -64,7 +74,7 @@ namespace Zer0
         public void SendDamage(int amount)
         {
             _attacking = false;
-            Debug.Log($"Sent {amount} damage!");
+            _knifeCollider.enabled = false;
         }
 
         private int RandomAttackIndex()
