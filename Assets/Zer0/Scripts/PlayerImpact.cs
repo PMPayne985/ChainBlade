@@ -2,7 +2,7 @@
 
 namespace Zer0
 {
-    public class Impact : MonoBehaviour
+    public class PlayerImpact : MonoBehaviour
     {
         [SerializeField, Tooltip("Force applied to objects struck")]
         private float force = 1f;

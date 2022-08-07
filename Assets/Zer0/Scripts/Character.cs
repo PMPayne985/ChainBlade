@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Zer0
 {
@@ -30,7 +31,13 @@ namespace Zer0
 
         public void Death()
         {
-            gameObject.SetActive(false);
+            if (gameObject.CompareTag("Player"))
+            {
+                var thisScene = SceneManager.GetActiveScene().name;
+                SceneManager.LoadScene(thisScene);
+            }
+            else
+                gameObject.SetActive(false);
         }
     }
 }

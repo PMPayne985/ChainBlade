@@ -47,7 +47,7 @@ namespace Zer0
         {
             _emitAt = 1 / emissionRate;
             _chainHead = Instantiate(knifePrefab, transform, true);
-            _chainHead.GetComponent<Impact>().SetChainKnife(this);
+            _chainHead.GetComponent<PlayerImpact>().SetChainKnife(this);
             _chainHead.SetActive(false);
             _chain = new List<GameObject>();
         }
