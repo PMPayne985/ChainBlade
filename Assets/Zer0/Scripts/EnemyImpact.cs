@@ -9,6 +9,8 @@ namespace Zer0
         [SerializeField, Tooltip("Check if this weapon should deal damage to damagable objects.")]
         private bool canDamage;
 
+        [SerializeField] private Enemy thisUnit;
+
         [SerializeField] private float damage = 1;
 
         private void OnTriggerEnter(Collider col)
@@ -19,7 +21,10 @@ namespace Zer0
             smokeSystem.Play();
 
             if (canDamage && col.TryGetComponent(out IDamagable target))
+            {
                 target.TakeDamage(damage);
+                thisUnit.EndAttack();
+            }
         }
     }
 }

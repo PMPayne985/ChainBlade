@@ -3875,6 +3875,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9962eec582d59da4abd55935db43c4e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1857483384 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6283065066431596111, guid: 94f0d43cb145327488e554f5d46d0761, type: 3}
+  m_PrefabInstance: {fileID: 6224657353384801707}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1072521f5618fe3489ff43fc0bc4dfb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1896421082 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1944111553845464, guid: d100f0b52c0966848a8eeaf0cf449418, type: 3}
@@ -4117,6 +4128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smokeSystem: {fileID: 19862844, guid: 445c6254d5b057d4dbdc7de90be36519, type: 3}
   canDamage: 1
+  thisUnit: {fileID: 1857483384}
   damage: 1
 --- !u!43 &2109544567
 Mesh:

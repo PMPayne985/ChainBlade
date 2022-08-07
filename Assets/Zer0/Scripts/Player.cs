@@ -90,5 +90,10 @@ namespace Zer0
         {
             _chainKnife.LaunchChain();
         }
+
+        public void EndAttack()
+        {
+            _knifeCollider.enabled = false;
+        }
     }
 }

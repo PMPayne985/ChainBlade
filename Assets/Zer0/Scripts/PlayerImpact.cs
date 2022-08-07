@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Zer0
 {
@@ -18,6 +19,13 @@ namespace Zer0
         [SerializeField, Tooltip("The Chain Knife script that will be used with this blade.")]
         private ChainKnife chainKnife;
 
+        private Player _player;
+
+        private void Awake()
+        {
+            _player = transform.root.GetComponent<Player>();
+        }
+
         public void SetChainKnife(ChainKnife newKnife)
         {
             chainKnife = newKnife;
@@ -36,7 +44,10 @@ namespace Zer0
                 draggable.Drag(transform);
             
             if (canDamage && col.TryGetComponent(out IDamagable target))
+            {
+                _player.EndAttack();
                 target.TakeDamage(damage);
+            }
         }
     }
 }

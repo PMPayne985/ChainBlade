@@ -102,5 +102,10 @@ namespace Zer0
         {
             return Random.Range(0, 3);
         }
+
+        public void EndAttack()
+        {
+            _weaponCollider.enabled = false;
+        }
     }
 }
