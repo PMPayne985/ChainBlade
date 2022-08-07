@@ -6,6 +6,7 @@ namespace Zer0
     {
         [SerializeField, Tooltip("Force applied to objects struck")]
         private float force = 1f;
+        [SerializeField] private float damage = 1;
         [SerializeField, Tooltip("Particle effect displayed when an object is struck")]
         private ParticleSystem smokeSystem;
         [SerializeField, Tooltip("Check if this weapon should push pushable objects.")]
@@ -26,7 +27,6 @@ namespace Zer0
         {
             if (col.CompareTag("Player")) return;
             
-            print($"Impacted {col.name}");
             chainKnife.EndExtension();
             smokeSystem.Play();
 
@@ -36,7 +36,7 @@ namespace Zer0
                 draggable.Drag(transform);
             
             if (canDamage && col.TryGetComponent(out IDamagable target))
-                target.TakeDamage(1);
+                target.TakeDamage(damage);
         }
     }
 }

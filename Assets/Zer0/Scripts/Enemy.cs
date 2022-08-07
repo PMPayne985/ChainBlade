@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
@@ -16,6 +17,8 @@ namespace Zer0
         private Animator _animator;
 
         [SerializeField] private float attackDistance = 2.5f;
+        [SerializeField] private EnemyImpact weapon;
+        private Collider _weaponCollider;
         private static readonly int AttackTrigger = Animator.StringToHash("Attack");
         private static readonly int AttackIndex = Animator.StringToHash("AttackIndex");
         private float _lastAttackIndex;
@@ -23,11 +26,20 @@ namespace Zer0
 
         private void Awake()
         {
+            if (!weapon)
+                Debug.LogError($"{gameObject.name}.Enemy.cs is missing a weapon reference. Please assign one in the hierarchy.");
+            
             _transform = transform;
             _controller = GetComponent<CharacterController>();
             _agent = GetComponent<NavMeshAgent>();
             _motor = GetComponent<AIMotor>();
             _animator = GetComponent<Animator>();
+            _weaponCollider = weapon.GetComponent<Collider>();
+        }
+
+        private void Start()
+        {
+            _weaponCollider.enabled = false;
         }
 
         private void Update()
@@ -68,6 +80,7 @@ namespace Zer0
         private void Attack()
         {
             _attacking = true;
+            _weaponCollider.enabled = true;
             
             var randomAttackIndex = RandomAttackIndex();
             
@@ -77,13 +90,12 @@ namespace Zer0
             _animator.SetTrigger(AttackTrigger);
             _animator.SetFloat(AttackIndex, randomAttackIndex);
             _lastAttackIndex = randomAttackIndex;
-            print("Attacking");
         }
 
         public void SendDamage(int amount)
         {
             _attacking = false;
-            Debug.Log($"Sent {amount} damage!");
+            _weaponCollider.enabled = false;
         }
 
         private int RandomAttackIndex()
