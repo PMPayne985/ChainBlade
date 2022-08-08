@@ -17,7 +17,7 @@ namespace Zer0
         private Animator _animator;
 
         [SerializeField] private float attackDistance = 2.5f;
-        [SerializeField] private EnemyImpact weapon;
+        private EnemyImpact weapon;
         private Collider _weaponCollider;
         private static readonly int AttackTrigger = Animator.StringToHash("Attack");
         private static readonly int AttackIndex = Animator.StringToHash("AttackIndex");
@@ -26,8 +26,9 @@ namespace Zer0
 
         private void Awake()
         {
+            weapon = GetComponentInChildren<EnemyImpact>();
             if (!weapon)
-                Debug.LogError($"{gameObject.name}.Enemy.cs is missing a weapon reference. Please assign one in the hierarchy.");
+                Debug.LogError($"Missing Enemy Impact component.");
             
             _transform = transform;
             _controller = GetComponent<CharacterController>();
