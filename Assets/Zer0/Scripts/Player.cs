@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -33,6 +32,7 @@ namespace Zer0
 
         private void Start()
         {
+            base.Start();
             _knifeCollider.enabled = false;
         }
 
