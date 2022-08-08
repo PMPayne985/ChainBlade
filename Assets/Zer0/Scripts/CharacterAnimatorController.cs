@@ -40,7 +40,6 @@ namespace Zer0
         private void Update()
         {
             PlayerInput();
-            Rotation();
         }
 
         private void FixedUpdate()
@@ -62,12 +61,15 @@ namespace Zer0
                 speed = new Vector3(0, gravity, 0);
 
             _controller.Move(speed);
+            Rotation();
             
             if (!_animator)
                 return;
             
             _animator.SetFloat(Speed, _vertical, directionDampTime, Time.deltaTime);
             _animator.SetFloat(Direction, _horizontal, directionDampTime, Time.deltaTime);
+            
+            
         }
 
         public void SetRotationSettings(float value)
@@ -77,7 +79,7 @@ namespace Zer0
         
         private void Rotation()
         {
-            _rotateAngle = _rotationSpeed * Input.GetAxis("Mouse X") * Time.deltaTime;
+            _rotateAngle = _rotationSpeed * Input.GetAxis("Mouse X");
             var rotate = new Vector3(0, _rotateAngle, 0);
 
             transform.Rotate(rotate);
