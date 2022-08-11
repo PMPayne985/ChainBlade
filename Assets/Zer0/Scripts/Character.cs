@@ -42,10 +42,7 @@ namespace Zer0
         public virtual void Death()
         {
             if (gameObject.CompareTag("Player"))
-            {
-                var thisScene = SceneManager.GetActiveScene().name;
-                SceneManager.LoadScene(thisScene);
-            }
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             else
                 gameObject.SetActive(false);
         }

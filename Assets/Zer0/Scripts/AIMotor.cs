@@ -13,8 +13,10 @@ public class AIMotor : MonoBehaviour
     private float _gravity = -9.31f;
 
     [SerializeField, Tooltip("The distance from the target the AI will stop.")]
-    protected float stopDistance = 2.5f;
-    
+    private float stopDistance = 1.5f;
+    private float _stopAt;
+
+    public int targetedSpace;
     public Transform target;
     
     private static readonly int Speed = Animator.StringToHash("Speed");
@@ -29,6 +31,7 @@ public class AIMotor : MonoBehaviour
     private void Start()
     {
         _agent.updatePosition = false;
+        _stopAt = stopDistance;
     }
 
     private void Update()
@@ -44,11 +47,23 @@ public class AIMotor : MonoBehaviour
             _agent.SetDestination(target.position);
         }
 
-        _animator.SetFloat(Speed, Vector3.Distance(transform.position, target.position) > _agent.radius * stopDistance ? 1 : 0);
+        _animator.SetFloat(Speed, Vector3.Distance(transform.position, target.position) > _agent.radius * _stopAt ? 1 : 0);
         
         Movement();
+
+        //if (Vector3.Distance(transform.position, target.position) > _agent.radius * _stopAt)
+            //transform.LookAt(target.root.position);
     }
 
+    public void SetTarget(Transform newTarget, float distance, int space)
+    {
+        _stopAt = distance > 0 ? distance : stopDistance;
+
+        targetedSpace = space;
+
+        target = newTarget;
+    }
+    
     private void OnAnimatorMove()
     {
         _position = _animator.rootPosition;

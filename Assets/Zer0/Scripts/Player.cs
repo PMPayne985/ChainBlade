@@ -10,6 +10,9 @@ namespace Zer0
 
         private UISetUp _UI;
         private Collider _knifeCollider;
+
+        public bool[] TargetSpacesOccupied;
+        public Transform[] TargetSpaces;
         
         private bool cursorLock;
         private bool _attacking;
@@ -36,6 +39,8 @@ namespace Zer0
         private void Start()
         {
             base.Start();
+            TargetSpacesOccupied = new bool[TargetSpaces.Length];
+            GetComponent<AITargeting>().CreateEnemyList();
             _knifeCollider.enabled = false;
             _UI.UpdateHealthUI(_health, maxHealth);
         }

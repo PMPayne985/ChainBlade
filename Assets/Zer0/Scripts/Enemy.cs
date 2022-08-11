@@ -108,5 +108,11 @@ namespace Zer0
         {
             _weaponCollider.enabled = false;
         }
+
+        public override void Death()
+        {
+            FindObjectOfType<AITargeting>().RemoveEnemy(_motor, _motor.targetedSpace);
+            base.Death();
+        }
     }
 }
