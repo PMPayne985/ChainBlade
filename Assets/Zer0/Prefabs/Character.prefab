@@ -4919,7 +4919,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 527332446865847663, guid: 5d9429ac165cd4b4fa0b3ce7224ab7dc, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 551966378551418997, guid: 5d9429ac165cd4b4fa0b3ce7224ab7dc, type: 3}
       propertyPath: m_Layer
@@ -4981,7 +4981,8 @@ PrefabInstance:
       propertyPath: InitialModule.startColor.maxColor.a
       value: 0.15686275
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1691569290, guid: 5d9429ac165cd4b4fa0b3ce7224ab7dc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5d9429ac165cd4b4fa0b3ce7224ab7dc, type: 3}
 --- !u!4 &5048328186924553765 stripped
 Transform:
