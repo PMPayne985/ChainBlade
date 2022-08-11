@@ -17,7 +17,7 @@ namespace Zer0
             LogMessage(Color.blue, $"{gameObject.name} starting health: {_health}");
         }
 
-        public void TakeDamage(float damageTaken)
+        public virtual void TakeDamage(float damageTaken)
         {
             if (damageTaken > 0)
                 _health -= damageTaken;
@@ -28,7 +28,7 @@ namespace Zer0
             LogMessage(Color.red, $"{gameObject.name} current health: {_health}");
         }
 
-        public void RecoverHealth(float healingDone)
+        public virtual void RecoverHealth(float healingDone)
         {
             if (healingDone > 0)
                 _health += healingDone;
@@ -39,7 +39,7 @@ namespace Zer0
             LogMessage(Color.green, $"{gameObject.name} current health: {_health}");
         }
 
-        public void Death()
+        public virtual void Death()
         {
             if (gameObject.CompareTag("Player"))
             {

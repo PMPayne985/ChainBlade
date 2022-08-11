@@ -7,7 +7,8 @@ namespace Zer0
     {
         private Animator _animator;
         private ChainKnife _chainKnife;
-        
+
+        private UISetUp _UI;
         private Collider _knifeCollider;
         
         private bool cursorLock;
@@ -28,12 +29,15 @@ namespace Zer0
             _knifeCollider = _chainKnife.transform.parent.GetComponentInChildren<Collider>();
             if (!_knifeCollider)
                 Debug.LogError("Chain Knife is missing a collider component.");
+
+            _UI = FindObjectOfType<UISetUp>();
         }
 
         private void Start()
         {
             base.Start();
             _knifeCollider.enabled = false;
+            _UI.UpdateHealthUI(_health, maxHealth);
         }
 
         private void Update()
@@ -98,6 +102,12 @@ namespace Zer0
         public void EndAttack()
         {
             _knifeCollider.enabled = false;
+        }
+
+        public override void TakeDamage(float damageTaken)
+        {
+            base.TakeDamage(damageTaken);
+            _UI.UpdateHealthUI(_health, maxHealth);
         }
     }
 }

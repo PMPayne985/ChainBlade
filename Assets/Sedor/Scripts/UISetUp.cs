@@ -1,18 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class UISetUp : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField, Tooltip("The text field where health is displayed.")]
+    private TMP_Text healthText;
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateHealthUI(float newHealth, float maxHealth)
     {
-        
+        healthText.text = $"HP: {newHealth} / {maxHealth}";
     }
 }
