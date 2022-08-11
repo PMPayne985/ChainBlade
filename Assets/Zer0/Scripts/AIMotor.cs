@@ -51,8 +51,8 @@ public class AIMotor : MonoBehaviour
         
         Movement();
 
-        //if (Vector3.Distance(transform.position, target.position) > _agent.radius * _stopAt)
-            //transform.LookAt(target.root.position);
+        if (Vector3.Distance(transform.position, target.position) < _agent.radius * _stopAt)
+            transform.LookAt(new Vector3(target.root.position.x, transform.position.y, target.root.position.z));
     }
 
     public void SetTarget(Transform newTarget, float distance, int space)
