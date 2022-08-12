@@ -43,24 +43,15 @@ namespace Zer0
             GetComponent<AITargeting>().CreateEnemyList();
             _knifeCollider.enabled = false;
             _UI.UpdateHealthUI(_health, maxHealth);
+            
+            CursorLock();
         }
 
         private void Update()
         {
             if (Input.GetKeyUp(KeyCode.Tab))
             {
-                cursorLock = !cursorLock;
-
-                if (cursorLock)
-                {
-                    Cursor.visible = false;
-                    Cursor.lockState = CursorLockMode.Locked;
-                }
-                else
-                {
-                    Cursor.visible = true;
-                    Cursor.lockState = CursorLockMode.None;
-                }
+                CursorLock();
             }
             
             if (Input.GetKeyDown(KeyCode.Mouse0) && !_attacking) Attack();
@@ -83,6 +74,22 @@ namespace Zer0
             _lastAttackIndex = randomAttackIndex;
         }
 
+        private void CursorLock()
+        {
+            cursorLock = !cursorLock;
+
+            if (cursorLock)
+            {
+                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
+            }
+            else
+            {
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+            }
+        }
+        
         public void SendDamage(int amount)
         {
             _attacking = false;
