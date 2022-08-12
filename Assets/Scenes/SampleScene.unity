@@ -1332,7 +1332,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6225917688595235411, guid: 94f0d43cb145327488e554f5d46d0761, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6225922958724105813, guid: 94f0d43cb145327488e554f5d46d0761, type: 3}
       propertyPath: m_Layer
@@ -4306,7 +4306,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6225917688595235411, guid: 94f0d43cb145327488e554f5d46d0761, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6225922958724105813, guid: 94f0d43cb145327488e554f5d46d0761, type: 3}
       propertyPath: m_Layer
@@ -6213,7 +6213,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6225917688595235411, guid: 94f0d43cb145327488e554f5d46d0761, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6225922958724105813, guid: 94f0d43cb145327488e554f5d46d0761, type: 3}
       propertyPath: m_Layer
@@ -8742,6 +8742,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 6225917688595235411, guid: 94f0d43cb145327488e554f5d46d0761, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6227790980637387181, guid: 94f0d43cb145327488e554f5d46d0761, type: 3}
       propertyPath: m_RootOrder
       value: 19
@@ -8900,6 +8904,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 269569345855377296, guid: a4349d53e16da24439d3e58faa8fed2e, type: 3}
+      propertyPath: maxChainsLength
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8464534221708025186, guid: a4349d53e16da24439d3e58faa8fed2e, type: 3}
       propertyPath: m_RootOrder
       value: 4

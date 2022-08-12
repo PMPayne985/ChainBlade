@@ -21,6 +21,8 @@ namespace Zer0
         private GameObject chainPrefab;
         [SerializeField, Tooltip("The blade of the static knife to be deactivated when the chain knife is extended.")] 
         private GameObject knifeBlade;
+        [SerializeField, Tooltip("The point the knife blade first appears on a chain attack.")]
+        private Transform emitPoint;
 
         private float _distance;
         private float _emitAt;
@@ -33,7 +35,6 @@ namespace Zer0
         private Transform _character;
 
         private bool _pressed;
-        private bool _dragging;
 
         private ObjectPool<GameObject> _chainPool;
 
@@ -46,7 +47,7 @@ namespace Zer0
         private void Start()
         {
             _emitAt = 1 / emissionRate;
-            _chainHead = Instantiate(knifePrefab, transform, true);
+            _chainHead = Instantiate(knifePrefab, emitPoint, true);
             _chainHead.GetComponent<PlayerImpact>().SetChainKnife(this);
             _chainHead.SetActive(false);
             _chain = new List<GameObject>();
@@ -55,25 +56,17 @@ namespace Zer0
         private void Update()
         {
             if (Input.GetMouseButtonUp(1) && _chainHead.activeInHierarchy)
-            {
-                _dragging = true;
                 _pressed = false;
-            }
 
             if (_pressed && (_chain.Count >= maxChainsLength))
-            {
-                _dragging = true;
                 _pressed = false;
-            }
         }
 
         private void FixedUpdate()
         {
             if (_pressed)
                 ChainExtend();
-            
-
-            if (_dragging)
+            else if (!_pressed && _chainHead.activeInHierarchy)
                 ChainReturn();
         }
 
@@ -83,10 +76,10 @@ namespace Zer0
             
             _chainHead.SetActive(true);
             knifeBlade.SetActive(false);
-            _chainHead.transform.position = transform.position + _character.forward * 0.3f;
+            _chainHead.transform.position = emitPoint.position + _character.forward * 0.3f;
             _chainHead.transform.rotation = _character.rotation;
             
-            var lookPoint = transform.position + _character.forward * maxChainsLength;
+            var lookPoint = emitPoint.position + _character.forward * maxChainsLength;
 
             _chainHead.transform.LookAt(lookPoint);
             _velocity = _chainHead.transform.forward * knifeVelocity;
@@ -95,20 +88,24 @@ namespace Zer0
 
         private void ChainExtend()
         {
-            _velocity += Vector3.down * Time.deltaTime;
-            _chainHead.transform.position += _velocity * Time.deltaTime;
-            _chainHead.transform.rotation = Quaternion.LookRotation(_velocity);
+            MoveChainHeadForward();
             
-            if (_chain.Count < maxChainsLength)
-            {
-                _distance += Vector3.Distance(_lastPosition, _chainHead.transform.position);
-                _lastPosition = _chainHead.transform.position;
-               
-                if (_distance > _emitAt)
-                    _chainPool.Get();
-            }
+            if (_chain.Count >= maxChainsLength) return;
+            
+            _distance += Vector3.Distance(_lastPosition, _chainHead.transform.position);
+            _lastPosition = _chainHead.transform.position;
+
+            if (_distance > _emitAt)
+                _chainPool.Get();
         }
 
+        private void MoveChainHeadForward()
+        {
+            _velocity += Vector3.forward * Time.deltaTime;
+            _chainHead.transform.position += _velocity * Time.deltaTime;
+            _chainHead.transform.rotation = Quaternion.LookRotation(_velocity);
+        }
+        
         private void ChainReturn()
         {
             if (_chain.Count == 0)
@@ -118,9 +115,9 @@ namespace Zer0
                 return;
             }
             
-            var startPoint = this.gameObject;
+            var currentChainPart = emitPoint.gameObject;
             
-            if (Vector3.Distance(startPoint.transform.position, _chain[0].transform.position) < 0.1f)
+            if (Vector3.Distance(currentChainPart.transform.position, _chain[0].transform.position) < 0.1f)
                 DisableChainPart(_chain[0]);
 
             if (_chain.Count == 0)
@@ -128,23 +125,24 @@ namespace Zer0
             
             foreach (var link in _chain)
             {
-                MoveChainParts(startPoint, link);
-                startPoint = link;
+                MoveChainPartsBack(currentChainPart, link);
+                currentChainPart = link;
             }
 
-            MoveChainParts(startPoint,  _chainHead);
+            MoveChainPartsBack(currentChainPart,  _chainHead);
         }
 
-        private void MoveChainParts(GameObject first, GameObject next)
+        private void MoveChainPartsBack(GameObject firstChainPart, GameObject nextChainPart)
         {
-            var direction = first.transform.position - next.transform.position;
-            var mag = direction.magnitude;
+            var direction = firstChainPart.transform.position - nextChainPart.transform.position;
+            var mag = Mathf.Min(direction.magnitude, dragVelocity * Time.deltaTime);
             direction.Normalize();
-            mag = Mathf.Min(mag, dragVelocity * Time.deltaTime);
-            next.transform.position += direction * mag;
+            
+            nextChainPart.transform.position += direction * mag;
+            
             if (direction != Vector3.zero)
             {
-                next.transform.rotation = Quaternion.RotateTowards(next.transform.rotation,
+                nextChainPart.transform.rotation = Quaternion.RotateTowards(nextChainPart.transform.rotation,
                     Quaternion.LookRotation(-direction), 500 * Time.deltaTime);
             }
         }
@@ -173,7 +171,6 @@ namespace Zer0
         public void EndExtension()
         {
             _pressed = false;
-            _dragging = true;
         }
 
         private GameObject CreateLink()
@@ -194,6 +191,8 @@ namespace Zer0
         private void OnReleaseLink(GameObject link)
         {
             _chain.Remove(link);
+            link.transform.position = emitPoint.transform.position;
+            link.transform.rotation = emitPoint.transform.rotation;
             link.SetActive(false);
         }
 

@@ -132,10 +132,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 15
+  damage: 1
   smokeSystem: {fileID: 19862844, guid: 445c6254d5b057d4dbdc7de90be36519, type: 3}
   canPush: 1
   canDrag: 1
-  hit: 0
+  canDamage: 0
+  chainKnife: {fileID: 0}
 --- !u!54 &8558450276630193163
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -189,7 +191,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6181572244052717840}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -30.850746, y: -3.97, z: 75.3}
+  m_LocalPosition: {x: 0, y: 0, z: 0.605}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
