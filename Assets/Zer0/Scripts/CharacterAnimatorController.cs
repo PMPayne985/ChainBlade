@@ -18,9 +18,12 @@ namespace Zer0
         private float _attackIndex;
         private float _rotateAngle;
         private float _rotationSpeed;
+
+        private bool _sprinting;
         
         private static readonly int Speed = Animator.StringToHash("Speed");
         private static readonly int Direction = Animator.StringToHash("Direction");
+        private static readonly int Sprinting = Animator.StringToHash("Sprinting");
 
         private void Awake()
         {
@@ -51,6 +54,11 @@ namespace Zer0
         {
             _horizontal = Input.GetAxis("Horizontal");
             _vertical = Input.GetAxis("Vertical");
+            
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+                _sprinting = true;
+            if (Input.GetKeyUp(KeyCode.LeftShift))
+                _sprinting = false;
         }
         
         private void Movement()
@@ -69,7 +77,7 @@ namespace Zer0
             _animator.SetFloat(Speed, _vertical, directionDampTime, Time.deltaTime);
             _animator.SetFloat(Direction, _horizontal, directionDampTime, Time.deltaTime);
             
-            
+            _animator.SetBool(Sprinting, _sprinting);
         }
 
         public void SetRotationSettings(float value)
@@ -79,6 +87,8 @@ namespace Zer0
         
         private void Rotation()
         {
+            if (_sprinting) return;
+            
             _rotateAngle = _rotationSpeed * Input.GetAxis("Mouse X");
             var rotate = new Vector3(0, _rotateAngle, 0);
 

@@ -1466,6 +1466,10 @@ PrefabInstance:
       propertyPath: stopDistance
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6283065066431596105, guid: 94f0d43cb145327488e554f5d46d0761, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 0e89ad26846dbbc488bd4298f26a3519, type: 2}
     - target: {fileID: 6283065066431596111, guid: 94f0d43cb145327488e554f5d46d0761, type: 3}
       propertyPath: weapon
       value: 
@@ -4436,6 +4440,10 @@ PrefabInstance:
       propertyPath: stopDistance
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6283065066431596105, guid: 94f0d43cb145327488e554f5d46d0761, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 0e89ad26846dbbc488bd4298f26a3519, type: 2}
     - target: {fileID: 6283065066431596111, guid: 94f0d43cb145327488e554f5d46d0761, type: 3}
       propertyPath: weapon
       value: 
@@ -6339,6 +6347,10 @@ PrefabInstance:
       propertyPath: stopDistance
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6283065066431596105, guid: 94f0d43cb145327488e554f5d46d0761, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 0e89ad26846dbbc488bd4298f26a3519, type: 2}
     - target: {fileID: 6283065066431596111, guid: 94f0d43cb145327488e554f5d46d0761, type: 3}
       propertyPath: weapon
       value: 
@@ -9098,6 +9110,10 @@ PrefabInstance:
       propertyPath: stopDistance
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6283065066431596105, guid: 94f0d43cb145327488e554f5d46d0761, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 0e89ad26846dbbc488bd4298f26a3519, type: 2}
     - target: {fileID: 6283065066431596111, guid: 94f0d43cb145327488e554f5d46d0761, type: 3}
       propertyPath: weapon
       value: 
@@ -9221,10 +9237,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8226219538628996678, guid: a4349d53e16da24439d3e58faa8fed2e, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8464534221708025186, guid: a4349d53e16da24439d3e58faa8fed2e, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -9273,10 +9285,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character
       objectReference: {fileID: 0}
-    - target: {fileID: 8464534221708090954, guid: a4349d53e16da24439d3e58faa8fed2e, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8464534223107217315, guid: a4349d53e16da24439d3e58faa8fed2e, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4349d53e16da24439d3e58faa8fed2e, type: 3}
