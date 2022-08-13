@@ -1332,7 +1332,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6225917688595235411, guid: 94f0d43cb145327488e554f5d46d0761, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6225922958724105813, guid: 94f0d43cb145327488e554f5d46d0761, type: 3}
       propertyPath: m_Layer
@@ -1474,6 +1474,10 @@ PrefabInstance:
       propertyPath: weapon
       value: 
       objectReference: {fileID: 491359604}
+    - target: {fileID: 6283065066431596111, guid: 94f0d43cb145327488e554f5d46d0761, type: 3}
+      propertyPath: maxHealth
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6283065066431596111, guid: 94f0d43cb145327488e554f5d46d0761, type: 3}
       propertyPath: attackDistance
       value: 1.5
@@ -2967,6 +2971,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4177662052655366, guid: d497776a8f00c3343aa3f81e9d3306e3, type: 3}
   m_PrefabInstance: {fileID: 602315708}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &613210825 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 269569345855377296, guid: a4349d53e16da24439d3e58faa8fed2e, type: 3}
+  m_PrefabInstance: {fileID: 8464534223525208162}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebbc688b2d0cb434cbae457298fa911f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &663534407 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4434221626337540, guid: cdcb19fde9e8cba40b7bff849baf2c1b, type: 3}
@@ -4306,7 +4321,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6225917688595235411, guid: 94f0d43cb145327488e554f5d46d0761, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6225922958724105813, guid: 94f0d43cb145327488e554f5d46d0761, type: 3}
       propertyPath: m_Layer
@@ -4448,6 +4463,10 @@ PrefabInstance:
       propertyPath: weapon
       value: 
       objectReference: {fileID: 9270036}
+    - target: {fileID: 6283065066431596111, guid: 94f0d43cb145327488e554f5d46d0761, type: 3}
+      propertyPath: maxHealth
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6283065066431596111, guid: 94f0d43cb145327488e554f5d46d0761, type: 3}
       propertyPath: attackDistance
       value: 1.5
@@ -6213,7 +6232,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6225917688595235411, guid: 94f0d43cb145327488e554f5d46d0761, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6225922958724105813, guid: 94f0d43cb145327488e554f5d46d0761, type: 3}
       propertyPath: m_Layer
@@ -6355,6 +6374,10 @@ PrefabInstance:
       propertyPath: weapon
       value: 
       objectReference: {fileID: 2039236650}
+    - target: {fileID: 6283065066431596111, guid: 94f0d43cb145327488e554f5d46d0761, type: 3}
+      propertyPath: maxHealth
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6283065066431596111, guid: 94f0d43cb145327488e554f5d46d0761, type: 3}
       propertyPath: attackDistance
       value: 1.5
@@ -8870,6 +8893,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6283065066431596111, guid: 94f0d43cb145327488e554f5d46d0761, type: 3}
+      propertyPath: maxHealth
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94f0d43cb145327488e554f5d46d0761, type: 3}
 --- !u!1001 &8070825690772349004
@@ -8984,6 +9011,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6273800330140926321, guid: a4349d53e16da24439d3e58faa8fed2e, type: 3}
+      propertyPath: chainKnife
+      value: 
+      objectReference: {fileID: 613210825}
     - target: {fileID: 8464534221708025186, guid: a4349d53e16da24439d3e58faa8fed2e, type: 3}
       propertyPath: m_RootOrder
       value: 4
