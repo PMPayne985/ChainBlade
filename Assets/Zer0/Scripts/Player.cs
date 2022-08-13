@@ -34,13 +34,13 @@ namespace Zer0
                 Debug.LogError("Chain Knife is missing a collider component.");
 
             _UI = FindObjectOfType<UISetUp>();
+            
+            TargetSpacesOccupied = new bool[TargetSpaces.Length];
         }
 
         private void Start()
         {
             base.Start();
-            TargetSpacesOccupied = new bool[TargetSpaces.Length];
-            GetComponent<AITargeting>().CreateEnemyList();
             _knifeCollider.enabled = false;
             _UI.UpdateHealthUI(_health, maxHealth);
             

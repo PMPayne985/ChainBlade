@@ -23,7 +23,7 @@ namespace Zer0
         private float _lastAttackIndex;
         private bool _attacking;
 
-        private void Awake()
+        private void OnEnable()
         {
             weapon = GetComponentInChildren<EnemyImpact>();
             if (!weapon)
@@ -111,7 +111,7 @@ namespace Zer0
 
         public override void Death()
         {
-            FindObjectOfType<AITargeting>().RemoveEnemy(_motor, _motor.targetedSpace);
+            GetComponent<AITargeting>().RemoveEnemy(_motor.targetedSpace);
             base.Death();
         }
     }

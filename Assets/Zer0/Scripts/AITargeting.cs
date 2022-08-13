@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -5,67 +6,62 @@ namespace Zer0
 {
     public class AITargeting : MonoBehaviour
     {
-        public List<AIMotor> _allEnemies = new List<AIMotor>();
         private Player _player;
+        private AIMotor _motor;
 
         private void Awake()
         {
-            _player = GetComponent<Player>();
-            print("I am Awake!");
+            _player = FindObjectOfType<Player>();
+            _motor = GetComponent<AIMotor>();
         }
 
-        public void AssignTargets()
+        private void Start()
         {
-            if (_allEnemies.Count == 0) return;
-            
-            for (var e = 0; e < _allEnemies.Count; e++)
-            {
-                if (_allEnemies[e].target) continue;
-                
-                if (e >= _player.TargetSpaces.Length)
-                    _allEnemies[e].SetTarget(_player.TargetSpaces[UnityEngine.Random.Range(0, _player.TargetSpaces.Length - 1)], 6, _player.TargetSpaces.Length + 10);
-                else
-                {
-                    for (var s = 0; s < _player.TargetSpacesOccupied.Length; s++)
-                    {
-                        if (_player.TargetSpacesOccupied[s]) continue;
-                        
-                        _allEnemies[e].SetTarget(_player.TargetSpaces[s], 0, s);
-                        _player.TargetSpacesOccupied[s] = true;
-                        break;
-                    }
-                }
-            }
+            AssignTarget();
         }
 
-        public void RemoveEnemy(AIMotor enemy, int space)
+        public void AssignTarget()
+        {
+            Transform target = null;
+            float distance = 0;
+            int space = 0;
+            
+            print($"{_player.TargetSpacesOccupied.Length}");
+            for (var i = 0; i < _player.TargetSpaces.Length; i++)
+            {
+                if (!_player.TargetSpacesOccupied[i])
+                {
+                    target = _player.TargetSpaces[i];
+                    distance = 0;
+                    space = i;
+                    _player.TargetSpacesOccupied[i] = true;
+                    
+                    print($"Target: {target}, Stop Distance: {distance}, Target Space: {space}");    
+                    break;
+                }
+                
+                print($"{_player.TargetSpaces[i]} is occupied!");
+            }
+
+            if (!target)
+            {
+                print("Selecting random target!");
+                var randomTarget = UnityEngine.Random.Range(0, _player.TargetSpaces.Length);
+
+                target = _player.TargetSpaces[randomTarget];
+                distance = 6;
+                space = 30;
+                
+                print($"Target: {target}, Stop Distance: {distance}, Target Space: {space}");
+            }
+            
+            _motor.SetTarget(target, distance, space);
+        }
+
+        public void RemoveEnemy(int space)
         {
             if (space < _player.TargetSpaces.Length)
                 _player.TargetSpacesOccupied[space] = false;
-            _allEnemies.Remove(enemy);
-            
-            AssignTargets();
-        }
-
-        public void CreateEnemyList()
-        {
-            _allEnemies.Clear();
-            
-            var enemies = FindObjectsOfType<AIMotor>();
-
-            foreach (var enemy in enemies)
-            {
-                _allEnemies.Add(enemy);
-            }
-            
-            AssignTargets();
-        }
-
-        public void AddEnemy(AIMotor enemy)
-        {
-            _allEnemies.Add(enemy);
-            
-            AssignTargets();
         }
     }
 }

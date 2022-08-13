@@ -1309,7 +1309,6 @@ GameObject:
   - component: {fileID: 8464534221717520007}
   - component: {fileID: 8464534221717520006}
   - component: {fileID: 2072961509}
-  - component: {fileID: 2072961514}
   m_Layer: 6
   m_Name: Character
   m_TagString: Player
@@ -1452,19 +1451,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30e05b861085f1541850087d49594a52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2072961514
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8464534221708090954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 490f562c7dd10ee42b4043611bea1d6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _allEnemies: []
 --- !u!1 &8464534221708095878
 GameObject:
   m_ObjectHideFlags: 0
@@ -5007,7 +4993,7 @@ PrefabInstance:
     - target: {fileID: 2479536358246948182, guid: 29ebac1b04313a244816443a0de4777f, type: 3}
       propertyPath: chainKnife
       value: 
-      objectReference: {fileID: 3450963156004871660}
+      objectReference: {fileID: 0}
     - target: {fileID: 2479536358246948182, guid: 29ebac1b04313a244816443a0de4777f, type: 3}
       propertyPath: smokeSystem
       value: 
@@ -5076,23 +5062,16 @@ PrefabInstance:
       propertyPath: maxChainsLength
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 8558425762916832183, guid: 29ebac1b04313a244816443a0de4777f, type: 3}
+      propertyPath: maxChainsLength
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 9032715362724592812, guid: 29ebac1b04313a244816443a0de4777f, type: 3}
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29ebac1b04313a244816443a0de4777f, type: 3}
---- !u!114 &3450963156004871660 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6529192187591082443, guid: 29ebac1b04313a244816443a0de4777f, type: 3}
-  m_PrefabInstance: {fileID: 8464534222567037991}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebbc688b2d0cb434cbae457298fa911f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &3925365650388793292 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4828318695737486315, guid: 29ebac1b04313a244816443a0de4777f, type: 3}
