@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -17,7 +18,14 @@ public class PauseMenu : MonoBehaviour
     public bool rotationSpeedFlip;
     public AudioMixer testMixer;
     public CharacterAnimatorController cacScript;
-    
+    public bool paused;
+
+    private void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.Escape))
+            TogglePause();
+    }
+
     public void GameLeave()
     {
         SceneManager.LoadScene("MainMenu");
@@ -33,10 +41,24 @@ public class PauseMenu : MonoBehaviour
         rotationSpeedFlip = !rotationSpeedFlip;
     }
 
-    public void Unpause()
+    public void TogglePause()
     {
-        mainPause.SetActive(false);
-        optionsPause.SetActive(false);
+        paused = !paused;
+        
+        if (paused)
+        {
+            mainPause.SetActive(true);
+            optionsPause.SetActive(false);
+            Time.timeScale = 0;
+            Cursor.lockState = CursorLockMode.None;
+        }
+        else
+        {
+            mainPause.SetActive(false);
+            optionsPause.SetActive(false);
+            Time.timeScale = 1;
+            Cursor.lockState = CursorLockMode.Confined;
+        }
     }
 
     public void Options()
