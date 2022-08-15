@@ -175,7 +175,7 @@ namespace Zer0
 
         private GameObject CreateLink()
         {
-            var link = Instantiate(chainPrefab, _chainHead.transform, true);
+            var link = Instantiate(chainPrefab, _chainHead.transform, false);
             return link;
         }
 

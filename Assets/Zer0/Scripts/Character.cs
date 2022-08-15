@@ -13,8 +13,6 @@ namespace Zer0
         protected void Start()
         {
             _health = maxHealth;
-            
-            LogMessage(Color.blue, $"{gameObject.name} starting health: {_health}");
         }
 
         public virtual void TakeDamage(float damageTaken)
@@ -24,8 +22,6 @@ namespace Zer0
             
             if (_health <= 0)
                 Death();
-            
-            LogMessage(Color.red, $"{gameObject.name} current health: {_health}");
         }
 
         public virtual void RecoverHealth(float healingDone)
@@ -35,8 +31,6 @@ namespace Zer0
 
             if (_health > maxHealth)
                 _health = maxHealth;
-            
-            LogMessage(Color.green, $"{gameObject.name} current health: {_health}");
         }
 
         public virtual void Death()

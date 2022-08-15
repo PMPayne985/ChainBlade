@@ -14,6 +14,8 @@ namespace Zer0
         private Transform _target;
         private AIMotor _motor;
         private Animator _animator;
+        private EnemySpawner _spawner;
+        private ScoreUI _scoreUI;
 
         [SerializeField] private float attackDistance = 2.5f;
         private EnemyImpact weapon;
@@ -22,6 +24,8 @@ namespace Zer0
         private static readonly int AttackIndex = Animator.StringToHash("AttackIndex");
         private float _lastAttackIndex;
         private bool _attacking;
+
+        private static int _score;
 
         private void OnEnable()
         {
@@ -35,12 +39,14 @@ namespace Zer0
             _motor = GetComponent<AIMotor>();
             _animator = GetComponent<Animator>();
             _weaponCollider = weapon.GetComponent<Collider>();
+            _scoreUI = FindObjectOfType<ScoreUI>();
         }
 
         private void Start()
         {
             base.Start();
             _weaponCollider.enabled = false;
+            _score = 0;
         }
 
         private void Update()
@@ -48,6 +54,11 @@ namespace Zer0
             TargetDistance();
         }
 
+        public void SetSpawner(EnemySpawner spawner)
+        {
+            _spawner = spawner;
+        }
+        
         public void Drag(Transform dragger)
         {
             _controller.enabled = false;
@@ -112,7 +123,14 @@ namespace Zer0
         public override void Death()
         {
             GetComponent<AITargeting>().RemoveEnemy(_motor.targetedSpace);
-            base.Death();
+            _score++;
+            if (_spawner)
+                _spawner.ReleaseEnemy(gameObject);
+            else
+                base.Death();
+            
+            _scoreUI.SetScore(_score);
+            
         }
     }
 }

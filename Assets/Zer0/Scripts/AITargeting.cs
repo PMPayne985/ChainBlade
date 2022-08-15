@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Zer0
@@ -26,7 +24,6 @@ namespace Zer0
             float distance = 0;
             int space = 0;
             
-            print($"{_player.TargetSpacesOccupied.Length}");
             for (var i = 0; i < _player.TargetSpaces.Length; i++)
             {
                 if (!_player.TargetSpacesOccupied[i])
@@ -35,24 +32,17 @@ namespace Zer0
                     distance = 0;
                     space = i;
                     _player.TargetSpacesOccupied[i] = true;
-                    
-                    print($"Target: {target}, Stop Distance: {distance}, Target Space: {space}");    
                     break;
                 }
-                
-                print($"{_player.TargetSpaces[i]} is occupied!");
             }
 
             if (!target)
             {
-                print("Selecting random target!");
                 var randomTarget = UnityEngine.Random.Range(0, _player.TargetSpaces.Length);
 
                 target = _player.TargetSpaces[randomTarget];
                 distance = 6;
                 space = 30;
-                
-                print($"Target: {target}, Stop Distance: {distance}, Target Space: {space}");
             }
             
             _motor.SetTarget(target, distance, space);
