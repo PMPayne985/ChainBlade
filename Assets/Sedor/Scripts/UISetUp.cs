@@ -8,6 +8,6 @@ public class UISetUp : MonoBehaviour
 
     public void UpdateHealthUI(float newHealth, float maxHealth)
     {
-        healthText.text = $"HP: {newHealth} / {maxHealth}";
+        healthText.text = $"{newHealth} / {maxHealth}";
     }
 }
