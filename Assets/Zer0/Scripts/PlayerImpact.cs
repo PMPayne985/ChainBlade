@@ -26,6 +26,11 @@ namespace Zer0
             _player = transform.root.GetComponent<Player>();
         }
 
+        private void Start()
+        {
+            ChainUpgrade.Instance.OnKnifeDamageUpgrade += UpgradeDamage;
+        }
+
         public void SetChainKnife(ChainKnife newKnife)
         {
             chainKnife = newKnife;
@@ -48,6 +53,11 @@ namespace Zer0
                 _player.EndAttack();
                 target.TakeDamage(damage);
             }
+        }
+
+        private void UpgradeDamage(float newDamage)
+        {
+            damage += newDamage;
         }
     }
 }

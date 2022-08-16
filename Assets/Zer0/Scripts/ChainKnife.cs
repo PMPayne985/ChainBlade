@@ -51,6 +51,8 @@ namespace Zer0
             _chainHead.GetComponentInChildren<PlayerImpact>().SetChainKnife(this);
             _chainHead.SetActive(false);
             _chain = new List<GameObject>();
+
+            ChainUpgrade.Instance.OnChainLengthUpgrade += UpgradeChainLength;
         }
 
         private void Update()
@@ -199,6 +201,11 @@ namespace Zer0
         private void OnDestroyLink(GameObject link)
         {
             DestroyImmediate(link);
+        }
+
+        private void UpgradeChainLength(int newLength)
+        {
+            maxChainsLength += newLength;
         }
     }
 }

@@ -11,10 +11,10 @@ namespace Zer0
         private UISetUp _UI;
         private Collider _knifeCollider;
 
-        public bool[] TargetSpacesOccupied;
-        public Transform[] TargetSpaces;
+        public bool[] TargetSpacesOccupied { get; private set; }
+        public Transform[] TargetSpaces { get; private set; }
         
-        private bool cursorLock;
+        private bool _cursorLock;
         private bool _attacking;
         private int _lastAttackIndex;
         private static readonly int AttackTrigger = Animator.StringToHash("Attack");
@@ -76,9 +76,9 @@ namespace Zer0
 
         private void CursorLock()
         {
-            cursorLock = !cursorLock;
+            _cursorLock = !_cursorLock;
 
-            if (cursorLock)
+            if (_cursorLock)
             {
                 Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked;

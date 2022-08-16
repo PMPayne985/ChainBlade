@@ -1,15 +1,36 @@
+using System;
 using UnityEngine;
 
-public class Collectible : MonoBehaviour
+namespace Zer0
 {
-    private int _numCollected;
-    
-    private void OnControllerColliderHit(ControllerColliderHit hit)
+    public class Collectible : MonoBehaviour
     {
-        if (!hit.collider.CompareTag("collectible")) return;
+        public static Collectible Instance { get; private set; }
         
-        _numCollected ++;
-        Destroy(hit.collider.gameObject);
-        print($"Links collected: {_numCollected}");
+        private int _numCollected;
+        public event Action<int> OnCollectedLink;
+
+        private void Awake()
+        {
+            if (Instance != null)
+                Destroy(gameObject);
+            else
+                Instance = this;
+        }
+
+        private void OnControllerColliderHit(ControllerColliderHit hit)
+        {
+            if (hit.collider.CompareTag("collectible"))
+                CollectLink(hit.gameObject);
+        }
+
+        private void CollectLink(GameObject collected)
+        {
+            _numCollected++;
+            OnCollectedLink?.Invoke(1);
+            Destroy(collected);
+
+            print($"Links collected: {_numCollected}");
+        }
     }
 }
