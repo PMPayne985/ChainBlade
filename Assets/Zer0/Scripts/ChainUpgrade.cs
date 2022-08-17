@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -41,7 +42,7 @@ namespace Zer0
 
         private void Start()
         {
-            Collectible.Instance.OnCollectedLink += IncrementCollected;
+            Collection.Instance.OnCollectedLink += IncrementCollected;
         }
 
         public void ToggleUpgradeMenu()
@@ -67,9 +68,9 @@ namespace Zer0
             }
         }
         
-        private void IncrementCollected(int increment)
+        private void IncrementCollected(GameObject collected)
         {
-            _linksCollected += increment;
+            _linksCollected ++;
         }
 
         public void UpgradeChainLength()

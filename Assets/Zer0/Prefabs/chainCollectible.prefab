@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3708523777560726796}
   - component: {fileID: 1691569290}
+  - component: {fileID: 7787018587535084756}
   m_Layer: 9
   m_Name: chainCollectible
   m_TagString: collectible
@@ -47,6 +48,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 1, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7787018587535084756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557888383295597854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b631c648f8347c94f9ffdedadc4c03c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &822350786087951652
 PrefabInstance:
   m_ObjectHideFlags: 0
