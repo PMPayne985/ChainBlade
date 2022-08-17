@@ -9087,6 +9087,70 @@ PrefabInstance:
       propertyPath: bMat
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8070825690661653818, guid: e9d965f6e48f08c48bd594e6a8b3b116, type: 3}
+      propertyPath: _dither
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 8070825690661653818, guid: e9d965f6e48f08c48bd594e6a8b3b116, type: 3}
+      propertyPath: _preset
+      value: 999
+      objectReference: {fileID: 0}
+    - target: {fileID: 8070825690661653818, guid: e9d965f6e48f08c48bd594e6a8b3b116, type: 3}
+      propertyPath: _sharpen
+      value: 7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8070825690661653818, guid: e9d965f6e48f08c48bd594e6a8b3b116, type: 3}
+      propertyPath: _tonemap
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8070825690661653818, guid: e9d965f6e48f08c48bd594e6a8b3b116, type: 3}
+      propertyPath: _contrast
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8070825690661653818, guid: e9d965f6e48f08c48bd594e6a8b3b116, type: 3}
+      propertyPath: _saturate
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8070825690661653818, guid: e9d965f6e48f08c48bd594e6a8b3b116, type: 3}
+      propertyPath: _brightness
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8070825690661653818, guid: e9d965f6e48f08c48bd594e6a8b3b116, type: 3}
+      propertyPath: _compareMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8070825690661653818, guid: e9d965f6e48f08c48bd594e6a8b3b116, type: 3}
+      propertyPath: _tintColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8070825690661653818, guid: e9d965f6e48f08c48bd594e6a8b3b116, type: 3}
+      propertyPath: _tintColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8070825690661653818, guid: e9d965f6e48f08c48bd594e6a8b3b116, type: 3}
+      propertyPath: _tintColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8070825690661653818, guid: e9d965f6e48f08c48bd594e6a8b3b116, type: 3}
+      propertyPath: _tintColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8070825690661653818, guid: e9d965f6e48f08c48bd594e6a8b3b116, type: 3}
+      propertyPath: _sharpenClamp
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 8070825690661653818, guid: e9d965f6e48f08c48bd594e6a8b3b116, type: 3}
+      propertyPath: _sharpenMaxDepth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8070825690661653818, guid: e9d965f6e48f08c48bd594e6a8b3b116, type: 3}
+      propertyPath: _sharpenMinDepth
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8070825690661653818, guid: e9d965f6e48f08c48bd594e6a8b3b116, type: 3}
+      propertyPath: _sharpenRelaxation
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 8070825690661653821, guid: e9d965f6e48f08c48bd594e6a8b3b116, type: 3}
       propertyPath: m_IsActive
       value: 1
