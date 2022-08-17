@@ -8846,6 +8846,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 7893389535834749301, guid: 12bb1116fb859c449a7238891311eb7d, type: 3}
+      propertyPath: spawnTime
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7893389535834749301, guid: 12bb1116fb859c449a7238891311eb7d, type: 3}
+      propertyPath: maxEnemies
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7893389535834749306, guid: 12bb1116fb859c449a7238891311eb7d, type: 3}
       propertyPath: m_RootOrder
       value: 19
@@ -9105,6 +9113,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9d965f6e48f08c48bd594e6a8b3b116, type: 3}
+--- !u!1 &8070825690772349005 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8070825690549541907, guid: e9d965f6e48f08c48bd594e6a8b3b116, type: 3}
+  m_PrefabInstance: {fileID: 8070825690772349004}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8070825690772349006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8070825690772349005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fa75a8c6bf112b4c8e16d84136b775d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transform_player: {fileID: 2072961504}
+  detection_diatance: 15
+  alpha: 0.3
 --- !u!1001 &8464534223525208162
 PrefabInstance:
   m_ObjectHideFlags: 0

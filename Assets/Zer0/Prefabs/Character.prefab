@@ -1416,6 +1416,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 10
+  ui: {fileID: 0}
   targetSpaces:
   - {fileID: 805257415224984007}
   - {fileID: 3013912754337259370}
@@ -1465,7 +1466,7 @@ NavMeshObstacle:
   m_Extents: {x: 0.35, y: 0.9, z: 0.35}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0.9, z: 0}
   m_TimeToStationary: 0.5
 --- !u!114 &4899466070643593475
