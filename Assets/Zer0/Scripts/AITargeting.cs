@@ -24,11 +24,11 @@ namespace Zer0
             float distance = 0;
             int space = 0;
             
-            for (var i = 0; i < _player.TargetSpaces.Length; i++)
+            for (var i = 0; i < _player.targetSpaces.Length; i++)
             {
                 if (!_player.TargetSpacesOccupied[i])
                 {
-                    target = _player.TargetSpaces[i];
+                    target = _player.targetSpaces[i];
                     distance = 0;
                     space = i;
                     _player.TargetSpacesOccupied[i] = true;
@@ -38,9 +38,9 @@ namespace Zer0
 
             if (!target)
             {
-                var randomTarget = UnityEngine.Random.Range(0, _player.TargetSpaces.Length);
+                var randomTarget = UnityEngine.Random.Range(0, _player.targetSpaces.Length);
 
-                target = _player.TargetSpaces[randomTarget];
+                target = _player.targetSpaces[randomTarget];
                 distance = 6;
                 space = 30;
             }
@@ -50,7 +50,7 @@ namespace Zer0
 
         public void RemoveEnemy(int space)
         {
-            if (space < _player.TargetSpaces.Length)
+            if (space < _player.targetSpaces.Length)
                 _player.TargetSpacesOccupied[space] = false;
         }
     }

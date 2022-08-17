@@ -5,27 +5,35 @@ using UnityEngine.Audio;
 
 public class MainMenu : MonoBehaviour
 {
-    public bool optionsBool;
-    public GameObject mainMain;
-    public GameObject optionsMain;
-    public Slider rotationSpeed;
-    public Toggle rotateDirect;
-    public Slider music;
-    public Slider sfx;
-    public Slider master;
-    public int rotationSpeedFinal;
-    public AudioMixer testMixer;
+    private bool _optionsBool;
+    [SerializeField, Tooltip("The Panel that contains the Main Menu buttons.")]
+    private GameObject mainMain;
+    [SerializeField, Tooltip("The Panel that contains the Options Menu buttons.")]
+    private GameObject optionsMain;
+    [SerializeField, Tooltip("Slider that controls the player adjustable mouse rotation speed.")]
+    private Slider rotationSpeed;
+    [SerializeField, Tooltip("Toggle to invert mouse rotation direction.")]
+    private Toggle rotateDirect;
+    [SerializeField, Tooltip("Slider to control Music volume.")]
+    private Slider music;
+    [SerializeField, Tooltip("Slider to control Sound Effects volume.")]
+    private Slider sfx;
+    [SerializeField, Tooltip("Slider to control Master volume.")]
+    private Slider master;
+    private int _rotationSpeedFinal;
+    [SerializeField]
+    private AudioMixer testMixer;
 
     public void GameRun()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene(1);
     }
     
     public void Options()
     {
-        optionsBool = !optionsBool;
+        _optionsBool = !_optionsBool;
         
-        if (!optionsBool)
+        if (!_optionsBool)
         {
             mainMain.SetActive(true);
             optionsMain.SetActive(false);
@@ -69,6 +77,6 @@ public class MainMenu : MonoBehaviour
     
     public void InverseRotate()
     {
-       rotationSpeedFinal = rotationSpeedFinal * -1;
+       _rotationSpeedFinal = _rotationSpeedFinal * -1;
     }
 }

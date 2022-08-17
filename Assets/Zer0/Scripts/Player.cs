@@ -8,11 +8,14 @@ namespace Zer0
         private Animator _animator;
         private ChainKnife _chainKnife;
 
-        private UISetUp _UI;
+        [SerializeField, Tooltip("The object that contains the functions to update UI")]
+        private UISetUp ui;
         private Collider _knifeCollider;
 
         public bool[] TargetSpacesOccupied { get; private set; }
-        public Transform[] TargetSpaces { get; private set; }
+        
+        [Tooltip("Targetable spaces for the Enemy AI")]
+        public Transform[] targetSpaces;
         
         private bool _cursorLock;
         private bool _attacking;
@@ -32,17 +35,15 @@ namespace Zer0
             _knifeCollider = _chainKnife.transform.parent.GetComponentInChildren<Collider>();
             if (!_knifeCollider)
                 Debug.LogError("Chain Knife is missing a collider component.");
-
-            _UI = FindObjectOfType<UISetUp>();
             
-            TargetSpacesOccupied = new bool[TargetSpaces.Length];
+            TargetSpacesOccupied = new bool[targetSpaces.Length];
         }
 
         private void Start()
         {
             base.Start();
             _knifeCollider.enabled = false;
-            _UI.UpdateHealthUI(_health, maxHealth);
+            ui.UpdateHealthUI(_health, maxHealth);
             
             CursorLock();
         }
@@ -119,7 +120,15 @@ namespace Zer0
         public override void TakeDamage(float damageTaken)
         {
             base.TakeDamage(damageTaken);
-            _UI.UpdateHealthUI(_health, maxHealth);
+            ui.UpdateHealthUI(_health, maxHealth);
         }
+        
+#if UNITY_EDITOR
+        private void OnValidate()
+        {
+            _health = maxHealth;
+            ui.UpdateHealthUI(_health, maxHealth);
+        }
+#endif 
     }
 }
