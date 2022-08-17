@@ -1684,7 +1684,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh51888
+  m_Name: pb_Mesh158058
   serializedVersion: 10
   m_SubMeshes: []
   m_Shapes:
@@ -5071,7 +5071,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh51998
+  m_Name: pb_Mesh158180
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8668,9 +8668,29 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1356555164838596297, guid: 3cbde50d9fc36a74993e0d5ff5624c3e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5586542047668566440, guid: 3cbde50d9fc36a74993e0d5ff5624c3e, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6485418252832770924, guid: 3cbde50d9fc36a74993e0d5ff5624c3e, type: 3}
       propertyPath: m_Layer
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7674357052387697621, guid: 3cbde50d9fc36a74993e0d5ff5624c3e, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7674357052387697621, guid: 3cbde50d9fc36a74993e0d5ff5624c3e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7674357052387697621, guid: 3cbde50d9fc36a74993e0d5ff5624c3e, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3cbde50d9fc36a74993e0d5ff5624c3e, type: 3}
@@ -8741,6 +8761,10 @@ PrefabInstance:
     - target: {fileID: 7026742958704979874, guid: 087f5f240d8385e46a70f73df76c09fa, type: 3}
       propertyPath: m_Name
       value: ScoreUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 7026742958704979874, guid: 087f5f240d8385e46a70f73df76c09fa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7026742958704979878, guid: 087f5f240d8385e46a70f73df76c09fa, type: 3}
       propertyPath: m_Pivot.x

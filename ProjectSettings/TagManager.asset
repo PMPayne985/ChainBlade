@@ -6,6 +6,9 @@ TagManager:
   tags:
   - collectible
   - Enemy
+  - stone
+  - big_stone
+  - ground
   layers:
   - Default
   - TransparentFX
@@ -42,4 +45,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Foreground
+    uniqueID: 2684152781
     locked: 0
