@@ -8,17 +8,21 @@ using Zer0;
 public class PauseMenu : MonoBehaviour
 {
     public bool optionsBool;
+    public GameObject darkBackground;
     public GameObject mainPause;
     public GameObject optionsPause;
     public Slider rotationSpeed;
-    public Toggle rotateDirect;
     public Slider music;
     public Slider sfx;
     public Slider master;
-    public bool rotationSpeedFlip;
     public AudioMixer testMixer;
-    public CharacterAnimatorController cacScript;
+    private CharacterAnimatorController _player;
     public bool paused;
+
+    private void Awake()
+    {
+        _player = FindObjectOfType<CharacterAnimatorController>();
+    }
 
     private void Update()
     {
@@ -26,56 +30,53 @@ public class PauseMenu : MonoBehaviour
             TogglePause();
     }
 
-    public void GameLeave()
+    public void ReturnToTitle()
     {
         SceneManager.LoadScene("MainMenu");
     }
 
     public void SpeedSlider(Slider speed)
     {
-        cacScript.SetRotationSettings(speed.value);
+        _player.SetRotationSettings(speed.value);
     }
-
-    public void RotationFlip()
-    {
-        rotationSpeedFlip = !rotationSpeedFlip;
-    }
-
+    
     public void TogglePause()
     {
         paused = !paused;
         
         if (paused)
         {
+            darkBackground.SetActive(true);
             mainPause.SetActive(true);
             optionsPause.SetActive(false);
             Time.timeScale = 0;
-            Cursor.lockState = CursorLockMode.None;
+            Cursor.lockState = CursorLockMode.Confined;
         }
         else
         {
+            darkBackground.SetActive(false);
             mainPause.SetActive(false);
             optionsPause.SetActive(false);
             Time.timeScale = 1;
-            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
 
-    public void Options()
+    public void ToggleOptions()
     {
         optionsBool = !optionsBool;
 
         if (!optionsBool)
         {
+            Cursor.lockState = CursorLockMode.None;
             mainPause.SetActive(true);
             optionsPause.SetActive(false);
         }
         else
         {
+            Cursor.lockState = CursorLockMode.Locked;
             mainPause.SetActive(false);
             optionsPause.SetActive(true);
-
-            Debug.Log($"Rotation Speed: {rotationSpeed.value}");
         }
 
     }

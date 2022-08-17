@@ -1310,7 +1310,6 @@ GameObject:
   - component: {fileID: 8464534221717520006}
   - component: {fileID: 2072961509}
   - component: {fileID: 2072961510}
-  - component: {fileID: 4899466070643593475}
   m_Layer: 6
   m_Name: Character
   m_TagString: Player
@@ -1469,18 +1468,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0.9, z: 0}
   m_TimeToStationary: 0.5
---- !u!114 &4899466070643593475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8464534221708090954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a924e5d53129d0c47b7de412f40977a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8464534221708095878
 GameObject:
   m_ObjectHideFlags: 0

@@ -129,7 +129,8 @@ namespace Zer0
             else
                 base.Death();
             
-            _scoreUI.SetScore(_score);
+            if (_scoreUI)
+                _scoreUI.SetScore(_score);
             
         }
     }

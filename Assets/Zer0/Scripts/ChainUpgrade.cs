@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 
 namespace Zer0
@@ -10,6 +11,16 @@ namespace Zer0
         private int _linksCollected;
         private int _chainLength;
         private int _chainKnifeUpgrades;
+        private bool _menuOpen;
+
+        private int _lengthMultiplyer = 1;
+        private int _damageMultiplyer = 1;
+
+        [SerializeField] private GameObject screenDarken;
+        [SerializeField] private GameObject upgradeMenu;
+        [SerializeField] private TMP_Text linkText;
+        [SerializeField] private TMP_Text lengthCostText;
+        [SerializeField] private TMP_Text damageCostText;
 
         public event Action<int> OnChainLengthUpgrade;
         public event Action<float> OnKnifeDamageUpgrade; 
@@ -22,11 +33,40 @@ namespace Zer0
                 Instance = this;
         }
 
+        private void Update()
+        {
+            if (Input.GetKeyUp(KeyCode.Tab))
+                ToggleUpgradeMenu();
+        }
+
         private void Start()
         {
             Collectible.Instance.OnCollectedLink += IncrementCollected;
         }
 
+        public void ToggleUpgradeMenu()
+        {
+            _menuOpen = !_menuOpen;
+
+            if (_menuOpen)
+            {
+                Cursor.lockState = CursorLockMode.Confined;
+                upgradeMenu.SetActive(true);
+                screenDarken.SetActive(true);
+                linkText.text = $"Current Links: {_linksCollected}";
+                lengthCostText.text = $"{_lengthMultiplyer}";
+                damageCostText.text = $"{_damageMultiplyer}";
+                Time.timeScale = 0;
+            }
+            else
+            {
+                Time.timeScale = 1;
+                Cursor.lockState = CursorLockMode.Locked;
+                screenDarken.SetActive(false);
+                upgradeMenu.SetActive(false);
+            }
+        }
+        
         private void IncrementCollected(int increment)
         {
             _linksCollected += increment;
@@ -34,12 +74,26 @@ namespace Zer0
 
         public void UpgradeChainLength()
         {
-            OnChainLengthUpgrade?.Invoke(1);
+            if (_linksCollected >= _lengthMultiplyer)
+            {
+                _linksCollected -= _lengthMultiplyer;
+                OnChainLengthUpgrade?.Invoke(1);
+                _lengthMultiplyer++;
+                linkText.text = $"Current Links: {_linksCollected}";
+                lengthCostText.text = $"{_lengthMultiplyer}";
+            }
         }
 
         public void UpgradeKnifeDamage()
         {
-            OnKnifeDamageUpgrade?.Invoke(1);
+            if (_linksCollected >= _damageMultiplyer)
+            {
+                _linksCollected -= _damageMultiplyer;
+                OnKnifeDamageUpgrade?.Invoke(1);
+                _damageMultiplyer++;
+                linkText.text = $"Current Links: {_linksCollected}";
+                damageCostText.text = $"{_damageMultiplyer}";
+            }
         }
     }
 }

@@ -17,7 +17,6 @@ namespace Zer0
         [Tooltip("Targetable spaces for the Enemy AI")]
         public Transform[] targetSpaces;
         
-        private bool _cursorLock;
         private bool _attacking;
         private int _lastAttackIndex;
         private static readonly int AttackTrigger = Animator.StringToHash("Attack");
@@ -44,17 +43,12 @@ namespace Zer0
             base.Start();
             _knifeCollider.enabled = false;
             ui.UpdateHealthUI(_health, maxHealth);
-            
-            CursorLock();
+
+            Cursor.lockState = CursorLockMode.Locked;
         }
 
         private void Update()
         {
-            if (Input.GetKeyUp(KeyCode.Tab))
-            {
-                CursorLock();
-            }
-            
             if (Input.GetKeyDown(KeyCode.Mouse0) && !_attacking) Attack();
             
             if (Input.GetKeyDown(KeyCode.Mouse1)) ChainAttack();
@@ -75,22 +69,6 @@ namespace Zer0
             _lastAttackIndex = randomAttackIndex;
         }
 
-        private void CursorLock()
-        {
-            _cursorLock = !_cursorLock;
-
-            if (_cursorLock)
-            {
-                Cursor.visible = false;
-                Cursor.lockState = CursorLockMode.Locked;
-            }
-            else
-            {
-                Cursor.visible = true;
-                Cursor.lockState = CursorLockMode.None;
-            }
-        }
-        
         public void SendDamage(int amount)
         {
             _attacking = false;
@@ -122,13 +100,5 @@ namespace Zer0
             base.TakeDamage(damageTaken);
             ui.UpdateHealthUI(_health, maxHealth);
         }
-        
-#if UNITY_EDITOR
-        private void OnValidate()
-        {
-            _health = maxHealth;
-            ui.UpdateHealthUI(_health, maxHealth);
-        }
-#endif 
     }
 }
