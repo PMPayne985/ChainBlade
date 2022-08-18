@@ -52,6 +52,7 @@ namespace Zer0
             if (_menuOpen)
             {
                 Cursor.lockState = CursorLockMode.Confined;
+                FindObjectOfType<ChainKnife>().WakeUpAllKnives();
                 upgradeMenu.SetActive(true);
                 screenDarken.SetActive(true);
                 linkText.text = $"Current Links: {_linksCollected}";
@@ -63,6 +64,7 @@ namespace Zer0
             {
                 Time.timeScale = 1;
                 Cursor.lockState = CursorLockMode.Locked;
+                FindObjectOfType<ChainKnife>().ResetAllBlades();
                 screenDarken.SetActive(false);
                 upgradeMenu.SetActive(false);
             }

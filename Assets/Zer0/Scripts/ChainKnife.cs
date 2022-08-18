@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
@@ -206,6 +207,18 @@ namespace Zer0
         private void UpgradeChainLength(int newLength)
         {
             maxChainsLength += newLength;
+        }
+
+        public void WakeUpAllKnives()
+        {
+            _chainHead.SetActive(true);
+            knifeBlade.SetActive(true);
+        }
+
+        public void ResetAllBlades()
+        {
+            _chainHead.SetActive(false);
+            knifeBlade.SetActive(true);
         }
     }
 }
