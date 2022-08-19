@@ -6,7 +6,7 @@ namespace Zer0
     public class Collection : MonoBehaviour
     {
         public static Collection Instance { get; private set; }
-        
+
         private int _numCollected;
         public event Action<GameObject> OnCollectedLink;
 
@@ -27,10 +27,8 @@ namespace Zer0
         private void CollectLink(GameObject collected)
         {
             _numCollected++;
-            OnCollectedLink?.Invoke(this.gameObject);
+            OnCollectedLink?.Invoke(collected);
             collected.SetActive(false);
-
-            print($"Links collected: {_numCollected}");
         }
     }
 }
