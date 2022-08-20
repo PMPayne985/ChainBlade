@@ -80,7 +80,7 @@ namespace Zer0
             if (_linksCollected >= _lengthMultiplyer)
             {
                 _linksCollected -= _lengthMultiplyer;
-                OnChainLengthUpgrade?.Invoke(1);
+                OnChainLengthUpgrade?.Invoke(3);
                 _lengthMultiplyer++;
                 linkText.text = $"Current Links: {_linksCollected}";
                 lengthCostText.text = $"{_lengthMultiplyer}";
