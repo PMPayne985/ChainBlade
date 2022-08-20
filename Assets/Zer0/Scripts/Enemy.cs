@@ -18,7 +18,7 @@ namespace Zer0
         private ScoreUI _scoreUI;
 
         [SerializeField] private float attackDistance = 2.5f;
-        private EnemyImpact weapon;
+        private EnemyImpact _weapon;
         private Collider _weaponCollider;
         private static readonly int AttackTrigger = Animator.StringToHash("Attack");
         private static readonly int AttackIndex = Animator.StringToHash("AttackIndex");
@@ -26,11 +26,12 @@ namespace Zer0
         private bool _attacking;
 
         private static int _score;
+        private static readonly int Dead = Animator.StringToHash("Dead");
 
         private void OnEnable()
         {
-            weapon = GetComponentInChildren<EnemyImpact>();
-            if (!weapon)
+            _weapon = GetComponentInChildren<EnemyImpact>();
+            if (!_weapon)
                 Debug.LogError($"Missing Enemy Impact component.");
             
             _transform = transform;
@@ -38,11 +39,11 @@ namespace Zer0
             _agent = GetComponent<NavMeshAgent>();
             _motor = GetComponent<AIMotor>();
             _animator = GetComponent<Animator>();
-            _weaponCollider = weapon.GetComponent<Collider>();
+            _weaponCollider = _weapon.GetComponent<Collider>();
             _scoreUI = FindObjectOfType<ScoreUI>();
         }
 
-        private void Start()
+        protected override void Start()
         {
             base.Start();
             _weaponCollider.enabled = false;
@@ -80,7 +81,8 @@ namespace Zer0
 
         private void TargetDistance()
         {
-            _target = _motor.target;
+            _target = dead ? null : _motor.target;
+            
             if (!_target) return;
             
             var distance = Vector3.Distance(_transform.position, _target.position);
@@ -110,6 +112,17 @@ namespace Zer0
             _weaponCollider.enabled = false;
         }
 
+        public override void Death()
+        {
+            base.Death();
+            gameObject.SetActive(false);
+            
+            if (_spawner)
+                _spawner.ReleaseEnemy(gameObject);
+            else
+                GetComponent<AITargeting>().RemoveEnemy(_motor.targetedSpace);
+        }
+        
         private int RandomAttackIndex()
         {
             return Random.Range(0, 3);
@@ -120,18 +133,20 @@ namespace Zer0
             _weaponCollider.enabled = false;
         }
 
-        public override void Death()
+        public override void InitiateDeath()
         {
-            GetComponent<AITargeting>().RemoveEnemy(_motor.targetedSpace);
+            base.InitiateDeath();
+            _animator.SetBool(Dead, true);
             _score++;
-            if (_spawner)
-                _spawner.ReleaseEnemy(gameObject);
-            else
-                base.Death();
-            
+
             if (_scoreUI)
                 _scoreUI.SetScore(_score);
-            
+        }
+
+        public override void Revive()
+        {
+            base.Revive();
+            dead = false;
         }
     }
 }

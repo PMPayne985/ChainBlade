@@ -50,6 +50,7 @@ namespace Zer0
 
             newEnemy.transform.position = transform.position;
             newEnemy.transform.rotation = transform.rotation;
+            newEnemy.GetComponent<Enemy>().Revive();
         }
 
         private GameObject CreateEnemy()

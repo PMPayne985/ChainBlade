@@ -2269,7 +2269,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1072521f5618fe3489ff43fc0bc4dfb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1
+  deathDelay: 3
+  maxHealth: 3
   attackDistance: 1.5
 --- !u!114 &6283065066431596104
 MonoBehaviour:

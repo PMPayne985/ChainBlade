@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 namespace Zer0
@@ -22,6 +24,7 @@ namespace Zer0
         private static readonly int AttackTrigger = Animator.StringToHash("Attack");
         private static readonly int ChainAttackTrigger = Animator.StringToHash("ChainAttack");
         private static readonly int AttackIndex = Animator.StringToHash("AttackIndex");
+        private static readonly int Dead = Animator.StringToHash("Dead");
 
         private void Awake()
         {
@@ -38,11 +41,11 @@ namespace Zer0
             TargetSpacesOccupied = new bool[targetSpaces.Length];
         }
 
-        private void Start()
+        protected override void Start()
         {
             base.Start();
             _knifeCollider.enabled = false;
-            ui.UpdateHealthUI(_health, maxHealth);
+            ui.UpdateHealthUI(Health, maxHealth);
 
             Cursor.lockState = CursorLockMode.Locked;
         }
@@ -75,6 +78,11 @@ namespace Zer0
             _knifeCollider.enabled = false;
         }
 
+        public override void Death()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+        
         private int RandomAttackIndex()
         {
             return Random.Range(0, 3);
@@ -95,10 +103,17 @@ namespace Zer0
             _knifeCollider.enabled = false;
         }
 
+        public override void InitiateDeath()
+        {
+            base.InitiateDeath();
+            GetComponent<PlayerInput>().enabled = false;
+            _animator.SetBool(Dead, true);
+        }
+
         public override void TakeDamage(float damageTaken)
         {
             base.TakeDamage(damageTaken);
-            ui.UpdateHealthUI(_health, maxHealth);
+            ui.UpdateHealthUI(Health, maxHealth);
         }
     }
 }

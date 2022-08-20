@@ -11072,11 +11072,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7893389535834749300, guid: 12bb1116fb859c449a7238891311eb7d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7893389535834749301, guid: 12bb1116fb859c449a7238891311eb7d, type: 3}
       propertyPath: spawnTime
-      value: 1.5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7893389535834749301, guid: 12bb1116fb859c449a7238891311eb7d, type: 3}
       propertyPath: maxEnemies
@@ -11484,5 +11484,9 @@ PrefabInstance:
       propertyPath: ui
       value: 
       objectReference: {fileID: 4742090795276393244}
+    - target: {fileID: 8464534221717520007, guid: a4349d53e16da24439d3e58faa8fed2e, type: 3}
+      propertyPath: deathDelay
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4349d53e16da24439d3e58faa8fed2e, type: 3}
