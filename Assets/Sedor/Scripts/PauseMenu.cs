@@ -26,7 +26,7 @@ public class PauseMenu : MonoBehaviour
 
     private void Update()
     {
-        if (PlayerInput.Instance.PauseMenu())
+        if (PlayerInput.PauseMenu())
             TogglePause();
     }
 

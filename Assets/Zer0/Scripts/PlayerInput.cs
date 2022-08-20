@@ -5,35 +5,20 @@ namespace Zer0
 {
     public class PlayerInput : MonoBehaviour
     {
+        public static bool Attack() => Input.GetButtonDown("Fire1");
 
-        public static PlayerInput Instance;
+        public static bool ChainAttack() => Input.GetButtonDown("Fire2");
 
-        private void Awake()
-        {
-            if (Instance)
-                Destroy(gameObject);
-            else
-                Instance = this;
-        }
+        public static bool Sprint() => Input.GetButton("Sprint");
 
-        public bool Attack()
-        {
-            return Input.GetButtonDown("Fire1");
-        }
+        public static bool PauseMenu() => Input.GetButtonUp("Cancel");
 
-        public bool ChainAttack()
-        {
-            return Input.GetButtonDown("Fire2");
-        }
+        public static bool UpgradeMenu() => Input.GetButtonUp("Upgrade");
         
-        public bool PauseMenu()
-        {
-            return Input.GetButtonUp("Cancel");
-        }
+        public static float Horizontal() => Input.GetAxis("Horizontal");
 
-        public bool UpgradeMenu()
-        {
-            return Input.GetButtonUp("Upgrade");
-        }
+        public static float Vertical() => Input.GetAxis("Vertical");
+
+        public static float Rotation() => Input.GetAxis("Mouse X");
     }
 }

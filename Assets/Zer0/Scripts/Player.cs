@@ -49,9 +49,9 @@ namespace Zer0
 
         private void Update()
         {
-            if (PlayerInput.Instance.Attack() && !_attacking) Attack();
+            if (PlayerInput.Attack() && !_attacking) Attack();
             
-            if (PlayerInput.Instance.ChainAttack()) ChainAttack();
+            if (PlayerInput.ChainAttack()) ChainAttack();
         }
 
         private void Attack()

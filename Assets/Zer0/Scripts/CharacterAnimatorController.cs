@@ -18,9 +18,8 @@ namespace Zer0
         private float _attackIndex;
         private float _rotateAngle;
         private float _rotationSpeed;
-
         private bool _sprinting;
-        
+
         private static readonly int Speed = Animator.StringToHash("Speed");
         private static readonly int Direction = Animator.StringToHash("Direction");
         private static readonly int Sprinting = Animator.StringToHash("Sprinting");
@@ -42,7 +41,11 @@ namespace Zer0
 
         private void Update()
         {
-            PlayerInput();
+            _horizontal = PlayerInput.Horizontal();
+            _vertical = PlayerInput.Vertical();
+            _sprinting = PlayerInput.Sprint();
+
+            _rotateAngle = _rotationSpeed * PlayerInput.Rotation();
         }
 
         private void FixedUpdate()
@@ -50,17 +53,6 @@ namespace Zer0
             Movement();
         }
 
-        private void PlayerInput()
-        {
-            _horizontal = Input.GetAxis("Horizontal");
-            _vertical = Input.GetAxis("Vertical");
-            
-            if (Input.GetKeyDown(KeyCode.LeftShift))
-                _sprinting = true;
-            if (Input.GetKeyUp(KeyCode.LeftShift))
-                _sprinting = false;
-        }
-        
         private void Movement()
         {
             var speed = Vector3.zero;
@@ -89,9 +81,7 @@ namespace Zer0
         {
             if (_sprinting) return;
             
-            _rotateAngle = _rotationSpeed * Input.GetAxis("Mouse X");
             var rotate = new Vector3(0, _rotateAngle, 0);
-
             transform.Rotate(rotate);
         }
     }

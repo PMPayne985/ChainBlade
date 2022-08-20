@@ -36,7 +36,7 @@ namespace Zer0
 
         private void Update()
         {
-            if (PlayerInput.Instance.UpgradeMenu())
+            if (PlayerInput.UpgradeMenu())
                 ToggleUpgradeMenu();
         }
 
