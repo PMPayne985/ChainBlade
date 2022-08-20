@@ -11070,6 +11070,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 7893389535834749300, guid: 12bb1116fb859c449a7238891311eb7d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7893389535834749301, guid: 12bb1116fb859c449a7238891311eb7d, type: 3}
       propertyPath: spawnTime
       value: 1.5
