@@ -26,7 +26,7 @@ public class PauseMenu : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Escape))
+        if (PlayerInput.Instance.PauseMenu())
             TogglePause();
     }
 

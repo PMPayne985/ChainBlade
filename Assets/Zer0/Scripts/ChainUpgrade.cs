@@ -36,7 +36,7 @@ namespace Zer0
 
         private void Update()
         {
-            if (Input.GetKeyUp(KeyCode.Tab))
+            if (PlayerInput.Instance.UpgradeMenu())
                 ToggleUpgradeMenu();
         }
 

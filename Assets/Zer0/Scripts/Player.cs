@@ -49,9 +49,9 @@ namespace Zer0
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0) && !_attacking) Attack();
+            if (PlayerInput.Instance.Attack() && !_attacking) Attack();
             
-            if (Input.GetKeyDown(KeyCode.Mouse1)) ChainAttack();
+            if (PlayerInput.Instance.ChainAttack()) ChainAttack();
         }
 
         private void Attack()
