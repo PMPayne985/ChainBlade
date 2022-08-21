@@ -147,6 +147,7 @@ namespace Zer0
         {
             base.Revive();
             dead = false;
+            Health = maxHealth;
         }
     }
 }

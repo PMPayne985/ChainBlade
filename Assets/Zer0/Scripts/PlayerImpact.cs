@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Zer0
 {
@@ -18,12 +19,16 @@ namespace Zer0
         private bool canDamage;
         [SerializeField, Tooltip("The Chain Knife script that will be used with this blade.")]
         private ChainKnife chainKnife;
+        [SerializeField, Tooltip("A list of sounds that can play on impact")]
+        private AudioClip[] impactSounds;
 
         private Player _player;
+        private AudioSource _audio;
 
         private void Awake()
         {
             _player = transform.root.GetComponent<Player>();
+            _audio = GetComponent<AudioSource>();
         }
 
         private void Start()
@@ -39,7 +44,8 @@ namespace Zer0
         private void OnTriggerEnter(Collider col)
         {
             if (col.CompareTag("Player")) return;
-            
+         
+            PlayImpactSound();
             chainKnife.EndExtension();
             smokeSystem.Play();
 
@@ -55,6 +61,13 @@ namespace Zer0
             }
         }
 
+        private void PlayImpactSound()
+        {
+            var random = Random.Range(0, impactSounds.Length);
+            
+            _audio.PlayOneShot(impactSounds[random]);
+        }
+        
         private void UpgradeDamage(float newDamage)
         {
             damage += newDamage;

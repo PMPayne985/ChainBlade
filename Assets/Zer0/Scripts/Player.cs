@@ -10,6 +10,9 @@ namespace Zer0
         private Animator _animator;
         private ChainKnife _chainKnife;
 
+        [SerializeField] private AudioSource combatAudio;
+        [SerializeField] private AudioClip[] attackSounds;
+        
         [SerializeField, Tooltip("The object that contains the functions to update UI")]
         private UISetUp ui;
         private Collider _knifeCollider;
@@ -59,6 +62,13 @@ namespace Zer0
 
         private void Attack()
         {
+            if (combatAudio)
+            {
+                var random = Random.Range(0, attackSounds.Length);
+                
+                combatAudio.PlayOneShot(attackSounds[random]);
+            }
+            
             _attacking = true;
             _knifeCollider.enabled = true;
             

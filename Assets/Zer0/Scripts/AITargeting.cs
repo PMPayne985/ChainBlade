@@ -13,7 +13,7 @@ namespace Zer0
             _motor = GetComponent<AIMotor>();
         }
 
-        private void Start()
+        private void OnEnable()
         {
             AssignTarget();
         }
