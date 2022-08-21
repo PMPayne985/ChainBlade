@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Audio;
+using Zer0;
 
 public class MainMenu : MonoBehaviour
 {
@@ -11,18 +12,28 @@ public class MainMenu : MonoBehaviour
     [SerializeField, Tooltip("The Panel that contains the Options Menu buttons.")]
     private GameObject optionsMain;
     [SerializeField, Tooltip("Slider that controls the player adjustable mouse rotation speed.")]
-    private Slider rotationSpeed;
-    [SerializeField, Tooltip("Toggle to invert mouse rotation direction.")]
-    private Toggle rotateDirect;
+    private Slider rotationSlider;
     [SerializeField, Tooltip("Slider to control Music volume.")]
-    private Slider music;
+    private Slider musicSlider;
     [SerializeField, Tooltip("Slider to control Sound Effects volume.")]
-    private Slider sfx;
+    private Slider sfxSlider;
     [SerializeField, Tooltip("Slider to control Master volume.")]
-    private Slider master;
-    private int _rotationSpeedFinal;
+    private Slider masterSlider;
     [SerializeField]
     private AudioMixer testMixer;
+
+    private void Start()
+    {
+        masterSlider.onValueChanged.AddListener(delegate {MasterVolume(); });
+        musicSlider.onValueChanged.AddListener(delegate {MusicVolume(); });
+        sfxSlider.onValueChanged.AddListener(delegate {SFXVolume(); });
+        rotationSlider.onValueChanged.AddListener(delegate {SpeedSlider(); });
+
+        masterSlider.value = PlayerPrefs.GetFloat("MasterVolume", .5f);
+        musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", .5f);
+        sfxSlider.value = PlayerPrefs.GetFloat("SFXVolume", .5f);
+        rotationSlider.value = PlayerPrefs.GetFloat("RotationSpeed", .5f);
+    }
 
     public void GameRun()
     {
@@ -42,28 +53,26 @@ public class MainMenu : MonoBehaviour
         {
             mainMain.SetActive(false);
             optionsMain.SetActive(true);
-
-            Debug.Log($"Rotation Speed: {rotationSpeed.value}");
         }
 
     }
 
-    public void MasterVolume(Slider volume)
+    private void MasterVolume()
     {
-        testMixer.SetFloat("MasterTest", master.value);
-        Debug.Log($"Master Sound: {volume.value}");
+        testMixer.SetFloat("Master", Mathf.Log10(masterSlider.value) * 20);
+        PlayerPrefs.SetFloat("MasterVolume", masterSlider.value);
     }
 
-    public void MusicVolume(Slider volume)
+    private void MusicVolume()
     {
-        testMixer.SetFloat("MusicTest", music.value);
-        Debug.Log($"Music Sound: {volume.value}");
+        testMixer.SetFloat("Music", Mathf.Log10(musicSlider.value) * 20);
+        PlayerPrefs.SetFloat("MusicVolume", musicSlider.value);
     }
 
-    public void SFXVolume(Slider volume)
+    private void SFXVolume()
     {
-        testMixer.SetFloat("SFXTest", sfx.value);
-        Debug.Log($"SFX Sound: {volume.value}");
+        testMixer.SetFloat("SFX", Mathf.Log10(sfxSlider.value) * 20);
+        PlayerPrefs.SetFloat("SFXVolume", sfxSlider.value);
     }
 
     public void QuitGame()
@@ -74,9 +83,9 @@ public class MainMenu : MonoBehaviour
         UnityEditor.EditorApplication.isPlaying = false;
 #endif        
     }
-    
-    public void InverseRotate()
+
+    private void SpeedSlider()
     {
-       _rotationSpeedFinal = _rotationSpeedFinal * -1;
+        PlayerPrefs.SetFloat("RotationSpeed", rotationSlider.value);
     }
 }
