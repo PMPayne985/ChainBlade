@@ -6226,7 +6226,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh96016
+  m_Name: pb_Mesh501244
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -11189,6 +11189,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4701027565326928310, guid: 5ebe66591effe054589df7462d35e0e9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.99975586
+      objectReference: {fileID: 0}
     - target: {fileID: 5907587115526288715, guid: 5ebe66591effe054589df7462d35e0e9, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -11273,6 +11277,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5907587115526288717, guid: 5ebe66591effe054589df7462d35e0e9, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5907587115526288717, guid: 5ebe66591effe054589df7462d35e0e9, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5907587115526288717, guid: 5ebe66591effe054589df7462d35e0e9, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 5907587115526288717, guid: 5ebe66591effe054589df7462d35e0e9, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 5907587115526288719, guid: 5ebe66591effe054589df7462d35e0e9, type: 3}
       propertyPath: m_Name
       value: HUD
@@ -11286,6 +11306,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7026742958704979872, guid: 087f5f240d8385e46a70f73df76c09fa, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7026742958704979872, guid: 087f5f240d8385e46a70f73df76c09fa, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7026742958704979872, guid: 087f5f240d8385e46a70f73df76c09fa, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 7026742958704979872, guid: 087f5f240d8385e46a70f73df76c09fa, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 7026742958704979874, guid: 087f5f240d8385e46a70f73df76c09fa, type: 3}
       propertyPath: m_Name
       value: ScoreUI

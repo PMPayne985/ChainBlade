@@ -13,14 +13,18 @@ namespace Zer0
         [SerializeField, Tooltip("The maximum number of active enemies at any one time.")]
         private int maxEnemies = 10;
 
-        private float _timer;
-        private int _totalEnemies;
-
         [SerializeField, Tooltip("The prefab that will be used for this enemy spawner.")]
         private GameObject enemy;
 
-        private List<Enemy> _myEnemies;
+        [SerializeField, Tooltip("Check this if this spawner should spawn up to its max enemies only once. Leave unchecked to spawn endlessly.")]
+        private bool spawnOnlyOnce;
 
+        private bool _stopSpawning;
+        private float _timer;
+        private int _activeEnemies;
+        private int _totalEnemies;
+        
+        private List<Enemy> _myEnemies;
         private ObjectPool<GameObject> _enemyPool;
 
         private void Awake()
@@ -35,14 +39,15 @@ namespace Zer0
 
         private void Update()
         {
-            _timer += Time.deltaTime;
+            if (_stopSpawning) return;
+
+                _timer += Time.deltaTime;
 
             if (_timer >= spawnTime)
             {
                 _timer = 0;
                 SpawnEnemy();
             }
-
         }
 
         public void ReleaseEnemy(GameObject obj)
@@ -52,7 +57,13 @@ namespace Zer0
 
         private void SpawnEnemy()
         {
-            if (_totalEnemies >= maxEnemies) return;
+            if (spawnOnlyOnce && _totalEnemies >= maxEnemies)
+            {
+                _stopSpawning = true;
+                return;
+            }
+            
+            if (_activeEnemies >= maxEnemies) return;
 
             var newEnemy = _enemyPool.Get();
 
@@ -72,6 +83,7 @@ namespace Zer0
         private void OnGetEnemy(GameObject obj)
         {
             obj.SetActive(true);
+            _activeEnemies++;
             _totalEnemies++;
         }
 
@@ -84,7 +96,7 @@ namespace Zer0
                 if (thisEnemy.gameObject.activeInHierarchy)
                     thisEnemy.ResetTargeting();
             }
-            _totalEnemies--;
+            _activeEnemies--;
         }
 
         private void OnDestroyEnemy(GameObject obj)

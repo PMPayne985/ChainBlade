@@ -7,7 +7,7 @@ namespace Zer0
     public class ScoreUI : MonoBehaviour
     {
         private TMP_Text _scoreText;
-        private List<GameObject> _links = new List<GameObject>();
+        private List<GameObject> _links;
 
         private void Awake()
         {
@@ -18,6 +18,7 @@ namespace Zer0
         {
             Collection.Instance.OnCollectedLink += StoreCollectedLink;
 
+            _links = new List<GameObject>();
             var startingLinks = FindObjectsOfType<Collectible>();
 
             for (var i = 0; i < startingLinks.Length; i++)
