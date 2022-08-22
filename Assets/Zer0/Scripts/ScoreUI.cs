@@ -27,12 +27,15 @@ namespace Zer0
             }
             
             ResetCollectedLink();
+            
+            Enemy.ResetScore();
         }
 
         public void SetScore(int score)
         {
-            _scoreText.text = $"Score: {score}";
-            if (score % 5 == 0)
+            _scoreText.text = $"Kills: {score}";
+            var testScore = score % 5;
+            if (testScore == 0)
                 ResetCollectedLink();
         }
 
@@ -44,9 +47,7 @@ namespace Zer0
                 if (l == link)
                     inList = true;
             }
-            
-            print(inList);
-            
+ 
             if (!inList)
                 _links.Add(link);
         }

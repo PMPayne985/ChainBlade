@@ -47,7 +47,6 @@ namespace Zer0
         {
             base.Start();
             _weaponCollider.enabled = false;
-            _score = 0;
         }
 
         private void Update()
@@ -148,6 +147,11 @@ namespace Zer0
             base.Revive();
             dead = false;
             Health = maxHealth;
+        }
+
+        public static void ResetScore()
+        {
+            _score = 0;
         }
     }
 }
