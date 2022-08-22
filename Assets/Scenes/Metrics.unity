@@ -11171,17 +11171,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b072076b6137224d8ee5c78da72fa96, type: 3}
---- !u!114 &4742090795276393244 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1167766401062998219, guid: 5ebe66591effe054589df7462d35e0e9, type: 3}
-  m_PrefabInstance: {fileID: 5907587117108054999}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74017e1901f72844d8e1a50073c67c1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &5907587117108054999
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11189,10 +11178,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4701027565326928310, guid: 5ebe66591effe054589df7462d35e0e9, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.99975586
-      objectReference: {fileID: 0}
     - target: {fileID: 5907587115526288715, guid: 5ebe66591effe054589df7462d35e0e9, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -11277,22 +11262,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5907587115526288717, guid: 5ebe66591effe054589df7462d35e0e9, type: 3}
-      propertyPath: m_UiScaleMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5907587115526288717, guid: 5ebe66591effe054589df7462d35e0e9, type: 3}
-      propertyPath: m_MatchWidthOrHeight
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5907587115526288717, guid: 5ebe66591effe054589df7462d35e0e9, type: 3}
-      propertyPath: m_ReferenceResolution.x
-      value: 1920
-      objectReference: {fileID: 0}
-    - target: {fileID: 5907587115526288717, guid: 5ebe66591effe054589df7462d35e0e9, type: 3}
-      propertyPath: m_ReferenceResolution.y
-      value: 1080
-      objectReference: {fileID: 0}
     - target: {fileID: 5907587115526288719, guid: 5ebe66591effe054589df7462d35e0e9, type: 3}
       propertyPath: m_Name
       value: HUD
@@ -11306,22 +11275,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7026742958704979872, guid: 087f5f240d8385e46a70f73df76c09fa, type: 3}
-      propertyPath: m_UiScaleMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7026742958704979872, guid: 087f5f240d8385e46a70f73df76c09fa, type: 3}
-      propertyPath: m_MatchWidthOrHeight
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7026742958704979872, guid: 087f5f240d8385e46a70f73df76c09fa, type: 3}
-      propertyPath: m_ReferenceResolution.x
-      value: 1920
-      objectReference: {fileID: 0}
-    - target: {fileID: 7026742958704979872, guid: 087f5f240d8385e46a70f73df76c09fa, type: 3}
-      propertyPath: m_ReferenceResolution.y
-      value: 1080
-      objectReference: {fileID: 0}
     - target: {fileID: 7026742958704979874, guid: 087f5f240d8385e46a70f73df76c09fa, type: 3}
       propertyPath: m_Name
       value: ScoreUI
@@ -11410,14 +11363,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7026742958736084696, guid: 087f5f240d8385e46a70f73df76c09fa, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
-    - target: {fileID: 7026742958736084696, guid: 087f5f240d8385e46a70f73df76c09fa, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 2100000, guid: 6522f30e342599e4e9dd4cc2cc03c830, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 087f5f240d8385e46a70f73df76c09fa, type: 3}
 --- !u!1001 &7893389536631389298
@@ -11844,6 +11789,6 @@ PrefabInstance:
     - target: {fileID: 8464534221717520007, guid: a4349d53e16da24439d3e58faa8fed2e, type: 3}
       propertyPath: ui
       value: 
-      objectReference: {fileID: 4742090795276393244}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4349d53e16da24439d3e58faa8fed2e, type: 3}
