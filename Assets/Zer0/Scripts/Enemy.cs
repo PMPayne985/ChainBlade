@@ -19,6 +19,7 @@ namespace Zer0
 
         [SerializeField] private float attackDistance = 2.5f;
         private EnemyImpact _weapon;
+        private AITargeting _targeting;
         private Collider _weaponCollider;
         private static readonly int AttackTrigger = Animator.StringToHash("Attack");
         private static readonly int AttackIndex = Animator.StringToHash("AttackIndex");
@@ -39,6 +40,7 @@ namespace Zer0
             _agent = GetComponent<NavMeshAgent>();
             _motor = GetComponent<AIMotor>();
             _animator = GetComponent<Animator>();
+            _targeting = GetComponent<AITargeting>();
             _weaponCollider = _weapon.GetComponent<Collider>();
             _scoreUI = FindObjectOfType<ScoreUI>();
         }
@@ -114,12 +116,12 @@ namespace Zer0
         public override void Death()
         {
             base.Death();
-            gameObject.SetActive(false);
-            
+
             if (_spawner)
                 _spawner.ReleaseEnemy(gameObject);
-            else
-                GetComponent<AITargeting>().RemoveEnemy(_motor.targetedSpace);
+            
+            gameObject.SetActive(false);
+            _attacking = false;
         }
         
         private int RandomAttackIndex()
@@ -138,6 +140,8 @@ namespace Zer0
             _animator.SetBool(Dead, true);
             _score++;
 
+            _targeting.RemoveEnemy(_motor.targetedSpace);
+            
             if (_scoreUI)
                 _scoreUI.SetScore(_score);
         }
@@ -152,6 +156,12 @@ namespace Zer0
         public static void ResetScore()
         {
             _score = 0;
+        }
+
+        public void ResetTargeting()
+        {
+            _targeting.RemoveEnemy(_motor.targetedSpace);
+            _targeting.AssignTarget();
         }
     }
 }

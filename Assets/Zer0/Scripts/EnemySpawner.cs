@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -17,12 +19,18 @@ namespace Zer0
         [SerializeField, Tooltip("The prefab that will be used for this enemy spawner.")]
         private GameObject enemy;
 
+        private List<Enemy> _myEnemies;
+
         private ObjectPool<GameObject> _enemyPool;
 
         private void Awake()
         {
-            _enemyPool =
-                new ObjectPool<GameObject>(CreateEnemy, OnGetEnemy, OnReleaseEnemy, OnDestroyEnemy, true, 50, 500);
+            _enemyPool = new ObjectPool<GameObject>(CreateEnemy, OnGetEnemy, OnReleaseEnemy, OnDestroyEnemy, true, 50, 500);
+        }
+
+        private void Start()
+        {
+            _myEnemies = new List<Enemy>();
         }
 
         private void Update()
@@ -57,6 +65,7 @@ namespace Zer0
         {
             var newEnemy = Instantiate(enemy, transform, false);
             newEnemy.GetComponent<Enemy>().SetSpawner(this);
+            _myEnemies.Add(newEnemy.GetComponent<Enemy>());
             return newEnemy;
         }
 
@@ -69,6 +78,12 @@ namespace Zer0
         private void OnReleaseEnemy(GameObject obj)
         {
             obj.SetActive(false);
+
+            foreach (var thisEnemy in _myEnemies)
+            {
+                if (thisEnemy.gameObject.activeInHierarchy)
+                    thisEnemy.ResetTargeting();
+            }
             _totalEnemies--;
         }
 
