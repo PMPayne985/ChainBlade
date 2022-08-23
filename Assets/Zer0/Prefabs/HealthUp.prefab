@@ -110,4 +110,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36a54f92eee78af4ca2757ba23322acf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthToRestore: 3
+  healthToRestore: 5
