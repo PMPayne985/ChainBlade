@@ -8,8 +8,10 @@ namespace Zer0
         public static Collection Instance { get; private set; }
 
         private int _numCollected;
-        public event Action<GameObject> OnCollectedLink;
 
+        public event Action<LinkCollectible> OnCollectedLink;
+        public event Action<HealthCollectible> OnCollectedHealth;
+        
         private void Awake()
         {
             if (Instance != null)
@@ -20,15 +22,24 @@ namespace Zer0
 
         private void OnControllerColliderHit(ControllerColliderHit hit)
         {
-            if (hit.collider.CompareTag("collectible"))
-                CollectLink(hit.gameObject);
+            if (hit.collider.TryGetComponent(out Collectible collected))
+                CollectLink(collected);
         }
 
-        private void CollectLink(GameObject collected)
+        private void CollectLink(Collectible collected)
         {
-            _numCollected++;
-            OnCollectedLink?.Invoke(collected);
-            collected.SetActive(false);
+            if (TryGetComponent(out LinkCollectible link))
+            {
+                _numCollected++;
+                OnCollectedLink?.Invoke(link);
+            }
+            else if (TryGetComponent(out HealthCollectible healthUp))
+            {
+                OnCollectedHealth?.Invoke(healthUp);
+            }
+            
+            collected.Collect();
+            collected.gameObject.SetActive(false);
         }
     }
 }

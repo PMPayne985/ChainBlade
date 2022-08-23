@@ -51,6 +51,8 @@ namespace Zer0
             ui.UpdateHealthUI(Health, maxHealth);
 
             Cursor.lockState = CursorLockMode.Locked;
+            
+            Collection.Instance.OnCollectedHealth += HealFromCollectible;
         }
 
         private void Update()
@@ -124,6 +126,11 @@ namespace Zer0
         {
             base.TakeDamage(damageTaken);
             ui.UpdateHealthUI(Health, maxHealth);
+        }
+
+        public void HealFromCollectible(HealthCollectible collectible)
+        {
+            RecoverHealth(collectible.healthToRestore);
         }
     }
 }

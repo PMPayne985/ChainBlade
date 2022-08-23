@@ -40,7 +40,7 @@ namespace Zer0
                 ResetCollectedLink();
         }
 
-        private void StoreCollectedLink(GameObject link)
+        private void StoreCollectedLink(Collectible link)
         {
             var inList = false;
             foreach (var l in _links)
@@ -50,7 +50,7 @@ namespace Zer0
             }
  
             if (!inList)
-                _links.Add(link);
+                _links.Add(link.gameObject);
         }
 
         private void ResetCollectedLink()

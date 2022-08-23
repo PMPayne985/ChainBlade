@@ -70,7 +70,7 @@ namespace Zer0
             }
         }
         
-        private void IncrementCollected(GameObject collected)
+        private void IncrementCollected(Collectible collected)
         {
             _linksCollected ++;
         }
