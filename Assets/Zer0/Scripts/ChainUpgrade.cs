@@ -7,32 +7,23 @@ namespace Zer0
 {
     public class ChainUpgrade : MonoBehaviour
     {
-        public static ChainUpgrade Instance;
-        
         private int _linksCollected;
         private int _chainLength;
         private int _chainKnifeUpgrades;
-        private bool _menuOpen;
+        public bool EnhancementOpen { get; private set; }
 
         private int _lengthMultiplyer = 1;
         private int _damageMultiplyer = 1;
 
         [SerializeField] private GameObject screenDarken;
         [SerializeField] private GameObject upgradeMenu;
+        [SerializeField] private PauseMenu _pauseMenu;
         [SerializeField] private TMP_Text linkText;
         [SerializeField] private TMP_Text lengthCostText;
         [SerializeField] private TMP_Text damageCostText;
 
-        public event Action<int> OnChainLengthUpgrade;
-        public event Action<float> OnKnifeDamageUpgrade; 
-
-        private void Awake()
-        {
-            if (Instance != null)
-                Destroy(gameObject);
-            else
-                Instance = this;
-        }
+        public static event Action<int> OnChainLengthUpgrade;
+        public static event Action<float> OnKnifeDamageUpgrade; 
 
         private void Update()
         {
@@ -47,9 +38,11 @@ namespace Zer0
 
         public void ToggleUpgradeMenu()
         {
-            _menuOpen = !_menuOpen;
+            if (_pauseMenu.Paused) return;
+            
+            EnhancementOpen = !EnhancementOpen;
 
-            if (_menuOpen)
+            if (EnhancementOpen)
             {
                 Cursor.lockState = CursorLockMode.Confined;
                 FindObjectOfType<ChainKnife>().WakeUpAllKnives();

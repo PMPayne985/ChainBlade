@@ -33,7 +33,7 @@ namespace Zer0
 
         private void Start()
         {
-            ChainUpgrade.Instance.OnKnifeDamageUpgrade += UpgradeDamage;
+            ChainUpgrade.OnKnifeDamageUpgrade += UpgradeDamage;
         }
 
         public void SetChainKnife(ChainKnife newKnife)

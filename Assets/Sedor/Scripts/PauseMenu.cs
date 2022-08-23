@@ -9,6 +9,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject darkBackground;
     [SerializeField] private GameObject mainPause;
     [SerializeField] private GameObject optionsPause;
+    [SerializeField] private ChainUpgrade enhancementMenu;
     
     [SerializeField] private AudioMixer testMixer;
 
@@ -18,7 +19,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private Slider sfxSlider;
     
     private CharacterAnimatorController _player;
-    private bool _paused;
+    public bool Paused { get; private set; }
     private bool _optionsBool;
 
     private void Awake()
@@ -58,9 +59,11 @@ public class PauseMenu : MonoBehaviour
     
     public void TogglePause()
     {
-        _paused = !_paused;
+        if (enhancementMenu.EnhancementOpen) return;
         
-        if (_paused)
+        Paused = !Paused;
+        
+        if (Paused)
         {
             darkBackground.SetActive(true);
             mainPause.SetActive(true);
@@ -73,6 +76,7 @@ public class PauseMenu : MonoBehaviour
             darkBackground.SetActive(false);
             mainPause.SetActive(false);
             optionsPause.SetActive(false);
+            _optionsBool = false;
             Time.timeScale = 1;
             Cursor.lockState = CursorLockMode.Locked;
         }
