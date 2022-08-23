@@ -11251,6 +11251,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HUD
       objectReference: {fileID: 0}
+    - target: {fileID: 7487402673253327304, guid: 5ebe66591effe054589df7462d35e0e9, type: 3}
+      propertyPath: damageMultiplier
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ebe66591effe054589df7462d35e0e9, type: 3}
 --- !u!114 &5907587117108055000 stripped
@@ -11318,10 +11322,6 @@ PrefabInstance:
     - target: {fileID: 6065870118290845324, guid: 58531eff33e7c18479a9e055879d5851, type: 3}
       propertyPath: m_Name
       value: HealthUp
-      objectReference: {fileID: 0}
-    - target: {fileID: 6065870118290845325, guid: 58531eff33e7c18479a9e055879d5851, type: 3}
-      propertyPath: healthToRestore
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58531eff33e7c18479a9e055879d5851, type: 3}
@@ -11419,6 +11419,10 @@ PrefabInstance:
     - target: {fileID: 7026742958704979878, guid: 087f5f240d8385e46a70f73df76c09fa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7026742958736084702, guid: 087f5f240d8385e46a70f73df76c09fa, type: 3}
+      propertyPath: killsBetweenPickupSpawns
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 087f5f240d8385e46a70f73df76c09fa, type: 3}

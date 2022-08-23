@@ -1,7 +1,5 @@
-using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace Zer0
 {
@@ -41,6 +39,14 @@ namespace Zer0
 
             if (Health > maxHealth)
                 Health = maxHealth;
+        }
+
+        public virtual void IncreaseMaxHealth(float healthToAdd)
+        {
+            if (healthToAdd <= 0) return;
+
+            maxHealth += healthToAdd;
+            Health += healthToAdd;
         }
 
         protected IEnumerator SendDeath()

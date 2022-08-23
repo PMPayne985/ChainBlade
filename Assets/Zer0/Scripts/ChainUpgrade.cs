@@ -12,18 +12,24 @@ namespace Zer0
         private int _chainKnifeUpgrades;
         public bool EnhancementOpen { get; private set; }
 
-        private int _lengthMultiplyer = 1;
-        private int _damageMultiplyer = 1;
+        [SerializeField] private int lengthMultiplier = 1;
+        private int _baseLengthCost = 1;
+        [SerializeField] private int damageMultiplier = 1;
+        private int _baseDamageCost = 1;
+        [SerializeField] private int healthMultiplier = 1;
+        private int _baseHealthCost = 1;
 
         [SerializeField] private GameObject screenDarken;
         [SerializeField] private GameObject upgradeMenu;
-        [SerializeField] private PauseMenu _pauseMenu;
+        [SerializeField] private PauseMenu pauseMenu;
         [SerializeField] private TMP_Text linkText;
         [SerializeField] private TMP_Text lengthCostText;
         [SerializeField] private TMP_Text damageCostText;
+        [SerializeField] private TMP_Text healthCostText;
 
         public static event Action<int> OnChainLengthUpgrade;
-        public static event Action<float> OnKnifeDamageUpgrade; 
+        public static event Action<float> OnKnifeDamageUpgrade;
+        public static event Action<float> OnMaxHealthUpgrade; 
 
         private void Update()
         {
@@ -38,7 +44,7 @@ namespace Zer0
 
         public void ToggleUpgradeMenu()
         {
-            if (_pauseMenu.Paused) return;
+            if (pauseMenu.Paused) return;
             
             EnhancementOpen = !EnhancementOpen;
 
@@ -49,8 +55,9 @@ namespace Zer0
                 upgradeMenu.SetActive(true);
                 screenDarken.SetActive(true);
                 linkText.text = $"Current Links: {_linksCollected}";
-                lengthCostText.text = $"{_lengthMultiplyer}";
-                damageCostText.text = $"{_damageMultiplyer}";
+                lengthCostText.text = $"{lengthMultiplier * _baseLengthCost}";
+                damageCostText.text = $"{damageMultiplier * _baseDamageCost}";
+                healthCostText.text = $"{healthMultiplier * _baseHealthCost}";
                 Time.timeScale = 0;
             }
             else
@@ -68,26 +75,44 @@ namespace Zer0
 
         public void UpgradeChainLength()
         {
-            if (_linksCollected >= _lengthMultiplyer)
+            if (CheckCanUpgrade(_baseLengthCost, lengthMultiplier))
             {
-                _linksCollected -= _lengthMultiplyer;
                 OnChainLengthUpgrade?.Invoke(3);
-                _lengthMultiplyer++;
-                linkText.text = $"Current Links: {_linksCollected}";
-                lengthCostText.text = $"{_lengthMultiplyer}";
+                _baseLengthCost++;
+                lengthCostText.text = $"{lengthMultiplier * _baseLengthCost}";
             }
         }
 
         public void UpgradeKnifeDamage()
         {
-            if (_linksCollected >= _damageMultiplyer)
+            if (CheckCanUpgrade(_baseDamageCost, damageMultiplier))
             {
-                _linksCollected -= _damageMultiplyer;
                 OnKnifeDamageUpgrade?.Invoke(1);
-                _damageMultiplyer++;
-                linkText.text = $"Current Links: {_linksCollected}";
-                damageCostText.text = $"{_damageMultiplyer}";
+                _baseDamageCost++;
+                damageCostText.text = $"{damageMultiplier * _baseDamageCost}";
             }
+        }
+
+        public void UpgradeMaxHealth()
+        {
+            if (CheckCanUpgrade(_baseHealthCost, healthMultiplier))
+            {
+                OnMaxHealthUpgrade?.Invoke(1);
+                _baseHealthCost++;
+                healthCostText.text = $"{healthMultiplier * _baseHealthCost}";
+            }
+        }
+
+        private bool CheckCanUpgrade(int upgradeCost, int upgradeMultiplier)
+        {
+            if (_linksCollected >= upgradeCost * upgradeMultiplier)
+            {
+                _linksCollected -= upgradeCost * upgradeMultiplier;
+                linkText.text = $"Current Links: {_linksCollected}";
+                return true;
+            }
+
+            return false;
         }
     }
 }

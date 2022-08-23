@@ -53,6 +53,7 @@ namespace Zer0
             Cursor.lockState = CursorLockMode.Locked;
             
             HealthCollectible.OnCollectedHealth += HealFromCollectible;
+            ChainUpgrade.OnMaxHealthUpgrade += IncreaseMaxHealth;
         }
 
         private void Update()
@@ -131,6 +132,12 @@ namespace Zer0
         public override void RecoverHealth(float healingDone)
         {
             base.RecoverHealth(healingDone);
+            ui.UpdateHealthUI(Health, maxHealth);
+        }
+
+        public override void IncreaseMaxHealth(float healthToAdd)
+        {
+            base.IncreaseMaxHealth(healthToAdd);
             ui.UpdateHealthUI(Health, maxHealth);
         }
 

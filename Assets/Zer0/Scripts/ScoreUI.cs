@@ -9,6 +9,8 @@ namespace Zer0
         private TMP_Text _scoreText;
         private List<GameObject> _links;
 
+        [SerializeField] private float killsBetweenPickupSpawns = 5;
+
         private void Awake()
         {
             _scoreText = GetComponent<TMP_Text>();
@@ -35,7 +37,7 @@ namespace Zer0
         public void SetScore(int score)
         {
             _scoreText.text = $"Kills: {score}";
-            var testScore = score % 5;
+            var testScore = score % killsBetweenPickupSpawns;
             if (testScore == 0)
                 ResetCollectedLink();
         }
