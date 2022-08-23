@@ -42,7 +42,7 @@ namespace Zer0
 
         private void Start()
         {
-            Collection.Instance.OnCollectedLink += IncrementCollected;
+            LinkCollectible.OnCollectedLink += IncrementCollected;
         }
 
         public void ToggleUpgradeMenu()
@@ -70,10 +70,8 @@ namespace Zer0
             }
         }
         
-        private void IncrementCollected(Collectible collected)
-        {
-            _linksCollected ++;
-        }
+        private void IncrementCollected(Collectible collected) 
+            => _linksCollected++;
 
         public void UpgradeChainLength()
         {

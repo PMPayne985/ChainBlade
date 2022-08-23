@@ -16,7 +16,7 @@ namespace Zer0
 
         private void Start()
         {
-            Collection.Instance.OnCollectedLink += StoreCollectedLink;
+            LinkCollectible.OnCollectedLink += StoreCollectedLink;
 
             _links = new List<GameObject>();
             var startingLinks = FindObjectsOfType<Collectible>();
@@ -45,7 +45,7 @@ namespace Zer0
             var inList = false;
             foreach (var l in _links)
             {
-                if (l == link)
+                if (l == link.gameObject)
                     inList = true;
             }
  
@@ -55,16 +55,18 @@ namespace Zer0
 
         private void ResetCollectedLink()
         {
-            if (_links.Count > 0)
-                foreach (var link in _links)
-                {
-                    if (!link.activeInHierarchy)
-                    {
-                        link.SetActive(true);
-                        _links.Remove(link);
-                        break;
-                    }
-                }
+            if (_links.Count <= 0) return;
+
+            var random = UnityEngine.Random.Range(0, _links.Count);
+            
+            for (var i = 0; i < _links.Count; i++)
+            {
+                if (i != random & _links[i].activeInHierarchy) continue;
+                
+                _links[i].SetActive(true);
+                _links.Remove(_links[i]);
+                break;
+            }
         }
     }
 }

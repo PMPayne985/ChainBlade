@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 6593555705597227607}
   m_Layer: 6
   m_Name: WeaponSnap
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 6227914604712793055}
   m_Layer: 6
   m_Name: Eyebrows
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -159,7 +159,7 @@ GameObject:
   - component: {fileID: 6308117313990540373}
   m_Layer: 6
   m_Name: Chr_Nomad_Female_02
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -293,7 +293,7 @@ GameObject:
   - component: {fileID: 6229553833445847133}
   m_Layer: 6
   m_Name: Spine_02
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -326,7 +326,7 @@ GameObject:
   - component: {fileID: 6307982863930182873}
   m_Layer: 6
   m_Name: Chr_Nomad_Female_01
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -460,7 +460,7 @@ GameObject:
   - component: {fileID: 6227364009989591911}
   m_Layer: 6
   m_Name: Eyes
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -491,7 +491,7 @@ GameObject:
   - component: {fileID: 6227777430227067329}
   m_Layer: 6
   m_Name: Clavicle_L
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -523,7 +523,7 @@ GameObject:
   - component: {fileID: 6227818121397052103}
   m_Layer: 6
   m_Name: Finger_02 1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -556,7 +556,7 @@ GameObject:
   - component: {fileID: 6306366736368433847}
   m_Layer: 6
   m_Name: Chr_Hero_Male_01
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -690,7 +690,7 @@ GameObject:
   - component: {fileID: 6229513117367051899}
   m_Layer: 6
   m_Name: Spine_03
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -724,7 +724,7 @@ GameObject:
   - component: {fileID: 6229064968941800357}
   m_Layer: 6
   m_Name: Spine_01
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -756,7 +756,7 @@ GameObject:
   - component: {fileID: 6227354578682717287}
   m_Layer: 6
   m_Name: IndexFinger_04
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -787,7 +787,7 @@ GameObject:
   - component: {fileID: 6227817077763182109}
   m_Layer: 6
   m_Name: Finger_04
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -818,7 +818,7 @@ GameObject:
   - component: {fileID: 6227808264659701349}
   m_Layer: 6
   m_Name: Hand_L
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -852,7 +852,7 @@ GameObject:
   - component: {fileID: 6227847920268571677}
   m_Layer: 6
   m_Name: Ankle_L
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -884,7 +884,7 @@ GameObject:
   - component: {fileID: 6229079283045691053}
   m_Layer: 6
   m_Name: Ball_R
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -916,7 +916,7 @@ GameObject:
   - component: {fileID: 6229205383467829039}
   m_Layer: 6
   m_Name: Thumb_03
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -947,7 +947,7 @@ GameObject:
   - component: {fileID: 6229375852049377441}
   m_Layer: 6
   m_Name: IndexFinger_03
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -979,7 +979,7 @@ GameObject:
   - component: {fileID: 6227543198086022421}
   m_Layer: 6
   m_Name: Toes_R
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1010,7 +1010,7 @@ GameObject:
   - component: {fileID: 6229209170179355079}
   m_Layer: 6
   m_Name: IndexFinger_03 1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1042,7 +1042,7 @@ GameObject:
   - component: {fileID: 6229408389747456139}
   m_Layer: 6
   m_Name: Head
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1076,7 +1076,7 @@ GameObject:
   - component: {fileID: 6229120072952739201}
   m_Layer: 6
   m_Name: IndexFinger_01 1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1108,7 +1108,7 @@ GameObject:
   - component: {fileID: 6229577519702567719}
   m_Layer: 6
   m_Name: IndexFinger_02
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1140,7 +1140,7 @@ GameObject:
   - component: {fileID: 6227413514174368257}
   m_Layer: 6
   m_Name: Hips
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1174,7 +1174,7 @@ GameObject:
   - component: {fileID: 6227882888250275823}
   m_Layer: 6
   m_Name: IndexFinger_04 1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1205,7 +1205,7 @@ GameObject:
   - component: {fileID: 6227715440150315781}
   m_Layer: 6
   m_Name: Finger_01 1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1237,7 +1237,7 @@ GameObject:
   - component: {fileID: 6229409466776613711}
   m_Layer: 6
   m_Name: Thumb_01 1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1269,7 +1269,7 @@ GameObject:
   - component: {fileID: 6229541175762776109}
   m_Layer: 6
   m_Name: Thumb_02
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1301,7 +1301,7 @@ GameObject:
   - component: {fileID: 6229362619298563311}
   m_Layer: 6
   m_Name: Jaw
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1332,7 +1332,7 @@ GameObject:
   - component: {fileID: 6229395314370245773}
   m_Layer: 6
   m_Name: Clavicle_R
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1364,7 +1364,7 @@ GameObject:
   - component: {fileID: 6227362196017322781}
   m_Layer: 6
   m_Name: Ball_L
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1396,7 +1396,7 @@ GameObject:
   - component: {fileID: 6227777494046455529}
   m_Layer: 6
   m_Name: IndexFinger_02 1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1428,7 +1428,7 @@ GameObject:
   - component: {fileID: 6227832841249751625}
   m_Layer: 6
   m_Name: LowerLeg_R
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1460,7 +1460,7 @@ GameObject:
   - component: {fileID: 6229212927357659051}
   m_Layer: 6
   m_Name: Finger_01
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1492,7 +1492,7 @@ GameObject:
   - component: {fileID: 6227585984695388401}
   m_Layer: 6
   m_Name: Ankle_R
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1524,7 +1524,7 @@ GameObject:
   - component: {fileID: 6227663721347117899}
   m_Layer: 6
   m_Name: Toes_L
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1556,7 +1556,7 @@ GameObject:
   - component: {fileID: 6307430439464175713}
   m_Layer: 6
   m_Name: Chr_Nomad_Male_03
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1691,7 +1691,7 @@ GameObject:
   - component: {fileID: 6306663793776238201}
   m_Layer: 6
   m_Name: Chr_Skeleton_03
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1825,7 +1825,7 @@ GameObject:
   - component: {fileID: 6227760666449803495}
   m_Layer: 6
   m_Name: Finger_04 1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1857,7 +1857,7 @@ GameObject:
   - component: {fileID: 6308149095456834071}
   m_Layer: 6
   m_Name: Chr_Nomad_Male_01
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1991,7 +1991,7 @@ GameObject:
   - component: {fileID: 6227692661362180305}
   m_Layer: 6
   m_Name: Elbow_L
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2024,7 +2024,7 @@ GameObject:
   - component: {fileID: 6308341849677619845}
   m_Layer: 6
   m_Name: Chr_Skeleton_01
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2310,7 +2310,7 @@ GameObject:
   - component: {fileID: 6229136798163777691}
   m_Layer: 6
   m_Name: UpperLeg_R
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2342,7 +2342,7 @@ GameObject:
   - component: {fileID: 6229558249103184993}
   m_Layer: 6
   m_Name: Finger_02
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2374,7 +2374,7 @@ GameObject:
   - component: {fileID: 6227556100601834793}
   m_Layer: 6
   m_Name: UpperLeg_L
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2407,7 +2407,7 @@ GameObject:
   - component: {fileID: 6308058247478845799}
   m_Layer: 6
   m_Name: Chr_Hero_Female_01
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2541,7 +2541,7 @@ GameObject:
   - component: {fileID: 6227570425876791033}
   m_Layer: 6
   m_Name: Hand_R
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2576,7 +2576,7 @@ GameObject:
   - component: {fileID: 6227770330247515045}
   m_Layer: 6
   m_Name: Thumb_01
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2608,7 +2608,7 @@ GameObject:
   - component: {fileID: 6229090573497483627}
   m_Layer: 6
   m_Name: LowerLeg_L
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2640,7 +2640,7 @@ GameObject:
   - component: {fileID: 6229276813836084749}
   m_Layer: 6
   m_Name: Thumb_02 1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2672,7 +2672,7 @@ GameObject:
   - component: {fileID: 6229317624239731811}
   m_Layer: 6
   m_Name: Root
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2704,7 +2704,7 @@ GameObject:
   - component: {fileID: 6229268872551941925}
   m_Layer: 6
   m_Name: Shoulder_L
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2736,7 +2736,7 @@ GameObject:
   - component: {fileID: 6227772654206381623}
   m_Layer: 6
   m_Name: Elbow_R
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2769,7 +2769,7 @@ GameObject:
   - component: {fileID: 6306580678569591683}
   m_Layer: 6
   m_Name: Chr_Skeleton_02
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2903,7 +2903,7 @@ GameObject:
   - component: {fileID: 6227733877911047949}
   m_Layer: 6
   m_Name: Finger_03
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2935,7 +2935,7 @@ GameObject:
   - component: {fileID: 6229202585300076831}
   m_Layer: 6
   m_Name: Finger_03 1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2967,7 +2967,7 @@ GameObject:
   - component: {fileID: 6229412670056760947}
   m_Layer: 6
   m_Name: IndexFinger_01
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2999,7 +2999,7 @@ GameObject:
   - component: {fileID: 6227640384226131327}
   m_Layer: 6
   m_Name: Neck
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3031,7 +3031,7 @@ GameObject:
   - component: {fileID: 6229267723853957949}
   m_Layer: 6
   m_Name: Thumb_03 1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3063,7 +3063,7 @@ GameObject:
   - component: {fileID: 6306321450316550809}
   m_Layer: 6
   m_Name: Chr_Nomad_Male_02
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3198,7 +3198,7 @@ GameObject:
   - component: {fileID: 6308371001456247869}
   m_Layer: 6
   m_Name: Chr_Undead_Knight_01
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3330,7 +3330,7 @@ GameObject:
   - component: {fileID: 6227838794592369087}
   m_Layer: 6
   m_Name: Shoulder_R
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3409,6 +3409,10 @@ PrefabInstance:
     - target: {fileID: 1144247992245888400, guid: 6dc96c3cfd05eef448ec70713b165ea6, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1144247992245888400, guid: 6dc96c3cfd05eef448ec70713b165ea6, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6808622982967067812, guid: 6dc96c3cfd05eef448ec70713b165ea6, type: 3}
       propertyPath: m_Size.x

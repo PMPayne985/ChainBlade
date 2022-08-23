@@ -17,10 +17,9 @@ namespace Zer0
         {
             if (col.CompareTag("Enemy")) return;
             
-            print($"Impacted {col.name}");
             smokeSystem.Play();
 
-            if (canDamage && col.TryGetComponent(out IDamagable target))
+            if (canDamage && col.TryGetComponent(out Player target))
             {
                 target.TakeDamage(damage);
                 thisUnit.EndAttack();
