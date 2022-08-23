@@ -97,7 +97,7 @@ namespace Zer0
         {
             if (CheckCanUpgrade(_baseHealthCost, healthMultiplier))
             {
-                OnMaxHealthUpgrade?.Invoke(1);
+                OnMaxHealthUpgrade?.Invoke(2);
                 _baseHealthCost++;
                 healthCostText.text = $"{healthMultiplier * _baseHealthCost}";
             }

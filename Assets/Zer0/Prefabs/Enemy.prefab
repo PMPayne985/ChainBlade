@@ -2270,7 +2270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathDelay: 3
-  maxHealth: 3
+  maxHealth: 2
   attackDistance: 1.5
 --- !u!114 &6283065066431596104
 MonoBehaviour:
