@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace Zer0
@@ -9,6 +8,10 @@ namespace Zer0
         [SerializeField, Tooltip("Force applied to objects struck")]
         private float force = 1f;
         [SerializeField] private float damage = 1;
+        [SerializeField, Tooltip("The number of enhancments needed before this weapon will receive a damage increase.")] 
+        private int increaseDamageInterval = 1;
+        [SerializeField] 
+        private weaponType type;
         [SerializeField, Tooltip("Particle effect displayed when an object is struck")]
         private ParticleSystem smokeSystem;
         [SerializeField, Tooltip("Check if this weapon should push pushable objects.")]
@@ -22,8 +25,19 @@ namespace Zer0
         [SerializeField, Tooltip("A list of sounds that can play on impact")]
         private AudioClip[] impactSounds;
 
+        private int _enhancmentStep;
+
         private Player _player;
         private AudioSource _audio;
+
+        [SerializeField, Tooltip("The status Effects this impact can apply to a target.")]
+        private StatusEffect[] effects = new StatusEffect[1];
+        [SerializeField, Tooltip("the duration of each effect from the effects list.")]
+        private float[] durations = new float[1];
+        [SerializeField, Tooltip("The frequency each effect from the effects list will occur.")]
+        private float[] frequencies = new float[1];
+        [SerializeField, Tooltip("The magnitude of each effect from the effects list.")]
+        private float[] magnitudes = new float[1];
 
         private void Awake()
         {
@@ -34,11 +48,62 @@ namespace Zer0
         private void Start()
         {
             ChainUpgrade.OnKnifeDamageUpgrade += UpgradeDamage;
+            ChainUpgrade.OnAddStatusEffect += SetStatusEffects;
+            ChainUpgrade.OnAddStatusEffect += SetEffectParameters;
+
         }
 
         public void SetChainKnife(ChainKnife newKnife)
         {
             chainKnife = newKnife;
+        }
+
+        public void AddDrag() => canDrag = true;
+        public void AddPush() => canPush = true;
+
+        
+        public void AddDamage(float startingDamage)
+        {
+            canDamage = true;
+            damage = startingDamage;
+        }
+        
+        public void SetStatusEffects(StatusEffect newEffect, weaponType weapon, float parm1, float parm2, float parm3)
+        {
+            if (type != weapon) return;
+            
+            var isKnown = false;
+            for (var i = 0; i < effects.Length; i++)
+            {
+                if (effects[i] == newEffect)
+                {
+                    isKnown = true;
+                    break;
+                }
+            }
+            
+            if (isKnown) return;
+
+            for (var i = 0; i < effects.Length; i++)
+            {
+                if (effects[i] == StatusEffect.None)
+                    effects[i] = newEffect;
+            }
+        }
+
+        public void SetEffectParameters(StatusEffect effectToChange, weaponType weapon, float duration, float frequency, float magnitude)
+        {
+            if (type != weapon) return;
+            
+            for (int i = 0; i < effects.Length; i++)
+            {
+                if (effects[i] == effectToChange)
+                {
+                    durations[i] += duration;
+                    frequencies[i] += frequency;
+                    magnitudes[i]  += magnitude;
+                }
+            }
         }
         
         private void OnTriggerEnter(Collider col)
@@ -59,6 +124,9 @@ namespace Zer0
                 _player.EndAttack();
                 target.TakeDamage(damage);
             }
+            
+            if (col.TryGetComponent(out StatusEffects affected))
+                ApplyStatusEffectOnImpact(affected);
         }
 
         private void PlayImpactSound()
@@ -70,7 +138,28 @@ namespace Zer0
         
         private void UpgradeDamage(float newDamage)
         {
-            damage += newDamage;
+            _enhancmentStep++;
+            if (_enhancmentStep >= increaseDamageInterval)
+            {
+                damage += newDamage;
+
+                if (_enhancmentStep > increaseDamageInterval)
+                    _enhancmentStep = 0;
+            }
+        }
+
+        private void ApplyStatusEffectOnImpact(StatusEffects affected)
+        {
+            for (var i = 0; i < effects.Length; i++)
+            {
+                affected.SetActiveEffect(effects[i], durations[i], frequencies[i], magnitudes[i]);
+            }
         }
     }
+
+    public enum weaponType
+    {
+        chainEnd,
+        knifeBlade
+    };
 }

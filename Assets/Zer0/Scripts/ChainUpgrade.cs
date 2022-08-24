@@ -18,6 +18,8 @@ namespace Zer0
         private int _baseDamageCost = 1;
         [SerializeField] private int healthMultiplier = 1;
         private int _baseHealthCost = 1;
+        [SerializeField] private int dotMultiplier = 1;
+        private int _baseDotCost = 1;
 
         [SerializeField] private GameObject screenDarken;
         [SerializeField] private GameObject upgradeMenu;
@@ -26,10 +28,12 @@ namespace Zer0
         [SerializeField] private TMP_Text lengthCostText;
         [SerializeField] private TMP_Text damageCostText;
         [SerializeField] private TMP_Text healthCostText;
+        [SerializeField] private TMP_Text dotCostText;
 
         public static event Action<int> OnChainLengthUpgrade;
         public static event Action<float> OnKnifeDamageUpgrade;
-        public static event Action<float> OnMaxHealthUpgrade; 
+        public static event Action<float> OnMaxHealthUpgrade;
+        public static event Action<StatusEffect, weaponType, float, float, float> OnAddStatusEffect; 
 
         private void Update()
         {
@@ -103,6 +107,20 @@ namespace Zer0
             }
         }
 
+        public void AddDotEffect()
+        {
+            if (CheckCanUpgrade(_baseDotCost, dotMultiplier))
+            {
+                if (_baseDotCost <= 1)
+                    OnAddStatusEffect?.Invoke(StatusEffect.Dot, weaponType.chainEnd, 4, 2, 1);
+                else
+                    OnAddStatusEffect?.Invoke(StatusEffect.Dot, weaponType.chainEnd, 2, 0, 0);
+            }
+
+            _baseDotCost++;
+            dotCostText.text = $"{_baseDotCost * dotMultiplier}";
+        }
+        
         private bool CheckCanUpgrade(int upgradeCost, int upgradeMultiplier)
         {
             if (_linksCollected >= upgradeCost * upgradeMultiplier)

@@ -134,10 +134,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   force: 15
   damage: 1
+  increaseDamageInterval: 4
+  type: 0
   smokeSystem: {fileID: 19862844, guid: 445c6254d5b057d4dbdc7de90be36519, type: 3}
   canPush: 1
   canDrag: 1
-  canDamage: 0
+  canDamage: 1
   chainKnife: {fileID: 0}
   impactSounds:
   - {fileID: 8300000, guid: ab16e18c2c1392742a2bf7e87f60f3fd, type: 3}
@@ -152,6 +154,13 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 626cfe58666ba064f98797d9efcfd1c2, type: 3}
   - {fileID: 8300000, guid: f2bb59d9a4cccc74bb689a53aba53373, type: 3}
   - {fileID: 8300000, guid: fce162fffc8cb34418ce707e4ac9d702, type: 3}
+  effects: 00000000
+  durations:
+  - 0
+  frequencies:
+  - 0
+  magnitudes:
+  - 0
 --- !u!54 &8558450276630193163
 Rigidbody:
   m_ObjectHideFlags: 0
