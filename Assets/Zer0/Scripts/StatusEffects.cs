@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Zer0
 {
-    [RequireComponent(typeof(IDamagable))]
+    [RequireComponent(typeof(Character))]
     public class StatusEffects : MonoBehaviour
     {
         private IDamagable _damagable;
@@ -23,9 +23,19 @@ namespace Zer0
 
         public void AddActiveEffect(statusEffectType newEffectType, float duration,float frequency, float magnitude)
         {
+            if (_activeEffects.Count > 0)
+            {
+                foreach (var effect in _activeEffects)
+                {
+                    if (effect.EffectType != newEffectType) continue;
+                    
+                    effect.duration = duration;
+                    return;
+                }
+            }
+            
             var thisEffect = new statusEffectInfo(newEffectType, duration, frequency, magnitude, frequency);
             _activeEffects.Add(thisEffect);
-            print($"{thisEffect.EffectType} added to {gameObject.name}");
         }
 
         public void RemoveActiveEffect(statusEffectType effectType)
@@ -53,28 +63,28 @@ namespace Zer0
                     case statusEffectType.None:
                         break;
                     case statusEffectType.Dot:
-                        if (_activeEffects.Count <= 0) return;
                         DamageOverTime(effect);
+                        if (_activeEffects.Count <= 0) return;
                         break;
                     case statusEffectType.Stun:
-                        if (_activeEffects.Count <= 0) return;
                         Stun();
+                        if (_activeEffects.Count <= 0) return;
                         break;
                     case statusEffectType.Slow:
-                        if (_activeEffects.Count <= 0) return;
                         SLow();
+                        if (_activeEffects.Count <= 0) return;
                         break;
                     case statusEffectType.Disarm:
-                        if (_activeEffects.Count <= 0) return;
                         Disarm();
+                        if (_activeEffects.Count <= 0) return;
                         break;
                     case statusEffectType.Protect:
-                        if (_activeEffects.Count <= 0) return;
                         Protect();
-                        break;
-                    case statusEffectType.Hot:
                         if (_activeEffects.Count <= 0) return;
+                        break;
+                    case statusEffectType.Hot: ;
                         HealOverTime();
+                        if (_activeEffects.Count <= 0) return;
                         break;
                     default:
                         throw new ArgumentOutOfRangeException();
