@@ -10,7 +10,9 @@ namespace Zer0
         [SerializeField] private float damage = 1;
         [SerializeField, Tooltip("The number of enhancments needed before this weapon will receive a damage increase.")] 
         private int increaseDamageInterval = 1;
-        [SerializeField] 
+        [SerializeField, Tooltip("The maximum number of abilities this weapon can have.")]
+        private int maxAbilities = 1;
+        [SerializeField, Tooltip("The type of this weapon.")]
         private weaponType type;
         [SerializeField, Tooltip("Particle effect displayed when an object is struck")]
         private ParticleSystem smokeSystem;
@@ -29,20 +31,21 @@ namespace Zer0
 
         private Player _player;
         private AudioSource _audio;
-
-        [SerializeField, Tooltip("The status Effects this impact can apply to a target.")]
-        private statusEffectType[] effects = new statusEffectType[1];
-        [SerializeField, Tooltip("the duration of each effect from the effects list.")]
-        private float[] durations = new float[1];
-        [SerializeField, Tooltip("The frequency each effect from the effects list will occur.")]
-        private float[] frequencies = new float[1];
-        [SerializeField, Tooltip("The magnitude of each effect from the effects list.")]
-        private float[] magnitudes = new float[1];
+        
+        private statusEffectType[] effects;
+        private float[] durations;
+        private float[] frequencies;
+        private float[] magnitudes;
 
         private void Awake()
         {
             _player = transform.root.GetComponent<Player>();
             _audio = GetComponent<AudioSource>();
+
+            effects = new statusEffectType[maxAbilities];
+            durations = new float[maxAbilities];
+            frequencies = new float[maxAbilities];
+            magnitudes = new float[maxAbilities];
         }
 
         private void Start()

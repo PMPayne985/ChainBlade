@@ -5,14 +5,20 @@ using UnityEngine;
 namespace Zer0
 {
     [RequireComponent(typeof(Character))]
+    [RequireComponent(typeof(Animator))]
     public class StatusEffects : MonoBehaviour
     {
-        private IDamagable _damagable;
+        private Character _character;
+        private Animator _animator;
         private List<statusEffectInfo> _activeEffects;
 
+        private bool _incapacitated;
+        private bool _slowed;
+        
         private void Awake()
         {
-            _damagable = GetComponent<IDamagable>();
+            _character = GetComponent<Character>();
+            _animator = GetComponent<Animator>();
             _activeEffects = new List<statusEffectInfo>();
         }
 
@@ -67,23 +73,23 @@ namespace Zer0
                         if (_activeEffects.Count <= 0) return;
                         break;
                     case statusEffectType.Stun:
-                        Stun();
+                        Stun(effect);
                         if (_activeEffects.Count <= 0) return;
                         break;
                     case statusEffectType.Slow:
-                        SLow();
+                        SLow(effect);
                         if (_activeEffects.Count <= 0) return;
                         break;
                     case statusEffectType.Disarm:
-                        Disarm();
+                        Disarm(effect);
                         if (_activeEffects.Count <= 0) return;
                         break;
                     case statusEffectType.Protect:
-                        Protect();
+                        Protect(effect);
                         if (_activeEffects.Count <= 0) return;
                         break;
                     case statusEffectType.Hot: ;
-                        HealOverTime();
+                        HealOverTime(effect);
                         if (_activeEffects.Count <= 0) return;
                         break;
                     default:
@@ -100,8 +106,7 @@ namespace Zer0
 
             if (effect.tick <= 0)
             {
-                print("Damage");
-                _damagable.TakeDamage(effect.magnitude);
+                _character.TakeDamage(effect.magnitude);
                     effect.tick = effect.frequency;
             }
 
@@ -109,29 +114,67 @@ namespace Zer0
                 _activeEffects.Remove(effect);
         }
 
-        private void Stun()
+        private void Stun(statusEffectInfo effect)
         {
+            effect.duration -= Time.deltaTime;
             
+            if (!_incapacitated)
+            {
+                _incapacitated = true;
+                _animator.speed = 0;
+            }
+            
+
+            if (effect.duration <= 0)
+            {
+                _incapacitated = false;
+                _animator.speed = 1;
+                _activeEffects.Remove(effect);
+            }
         }
 
-        private void SLow()
+        private void SLow(statusEffectInfo effect)
         {
+            effect.duration -= Time.deltaTime;
             
+            if (!_slowed)
+            {
+                _slowed = true;
+                _animator.speed -= effect.magnitude;
+            }
+            
+
+            if (effect.duration <= 0)
+            {
+                _slowed = false;
+                _animator.speed += effect.magnitude;
+                _activeEffects.Remove(effect);
+            }
         }
         
-        private void Disarm()
+        private void Disarm(statusEffectInfo effect)
         {
             
         }
 
-        private void Protect()
+        private void Protect(statusEffectInfo effect)
         {
             
         }
 
-        private void HealOverTime()
+        private void HealOverTime(statusEffectInfo effect)
         {
-            
+            effect.duration -= Time.deltaTime;
+            effect.tick -= Time.deltaTime;
+
+            if (effect.tick <= 0)
+            {
+                _character.RecoverHealth(effect.magnitude);
+                effect.tick = effect.frequency;
+            }
+
+            if (effect.duration <= 0)
+                _activeEffects.Remove(effect);
         }
 
         private class statusEffectInfo
