@@ -154,13 +154,13 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 626cfe58666ba064f98797d9efcfd1c2, type: 3}
   - {fileID: 8300000, guid: f2bb59d9a4cccc74bb689a53aba53373, type: 3}
   - {fileID: 8300000, guid: fce162fffc8cb34418ce707e4ac9d702, type: 3}
-  effects: 01000000
+  effects: 00000000
   durations:
-  - 4
+  - 0
   frequencies:
-  - 2
+  - 0
   magnitudes:
-  - 1
+  - 0
 --- !u!54 &8558450276630193163
 Rigidbody:
   m_ObjectHideFlags: 0
