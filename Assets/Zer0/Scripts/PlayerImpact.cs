@@ -31,7 +31,7 @@ namespace Zer0
         private AudioSource _audio;
 
         [SerializeField, Tooltip("The status Effects this impact can apply to a target.")]
-        private StatusEffect[] effects = new StatusEffect[1];
+        private statusEffectType[] effects = new statusEffectType[1];
         [SerializeField, Tooltip("the duration of each effect from the effects list.")]
         private float[] durations = new float[1];
         [SerializeField, Tooltip("The frequency each effect from the effects list will occur.")]
@@ -68,14 +68,14 @@ namespace Zer0
             damage = startingDamage;
         }
         
-        public void SetStatusEffects(StatusEffect newEffect, weaponType weapon, float parm1, float parm2, float parm3)
+        public void SetStatusEffects(statusEffectType newEffectType, weaponType weapon, float parm1, float parm2, float parm3)
         {
             if (type != weapon) return;
             
             var isKnown = false;
             for (var i = 0; i < effects.Length; i++)
             {
-                if (effects[i] == newEffect)
+                if (effects[i] == newEffectType)
                 {
                     isKnown = true;
                     break;
@@ -86,18 +86,18 @@ namespace Zer0
 
             for (var i = 0; i < effects.Length; i++)
             {
-                if (effects[i] == StatusEffect.None)
-                    effects[i] = newEffect;
+                if (effects[i] == statusEffectType.None)
+                    effects[i] = newEffectType;
             }
         }
 
-        public void SetEffectParameters(StatusEffect effectToChange, weaponType weapon, float duration, float frequency, float magnitude)
+        public void SetEffectParameters(statusEffectType effectTypeToChange, weaponType weapon, float duration, float frequency, float magnitude)
         {
             if (type != weapon) return;
             
             for (int i = 0; i < effects.Length; i++)
             {
-                if (effects[i] == effectToChange)
+                if (effects[i] == effectTypeToChange)
                 {
                     durations[i] += duration;
                     frequencies[i] += frequency;
@@ -152,7 +152,7 @@ namespace Zer0
         {
             for (var i = 0; i < effects.Length; i++)
             {
-                affected.SetActiveEffect(effects[i], durations[i], frequencies[i], magnitudes[i]);
+                affected.AddActiveEffect(effects[i], durations[i], frequencies[i], magnitudes[i]);
             }
         }
     }

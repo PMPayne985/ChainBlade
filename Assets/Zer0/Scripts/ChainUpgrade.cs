@@ -33,7 +33,7 @@ namespace Zer0
         public static event Action<int> OnChainLengthUpgrade;
         public static event Action<float> OnKnifeDamageUpgrade;
         public static event Action<float> OnMaxHealthUpgrade;
-        public static event Action<StatusEffect, weaponType, float, float, float> OnAddStatusEffect; 
+        public static event Action<statusEffectType, weaponType, float, float, float> OnAddStatusEffect; 
 
         private void Update()
         {
@@ -112,9 +112,9 @@ namespace Zer0
             if (CheckCanUpgrade(_baseDotCost, dotMultiplier))
             {
                 if (_baseDotCost <= 1)
-                    OnAddStatusEffect?.Invoke(StatusEffect.Dot, weaponType.chainEnd, 4, 2, 1);
+                    OnAddStatusEffect?.Invoke(statusEffectType.Dot, weaponType.chainEnd, 4, 2, 1);
                 else
-                    OnAddStatusEffect?.Invoke(StatusEffect.Dot, weaponType.chainEnd, 2, 0, 0);
+                    OnAddStatusEffect?.Invoke(statusEffectType.Dot, weaponType.chainEnd, 2, 0, 0);
             }
 
             _baseDotCost++;

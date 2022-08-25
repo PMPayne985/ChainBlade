@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Zer0
@@ -7,79 +8,95 @@ namespace Zer0
     public class StatusEffects : MonoBehaviour
     {
         private IDamagable _damagable;
-        private StatusEffect _activeStatusEffect = StatusEffect.None;
-
-        private float _duration;
-        private float _frequency;
-        private float _magnitude;
-
-        private float _tick;
+        private List<statusEffectInfo> _activeEffects;
 
         private void Awake()
         {
             _damagable = GetComponent<IDamagable>();
+            _activeEffects = new List<statusEffectInfo>();
         }
 
         private void Update()
         {
-            ActivateEffect();
+            ActivateEffects();
         }
 
-        public void SetActiveEffect(StatusEffect newEffect, float duration,float frequency, float magnitude)
+        public void AddActiveEffect(statusEffectType newEffectType, float duration,float frequency, float magnitude)
         {
-            _duration = duration;
-            _frequency = frequency;
-            _tick = _frequency;
-            _magnitude = magnitude;
-            _activeStatusEffect = newEffect;
+            var thisEffect = new statusEffectInfo(newEffectType, duration, frequency, magnitude, frequency);
+            _activeEffects.Add(thisEffect);
+            print($"{thisEffect.EffectType} added to {gameObject.name}");
         }
 
-        private void ActivateEffect()
+        public void RemoveActiveEffect(statusEffectType effectType)
         {
-            if (_activeStatusEffect != StatusEffect.None)
+            if (_activeEffects.Count <= 0) return;
+
+            foreach (var effect in _activeEffects)
             {
-                _duration -= Time.deltaTime;
-                _tick -= Time.deltaTime;
+                if (effect.EffectType == effectType)
+                {
+                    _activeEffects.Remove(effect);
+                    return;
+                }
             }
-
-            switch (_activeStatusEffect)
+        }
+        
+        private void ActivateEffects()
+        {
+            if (_activeEffects.Count <= 0) return;
+            
+            foreach (var effect in _activeEffects)
             {
-                case StatusEffect.None:
-                    break;
-                case StatusEffect.Dot:
-                    DamageOverTime();
-                    break;
-                case StatusEffect.Stun:
-                    Stun();
-                    break;
-                case StatusEffect.Slow:
-                    SLow();
-                    break;
-                case StatusEffect.Disarm:
-                    Disarm();
-                    break;
-                case StatusEffect.Protect:
-                    Protect();
-                    break;
-                case StatusEffect.Hot:
-                    HealOverTime();
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
+                switch (effect.EffectType)
+                {
+                    case statusEffectType.None:
+                        break;
+                    case statusEffectType.Dot:
+                        if (_activeEffects.Count <= 0) return;
+                        DamageOverTime(effect);
+                        break;
+                    case statusEffectType.Stun:
+                        if (_activeEffects.Count <= 0) return;
+                        Stun();
+                        break;
+                    case statusEffectType.Slow:
+                        if (_activeEffects.Count <= 0) return;
+                        SLow();
+                        break;
+                    case statusEffectType.Disarm:
+                        if (_activeEffects.Count <= 0) return;
+                        Disarm();
+                        break;
+                    case statusEffectType.Protect:
+                        if (_activeEffects.Count <= 0) return;
+                        Protect();
+                        break;
+                    case statusEffectType.Hot:
+                        if (_activeEffects.Count <= 0) return;
+                        HealOverTime();
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+            }
             }
             
         }
         
-        private void DamageOverTime()
+        private void DamageOverTime(statusEffectInfo effect)
         {
-            if (_tick <= 0)
+            effect.duration -= Time.deltaTime;
+            effect.tick -= Time.deltaTime;
+
+            if (effect.tick <= 0)
             {
-                _damagable.TakeDamage(_magnitude);
-                _tick = _frequency;
+                print("Damage");
+                _damagable.TakeDamage(effect.magnitude);
+                    effect.tick = effect.frequency;
             }
 
-            if (_duration <= 0)
-                SetActiveEffect(StatusEffect.None, 0, 0, 0);
+            if (effect.duration <= 0)
+                _activeEffects.Remove(effect);
         }
 
         private void Stun()
@@ -106,9 +123,27 @@ namespace Zer0
         {
             
         }
+
+        private class statusEffectInfo
+        {
+            public statusEffectType EffectType;
+            public float duration;
+            public float frequency;
+            public float magnitude;
+            public float tick;
+
+            public statusEffectInfo(statusEffectType thisEffectType, float thisDuration, float thisFrequency, float thisMagnitude, float thisTick)
+            {
+                EffectType = thisEffectType;
+                duration = thisDuration;
+                frequency = thisFrequency;
+                magnitude = thisMagnitude;
+                tick = thisTick;
+            }
+        }
     }
 
-    public enum StatusEffect
+    public enum statusEffectType
     {
         None,
         Dot,
