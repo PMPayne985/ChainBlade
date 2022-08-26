@@ -21659,7 +21659,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6229166941658300939
 Transform:
   m_ObjectHideFlags: 0
@@ -21902,9 +21902,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1072521f5618fe3489ff43fc0bc4dfb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetSpaces: []
   deathDelay: 3
-  maxHealth: 2
-  attackDistance: 1.5
+  maxHealth: 3
+  attackDistance: 1.8
 --- !u!114 &6283065066431596104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21917,7 +21918,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 692d241dc9291964ab45769926bf5629, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stopDistance: 1.5
+  stopDistance: 1
   targetedSpace: 0
   target: {fileID: 0}
 --- !u!114 &2574943856244710772
@@ -22424,7 +22425,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6229404564339631791
 Transform:
   m_ObjectHideFlags: 0

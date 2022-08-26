@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36a54f92eee78af4ca2757ba23322acf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthToRestore: 5
+  healthToRestore: 10
 --- !u!1001 &5863263361249742479
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -174,3 +174,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4651678477994308, guid: 6260e5ed6d3edfc469f216ef9a00f03b, type: 3}
   m_PrefabInstance: {fileID: 5863263361249742479}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5862413926783480989 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1412398919580178, guid: 6260e5ed6d3edfc469f216ef9a00f03b, type: 3}
+  m_PrefabInstance: {fileID: 5863263361249742479}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3088148186064196334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5862413926783480989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ade60f7d2277a543813f511204811b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotate: 1
+  rotationInDegrees: 15
+  bob: 1
+  bobMagnitude: 0.25
+  bobFrequency: 1

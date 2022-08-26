@@ -53,7 +53,8 @@ namespace Zer0
 
         private void Update()
         {
-            TargetDistance();
+            if (_targeting.Target && _targeting.TargetDistance() <= attackDistance)
+                Attack();
         }
 
         public void SetSpawner(EnemySpawner spawner)
@@ -80,31 +81,24 @@ namespace Zer0
             _agent.enabled = true;
         }
 
-        private void TargetDistance()
-        {
-            _target = dead ? null : _motor.target.root;
-            
-            if (!_target) return;
-            
-            var distance = Vector3.Distance(_transform.position, _target.position);
-
-            if (!_attacking && distance <= attackDistance)
-                Attack();
-        }
-        
         private void Attack()
         {
-            _attacking = true;
-            _weaponCollider.enabled = true;
+            if (_attacking) return;
             
-            var randomAttackIndex = RandomAttackIndex();
-            
-            while (randomAttackIndex == _lastAttackIndex) 
-                randomAttackIndex = RandomAttackIndex();
-            
-            _animator.SetTrigger(AttackTrigger);
-            _animator.SetFloat(AttackIndex, randomAttackIndex);
-            _lastAttackIndex = randomAttackIndex;
+            if (_targeting.Target && _targeting.TargetDistance() <= attackDistance)
+            {
+                _attacking = true;
+                _weaponCollider.enabled = true;
+
+                var randomAttackIndex = RandomAttackIndex();
+
+                while (randomAttackIndex == _lastAttackIndex)
+                    randomAttackIndex = RandomAttackIndex();
+
+                _animator.SetTrigger(AttackTrigger);
+                _animator.SetFloat(AttackIndex, randomAttackIndex);
+                _lastAttackIndex = randomAttackIndex;
+            }
         }
 
         public void SendDamage(int amount)

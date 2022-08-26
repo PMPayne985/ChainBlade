@@ -9,7 +9,11 @@ namespace Zer0
         protected bool dead;
 
         public Character Target { get; protected set; }
-
+        
+        [Tooltip("Targetable spaces for the Enemy AI")]
+        public Transform[] targetSpaces;
+        public bool[] TargetSpacesOccupied { get; private set; }
+        
         [SerializeField, Tooltip("The delay before this character is removed from the scene.")]
         protected float deathDelay;
         [SerializeField, Tooltip("Character's maximum health.")]
@@ -19,6 +23,7 @@ namespace Zer0
         {
             dead = false;
             Health = maxHealth;
+            TargetSpacesOccupied = new bool[targetSpaces.Length];
         }
 
         public virtual void TakeDamage(float damageTaken)

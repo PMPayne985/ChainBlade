@@ -11323,10 +11323,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: HealthUp
       objectReference: {fileID: 0}
-    - target: {fileID: 6065870118290845325, guid: 58531eff33e7c18479a9e055879d5851, type: 3}
-      propertyPath: healthToRestore
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58531eff33e7c18479a9e055879d5851, type: 3}
 --- !u!1001 &7026742958417480618

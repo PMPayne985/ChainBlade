@@ -9,6 +9,7 @@ namespace Zer0
     {
         private Animator _animator;
         private ChainKnife _chainKnife;
+        private SpellCasting _casting;
 
         [SerializeField] private AudioSource combatAudio;
         [SerializeField] private AudioClip[] attackSounds;
@@ -17,11 +18,6 @@ namespace Zer0
         private UISetUp ui;
         private Collider _knifeCollider;
 
-        public bool[] TargetSpacesOccupied { get; private set; }
-        
-        [Tooltip("Targetable spaces for the Enemy AI")]
-        public Transform[] targetSpaces;
-        
         private bool _attacking;
         private int _lastAttackIndex;
         private static readonly int AttackTrigger = Animator.StringToHash("Attack");
@@ -40,8 +36,10 @@ namespace Zer0
             _knifeCollider = _chainKnife.transform.parent.GetComponentInChildren<Collider>();
             if (!_knifeCollider)
                 Debug.LogError("Chain Knife is missing a collider component.");
-            
-            TargetSpacesOccupied = new bool[targetSpaces.Length];
+
+            _casting = GetComponent<SpellCasting>();
+            if (!_casting)
+                Debug.LogWarning("Player can not cast spells.");
         }
 
         protected override void Start()
@@ -61,6 +59,12 @@ namespace Zer0
             if (PlayerInput.Attack() && !_attacking) Attack();
             
             if (PlayerInput.ChainAttack()) ChainAttack();
+            
+            if (_casting)
+                if (PlayerInput.NextSpell()) _casting.NextSpell();
+           
+            if (_casting)
+                if (PlayerInput.CastSpell()) _casting.CastSpell();
         }
 
         private void Attack()
