@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Zer0
 {
-    public class AITargeting : MonoBehaviour
+    public class AITargeting : Targeting
     {
         private Player _player;
         private AIMotor _motor;
@@ -46,6 +46,7 @@ namespace Zer0
             }
             
             _motor.SetTarget(target, distance, space);
+            Target = target.GetComponent<Character>();
         }
 
         public void RemoveEnemy(int space)

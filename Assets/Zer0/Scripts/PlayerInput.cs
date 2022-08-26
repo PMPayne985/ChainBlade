@@ -14,6 +14,9 @@ namespace Zer0
         public static bool PauseMenu() => Input.GetButtonUp("Cancel");
 
         public static bool UpgradeMenu() => Input.GetButtonUp("Upgrade");
+        public static bool NextSpell() => Input.GetButtonUp("NextSpell");
+        public static bool CastSpell() => Input.GetButtonUp("CastSpell");
+        public static bool NextTarget() => Input.GetButtonUp("NextTarget");
         
         public static float Horizontal() => Input.GetAxis("Horizontal");
 

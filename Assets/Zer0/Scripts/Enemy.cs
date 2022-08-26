@@ -82,7 +82,7 @@ namespace Zer0
 
         private void TargetDistance()
         {
-            _target = dead ? null : _motor.target;
+            _target = dead ? null : _motor.target.root;
             
             if (!_target) return;
             

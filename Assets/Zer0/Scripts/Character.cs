@@ -8,6 +8,8 @@ namespace Zer0
         protected float Health;
         protected bool dead;
 
+        public Character Target { get; protected set; }
+
         [SerializeField, Tooltip("The delay before this character is removed from the scene.")]
         protected float deathDelay;
         [SerializeField, Tooltip("Character's maximum health.")]
