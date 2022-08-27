@@ -88,8 +88,34 @@ namespace Zer0
         
         public void CastSpell()
         {
+            if (CanCast())
+            _animator.SetTrigger(Cast);
+            
             var cast = Instantiate(_activeSpell, launchPoint.position, launchPoint.rotation);
             cast.GetComponent<Rigidbody>().AddForce(launchPoint.forward * 5, ForceMode.Impulse);
+        }
+
+        public bool CanCast()
+        {
+            if (_spells.Count <= 0)
+            {
+                Logging.LogMessage(errorLevel.Log, Color.blue, "You don't know any spells!");
+                return false;
+            }
+            
+            if (_onCoolDown)
+            {
+                Logging.LogMessage(errorLevel.Log, Color.blue, "On cooldown!");
+                return false;
+            }
+            
+            if (_activeSpell.Cost > _spellPoints)
+            {
+                Logging.LogMessage(errorLevel.Log, Color.blue, "Not Enough spell points!");
+                return false;
+            }
+
+            return true;
         }
     }
 }

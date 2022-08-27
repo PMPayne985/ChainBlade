@@ -10,6 +10,7 @@ namespace Zer0
         private Animator _animator;
         private ChainKnife _chainKnife;
         private SpellCasting _casting;
+        private StatusEffects _statusEffects;
 
         [SerializeField] private AudioSource combatAudio;
         [SerializeField] private AudioClip[] attackSounds;
@@ -40,6 +41,8 @@ namespace Zer0
             _casting = GetComponent<SpellCasting>();
             if (!_casting)
                 Debug.LogWarning("Player can not cast spells.");
+
+            _statusEffects = GetComponent<StatusEffects>();
         }
 
         protected override void Start()
@@ -97,6 +100,7 @@ namespace Zer0
 
         public override void Death()
         {
+            _statusEffects.ClearAllEffects();
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         

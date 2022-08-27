@@ -16,6 +16,7 @@ namespace Zer0
         private Animator _animator;
         private EnemySpawner _spawner;
         private ScoreUI _scoreUI;
+        private StatusEffects _statusEffects;
 
         [SerializeField] private float attackDistance = 2.5f;
         private EnemyImpact _weapon;
@@ -43,6 +44,7 @@ namespace Zer0
             _targeting = GetComponent<AITargeting>();
             _weaponCollider = _weapon.GetComponent<Collider>();
             _scoreUI = FindObjectOfType<ScoreUI>();
+            _statusEffects = GetComponent<StatusEffects>();
         }
 
         protected override void Start()
@@ -113,6 +115,8 @@ namespace Zer0
 
             if (_spawner)
                 _spawner.ReleaseEnemy(gameObject);
+            
+            _statusEffects.ClearAllEffects();
             
             gameObject.SetActive(false);
             _attacking = false;

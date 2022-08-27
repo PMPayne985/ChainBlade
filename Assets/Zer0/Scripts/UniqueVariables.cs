@@ -32,4 +32,11 @@ namespace Zer0
         Medium,
         Large
     }
+
+    public enum errorLevel
+    {
+        Log,
+        Warning,
+        Error
+    }
 }

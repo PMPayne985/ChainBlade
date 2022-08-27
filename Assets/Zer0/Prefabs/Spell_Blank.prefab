@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4306978217419987247}
   - component: {fileID: 8995027239887486098}
   m_Layer: 0
-  m_Name: Spell_ChainStrike
+  m_Name: Spell_Blank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,18 +50,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5a863d0a1042d44a8b44c9f36f928bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellName: Chain Strike
-  icon: {fileID: 21300000, guid: 4c73b86f15d420c47a0b4b9f9b0803f6, type: 3}
+  spellName: Blank
+  icon: {fileID: 21300000, guid: 291d2e65d6bc7a34ba915b4e6ddee394, type: 3}
   visualEffect: {fileID: 4631079980008022893, guid: dd789709a8d62f04c900cb9ab2416655, type: 3}
-  cost: 2
+  cost: 1
   coolDown: 1.5
   range: 100
-  aoe: 1
+  aoe: 0
   explosionSpeed: 1
-  duration: 1.5
-  frequency: 0.75
+  duration: 1
+  frequency: 1
   magnitude: 1
-  effectToAdd: 1
+  effectToAdd: 0
   areaOfEffectTriggerField: {fileID: 3011070413910585229}
   collisionDetection: {fileID: 3011070413910585230}
 --- !u!135 &3011070413910585229

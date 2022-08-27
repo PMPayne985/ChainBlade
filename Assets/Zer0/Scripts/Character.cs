@@ -77,10 +77,5 @@ namespace Zer0
         {
             
         }
-        
-        private void LogMessage(Color color, string message)
-        {
-            Debug.Log ($"<color=#{(byte)(color.r * 255f):X2}{(byte)(color.g * 255f):X2}{(byte)(color.b * 255f):X2}>{message}</color>");
-        }
     }
 }

@@ -68,6 +68,11 @@ namespace Zer0
                 }
             }
         }
+
+        public void ClearAllEffects()
+        {
+            _activeEffects.Clear();
+        }
         
         private void ActivateEffects()
         {

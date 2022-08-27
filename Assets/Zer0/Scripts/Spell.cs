@@ -39,8 +39,14 @@ namespace Zer0
         private SphereCollider areaOfEffectTriggerField;
         [SerializeField, Tooltip("The collider used to start the spells effect.")]
         private SphereCollider collisionDetection;
+        [SerializeField, Tooltip("Check this if the effect should stay in place and not stay with the target struck.")]
+        private bool effectStationary;
         
-        
+        public string Name => spellName;
+        public Sprite Icon => icon;
+        public int Cost => cost;
+
+
         private float _maxSize;
         private float _explosionTimer;
         private bool _explode;
@@ -50,7 +56,7 @@ namespace Zer0
         {
             SetRadius();
             _explode = false;
-            _explosionTimer = .5f;
+            _explosionTimer = 0;
             _startPosition = transform.position;
             collisionDetection.enabled = true;
             areaOfEffectTriggerField.enabled = false;
@@ -59,12 +65,24 @@ namespace Zer0
         private void Update()
         {
             Explode();
+            //ExplodeAtMaxRange();
         }
 
         private void OnCollisionEnter(Collision collision)
         {
+            ApplyImmediate(collision);
+            
             _explode = true;
-            Instantiate(visualEffect, collision.contacts[0].point, Quaternion.identity);
+            
+            Transform thisParent = null;
+            if (!effectStationary)
+            {
+                transform.parent = collision.transform;
+                thisParent = collision.transform;
+            }
+            
+            var visual = Instantiate(visualEffect, collision.contacts[0].point, Quaternion.identity, thisParent);
+            visual.GetComponent<DestroyAfterTime>().SetDecay(duration);
             collisionDetection.enabled = false;
             areaOfEffectTriggerField.enabled = true;
         }
@@ -81,18 +99,17 @@ namespace Zer0
                 areaOfEffectTriggerField.enabled = true;
             }
         }
-        
-        private void OnTriggerEnter(Collider other)
-        {
-            if (!other.TryGetComponent(out StatusEffects target)) return;
-            
-            ApplyStatusEffects(target);
-        }
 
+        private void ApplyImmediate(Collision collision)
+        {
+            if (collision.gameObject.TryGetComponent(out StatusEffects target))
+                ApplyStatusEffects(target);
+        }
+        
         private void OnTriggerStay(Collider other)
         {
             if (other.TryGetComponent(out StatusEffects target))
-                UpdateStatusEffects(target);
+                ApplyStatusEffects(target);
         }
 
         private void SetRadius()
@@ -113,11 +130,6 @@ namespace Zer0
             target.AddActiveEffect(effectToAdd, duration, frequency, magnitude);
         }
 
-        private void UpdateStatusEffects(StatusEffects target)
-        {
-            target.AddActiveEffect(effectToAdd, duration, 0, 0);
-        }
-        
         private void Explode()
         {
             if (!_explode) return;
@@ -127,7 +139,7 @@ namespace Zer0
             areaOfEffectTriggerField.radius = _explosionTimer;
             if (_explosionTimer > _maxSize)
             {
-                gameObject.SetActive(false);
+                DestroyImmediate(gameObject);
             }
         }
         
@@ -142,8 +154,9 @@ namespace Zer0
             if (newAoe != areaOfEffect.None) aoe = newAoe;
         }
 
-        public void SetSpellEffect(float newDuration, float newFrequency, float newMagnitude, statusEffectType newEffect)
+        public void SetSpellEffect(float newDuration, float newFrequency, float newMagnitude, statusEffectType newEffect, bool stationary)
         {
+            effectStationary = stationary;
             duration += newDuration;
             frequency += newFrequency;
             magnitude += newMagnitude;
