@@ -11799,6 +11799,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 520247917632334271, guid: a4349d53e16da24439d3e58faa8fed2e, type: 3}
+      propertyPath: testSpell
+      value: 
+      objectReference: {fileID: 3011070413910585228, guid: 42a39ed8a064d3342aa40d3c2eb589b2, type: 3}
     - target: {fileID: 8464534221708025186, guid: a4349d53e16da24439d3e58faa8fed2e, type: 3}
       propertyPath: m_RootOrder
       value: 5

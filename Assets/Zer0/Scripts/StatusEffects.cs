@@ -230,15 +230,4 @@ namespace Zer0
             }
         }
     }
-
-    public enum statusEffectType
-    {
-        None,
-        Dot,
-        Stun,
-        Slow,
-        Disarm,
-        Protect,
-        Hot
-    };
 }

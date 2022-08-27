@@ -159,10 +159,4 @@ namespace Zer0
             }
         }
     }
-
-    public enum weaponType
-    {
-        chainEnd,
-        knifeBlade
-    };
 }
