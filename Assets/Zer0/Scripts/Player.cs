@@ -50,7 +50,7 @@ namespace Zer0
         {
             base.Start();
             _knifeCollider.enabled = false;
-            ui.UpdateHealthUI(Health, maxHealth);
+            ui.SetHealthDisplay(Health, maxHealth);
 
             Cursor.lockState = CursorLockMode.Locked;
             
@@ -136,19 +136,19 @@ namespace Zer0
         public override void TakeDamage(float damageTaken)
         {
             base.TakeDamage(damageTaken);
-            ui.UpdateHealthUI(Health, maxHealth);
+            ui.SetHealthDisplay(Health, maxHealth);
         }
 
         public override void RecoverHealth(float healingDone)
         {
             base.RecoverHealth(healingDone);
-            ui.UpdateHealthUI(Health, maxHealth);
+            ui.SetHealthDisplay(Health, maxHealth);
         }
 
         public override void IncreaseMaxHealth(float healthToAdd)
         {
             base.IncreaseMaxHealth(healthToAdd);
-            ui.UpdateHealthUI(Health, maxHealth);
+            ui.SetHealthDisplay(Health, maxHealth);
         }
 
         private void HealFromCollectible(HealthCollectible collectible) 
