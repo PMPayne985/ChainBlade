@@ -45,6 +45,7 @@ namespace Zer0
             _weaponCollider = _weapon.GetComponent<Collider>();
             _scoreUI = FindObjectOfType<ScoreUI>();
             _statusEffects = GetComponent<StatusEffects>();
+            dead = false;
         }
 
         protected override void Start()
@@ -113,6 +114,8 @@ namespace Zer0
         {
             base.Death();
 
+            _statusEffects.SetDeathStatus(dead);
+            
             if (_spawner)
                 _spawner.ReleaseEnemy(gameObject);
             

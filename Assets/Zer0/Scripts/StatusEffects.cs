@@ -25,12 +25,18 @@ namespace Zer0
         private bool _hotted;
         private bool _disarmed;
         private bool _protected;
+        private bool _dead;
 
         private void Awake()
         {
             _character = GetComponent<Character>();
             _animator = GetComponent<Animator>();
             _activeEffects = new List<statusEffectInfo>();
+        }
+
+        private void OnEnable()
+        {
+            _dead = false;
         }
 
         private void Update()
@@ -76,49 +82,47 @@ namespace Zer0
         
         private void ActivateEffects()
         {
-            if (_activeEffects.Count <= 0) return;
-            
-            foreach (var effect in _activeEffects)
+            if (_dead)
             {
-                switch (effect.EffectType)
+                ClearAllEffects();
+                return;
+            }
+            if (_activeEffects.Count <= 0) return;
+
+            for (var i = 0; i < _activeEffects.Count; i++)
+            {
+                if (i > _activeEffects.Count) return;
+
+                switch (_activeEffects[i].EffectType)
                 {
                     case statusEffectType.None:
                         break;
                     case statusEffectType.Dot:
-                        DamageOverTime(effect);
-                        if (_activeEffects.Count <= 0) return;
+                        DamageOverTime(_activeEffects[i]);
                         break;
                     case statusEffectType.Stun:
-                        Stun(effect);
-                        if (_activeEffects.Count <= 0) return;
+                        Stun(_activeEffects[i]);
                         break;
                     case statusEffectType.Slow:
-                        SLow(effect);
-                        if (_activeEffects.Count <= 0) return;
+                        SLow(_activeEffects[i]);
                         break;
                     case statusEffectType.Disarm:
-                        Disarm(effect);
-                        if (_activeEffects.Count <= 0) return;
+                        Disarm(_activeEffects[i]);
                         break;
                     case statusEffectType.Protect:
-                        Protect(effect);
-                        if (_activeEffects.Count <= 0) return;
+                        Protect(_activeEffects[i]);
                         break;
-                    case statusEffectType.Hot: ;
-                        HealOverTime(effect);
-                        if (_activeEffects.Count <= 0) return;
+                    case statusEffectType.Hot:
+                        HealOverTime(_activeEffects[i]);
                         break;
                     default:
                         throw new ArgumentOutOfRangeException();
+                }
             }
-            }
-            
         }
         
         private void DamageOverTime(statusEffectInfo effect)
         {
-            if (_activeEffects.Count <= 0) return;
-            
             effect.duration -= Time.deltaTime;
             effect.tick -= Time.deltaTime;
 
@@ -127,17 +131,13 @@ namespace Zer0
                 _dotted = true;
                 if (dotEffect) dotEffect.SetActive(true);
             }
-            
-            if (_activeEffects.Count <= 0) return;
-            
+
             if (effect.tick <= 0)
             {
                 _character.TakeDamage(effect.magnitude);
                     effect.tick = effect.frequency;
             }
 
-            if (_activeEffects.Count <= 0) return;
-            
             if (effect.duration <= 0)
             {
                 _dotted = false;
@@ -221,6 +221,11 @@ namespace Zer0
                 if (hotEffect) hotEffect.SetActive(false);
                 _activeEffects.Remove(effect);
             }
+        }
+
+        public void SetDeathStatus(bool deathStatus)
+        {
+            _dead = deathStatus;
         }
 
         private class statusEffectInfo

@@ -8,6 +8,8 @@ namespace Zer0
         protected float Health;
         protected bool dead;
 
+        public bool Dead => dead;
+
         public Character Target { get; protected set; }
         
         [Tooltip("Targetable spaces for the Enemy AI")]

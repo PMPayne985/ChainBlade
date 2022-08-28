@@ -130,6 +130,7 @@ namespace Zer0
             base.InitiateDeath();
             GetComponent<PlayerInput>().enabled = false;
             _animator.SetBool(Dead, true);
+            _statusEffects.SetDeathStatus(dead);
         }
 
         public override void TakeDamage(float damageTaken)
