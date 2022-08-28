@@ -302,6 +302,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   force: 15
   damage: 1
+  increaseDamageInterval: 1
+  maxAbilities: 1
+  type: 0
   smokeSystem: {fileID: 19862844, guid: 445c6254d5b057d4dbdc7de90be36519, type: 3}
   canPush: 1
   canDrag: 0
