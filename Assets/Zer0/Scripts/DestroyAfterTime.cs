@@ -11,7 +11,7 @@ namespace Zer0
         {
             decayTime -= Time.deltaTime;
 
-            if (decayTime <= 0) DestroyImmediate(gameObject);
+            if (decayTime <= 0) Destroy(gameObject);
         }
 
         public void SetDecay(float duration)

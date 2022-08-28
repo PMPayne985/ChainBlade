@@ -25,6 +25,7 @@ namespace Zer0
         private static readonly int ChainAttackTrigger = Animator.StringToHash("ChainAttack");
         private static readonly int AttackIndex = Animator.StringToHash("AttackIndex");
         private static readonly int Dead = Animator.StringToHash("Dead");
+        private static readonly int Cast = Animator.StringToHash("Cast");
 
         private void Awake()
         {
@@ -67,7 +68,7 @@ namespace Zer0
                 if (PlayerInput.NextSpell()) _casting.NextSpell();
            
             if (_casting)
-                if (PlayerInput.CastSpell()) _casting.CastSpell();
+                if (PlayerInput.CastSpell() && _casting.CanCast()) _animator.SetTrigger(Cast);
         }
 
         private void Attack()

@@ -64,6 +64,7 @@ MonoBehaviour:
   effectToAdd: 1
   areaOfEffectTriggerField: {fileID: 3011070413910585229}
   collisionDetection: {fileID: 3011070413910585230}
+  effectStationary: 0
 --- !u!135 &3011070413910585229
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -167,6 +168,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChainsTrail1_1
       objectReference: {fileID: 0}
+    - target: {fileID: 124242, guid: b274c02253f9fa245a4cf4ea742b575f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 442878, guid: b274c02253f9fa245a4cf4ea742b575f, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -241,15 +246,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 480308, guid: b274c02253f9fa245a4cf4ea742b575f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.25
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 480308, guid: b274c02253f9fa245a4cf4ea742b575f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.25
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 480308, guid: b274c02253f9fa245a4cf4ea742b575f, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.25
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 480308, guid: b274c02253f9fa245a4cf4ea742b575f, type: 3}
       propertyPath: m_LocalPosition.x

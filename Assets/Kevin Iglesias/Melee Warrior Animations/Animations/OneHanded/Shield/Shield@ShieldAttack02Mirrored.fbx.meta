@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 716dc2fd08718764fab6d5a2cc425718
+guid: 0f24f31f62ce52946a2176b6c6934b1f
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable:
@@ -448,7 +448,7 @@ ModelImporter:
       curves: []
       events:
       - time: 0.23703705
-        functionName: CastSpell
+        functionName: LaunchChain
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0

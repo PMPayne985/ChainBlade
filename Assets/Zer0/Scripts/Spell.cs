@@ -45,6 +45,7 @@ namespace Zer0
         public string Name => spellName;
         public Sprite Icon => icon;
         public int Cost => cost;
+        public float CoolDown => coolDown;
 
 
         private float _maxSize;
@@ -65,7 +66,7 @@ namespace Zer0
         private void Update()
         {
             Explode();
-            //ExplodeAtMaxRange();
+            ExplodeAtMaxRange();
         }
 
         private void OnCollisionEnter(Collision collision)
@@ -139,7 +140,7 @@ namespace Zer0
             areaOfEffectTriggerField.radius = _explosionTimer;
             if (_explosionTimer > _maxSize)
             {
-                DestroyImmediate(gameObject);
+                Destroy(gameObject);
             }
         }
         

@@ -88,8 +88,12 @@ namespace Zer0
         
         public void CastSpell()
         {
-            if (CanCast())
-            _animator.SetTrigger(Cast);
+            if (!CanCast()) return;
+            
+            _onCoolDown = true;
+            _coolDownCounter = _activeSpell.CoolDown;
+
+            _spellPoints -= _activeSpell.Cost;
             
             var cast = Instantiate(_activeSpell, launchPoint.position, launchPoint.rotation);
             cast.GetComponent<Rigidbody>().AddForce(launchPoint.forward * 5, ForceMode.Impulse);

@@ -117,6 +117,8 @@ namespace Zer0
         
         private void DamageOverTime(statusEffectInfo effect)
         {
+            if (_activeEffects.Count <= 0) return;
+            
             effect.duration -= Time.deltaTime;
             effect.tick -= Time.deltaTime;
 
@@ -126,12 +128,16 @@ namespace Zer0
                 if (dotEffect) dotEffect.SetActive(true);
             }
             
+            if (_activeEffects.Count <= 0) return;
+            
             if (effect.tick <= 0)
             {
                 _character.TakeDamage(effect.magnitude);
                     effect.tick = effect.frequency;
             }
 
+            if (_activeEffects.Count <= 0) return;
+            
             if (effect.duration <= 0)
             {
                 _dotted = false;
