@@ -49,26 +49,35 @@ namespace Zer0
 
         public void BuyArmorPoints()
         {
-            OnSpentLink?.Invoke(upgradeMenu.UpgradeArmorMenu, upgradePointsPerLink);
-            _currentLinks--;
-            currentLinkText.text = $"{_currentLinks}";
-            armorLinksSpentText.text = $"{_armorUpgrades}";
+            if (CheckCanUpgrade())
+            {
+                OnSpentLink?.Invoke(upgradeMenu.UpgradeArmorMenu, upgradePointsPerLink);
+                _currentLinks--;
+                currentLinkText.text = $"{_currentLinks}";
+                armorLinksSpentText.text = $"{_armorUpgrades}";
+            }
         }
         
         public void BuyBladePoints()
         {
-            OnSpentLink?.Invoke(upgradeMenu.UpgradeBladeMenu, upgradePointsPerLink);
-            _currentLinks--;
-            currentLinkText.text = $"{_currentLinks}";
-            bladeLinksSpentText.text = $"{_bladeUpgrades}";
+            if (CheckCanUpgrade())
+            {
+                OnSpentLink?.Invoke(upgradeMenu.UpgradeBladeMenu, upgradePointsPerLink);
+                _currentLinks--;
+                currentLinkText.text = $"{_currentLinks}";
+                bladeLinksSpentText.text = $"{_bladeUpgrades}";
+            }
         }
         
         public void BuySpellPoints()
         {
-            OnSpentLink?.Invoke(upgradeMenu.UpgradeSpellMenu, upgradePointsPerLink);
-            _currentLinks--;
-            currentLinkText.text = $"{_currentLinks}";
-            spellLinksSpentText.text = $"{_spellUpgrades}";
+            if (CheckCanUpgrade())
+            {
+                OnSpentLink?.Invoke(upgradeMenu.UpgradeSpellMenu, upgradePointsPerLink);
+                _currentLinks--;
+                currentLinkText.text = $"{_currentLinks}";
+                spellLinksSpentText.text = $"{_spellUpgrades}";
+            }
         }
         
         private void IncrementCollected(Collectible collected)
@@ -77,15 +86,16 @@ namespace Zer0
             _totalLinks++;
         }
         
-        private bool CheckCanUpgrade(int upgradeCost, int upgradeMultiplier)
+        private bool CheckCanUpgrade()
         {
-            if (_currentLinks >= upgradeCost * upgradeMultiplier)
+            if (_currentLinks > 0)
             {
-                _currentLinks -= upgradeCost * upgradeMultiplier;
-                currentLinkText.text = $"Current Links: {_currentLinks}";
+                _currentLinks--;
+                currentLinkText.text = $"{_currentLinks}";
                 return true;
             }
-
+            
+            Logging.LogMessage(errorLevel.Log, Color.black, "Not enough Links!");
             return false;
         }
     }
