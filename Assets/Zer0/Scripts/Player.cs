@@ -24,7 +24,7 @@ namespace Zer0
         private static readonly int AttackTrigger = Animator.StringToHash("Attack");
         private static readonly int ChainAttackTrigger = Animator.StringToHash("ChainAttack");
         private static readonly int AttackIndex = Animator.StringToHash("AttackIndex");
-        private static readonly int Dead = Animator.StringToHash("Dead");
+        private static readonly int IsDead = Animator.StringToHash("Dead");
         private static readonly int Cast = Animator.StringToHash("Cast");
 
         private void Awake()
@@ -55,7 +55,7 @@ namespace Zer0
             Cursor.lockState = CursorLockMode.Locked;
             
             HealthCollectible.OnCollectedHealth += HealFromCollectible;
-            ChainUpgrade.OnMaxHealthUpgrade += IncreaseMaxHealth;
+            UpgradeArmorMenu.OnMaxHealthUpgrade += IncreaseMaxHealth;
         }
 
         private void Update()
@@ -129,7 +129,7 @@ namespace Zer0
         {
             base.InitiateDeath();
             GetComponent<PlayerInput>().enabled = false;
-            _animator.SetBool(Dead, true);
+            _animator.SetBool(IsDead, true);
             _statusEffects.SetDeathStatus(dead);
         }
 

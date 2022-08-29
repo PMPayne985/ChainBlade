@@ -7,9 +7,8 @@ namespace Zer0
     {
         [SerializeField, Tooltip("Force applied to objects struck")]
         private float force = 1f;
-        [SerializeField] private float damage = 1;
-        [SerializeField, Tooltip("The number of enhancments needed before this weapon will receive a damage increase.")] 
-        private int increaseDamageInterval = 1;
+        [SerializeField] 
+        private float damage = 1;
         [SerializeField, Tooltip("The maximum number of abilities this weapon can have.")]
         private int maxAbilities = 1;
         [SerializeField, Tooltip("The type of this weapon.")]
@@ -50,9 +49,10 @@ namespace Zer0
 
         private void Start()
         {
-            ChainUpgrade.OnKnifeDamageUpgrade += UpgradeDamage;
-            ChainUpgrade.OnAddStatusEffect += SetStatusEffects;
-            ChainUpgrade.OnAddStatusEffect += SetEffectParameters;
+            UpgradeBladeMenu.OnDamageUpgrade += UpgradeDamage;
+            UpgradeBladeMenu.OnAddStatusEffect += SetStatusEffects;
+            UpgradeBladeMenu.OnAddStatusEffect += SetEffectParameters;
+            UpgradeBladeMenu.OnChainPullUpgrade += ChangeDrag;
 
         }
 
@@ -61,13 +61,18 @@ namespace Zer0
             chainKnife = newKnife;
         }
 
-        public void AddDrag() => canDrag = true;
-        public void AddPush() => canPush = true;
+        public void ChangeDrag(weaponType checkType, bool status)
+        {
+            if (type == checkType)
+                canDrag = status;
+        }
+
+        public void ChangePush(bool status) => canPush = status;
 
         
-        public void AddDamage(float startingDamage)
+        public void ChangeDamage(bool status, float startingDamage)
         {
-            canDamage = true;
+            canDamage = status;
             damage = startingDamage;
         }
         
@@ -139,15 +144,11 @@ namespace Zer0
             _audio.PlayOneShot(impactSounds[random]);
         }
         
-        private void UpgradeDamage(float newDamage)
+        private void UpgradeDamage(weaponType weapon, float newDamage)
         {
-            _enhancmentStep++;
-            if (_enhancmentStep >= increaseDamageInterval)
+            if (weapon == type)
             {
                 damage += newDamage;
-
-                if (_enhancmentStep > increaseDamageInterval)
-                    _enhancmentStep = 0;
             }
         }
 

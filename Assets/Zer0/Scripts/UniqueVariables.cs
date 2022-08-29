@@ -1,10 +1,11 @@
+using System;
 using UnityEngine;
 
 namespace Zer0
 {
     public class UniqueVariables : MonoBehaviour
     {
-
+        
     }
     
     public enum weaponType

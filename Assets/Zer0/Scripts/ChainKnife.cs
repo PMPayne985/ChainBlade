@@ -53,7 +53,7 @@ namespace Zer0
             _chainHead.SetActive(false);
             _chain = new List<GameObject>();
 
-            ChainUpgrade.OnChainLengthUpgrade += UpgradeChainLength;
+            UpgradeBladeMenu.OnChainLengthUpgrade += UpgradeChainLength;
         }
 
         private void Update()
