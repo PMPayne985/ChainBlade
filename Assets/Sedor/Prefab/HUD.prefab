@@ -2141,7 +2141,7 @@ MonoBehaviour:
   healthCostText: {fileID: 6212723085122797168}
   currentPointsText: {fileID: 2914077001788103486}
   totalPointsText: {fileID: 5211460277873937429}
-  healthToAdd: 0
+  healthToAdd: 2
   healthMultiplier: 2
 --- !u!1 &1223739390453403448
 GameObject:

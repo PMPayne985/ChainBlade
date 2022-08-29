@@ -95,10 +95,10 @@ namespace Zer0
                     OnAddStatusEffect?.Invoke(statusEffectType.Dot, weaponType.chainEnd, 4, 2, 1);
                 else
                     OnAddStatusEffect?.Invoke(statusEffectType.Dot, weaponType.chainEnd, 2, 0, 0);
+                
+                _baseChainStrikeDotCost++;
+                chainStrikeDotCostText.text = $"{_baseChainStrikeDotCost * dotMultiplier}";
             }
-
-            _baseChainStrikeDotCost++;
-            chainStrikeDotCostText.text = $"{_baseChainStrikeDotCost * dotMultiplier}";
         }
         
         public void UpgradeChainLength()
