@@ -60,6 +60,7 @@ public class PauseMenu : MonoBehaviour
     public void TogglePause()
     {
         if (enhancementMenu.EnhancementOpen) return;
+        if (DebugMenu.Instance.MenuOn) return;
         
         Paused = !Paused;
         

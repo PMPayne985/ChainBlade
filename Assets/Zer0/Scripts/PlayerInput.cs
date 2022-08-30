@@ -23,5 +23,7 @@ namespace Zer0
         public static float Vertical() => Input.GetAxis("Vertical");
 
         public static float Rotation() => Input.GetAxis("Mouse X");
+
+        public static bool Debug() => Input.GetButtonUp("Debug");
     }
 }

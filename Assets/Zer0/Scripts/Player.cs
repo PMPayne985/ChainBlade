@@ -56,6 +56,7 @@ namespace Zer0
             
             HealthCollectible.OnCollectedHealth += HealFromCollectible;
             UpgradeArmorMenu.OnMaxHealthUpgrade += IncreaseMaxHealth;
+            DebugMenu.OnRefillHealthCommand += RecoverHealth;
         }
 
         private void Update()

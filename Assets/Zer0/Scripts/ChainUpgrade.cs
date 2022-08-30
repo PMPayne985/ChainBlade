@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Zer0
@@ -25,6 +26,11 @@ namespace Zer0
         
         public bool EnhancementOpen { get; private set; }
 
+        private void Awake()
+        {
+            OpenAllMenus();
+        }
+
         private void Update()
         {
             if (PlayerInput.UpgradeMenu())
@@ -34,6 +40,7 @@ namespace Zer0
         public void ToggleUpgradeMenu()
         {
             if (pauseMenu.Paused) return;
+            if (DebugMenu.Instance.MenuOn) return;
             
             EnhancementOpen = !EnhancementOpen;
 
@@ -95,6 +102,19 @@ namespace Zer0
             upgradeSpellMenu.OnOpen();
         }
 
+        public void OpenAllMenus()
+        {
+            upgradeTopMenu.gameObject.SetActive(true);
+            upgradeArmorMenu.gameObject.SetActive(true);
+            upgradeBladeMenu.gameObject.SetActive(true);
+            upgradeSpellMenu.gameObject.SetActive(true);
+            
+            upgradeTopMenu.OnOpen();
+            upgradeArmorMenu.OnOpen();
+            upgradeBladeMenu.OnOpen();
+            upgradeSpellMenu.OnOpen();
+        }
+        
         public void CloseAllMenus()
         {
             upgradeTopMenu.gameObject.SetActive(false);

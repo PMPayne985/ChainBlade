@@ -36,6 +36,8 @@ namespace Zer0
         private void Start()
         {
             LinkCollectible.OnCollectedLink += IncrementCollected;
+            DebugMenu.OnAddLinksCommand += AddLinksWithoutCollectible;
+            gameObject.SetActive(false);
         }
         
         public void OnOpen()
@@ -53,6 +55,7 @@ namespace Zer0
             {
                 OnSpentLink?.Invoke(upgradeMenu.UpgradeArmorMenu, upgradePointsPerLink);
                 _currentLinks--;
+                _armorUpgrades++;
                 currentLinkText.text = $"{_currentLinks}";
                 armorLinksSpentText.text = $"{_armorUpgrades}";
             }
@@ -64,6 +67,7 @@ namespace Zer0
             {
                 OnSpentLink?.Invoke(upgradeMenu.UpgradeBladeMenu, upgradePointsPerLink);
                 _currentLinks--;
+                _bladeUpgrades++;
                 currentLinkText.text = $"{_currentLinks}";
                 bladeLinksSpentText.text = $"{_bladeUpgrades}";
             }
@@ -75,6 +79,7 @@ namespace Zer0
             {
                 OnSpentLink?.Invoke(upgradeMenu.UpgradeSpellMenu, upgradePointsPerLink);
                 _currentLinks--;
+                _spellUpgrades++;
                 currentLinkText.text = $"{_currentLinks}";
                 spellLinksSpentText.text = $"{_spellUpgrades}";
             }
@@ -84,6 +89,18 @@ namespace Zer0
         {
             _currentLinks++;
             _totalLinks++;
+            
+            currentLinkText.text = $"{_currentLinks}";
+            totalLinkText.text = $"{_totalLinks}";
+        }
+
+        private void AddLinksWithoutCollectible(int newLinks)
+        {
+            _currentLinks += newLinks;
+            _totalLinks += newLinks;
+            
+            currentLinkText.text = $"{_currentLinks}";
+            totalLinkText.text = $"{_totalLinks}";
         }
         
         private bool CheckCanUpgrade()

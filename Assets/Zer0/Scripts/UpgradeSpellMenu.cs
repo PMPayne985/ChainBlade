@@ -16,6 +16,7 @@ namespace Zer0
         private void Start()
         {
             UpgradeTopMenu.OnSpentLink += IncrementCollected;
+            gameObject.SetActive(false);
         }
         
         public void OnOpen()

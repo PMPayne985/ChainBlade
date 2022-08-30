@@ -37,6 +37,8 @@ namespace Zer0
             _spellPoints = maxSpellPoints;
             _ui.SetSpellPointDisplay(_spellPoints, maxSpellPoints);
             AddSpell(testSpell);
+
+            DebugMenu.OnRefillSpellPointsCommand += RecoverSpellPoints;
         }
 
         private void Update()
