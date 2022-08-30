@@ -11803,6 +11803,18 @@ PrefabInstance:
       propertyPath: testSpell
       value: 
       objectReference: {fileID: 3011070413910585228, guid: c80205adc775acb42be152592504e64a, type: 3}
+    - target: {fileID: 8334816136879202634, guid: a4349d53e16da24439d3e58faa8fed2e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.003
+      objectReference: {fileID: 0}
+    - target: {fileID: 8334816136879202634, guid: a4349d53e16da24439d3e58faa8fed2e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.216
+      objectReference: {fileID: 0}
+    - target: {fileID: 8334816136879202634, guid: a4349d53e16da24439d3e58faa8fed2e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.315
+      objectReference: {fileID: 0}
     - target: {fileID: 8464534221708025186, guid: a4349d53e16da24439d3e58faa8fed2e, type: 3}
       propertyPath: m_RootOrder
       value: 5
