@@ -19,12 +19,13 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private Slider sfxSlider;
     
     private CharacterAnimatorController _player;
-    public bool Paused { get; private set; }
+    public static bool Paused { get; private set; }
     private bool _optionsBool;
 
     private void Awake()
     {
         _player = FindObjectOfType<CharacterAnimatorController>();
+        OpenAllMenus();
     }
 
     private void Start()
@@ -38,6 +39,8 @@ public class PauseMenu : MonoBehaviour
         musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", .5f);
         sfxSlider.value = PlayerPrefs.GetFloat("SFXVolume", .5f);
         rotationSlider.value = PlayerPrefs.GetFloat("RotationSpeed", .5f);
+        
+        CloseAllMenus();
     }
 
     private void Update()
@@ -59,7 +62,7 @@ public class PauseMenu : MonoBehaviour
     
     public void TogglePause()
     {
-        if (enhancementMenu.EnhancementOpen) return;
+        if (ChainUpgrade.EnhancementOpen) return;
         if (DebugMenu.Instance.MenuOn) return;
         
         Paused = !Paused;
@@ -97,9 +100,20 @@ public class PauseMenu : MonoBehaviour
             mainPause.SetActive(false);
             optionsPause.SetActive(true);
         }
-
     }
 
+    public void OpenAllMenus()
+    {
+        mainPause.SetActive(true);
+        optionsPause.SetActive(true);
+    }
+
+    public void CloseAllMenus()
+    {
+        mainPause.SetActive(false);
+        optionsPause.SetActive(false);
+    }
+    
     private void MasterVolume()
     {
         testMixer.SetFloat("Master", Mathf.Log10(masterSlider.value) * 20);

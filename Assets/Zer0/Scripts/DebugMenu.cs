@@ -113,6 +113,9 @@ namespace Zer0
 
         private void ToggleDebugWindow()
         {
+            if (PauseMenu.Paused) return;
+            if (ChainUpgrade.EnhancementOpen) return;
+            
             if (debugOn)
                 _menuOn = !_menuOn;
 

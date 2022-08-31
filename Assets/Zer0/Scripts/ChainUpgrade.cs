@@ -24,7 +24,7 @@ namespace Zer0
         public UpgradeMenu UpgradeBladeMenu => upgradeBladeMenu;
         public UpgradeMenu UpgradeSpellMenu => upgradeSpellMenu;
         
-        public bool EnhancementOpen { get; private set; }
+        public static bool EnhancementOpen { get; private set; }
 
         private void Awake()
         {
@@ -39,7 +39,7 @@ namespace Zer0
 
         public void ToggleUpgradeMenu()
         {
-            if (pauseMenu.Paused) return;
+            if (PauseMenu.Paused) return;
             if (DebugMenu.Instance.MenuOn) return;
             
             EnhancementOpen = !EnhancementOpen;
