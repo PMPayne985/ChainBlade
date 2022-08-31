@@ -54,7 +54,6 @@ namespace Zer0
             if (CheckCanUpgrade())
             {
                 OnSpentLink?.Invoke(upgradeMenu.UpgradeArmorMenu, upgradePointsPerLink);
-                _currentLinks--;
                 _armorUpgrades++;
                 currentLinkText.text = $"{_currentLinks}";
                 armorLinksSpentText.text = $"{_armorUpgrades}";
@@ -66,7 +65,6 @@ namespace Zer0
             if (CheckCanUpgrade())
             {
                 OnSpentLink?.Invoke(upgradeMenu.UpgradeBladeMenu, upgradePointsPerLink);
-                _currentLinks--;
                 _bladeUpgrades++;
                 currentLinkText.text = $"{_currentLinks}";
                 bladeLinksSpentText.text = $"{_bladeUpgrades}";
@@ -78,7 +76,6 @@ namespace Zer0
             if (CheckCanUpgrade())
             {
                 OnSpentLink?.Invoke(upgradeMenu.UpgradeSpellMenu, upgradePointsPerLink);
-                _currentLinks--;
                 _spellUpgrades++;
                 currentLinkText.text = $"{_currentLinks}";
                 spellLinksSpentText.text = $"{_spellUpgrades}";
