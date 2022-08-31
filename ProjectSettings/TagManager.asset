@@ -21,8 +21,8 @@ TagManager:
   - Skybox
   - Object
   - Map
-  - 
-  - 
+  - Obstacle
+  - EnemyInterest
   - 
   - 
   - 

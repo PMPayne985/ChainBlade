@@ -15,8 +15,6 @@ namespace Zer0
         private Spell _activeSpell;
         private int _activeSpellIndex;
 
-        public Spell testSpell;
-
         [SerializeField] private float maxSpellPoints = 10;
         private float _spellPoints;
         [SerializeField] private float spellRechargeRate = 0.1f;
@@ -36,9 +34,11 @@ namespace Zer0
             _spells = new List<Spell>();
             _spellPoints = maxSpellPoints;
             _ui.SetSpellPointDisplay(_spellPoints, maxSpellPoints);
-            AddSpell(testSpell);
 
             DebugMenu.OnRefillSpellPointsCommand += RecoverSpellPoints;
+            UpgradeSpellMenu.OnBuyNewSpell += AddSpell;
+            UpgradeSpellMenu.OnEnhanceSpell += EnhanceSpell;
+            UpgradeSpellMenu.OnChangeSpellParameters += ChangeSpellParams;
         }
 
         private void Update()
@@ -74,9 +74,42 @@ namespace Zer0
                 NextSpell();
         }
 
+        public void EnhanceSpell(string spellName, float newDuration, float newFrequency, float newMagnitude,
+            float newImpactDamage, statusEffectType newEffect, bool stationary)
+        {
+            foreach (var thisSpell in _spells)
+            {
+                if (thisSpell.Name == spellName)
+                {
+                    thisSpell.SetSpellEffect(newDuration, newFrequency, newMagnitude, newImpactDamage, newEffect, stationary);
+                    return;
+                }
+            }
+        }
+
+        public void ChangeSpellParams(string newName, Sprite newIcon, int newCost, float newCooldown, float newRange,
+            areaOfEffect newAoe)
+        {
+            foreach (var thisSpell in _spells)
+            {
+                if (thisSpell.Name == newName)
+                {
+                    thisSpell.SetSpellVariables(newName, newIcon, newCost, newCooldown, newRange, newAoe);
+                    return;
+                }
+            }
+        }
+        
         public void RemoveSpell(string spellName)
         {
-            
+            foreach (var thisSpell in _spells)
+            {
+                if (thisSpell.Name == spellName)
+                {
+                    _spells.Remove(thisSpell);
+                    return;
+                }
+            }
         }
 
         public void RecoverSpellPoints(float amount)

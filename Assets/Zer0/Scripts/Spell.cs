@@ -11,12 +11,15 @@ namespace Zer0
         private Sprite icon;
         [SerializeField, Tooltip("The effect that will be displayed when the spell strikes a target")]
         private GameObject visualEffect;
+        [SerializeField, Tooltip("The damage the spell does on impact. (set to 0 if no damage is desired)")]
+        private float impactDamage;
         [SerializeField, Tooltip("The number of Spell Points used to cast this spell.")]
         private int cost;
         [SerializeField, Tooltip("The amount of time in seconds all spells will be unavailable after casting this spell.")]
         private float coolDown;
         [SerializeField, Tooltip("The maximum distance this spell will travel without hitting a target before activating its effect.")]
         private float range;
+        
         [SerializeField, Tooltip("The maximum size in meters of this spells area of effect. \n" +
                                  "(This coupled with Explode Speed will determine how long an effect remains active on the battlefield \n" +
                                  "and thus able to affect enemies and possibly the player.)")] 
@@ -26,6 +29,7 @@ namespace Zer0
                                  "(This coupled with Aoe will determine how long an effect remains active on the battlefield \n" +
                                  "and thus able to affect enemies and possibly the player.)")] 
         private float explosionSpeed = 1;
+        
         [SerializeField, Tooltip("How long any ongoing effects will apply to affected targets.")]
         private float duration;
         [SerializeField, Tooltip("How frequently ongoing effects will apply to affected targets.")]
@@ -103,8 +107,10 @@ namespace Zer0
 
         private void ApplyImmediate(Collision collision)
         {
-            if (collision.gameObject.TryGetComponent(out StatusEffects target))
-                ApplyStatusEffects(target);
+            if (collision.gameObject.TryGetComponent(out StatusEffects sTarget))
+                ApplyStatusEffects(sTarget);
+            if (collision.gameObject.TryGetComponent(out IDamagable dTarget))
+                dTarget.TakeDamage(impactDamage);
         }
         
         private void OnTriggerStay(Collider other)
@@ -155,12 +161,13 @@ namespace Zer0
             if (newAoe != areaOfEffect.None) aoe = newAoe;
         }
 
-        public void SetSpellEffect(float newDuration, float newFrequency, float newMagnitude, statusEffectType newEffect, bool stationary)
+        public void SetSpellEffect(float newDuration, float newFrequency, float newMagnitude, float newImpactDamage, statusEffectType newEffect, bool stationary)
         {
             effectStationary = stationary;
             duration += newDuration;
             frequency += newFrequency;
             magnitude += newMagnitude;
+            impactDamage += newImpactDamage;
             if (newEffect != statusEffectType.None) effectToAdd = newEffect;
         }
     }
