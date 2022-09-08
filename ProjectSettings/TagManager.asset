@@ -9,6 +9,7 @@ TagManager:
   - stone
   - big_stone
   - ground
+  - Preciver
   layers:
   - Default
   - TransparentFX
