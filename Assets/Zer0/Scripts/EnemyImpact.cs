@@ -10,6 +10,7 @@ namespace Zer0
         private bool canDamage;
 
         [SerializeField] private Enemy thisUnit;
+        [SerializeField] private EnemyAI this_Unit;
 
         [SerializeField] private float damage = 1;
 
@@ -22,7 +23,10 @@ namespace Zer0
             if (canDamage && col.TryGetComponent(out Player target))
             {
                 target.TakeDamage(damage);
-                thisUnit.EndAttack();
+                if (thisUnit)
+                    thisUnit.EndAttack();
+                if (this_Unit)
+                    this_Unit.EndAttack();
             }
         }
     }

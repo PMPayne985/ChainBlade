@@ -29,6 +29,8 @@ namespace Zer0
 
         private void Awake()
         {
+            if (!ui) ui = FindObjectOfType<UISetUp>();
+            
             _animator = GetComponent<Animator>();
             if (!_animator) Debug.LogError("CharacterBehavior is missing an Animator Component.");
 

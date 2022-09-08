@@ -16,6 +16,8 @@ namespace Zer0
         
         [SerializeField, Tooltip("Determines the base value of how fast the character moves.")]
         private float speed = 1f;
+
+        [SerializeField, Tooltip("")] private float rotationSpeed = 3;
         
         [SerializeField, Tooltip("If set equal to or greater than 0, the evaluated AI decision value is multiplied by the 'Speed'.")]
         private int objectiveAsSpeed = -1;
@@ -27,6 +29,8 @@ namespace Zer0
         private Animator animator;
         
         private float _velocity;
+
+        [HideInInspector] public bool atTarget;
         
         private static readonly int Speed = Animator.StringToHash("Speed");
 
@@ -47,22 +51,30 @@ namespace Zer0
 
         private void Update()
         {
-            if (Mathf2.Approximately(context.DecidedDirection.sqrMagnitude, 0))
-                return;
+            var targetDirection = context.DecidedDirection;
+            var step = rotationSpeed * Time.deltaTime;
+            var newDirection = Vector3.RotateTowards(transform.forward, targetDirection, step, 0);
             
-            transform.rotation = Quaternion.LookRotation(context.DecidedDirection, up);
-            
-            if (objectiveAsSpeed >= 0)
+            transform.rotation = Quaternion.LookRotation(newDirection);
+
+            float speedMultiplier = 1;
+            if (Vector3.Angle(targetDirection, transform.forward) > 50)
+                speedMultiplier = 0;
+
+            if (atTarget)
+                speedMultiplier = 0;
+
+            if (objectiveAsSpeed >= 0 && objectiveAsSpeed < context.DecidedValues.Count)
             {
-                _velocity = context.DecidedValues[objectiveAsSpeed] * speed;
-                _velocity = _velocity > speed ? speed : _velocity;
+                float magnitude = context.DecidedValues[objectiveAsSpeed];
+                magnitude = magnitude > speed ? speed : magnitude;
+                _velocity = magnitude * speedMultiplier;
             }
             else
-            {
-                _velocity = speed;
-            }
-
+                _velocity = speed * speedMultiplier;
+            
             var animatorSpeed = _velocity < speed / 2 ? 0.5f : 1;
+            animatorSpeed *= speedMultiplier;
             animator.SetFloat(Speed, animatorSpeed);
             
             transform.position += Time.deltaTime * _velocity * context.DecidedDirection;

@@ -44,7 +44,8 @@ namespace Zer0
                 space = 30;
             }
             
-            _motor.SetTarget(target, distance, space);
+            if (_motor)
+                _motor.SetTarget(target, distance, space);
         }
 
         public void RemoveEnemy(int space)

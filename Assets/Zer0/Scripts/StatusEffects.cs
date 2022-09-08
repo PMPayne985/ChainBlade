@@ -26,6 +26,7 @@ namespace Zer0
         private bool _disarmed;
         private bool _protected;
         private bool _dead;
+        private static readonly int StunAnim = Animator.StringToHash("Stun");
 
         private void Awake()
         {
@@ -154,7 +155,7 @@ namespace Zer0
             {
                 _incapacitated = true;
                 if (stunEffect) stunEffect.SetActive(true);
-                _animator.speed = 0;
+                _animator.SetBool(StunAnim, true);
             }
             
 
@@ -162,7 +163,7 @@ namespace Zer0
             {
                 _incapacitated = false;
                 if (stunEffect) stunEffect.SetActive(false);
-                _animator.speed = 1;
+                _animator.SetBool(StunAnim, false);
                 _activeEffects.Remove(effect);
             }
         }
