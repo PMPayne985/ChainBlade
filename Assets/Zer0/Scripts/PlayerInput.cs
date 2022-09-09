@@ -7,7 +7,8 @@ namespace Zer0
     {
         public static bool Attack() => Input.GetButtonDown("Fire1") || Input.GetAxis("FireAxis") > .5f;
 
-        public static bool ChainAttack() => Input.GetButtonDown("Fire2") || Input.GetAxis("FireAxis") < -.5f;
+        public static bool ChainPreview() => Input.GetButtonDown("Fire2") || Input.GetAxis("FireAxis") < -.5f;
+        public static bool ChainAttack() => Input.GetButtonUp("Fire2") || Input.GetAxis("FireAxis") < -.5f;
 
         public static bool Sprint() => Input.GetButton("Sprint");
 

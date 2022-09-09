@@ -30,7 +30,7 @@ namespace Zer0
         
         private float _velocity;
 
-        [HideInInspector] public bool atTarget;
+        [HideInInspector] public bool stopped;
         
         private static readonly int Speed = Animator.StringToHash("Speed");
 
@@ -61,7 +61,7 @@ namespace Zer0
             if (Vector3.Angle(targetDirection, transform.forward) > 50)
                 speedMultiplier = 0;
 
-            if (atTarget)
+            if (stopped)
                 speedMultiplier = 0;
 
             if (objectiveAsSpeed >= 0 && objectiveAsSpeed < context.DecidedValues.Count)

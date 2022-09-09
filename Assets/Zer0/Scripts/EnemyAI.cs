@@ -34,6 +34,7 @@ namespace Zer0
         private float _snapToHeight;
         private float _lastAttackIndex;
         private float _targetDistance;
+        private float _damageDelay;
         
         private bool _attacking;
         
@@ -42,6 +43,7 @@ namespace Zer0
         private static readonly int AttackTrigger = Animator.StringToHash("Attack");
         private static readonly int AttackIndex = Animator.StringToHash("AttackIndex");
         private static readonly int Dead = Animator.StringToHash("Dead");
+        private static readonly int Damage = Animator.StringToHash("TakeDamage");
 
         private void Awake()
         {
@@ -91,7 +93,17 @@ namespace Zer0
             
             _targetDistance = Vector3.Distance(player.transform.position, transform.position);
 
-            _controller.atTarget = (_targetDistance <= attackDistance);
+            _controller.stopped = (_targetDistance <= attackDistance);
+
+            if (DamageReceived)
+            {
+                _damageDelay += Time.deltaTime;
+                if (_damageDelay >= 0.25f)
+                {
+                    _controller.stopped = false;
+                    DamageReceived = false;
+                }
+            }
         }
 
         public void SetSpawner(EnemySpawner spawner)
@@ -140,6 +152,17 @@ namespace Zer0
         {
             _attacking = false;
             _weaponCollider.enabled = false;
+        }
+
+        public override void TakeDamage(float damageTaken)
+        {
+            base.TakeDamage(damageTaken);
+            if (DamageReceived)
+            {
+                animator.SetTrigger(Damage);
+                _controller.stopped = true;
+                _damageDelay = 0;
+            }
         }
 
         public override void Death()

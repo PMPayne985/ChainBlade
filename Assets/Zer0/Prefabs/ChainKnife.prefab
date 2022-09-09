@@ -31,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4828318695737486315}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4338893131024926895
 MeshFilter:
@@ -112,7 +112,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4828318695737486315}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4828318695737486311
 GameObject:
@@ -143,7 +143,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4828318696512694474}
   - {fileID: 7955308620049569563}
   - {fileID: 442053567709128620}
   - {fileID: 2399166461983294374}
@@ -168,40 +167,10 @@ MonoBehaviour:
   emissionRate: 100
   maxChainsLength: 8
   knifePrefab: {fileID: 2763560010028495797, guid: dd3c95f18801aa341943f2c34aa7cfc0, type: 3}
+  previewKnife: {fileID: 0}
   chainPrefab: {fileID: 156422, guid: 73d172e661c6ff9469a4d40a0d9b018d, type: 3}
   knifeBlade: {fileID: 9032715362724592812}
-  emitPoint: {fileID: 4828318696512694474}
---- !u!1 &4828318696512694473
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4828318696512694474}
-  m_Layer: 6
-  m_Name: barrel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4828318696512694474
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4828318696512694473}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.115}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4828318695737486315}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  emitPoint: {fileID: 2399166461983294374}
 --- !u!1 &9032715362724592812
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,7 +206,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4828318695737486315}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!33 &6085007662641641496
 MeshFilter:
@@ -303,7 +272,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   force: 15
   damage: 1
-  increaseDamageInterval: 1
   maxAbilities: 1
   type: 0
   smokeSystem: {fileID: 19862844, guid: 445c6254d5b057d4dbdc7de90be36519, type: 3}
@@ -458,7 +426,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5471118153692981669, guid: 20e03ac84ce62724ca74146e8290b5b7, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5471118153692981669, guid: 20e03ac84ce62724ca74146e8290b5b7, type: 3}
       propertyPath: m_LocalPosition.x

@@ -21,6 +21,8 @@ namespace Zer0
         [SerializeField, Tooltip("Character's maximum health.")]
         protected float maxHealth = 3;
 
+        protected bool DamageReceived;
+
         protected virtual void Start()
         {
             dead = false;
@@ -30,13 +32,20 @@ namespace Zer0
 
         public virtual void TakeDamage(float damageTaken)
         {
+            DamageReceived = false;
             if (dead) return;
-            
+
             if (damageTaken > 0)
+            {
                 Health -= damageTaken;
-            
-            if (Health <= 0)
-                InitiateDeath();
+                DamageReceived = true;
+                
+                if (Health <= 0)
+                {
+                    InitiateDeath();
+                    DamageReceived = false;
+                }
+            }
         }
 
         public virtual void RecoverHealth(float healingDone)

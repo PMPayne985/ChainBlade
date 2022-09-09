@@ -18,6 +18,8 @@ namespace Zer0
         private int maxChainsLength = 50;
         [SerializeField, Tooltip("The prefab that will appear at the end of the chain")] 
         private GameObject knifePrefab;
+        [SerializeField, Tooltip("The knife preview that will display before launching the chain attack")]
+        private GameObject previewKnife;
         [SerializeField, Tooltip("The prefab for each link of the chain")] 
         private GameObject chainPrefab;
         [SerializeField, Tooltip("The blade of the static knife to be deactivated when the chain knife is extended.")] 
@@ -35,7 +37,7 @@ namespace Zer0
         private List<GameObject> _chain;
         private Transform _character;
 
-        private bool _pressed;
+        private bool _launched;
 
         private ObjectPool<GameObject> _chainPool;
 
@@ -58,25 +60,42 @@ namespace Zer0
 
         private void Update()
         {
-            if (Input.GetMouseButtonUp(1) && _chainHead.activeInHierarchy)
-                _pressed = false;
-
-            if (_pressed && (_chain.Count >= maxChainsLength))
-                _pressed = false;
+            if (_launched && (_chain.Count >= maxChainsLength))
+                _launched = false;
+            
+            if (PlayerInput.ChainPreview() && previewKnife)
+                ShowPreview();
         }
 
         private void FixedUpdate()
         {
-            if (_pressed)
+            if (_launched)
                 ChainExtend();
-            else if (!_pressed && _chainHead.activeInHierarchy)
+            else if (!_launched && _chainHead.activeInHierarchy)
                 ChainReturn();
         }
 
+        private void ShowPreview()
+        {
+            var previewPosition = emitPoint.position + _character.forward * .3f;
+            previewPosition += _character.forward * (maxChainsLength / emissionRate);
+            previewPosition += new Vector3(0, 1, 0);
+            
+            previewKnife.SetActive(true);
+            previewKnife.transform.position = previewPosition;
+        }
+
+        private void EndPreview()
+        {
+            previewKnife.SetActive(false);
+            previewKnife.transform.position = _character.position;
+        }
+        
         public void LaunchChain()
         {
             if (_chainHead.activeInHierarchy) return;
             
+            EndPreview();
             _chainHead.SetActive(true);
             knifeBlade.SetActive(false);
             _chainHead.transform.position = emitPoint.position + _character.forward * 0.3f;
@@ -86,7 +105,7 @@ namespace Zer0
 
             _chainHead.transform.LookAt(lookPoint);
             _velocity = _chainHead.transform.forward * knifeVelocity;
-            _pressed = true;
+            _launched = true;
         }
 
         private void ChainExtend()
@@ -173,7 +192,7 @@ namespace Zer0
 
         public void EndExtension()
         {
-            _pressed = false;
+            _launched = false;
         }
 
         private GameObject CreateLink()

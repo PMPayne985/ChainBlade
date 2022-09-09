@@ -19,6 +19,10 @@ namespace Zer0
         [SerializeField, Tooltip("Check this if this spawner should spawn up to its max enemies only once. Leave unchecked to spawn endlessly.")]
         private bool spawnOnlyOnce;
 
+        [SerializeField,
+         Tooltip("Tick this if you want the first spawn to happen as soon as the spawner come online instead of after the first spawn time delay.")]
+        private bool spawnOnEnable;
+
         private bool _stopSpawning;
         private float _timer;
         private int _activeEnemies;
@@ -35,6 +39,12 @@ namespace Zer0
         private void Start()
         {
             _myEnemies = new List<EnemyAI>();
+        }
+
+        private void OnEnable()
+        {
+            if (spawnOnEnable)
+                SpawnEnemy();
         }
 
         private void Update()
