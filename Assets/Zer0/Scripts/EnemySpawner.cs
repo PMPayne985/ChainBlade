@@ -24,7 +24,7 @@ namespace Zer0
         private int _activeEnemies;
         private int _totalEnemies;
         
-        private List<Enemy> _myEnemies;
+        private List<EnemyAI> _myEnemies;
         private ObjectPool<GameObject> _enemyPool;
 
         private void Awake()
@@ -34,7 +34,7 @@ namespace Zer0
 
         private void Start()
         {
-            _myEnemies = new List<Enemy>();
+            _myEnemies = new List<EnemyAI>();
         }
 
         private void Update()
@@ -69,14 +69,14 @@ namespace Zer0
 
             newEnemy.transform.position = transform.position;
             newEnemy.transform.rotation = transform.rotation;
-            newEnemy.GetComponent<Enemy>().Revive();
+            newEnemy.GetComponent<EnemyAI>().Revive();
         }
 
         private GameObject CreateEnemy()
         {
             var newEnemy = Instantiate(enemy, transform, false);
-            newEnemy.GetComponent<Enemy>().SetSpawner(this);
-            _myEnemies.Add(newEnemy.GetComponent<Enemy>());
+            newEnemy.GetComponent<EnemyAI>().SetSpawner(this);
+            _myEnemies.Add(newEnemy.GetComponent<EnemyAI>());
             return newEnemy;
         }
 
@@ -90,12 +90,7 @@ namespace Zer0
         private void OnReleaseEnemy(GameObject obj)
         {
             obj.SetActive(false);
-
-            foreach (var thisEnemy in _myEnemies)
-            {
-                if (thisEnemy.gameObject.activeInHierarchy)
-                    thisEnemy.ResetTargeting();
-            }
+            
             _activeEnemies--;
         }
 
@@ -103,5 +98,12 @@ namespace Zer0
         {
             DestroyImmediate(obj);
         }
+
+#if UNITY_EDITOR
+        private void OnDrawGizmos()
+        {
+            
+        }
+#endif
     }
 }

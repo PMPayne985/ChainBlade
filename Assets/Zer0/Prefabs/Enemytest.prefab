@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4781511675009189046}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: WeaponSnap
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 396606238730876603}
   - component: {fileID: 7914840742734991445}
   - component: {fileID: 6615026544203916035}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Vortex_1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5022,7 +5022,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2553560034795069151}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: StunEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5056,7 +5056,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1862894246336170859}
   - component: {fileID: 1862894246336170858}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: MapMarker
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -5143,13 +5143,13 @@ GameObject:
   - component: {fileID: 48213923758218096}
   - component: {fileID: 5347901162520353681}
   - component: {fileID: 1862894246407579487}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: SM_Prop_Forge_Pickaxe_01
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1216084677896036383
 Transform:
   m_ObjectHideFlags: 0
@@ -5243,6 +5243,7 @@ MonoBehaviour:
   smokeSystem: {fileID: 19862844, guid: 445c6254d5b057d4dbdc7de90be36519, type: 3}
   canDamage: 1
   thisUnit: {fileID: 0}
+  this_Unit: {fileID: 178001356840336164}
   damage: 1
 --- !u!1 &2106079358250294841
 GameObject:
@@ -5255,7 +5256,7 @@ GameObject:
   - component: {fileID: 8796453887886676217}
   - component: {fileID: 250559408435150339}
   - component: {fileID: 7828329507051187511}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: chain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10073,7 +10074,7 @@ GameObject:
   - component: {fileID: 3194762942342162657}
   - component: {fileID: 3194762942323865061}
   - component: {fileID: 3194762942324446307}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: chain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14891,7 +14892,7 @@ GameObject:
   - component: {fileID: 3194762942342110273}
   - component: {fileID: 3194762942323824307}
   - component: {fileID: 3194762942323877991}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Vortex_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19871,7 +19872,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5744220254305958420}
   - component: {fileID: 5643046120194996792}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Chr_Nomad_Female_01
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -20005,7 +20006,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5743882694126364038}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Eyes
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -20036,7 +20037,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5740266838473262780}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Spine_02
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -20068,7 +20069,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5744296114080716576}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Clavicle_L
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -20100,7 +20101,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5744248020871849278}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Eyebrows
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -20132,7 +20133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5744036919187330174}
   - component: {fileID: 5643216167212714676}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Chr_Nomad_Female_02
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -20266,7 +20267,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5744296040461139976}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: IndexFinger_02 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -20298,7 +20299,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5740057994058371402}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Finger_01
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -20330,7 +20331,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5744306737199264936}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: LowerLeg_R
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -20362,7 +20363,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5740143915820139116}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Clavicle_R
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -20394,7 +20395,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5743880209872858620}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Ball_L
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -20427,7 +20428,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5743962253563692884}
   - component: {fileID: 5643388960776991990}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Chr_Nomad_Male_01
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -20561,7 +20562,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5744166540385580592}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Elbow_L
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -20594,7 +20595,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5739879671826707690}
   - component: {fileID: 5643554656703665252}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Chr_Skeleton_01
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -20728,7 +20729,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5740262458056467072}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Finger_02
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -20764,11 +20765,13 @@ GameObject:
   - component: {fileID: 5686843538839662737}
   - component: {fileID: 5686843538839662722}
   - component: {fileID: 5686843538839662723}
+  - component: {fileID: 2124884427721432639}
   - component: {fileID: 2124884427721432625}
   - component: {fileID: 2124884427721432624}
-  - component: {fileID: 2124884427721432639}
   - component: {fileID: 7862633585050388736}
-  m_Layer: 7
+  - component: {fileID: 867840927}
+  - component: {fileID: 4058625367218018721}
+  m_Layer: 0
   m_Name: AI
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -20828,14 +20831,16 @@ MonoBehaviour:
   objectiveLabels:
   - Interest
   - Danger
+  - Walls
   context:
-    minObjectives: 0001
-    normObjectives: 0101
+    minObjectives: 000101
+    normObjectives: 010101
     constraintSolver:
       Unlimited: 0
       Epsilons:
       - 0
       - 0.4
+      - 0.2
   selfObject: {fileID: 0}
   indicatorGizmo:
     Enabled: 1
@@ -20923,7 +20928,7 @@ MonoBehaviour:
     InnerRadius: 0
     OuterRadius: 20
     RadiusMapping: 2
-    BoundsType: 1
+    BoundsType: 0
 --- !u!114 &5686843538839662723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20946,8 +20951,7 @@ MonoBehaviour:
     tab3: 0
     tab4: 0
   advancedInspector: 0
-  FilteredEnvironments:
-  - Obstacles
+  FilteredEnvironments: []
   GameObjects: []
   velocityGizmo:
     Enabled: 0
@@ -20970,7 +20974,7 @@ MonoBehaviour:
   radiusSteeringFoldout: 1
   SeekBounds:
     TargetObjective: 1
-    MagnitudeMultiplier: 1
+    MagnitudeMultiplier: 1.5
     SensitivityOffset: 0
     ValueWriting: 0
     LayerBlending: 0
@@ -20985,7 +20989,58 @@ MonoBehaviour:
     InnerRadius: 0
     OuterRadius: 15
     RadiusMapping: 2
-    BoundsType: 1
+    BoundsType: 0
+--- !u!114 &2124884427721432639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5745664401417663666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 805961412, guid: b26ce4b80a42c6441af375612ff69ca2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Order: 0
+  Label: Wander
+  initialized: 1
+  tabState:
+    tab0: 0
+    tab1: 0
+    tab2: 0
+    tab3: 0
+    tab4: 0
+  advancedInspector: 0
+  FilteredEnvironments: []
+  GameObjects: []
+  velocityGizmo:
+    Enabled: 0
+    Color: {r: 0.5, g: 0.5, b: 1, a: 1}
+    DirectionScale: 1
+    PointSize: 0.2
+  steeringFoldout: 1
+  Wander:
+    TargetObjective: 0
+    MagnitudeMultiplier: 0.3
+    SensitivityOffset: 0
+    ValueWriting: 0
+    LayerBlending: 0
+    LayerNormalization: 0
+    ValueMapping: 2
+    UseSignificance: 1
+    UseSensorProjection: 1
+    VectorProjection: 1
+    PresetVelocity: 0
+    Prediction: 0
+    PredictionMagnitude: 0
+    Up: {x: 0, y: 0, z: 1}
+    AngleDeviationMin: 25
+    AngleDeviationMax: 45
+    TimeDeviationMin: 1
+    TimeDeviationMax: 5
+    Steadiness: 0.45
+    planarMappingType: 1
 --- !u!114 &2124884427721432625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21038,57 +21093,6 @@ MonoBehaviour:
     AngleMapping: 2
     MaxIncrease: 0.2
     MaxAngle: 45
---- !u!114 &2124884427721432639
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5745664401417663666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 805961412, guid: b26ce4b80a42c6441af375612ff69ca2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Order: 0
-  Label: Wander
-  initialized: 1
-  tabState:
-    tab0: 0
-    tab1: 0
-    tab2: 0
-    tab3: 0
-    tab4: 0
-  advancedInspector: 0
-  FilteredEnvironments: []
-  GameObjects: []
-  velocityGizmo:
-    Enabled: 0
-    Color: {r: 0.5, g: 0.5, b: 1, a: 1}
-    DirectionScale: 1
-    PointSize: 0.2
-  steeringFoldout: 1
-  Wander:
-    TargetObjective: 0
-    MagnitudeMultiplier: 0.3
-    SensitivityOffset: 0
-    ValueWriting: 0
-    LayerBlending: 0
-    LayerNormalization: 0
-    ValueMapping: 2
-    UseSignificance: 1
-    UseSensorProjection: 1
-    VectorProjection: 1
-    PresetVelocity: 0
-    Prediction: 0
-    PredictionMagnitude: 0
-    Up: {x: 0, y: 0, z: 1}
-    AngleDeviationMin: 25
-    AngleDeviationMax: 45
-    TimeDeviationMin: 1
-    TimeDeviationMax: 5
-    Steadiness: 0.45
-    planarMappingType: 1
 --- !u!114 &7862633585050388736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21108,6 +21112,146 @@ MonoBehaviour:
   TrackVelocity: 1
   UpdateLocalBounds: 1
   IgnoreLocalBounds: 0
+--- !u!114 &867840927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5745664401417663666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 495989845, guid: b26ce4b80a42c6441af375612ff69ca2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Order: 0
+  Label: Avoid Walls
+  initialized: 1
+  tabState:
+    tab0: 0
+    tab1: 0
+    tab2: 0
+    tab3: 0
+    tab4: 0
+  advancedInspector: 0
+  FilteredEnvironments:
+  - Obstacles
+  GameObjects: []
+  velocityGizmo:
+    Enabled: 0
+    Color: {r: 0.5, g: 0.5, b: 1, a: 1}
+    DirectionScale: 1
+    PointSize: 0.2
+  steeringFoldout: 1
+  innerRadiusGizmo:
+    Enabled: 0
+    Color: {r: 0.59607846, g: 1, b: 0.5686275, a: 1}
+  outerRadiusGizmo:
+    Enabled: 0
+    Color: {r: 0.2627451, g: 0.79607844, b: 0.24705882, a: 1}
+  innerCircleGizmo:
+    Enabled: 0
+    Color: {r: 0.59607846, g: 1, b: 0.5686275, a: 1}
+  outerCircleGizmo:
+    Enabled: 0
+    Color: {r: 0.2627451, g: 0.79607844, b: 0.24705882, a: 1}
+  radiusSteeringFoldout: 1
+  AvoidBounds:
+    TargetObjective: 0
+    MagnitudeMultiplier: 1.5
+    SensitivityOffset: 0
+    ValueWriting: 0
+    LayerBlending: 0
+    LayerNormalization: 0
+    ValueMapping: 2
+    UseSignificance: 1
+    UseSensorProjection: 1
+    VectorProjection: 0
+    PresetVelocity: 0
+    Prediction: 0
+    PredictionMagnitude: 0
+    InnerRadius: 0
+    OuterRadius: 2
+    RadiusMapping: 2
+    PlaneBend: 0
+    UseVelocity: 0
+    DefaultOrientation: {x: 0, y: 1, z: 0}
+    smoothness: 0
+    boundsType: 1
+  PlaneGizmo:
+    Enabled: 0
+    Color: {r: 0.2627451, g: 0.79607844, b: 0.24705882, a: 1}
+    PlaneSize: 5
+--- !u!114 &4058625367218018721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5745664401417663666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 495989845, guid: b26ce4b80a42c6441af375612ff69ca2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Order: 0
+  Label: Avoid Other Enemies
+  initialized: 1
+  tabState:
+    tab0: 0
+    tab1: 0
+    tab2: 0
+    tab3: 0
+    tab4: 0
+  advancedInspector: 0
+  FilteredEnvironments:
+  - Other Enemies
+  GameObjects: []
+  velocityGizmo:
+    Enabled: 0
+    Color: {r: 0.5, g: 0.5, b: 1, a: 1}
+    DirectionScale: 1
+    PointSize: 0.2
+  steeringFoldout: 1
+  innerRadiusGizmo:
+    Enabled: 0
+    Color: {r: 0.59607846, g: 1, b: 0.5686275, a: 1}
+  outerRadiusGizmo:
+    Enabled: 0
+    Color: {r: 0.2627451, g: 0.79607844, b: 0.24705882, a: 1}
+  innerCircleGizmo:
+    Enabled: 0
+    Color: {r: 0.59607846, g: 1, b: 0.5686275, a: 1}
+  outerCircleGizmo:
+    Enabled: 0
+    Color: {r: 0.2627451, g: 0.79607844, b: 0.24705882, a: 1}
+  radiusSteeringFoldout: 1
+  AvoidBounds:
+    TargetObjective: 0
+    MagnitudeMultiplier: 2
+    SensitivityOffset: 0
+    ValueWriting: 0
+    LayerBlending: 0
+    LayerNormalization: 0
+    ValueMapping: 2
+    UseSignificance: 1
+    UseSensorProjection: 1
+    VectorProjection: 0
+    PresetVelocity: 0
+    Prediction: 0
+    PredictionMagnitude: 0
+    InnerRadius: 1.5
+    OuterRadius: 2.5
+    RadiusMapping: 2
+    PlaneBend: 0
+    UseVelocity: 1
+    DefaultOrientation: {x: 0, y: 1, z: 0}
+    smoothness: 0
+    boundsType: 0
+  PlaneGizmo:
+    Enabled: 0
+    Color: {r: 0.2627451, g: 0.79607844, b: 0.24705882, a: 1}
+    PlaneSize: 5
 --- !u!1 &5745677797622427828
 GameObject:
   m_ObjectHideFlags: 0
@@ -21117,7 +21261,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5739840577332874874}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: UpperLeg_R
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -21149,7 +21293,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5743919143139769872}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Ankle_R
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -21182,7 +21326,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5739883649398166470}
   - component: {fileID: 5647392146262108312}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Chr_Skeleton_03
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -21316,7 +21460,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5744102895867055622}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Finger_04 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -21348,7 +21492,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5740328912608176862}
   - component: {fileID: 5643620437715762816}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Chr_Nomad_Male_03
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -21482,7 +21626,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5744147100852700586}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Toes_L
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -21513,7 +21657,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5739980868170535148}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Thumb_02 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -21545,7 +21689,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5740030336942899842}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Root
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -21577,7 +21721,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5739970411984877450}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: LowerLeg_L
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -21609,7 +21753,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5740008678175175108}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Shoulder_L
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -21641,7 +21785,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5744039187781344200}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: UpperLeg_L
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -21674,7 +21818,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5743907518802731890}
   - component: {fileID: 5643272016860682118}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Chr_Hero_Female_01
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -21808,7 +21952,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5743939163846871064}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Hand_R
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -21843,7 +21987,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5744104296430959940}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Thumb_01
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -21875,7 +22019,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5740006567421296092}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Thumb_03 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -21907,7 +22051,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5744005289043002202}
   - component: {fileID: 5647190127976014968}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Chr_Nomad_Male_02
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -22041,7 +22185,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5744149584792112030}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Neck
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -22074,7 +22218,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5739933068071862294}
   - component: {fileID: 5643435236990513884}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Chr_Undead_Knight_01
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -22206,7 +22350,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5744321606893834078}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Shoulder_R
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -22238,7 +22382,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5744106345226688726}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Elbow_R
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -22270,7 +22414,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5740056310637969406}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Finger_03 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -22302,7 +22446,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5740125399956598930}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: IndexFinger_01
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -22335,7 +22479,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5740152186536988750}
   - component: {fileID: 5647282780500571490}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Chr_Skeleton_02
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -22469,7 +22613,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5744075815270545900}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Finger_03
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -22501,7 +22645,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5744326828370082044}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Finger_04
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -22532,7 +22676,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5744282968333596804}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Hand_L
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -22566,7 +22710,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5739968467633690700}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Ball_R
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -22598,7 +22742,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5744225729194902268}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Ankle_L
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -22630,7 +22774,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5744328026604016678}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Finger_02 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -22662,7 +22806,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5743872438171079302}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: IndexFinger_04
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -22694,7 +22838,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5743928870544333896}
   - component: {fileID: 5647200916848594006}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Chr_Hero_Male_01
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -22828,7 +22972,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5739910173062479172}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Spine_01
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -22860,7 +23004,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5740393385619722394}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Spine_03
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -22894,7 +23038,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5740316895562718662}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: IndexFinger_02
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -22926,7 +23070,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5743888234740825312}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Hips
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -22960,7 +23104,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5740229319689346624}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: IndexFinger_03
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -22992,7 +23136,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5740050175273742798}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Thumb_03
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -23023,7 +23167,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5740062912445433638}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: IndexFinger_03 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -23055,7 +23199,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5740147370737077866}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Head
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -23089,7 +23233,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5739859448810914656}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: IndexFinger_01 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -23121,7 +23265,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5744053223568733172}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Toes_R
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -23152,7 +23296,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5740280568819697356}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Thumb_02
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -23184,7 +23328,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5740242612673212942}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Jaw
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -23215,7 +23359,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5744093111654626788}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Finger_01 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -23247,7 +23391,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5740148430320027054}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Thumb_01 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -23279,7 +23423,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5744260027161837838}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: IndexFinger_04 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -23421,6 +23565,7 @@ MonoBehaviour:
   objectiveAsSpeed: -1
   context: {fileID: 5686843538839662737}
   animator: {fileID: 8354857551015797620}
+  atTarget: 0
 --- !u!114 &178001356840336164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23434,14 +23579,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetSpaces: []
-  deathDelay: 0
+  deathDelay: 3
   maxHealth: 3
   player: {fileID: 0}
   weapon: {fileID: 0}
   animator: {fileID: 0}
   scoreUI: {fileID: 0}
   statusEffects: {fileID: 0}
-  attackDistance: 0
+  attackDistance: 1.5
 --- !u!114 &6336310663177027137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23459,4 +23604,4 @@ MonoBehaviour:
   disarmEffect: {fileID: 0}
   protectEffect: {fileID: 0}
   slowEffect: {fileID: 0}
-  stunEffect: {fileID: 0}
+  stunEffect: {fileID: 1813251273635980108}

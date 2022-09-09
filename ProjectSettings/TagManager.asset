@@ -10,7 +10,6 @@ TagManager:
   - big_stone
   - ground
   - Preciver
-  - Perceiver
   layers:
   - Default
   - TransparentFX

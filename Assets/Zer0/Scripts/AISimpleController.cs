@@ -77,6 +77,7 @@ namespace Zer0
             animatorSpeed *= speedMultiplier;
             animator.SetFloat(Speed, animatorSpeed);
             
+            print(_velocity);
             transform.position += Time.deltaTime * _velocity * context.DecidedDirection;
         }
     }
