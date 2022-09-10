@@ -20987,7 +20987,7 @@ MonoBehaviour:
     Prediction: 0
     PredictionMagnitude: 0
     InnerRadius: 0
-    OuterRadius: 6
+    OuterRadius: 10
     RadiusMapping: 2
     BoundsType: 1
 --- !u!114 &2124884427721432639
@@ -21148,13 +21148,13 @@ MonoBehaviour:
     Color: {r: 0.59607846, g: 1, b: 0.5686275, a: 1}
   outerRadiusGizmo:
     Enabled: 1
-    Color: {r: 0, g: 1, b: 1, a: 1}
+    Color: {r: 1, g: 1, b: 0, a: 1}
   innerCircleGizmo:
     Enabled: 0
     Color: {r: 0.59607846, g: 1, b: 0.5686275, a: 1}
   outerCircleGizmo:
     Enabled: 0
-    Color: {r: 0, g: 1, b: 1, a: 1}
+    Color: {r: 1, g: 1, b: 0, a: 1}
   radiusSteeringFoldout: 1
   AvoidBounds:
     TargetObjective: 0
@@ -21216,14 +21216,14 @@ MonoBehaviour:
     Enabled: 0
     Color: {r: 0.59607846, g: 1, b: 0.5686275, a: 1}
   outerRadiusGizmo:
-    Enabled: 0
-    Color: {r: 0.2627451, g: 0.79607844, b: 0.24705882, a: 1}
+    Enabled: 1
+    Color: {r: 0, g: 0.95642614, b: 1, a: 1}
   innerCircleGizmo:
     Enabled: 0
     Color: {r: 0.59607846, g: 1, b: 0.5686275, a: 1}
   outerCircleGizmo:
     Enabled: 0
-    Color: {r: 0.2627451, g: 0.79607844, b: 0.24705882, a: 1}
+    Color: {r: 0, g: 0.95642614, b: 1, a: 1}
   radiusSteeringFoldout: 1
   AreaMask: 1
   SeekNavMesh:
@@ -21241,14 +21241,14 @@ MonoBehaviour:
     Prediction: 0
     PredictionMagnitude: 0
     InnerRadius: 0.5
-    OuterRadius: 5
+    OuterRadius: 15
     RadiusMapping: 2
-  feelerType: 1
-  feelerCount: 3
+  feelerType: 0
+  feelerCount: 16
   feelerGizmo:
     Enabled: 1
     Color: {r: 0, g: 1, b: 1, a: 1}
-    HitColor: {r: 1, g: 0, b: 1, a: 1}
+    HitColor: {r: 0, g: 1, b: 1, a: 1}
     Size: 0.2
 --- !u!1 &5745677797622427828
 GameObject:
