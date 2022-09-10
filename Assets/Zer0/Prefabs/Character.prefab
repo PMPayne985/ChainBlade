@@ -6468,7 +6468,7 @@ NavMeshObstacle:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8464534221708090954}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Shape: 0
   m_Extents: {x: 0.35, y: 0.9, z: 0.35}
@@ -10430,6 +10430,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8464534223279142171}
     m_Modifications:
+    - target: {fileID: 491778680240881005, guid: 29ebac1b04313a244816443a0de4777f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.003
+      objectReference: {fileID: 0}
+    - target: {fileID: 491778680240881005, guid: 29ebac1b04313a244816443a0de4777f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.315
+      objectReference: {fileID: 0}
     - target: {fileID: 1521711624858029083, guid: 29ebac1b04313a244816443a0de4777f, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -10518,6 +10526,10 @@ PrefabInstance:
       propertyPath: previewKnife
       value: 
       objectReference: {fileID: 9025854956848254008}
+    - target: {fileID: 8558425762916832183, guid: 29ebac1b04313a244816443a0de4777f, type: 3}
+      propertyPath: maxChainsLength
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 9032715362724592812, guid: 29ebac1b04313a244816443a0de4777f, type: 3}
       propertyPath: m_Layer
       value: 0
