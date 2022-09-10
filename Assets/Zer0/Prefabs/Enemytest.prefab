@@ -21176,7 +21176,7 @@ MonoBehaviour:
     PlaneBend: 0
     UseVelocity: 1
     DefaultOrientation: {x: 0, y: 1, z: 0}
-    smoothness: 2
+    smoothness: 1
     boundsType: 1
   PlaneGizmo:
     Enabled: 0
@@ -21195,7 +21195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Order: 0
-  Label: Nav Mesh Seek Target
+  Label: Nav Mesh Avoid
   initialized: 1
   tabState:
     tab0: 0
@@ -21244,7 +21244,7 @@ MonoBehaviour:
     OuterRadius: 25
     RadiusMapping: 2
   feelerType: 1
-  feelerCount: 4
+  feelerCount: 1
   feelerGizmo:
     Enabled: 1
     Color: {r: 0, g: 1, b: 1, a: 1}
