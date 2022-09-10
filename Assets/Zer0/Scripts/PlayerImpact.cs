@@ -129,7 +129,9 @@ namespace Zer0
             
             if (canDamage && col.TryGetComponent(out IDamagable target))
             {
-                _player.EndAttack();
+                if (_player)
+                    _player.EndAttack();
+                
                 target.TakeDamage(damage);
             }
             

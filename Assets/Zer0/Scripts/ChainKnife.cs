@@ -50,7 +50,7 @@ namespace Zer0
         private void Start()
         {
             _emitAt = 1 / emissionRate;
-            _chainHead = Instantiate(knifePrefab, emitPoint, true);
+            _chainHead = Instantiate(knifePrefab);
             _chainHead.GetComponentInChildren<PlayerImpact>().SetChainKnife(this);
             _chainHead.SetActive(false);
             _chain = new List<GameObject>();
@@ -78,7 +78,7 @@ namespace Zer0
         private void ShowPreview()
         {
             var previewPosition = emitPoint.position + _character.forward * .3f;
-            var travelDistance = maxChainsLength / emissionRate;
+            var travelDistance = maxChainsLength * _emitAt;
             var ray = new Ray(previewPosition, _character.forward);
             
             if (Physics.Raycast(ray, out var hit, travelDistance))
@@ -88,7 +88,6 @@ namespace Zer0
             else
             {
                 previewPosition += _character.forward * travelDistance;
-                previewPosition += new Vector3(0, 1, 0);
             }
             
             previewKnife.SetActive(true);
@@ -111,7 +110,7 @@ namespace Zer0
             _chainHead.transform.position = emitPoint.position + _character.forward * 0.3f;
             _chainHead.transform.rotation = _character.rotation;
             
-            var lookPoint = emitPoint.position + _character.forward * maxChainsLength;
+            var lookPoint = emitPoint.position + _character.forward * (maxChainsLength * emissionRate);
 
             _chainHead.transform.LookAt(lookPoint);
             _velocity = _chainHead.transform.forward * knifeVelocity;
@@ -207,7 +206,7 @@ namespace Zer0
 
         private GameObject CreateLink()
         {
-            var link = Instantiate(chainPrefab, _chainHead.transform, false);
+            var link = Instantiate(chainPrefab);
             return link;
         }
 
