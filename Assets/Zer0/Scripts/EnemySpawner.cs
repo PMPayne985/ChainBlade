@@ -68,10 +68,9 @@ namespace Zer0
         private void SpawnEnemy()
         {
             if (spawnOnlyOnce && _totalEnemies >= maxEnemies)
-            {
                 _stopSpawning = true;
-                return;
-            }
+            
+            if (_stopSpawning) return;
             
             if (_activeEnemies >= maxEnemies) return;
 

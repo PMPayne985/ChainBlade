@@ -20769,8 +20769,8 @@ GameObject:
   - component: {fileID: 2124884427721432625}
   - component: {fileID: 2124884427721432624}
   - component: {fileID: 7862633585050388736}
-  - component: {fileID: 867840927}
   - component: {fileID: 4058625367218018721}
+  - component: {fileID: 2614571298059711437}
   m_Layer: 0
   m_Name: AI
   m_TagString: Enemy
@@ -20840,7 +20840,7 @@ MonoBehaviour:
       Epsilons:
       - 0
       - 0.4
-      - 0.2
+      - 0.6
   selfObject: {fileID: 0}
   indicatorGizmo:
     Enabled: 1
@@ -20903,13 +20903,13 @@ MonoBehaviour:
     Color: {r: 0.59607846, g: 1, b: 0.5686275, a: 1}
   outerRadiusGizmo:
     Enabled: 1
-    Color: {r: 0.49019608, g: 0, b: 1, a: 1}
+    Color: {r: 0, g: 1, b: 0, a: 1}
   innerCircleGizmo:
     Enabled: 0
     Color: {r: 0.59607846, g: 1, b: 0.5686275, a: 1}
   outerCircleGizmo:
     Enabled: 0
-    Color: {r: 0.49019608, g: 0, b: 1, a: 1}
+    Color: {r: 0, g: 1, b: 0, a: 1}
   radiusSteeringFoldout: 1
   SeekBounds:
     TargetObjective: 0
@@ -20928,7 +20928,7 @@ MonoBehaviour:
     InnerRadius: 0
     OuterRadius: 20
     RadiusMapping: 2
-    BoundsType: 0
+    BoundsType: 1
 --- !u!114 &5686843538839662723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20942,7 +20942,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Order: 0
-  Label: Avoid Obstacles
+  Label: Avoid Danger
   initialized: 1
   tabState:
     tab0: 0
@@ -20974,7 +20974,7 @@ MonoBehaviour:
   radiusSteeringFoldout: 1
   SeekBounds:
     TargetObjective: 1
-    MagnitudeMultiplier: 1.5
+    MagnitudeMultiplier: 1
     SensitivityOffset: 0
     ValueWriting: 0
     LayerBlending: 0
@@ -20987,9 +20987,9 @@ MonoBehaviour:
     Prediction: 0
     PredictionMagnitude: 0
     InnerRadius: 0
-    OuterRadius: 15
+    OuterRadius: 6
     RadiusMapping: 2
-    BoundsType: 0
+    BoundsType: 1
 --- !u!114 &2124884427721432639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21035,11 +21035,11 @@ MonoBehaviour:
     Prediction: 0
     PredictionMagnitude: 0
     Up: {x: 0, y: 0, z: 1}
-    AngleDeviationMin: 25
-    AngleDeviationMax: 45
+    AngleDeviationMin: 10
+    AngleDeviationMax: 25
     TimeDeviationMin: 1
     TimeDeviationMax: 5
-    Steadiness: 0.45
+    Steadiness: 0.4
     planarMappingType: 1
 --- !u!114 &2124884427721432625
 MonoBehaviour:
@@ -21112,76 +21112,6 @@ MonoBehaviour:
   TrackVelocity: 1
   UpdateLocalBounds: 1
   IgnoreLocalBounds: 0
---- !u!114 &867840927
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5745664401417663666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 495989845, guid: b26ce4b80a42c6441af375612ff69ca2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Order: 0
-  Label: Avoid Walls
-  initialized: 1
-  tabState:
-    tab0: 0
-    tab1: 0
-    tab2: 0
-    tab3: 0
-    tab4: 0
-  advancedInspector: 0
-  FilteredEnvironments:
-  - Obstacles
-  GameObjects: []
-  velocityGizmo:
-    Enabled: 0
-    Color: {r: 0.5, g: 0.5, b: 1, a: 1}
-    DirectionScale: 1
-    PointSize: 0.2
-  steeringFoldout: 1
-  innerRadiusGizmo:
-    Enabled: 0
-    Color: {r: 0.59607846, g: 1, b: 0.5686275, a: 1}
-  outerRadiusGizmo:
-    Enabled: 0
-    Color: {r: 0.2627451, g: 0.79607844, b: 0.24705882, a: 1}
-  innerCircleGizmo:
-    Enabled: 0
-    Color: {r: 0.59607846, g: 1, b: 0.5686275, a: 1}
-  outerCircleGizmo:
-    Enabled: 0
-    Color: {r: 0.2627451, g: 0.79607844, b: 0.24705882, a: 1}
-  radiusSteeringFoldout: 1
-  AvoidBounds:
-    TargetObjective: 0
-    MagnitudeMultiplier: 1.5
-    SensitivityOffset: 0
-    ValueWriting: 0
-    LayerBlending: 0
-    LayerNormalization: 0
-    ValueMapping: 2
-    UseSignificance: 1
-    UseSensorProjection: 1
-    VectorProjection: 0
-    PresetVelocity: 0
-    Prediction: 0
-    PredictionMagnitude: 0
-    InnerRadius: 0
-    OuterRadius: 2
-    RadiusMapping: 2
-    PlaneBend: 0
-    UseVelocity: 0
-    DefaultOrientation: {x: 0, y: 1, z: 0}
-    smoothness: 0
-    boundsType: 1
-  PlaneGizmo:
-    Enabled: 0
-    Color: {r: 0.2627451, g: 0.79607844, b: 0.24705882, a: 1}
-    PlaneSize: 5
 --- !u!114 &4058625367218018721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21217,18 +21147,18 @@ MonoBehaviour:
     Enabled: 0
     Color: {r: 0.59607846, g: 1, b: 0.5686275, a: 1}
   outerRadiusGizmo:
-    Enabled: 0
-    Color: {r: 0.2627451, g: 0.79607844, b: 0.24705882, a: 1}
+    Enabled: 1
+    Color: {r: 0, g: 1, b: 1, a: 1}
   innerCircleGizmo:
     Enabled: 0
     Color: {r: 0.59607846, g: 1, b: 0.5686275, a: 1}
   outerCircleGizmo:
     Enabled: 0
-    Color: {r: 0.2627451, g: 0.79607844, b: 0.24705882, a: 1}
+    Color: {r: 0, g: 1, b: 1, a: 1}
   radiusSteeringFoldout: 1
   AvoidBounds:
     TargetObjective: 0
-    MagnitudeMultiplier: 2
+    MagnitudeMultiplier: 1
     SensitivityOffset: 0
     ValueWriting: 0
     LayerBlending: 0
@@ -21240,18 +21170,86 @@ MonoBehaviour:
     PresetVelocity: 0
     Prediction: 0
     PredictionMagnitude: 0
-    InnerRadius: 1.5
-    OuterRadius: 2.5
+    InnerRadius: 0
+    OuterRadius: 0.5
     RadiusMapping: 2
     PlaneBend: 0
     UseVelocity: 1
     DefaultOrientation: {x: 0, y: 1, z: 0}
-    smoothness: 0
-    boundsType: 0
+    smoothness: 2
+    boundsType: 1
   PlaneGizmo:
     Enabled: 0
     Color: {r: 0.2627451, g: 0.79607844, b: 0.24705882, a: 1}
     PlaneSize: 5
+--- !u!114 &2614571298059711437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5745664401417663666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1237709983, guid: b26ce4b80a42c6441af375612ff69ca2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Order: 0
+  Label: Nav Mesh Seek Target
+  initialized: 1
+  tabState:
+    tab0: 0
+    tab1: 0
+    tab2: 0
+    tab3: 0
+    tab4: 0
+  advancedInspector: 0
+  FilteredEnvironments: []
+  GameObjects: []
+  velocityGizmo:
+    Enabled: 0
+    Color: {r: 0.5, g: 0.5, b: 1, a: 1}
+    DirectionScale: 1
+    PointSize: 0.2
+  steeringFoldout: 1
+  innerRadiusGizmo:
+    Enabled: 0
+    Color: {r: 0.59607846, g: 1, b: 0.5686275, a: 1}
+  outerRadiusGizmo:
+    Enabled: 0
+    Color: {r: 0.2627451, g: 0.79607844, b: 0.24705882, a: 1}
+  innerCircleGizmo:
+    Enabled: 0
+    Color: {r: 0.59607846, g: 1, b: 0.5686275, a: 1}
+  outerCircleGizmo:
+    Enabled: 0
+    Color: {r: 0.2627451, g: 0.79607844, b: 0.24705882, a: 1}
+  radiusSteeringFoldout: 1
+  AreaMask: 1
+  SeekNavMesh:
+    TargetObjective: 2
+    MagnitudeMultiplier: 1
+    SensitivityOffset: 0
+    ValueWriting: 0
+    LayerBlending: 0
+    LayerNormalization: 0
+    ValueMapping: 2
+    UseSignificance: 1
+    UseSensorProjection: 1
+    VectorProjection: 0
+    PresetVelocity: 0
+    Prediction: 0
+    PredictionMagnitude: 0
+    InnerRadius: 0.5
+    OuterRadius: 25
+    RadiusMapping: 2
+  feelerType: 1
+  feelerCount: 4
+  feelerGizmo:
+    Enabled: 1
+    Color: {r: 0, g: 1, b: 1, a: 1}
+    HitColor: {r: 1, g: 0, b: 1, a: 1}
+    Size: 0.2
 --- !u!1 &5745677797622427828
 GameObject:
   m_ObjectHideFlags: 0
@@ -23539,9 +23537,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6618452578671466288}
   serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Mass: 50
+  m_Drag: 10
+  m_AngularDrag: 0.5
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -23565,7 +23563,7 @@ MonoBehaviour:
   objectiveAsSpeed: -1
   context: {fileID: 5686843538839662737}
   animator: {fileID: 8354857551015797620}
-  atTarget: 0
+  stopped: 0
 --- !u!114 &178001356840336164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23583,9 +23581,9 @@ MonoBehaviour:
   maxHealth: 3
   player: {fileID: 0}
   weapon: {fileID: 0}
-  animator: {fileID: 0}
+  animator: {fileID: 8354857551015797620}
   scoreUI: {fileID: 0}
-  statusEffects: {fileID: 0}
+  statusEffects: {fileID: 6336310663177027137}
   attackDistance: 1.5
 --- !u!114 &6336310663177027137
 MonoBehaviour:

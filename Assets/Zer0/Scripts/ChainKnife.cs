@@ -78,8 +78,18 @@ namespace Zer0
         private void ShowPreview()
         {
             var previewPosition = emitPoint.position + _character.forward * .3f;
-            previewPosition += _character.forward * (maxChainsLength / emissionRate);
-            previewPosition += new Vector3(0, 1, 0);
+            var travelDistance = maxChainsLength / emissionRate;
+            var ray = new Ray(previewPosition, _character.forward);
+            
+            if (Physics.Raycast(ray, out var hit, travelDistance))
+            {
+                previewPosition = hit.point;
+            }
+            else
+            {
+                previewPosition += _character.forward * travelDistance;
+                previewPosition += new Vector3(0, 1, 0);
+            }
             
             previewKnife.SetActive(true);
             previewKnife.transform.position = previewPosition;
