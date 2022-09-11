@@ -21170,8 +21170,8 @@ MonoBehaviour:
     PresetVelocity: 0
     Prediction: 0
     PredictionMagnitude: 0
-    InnerRadius: 0
-    OuterRadius: 0.5
+    InnerRadius: 0.5
+    OuterRadius: 1
     RadiusMapping: 2
     PlaneBend: 0
     UseVelocity: 1
@@ -21244,7 +21244,7 @@ MonoBehaviour:
     OuterRadius: 15
     RadiusMapping: 2
   feelerType: 0
-  feelerCount: 16
+  feelerCount: 4
   feelerGizmo:
     Enabled: 1
     Color: {r: 0, g: 1, b: 1, a: 1}
