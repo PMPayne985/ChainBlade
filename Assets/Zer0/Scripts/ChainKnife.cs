@@ -29,6 +29,8 @@ namespace Zer0
 
         private float _distance;
         private float _emitAt;
+        private float _maxChainDistance;
+        private float _chainTravelDistance;
         
         private Vector3 _velocity;
         private Vector3 _lastPosition;
@@ -60,8 +62,10 @@ namespace Zer0
 
         private void Update()
         {
-            if (_launched && (_chain.Count >= maxChainsLength))
-                _launched = false;
+            if (PlayerInput.ChainPreview())
+                ShowPreview();
+            if (PlayerInput.EndChainPreview())
+                EndPreview();
         }
 
         private void FixedUpdate()
@@ -74,17 +78,18 @@ namespace Zer0
 
         private void ShowPreview()
         {
-            var previewPosition = emitPoint.position + _character.forward * .3f;
-            var travelDistance = maxChainsLength * _emitAt;
+            var previewPosition = emitPoint.position;
+            var dist = _chainTravelDistance;
             var ray = new Ray(previewPosition, _character.forward);
-            
-            if (Physics.Raycast(ray, out var hit, travelDistance))
+            if (dist < 3) dist = 3;
+
+            if (Physics.Raycast(ray, out var hit, dist))
             {
                 previewPosition = hit.point;
             }
             else
             {
-                previewPosition += _character.forward * travelDistance;
+                previewPosition += _character.forward * dist;
             }
             
             previewKnife.SetActive(true);
@@ -102,6 +107,7 @@ namespace Zer0
             if (_chainHead.activeInHierarchy) return;
             
             EndPreview();
+            _maxChainDistance = 0;
             _chainHead.SetActive(true);
             knifeBlade.SetActive(false);
             _chainHead.transform.position = emitPoint.position + _character.forward * 0.3f;
@@ -118,7 +124,12 @@ namespace Zer0
         {
             MoveChainHeadForward();
             
-            if (_chain.Count >= maxChainsLength) return;
+            if (_chain.Count >= maxChainsLength)
+            {
+                _chainTravelDistance = _maxChainDistance;
+                _launched = false;
+                return;
+            }
             
             _distance += Vector3.Distance(_lastPosition, _chainHead.transform.position);
             _lastPosition = _chainHead.transform.position;
@@ -132,6 +143,10 @@ namespace Zer0
             _velocity += Vector3.forward * Time.deltaTime;
             _chainHead.transform.position += _velocity * Time.deltaTime;
             _chainHead.transform.rotation = Quaternion.LookRotation(_velocity);
+
+            var dist = Vector3.Distance(emitPoint.position, _chainHead.transform.position);
+            if (dist > _maxChainDistance)
+                _maxChainDistance = dist;
         }
         
         private void ChainReturn()
