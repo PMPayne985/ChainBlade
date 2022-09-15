@@ -6,7 +6,6 @@ namespace Zer0
     public class SpellCasting : MonoBehaviour
     {
         private List<Spell> _spells;
-        private Targeting _targeting;
         private Animator _animator;
         private UISetUp _ui;
 
@@ -24,7 +23,6 @@ namespace Zer0
 
         private void Awake()
         {
-            _targeting = GetComponent<PlayerTargeting>();
             _animator = GetComponent<Animator>();
             _ui = FindObjectOfType<UISetUp>();
         }
@@ -75,7 +73,7 @@ namespace Zer0
         }
 
         public void EnhanceSpell(string spellName, float newDuration, float newFrequency, float newMagnitude,
-            float newImpactDamage, statusEffectType newEffect, bool stationary)
+            int newImpactDamage, statusEffectType newEffect, bool stationary)
         {
             foreach (var thisSpell in _spells)
             {

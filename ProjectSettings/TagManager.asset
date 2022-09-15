@@ -4,29 +4,55 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - collectible
+  - Action
+  - AutoCrouch
+  - Ragdoll
+  - Ignore Ragdoll
+  - Boss
   - Enemy
-  - stone
-  - big_stone
+  - CompanionAI
+  - Weapon
+  - LookAt
+  - Dirt
+  - Wood
+  - Metal
+  - Concrete
+  - Glass
+  - Water
+  - LadderTrigger
+  - ExitWater
+  - Barrel
+  - FreeClimb
+  - ClimbDirection
+  - Zipline
+  - PlayerUI
+  - Collectable
+  - CoverPoint
+  - Interactable
+  - AIAction
+  - collectible
   - ground
-  - Preciver
+  - Obstacle
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Terrain
+  - Ground
   - Water
   - UI
+  - Obstacle
+  - 
   - Player
   - Enemy
-  - Skybox
-  - Object
-  - Map
-  - Obstacle
-  - EnemyInterest
-  - Rocks
-  - Mountain
-  - Plant
+  - CompanionAI
+  - Triggers
+  - StopMove
+  - 
+  - HeadTrack
+  - BodyPart
+  - BlockAIRayCast
+  - Pushable
+  - CoverPoint
   - 
   - 
   - 
@@ -39,14 +65,8 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - PostProcess
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Foreground
-    uniqueID: 2684152781
     locked: 0

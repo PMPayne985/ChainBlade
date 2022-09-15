@@ -44,14 +44,14 @@ namespace Zer0
         private void Awake()
         {
             _character = transform.root;
+            _chainHead = Instantiate(knifePrefab);
             _chainPool = new ObjectPool<GameObject>(CreateLink, OnGetLink, OnReleaseLink, OnDestroyLink, true, 5, 50);
         }
 
         private void Start()
         {
             _emitAt = 1 / emissionRate;
-            _chainHead = Instantiate(knifePrefab);
-            _chainHead.GetComponentInChildren<PlayerImpact>().SetChainKnife(this);
+            _chainHead.GetComponent<PlayerImpact>().SetChainKnifeDependencies(this);
             _chainHead.SetActive(false);
             _chain = new List<GameObject>();
 
@@ -62,9 +62,6 @@ namespace Zer0
         {
             if (_launched && (_chain.Count >= maxChainsLength))
                 _launched = false;
-            
-            if (PlayerInput.ChainPreview() && previewKnife)
-                ShowPreview();
         }
 
         private void FixedUpdate()

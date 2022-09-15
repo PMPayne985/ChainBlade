@@ -1,7 +1,7 @@
-using System;
-using System.Collections.Generic;
+using EmeraldAI;
+using EmeraldAI.Utility;
+using UnityEditor;
 using UnityEngine;
-using UnityEngine.Pool;
 
 namespace Zer0
 {
@@ -14,7 +14,7 @@ namespace Zer0
         private int maxEnemies = 10;
 
         [SerializeField, Tooltip("The prefab that will be used for this enemy spawner.")]
-        private GameObject enemy;
+        private GameObject enemyPrefab;
 
         [SerializeField, Tooltip("Check this if this spawner should spawn up to its max enemies only once. Leave unchecked to spawn endlessly.")]
         private bool spawnOnlyOnce;
@@ -27,19 +27,6 @@ namespace Zer0
         private float _timer;
         private int _activeEnemies;
         private int _totalEnemies;
-        
-        private List<EnemyAI> _myEnemies;
-        private ObjectPool<GameObject> _enemyPool;
-
-        private void Awake()
-        {
-            _enemyPool = new ObjectPool<GameObject>(CreateEnemy, OnGetEnemy, OnReleaseEnemy, OnDestroyEnemy, true, 50, 500);
-        }
-
-        private void Start()
-        {
-            _myEnemies = new List<EnemyAI>();
-        }
 
         private void OnEnable()
         {
@@ -59,12 +46,7 @@ namespace Zer0
                 SpawnEnemy();
             }
         }
-
-        public void ReleaseEnemy(GameObject obj)
-        {
-            _enemyPool.Release(obj);
-        }
-
+        
         private void SpawnEnemy()
         {
             if (spawnOnlyOnce && _totalEnemies >= maxEnemies)
@@ -74,44 +56,24 @@ namespace Zer0
             
             if (_activeEnemies >= maxEnemies) return;
 
-            var newEnemy = _enemyPool.Get();
+            var newEnemy = Instantiate(enemyPrefab, transform.position, transform.rotation, transform);
+            
+            newEnemy.GetComponent<Enemy>().SetSpawner(this);
 
-            newEnemy.transform.position = transform.position;
-            newEnemy.transform.rotation = transform.rotation;
-            newEnemy.GetComponent<EnemyAI>().Revive();
-        }
-
-        private GameObject CreateEnemy()
-        {
-            var newEnemy = Instantiate(enemy, transform, false);
-            newEnemy.GetComponent<EnemyAI>().SetSpawner(this);
-            _myEnemies.Add(newEnemy.GetComponent<EnemyAI>());
-            return newEnemy;
-        }
-
-        private void OnGetEnemy(GameObject obj)
-        {
-            obj.SetActive(true);
             _activeEnemies++;
             _totalEnemies++;
         }
 
-        private void OnReleaseEnemy(GameObject obj)
+        public void DespawnEnemy(Enemy thisEnemy)
         {
-            obj.SetActive(false);
-            
             _activeEnemies--;
-        }
-
-        private void OnDestroyEnemy(GameObject obj)
-        {
-            DestroyImmediate(obj);
         }
 
 #if UNITY_EDITOR
         private void OnDrawGizmos()
         {
-            
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, 1);
         }
 #endif
     }

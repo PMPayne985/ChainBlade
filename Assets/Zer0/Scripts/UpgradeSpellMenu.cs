@@ -32,7 +32,7 @@ namespace Zer0
         private int _baseDotCost = 1; 
 
         public static event Action<Spell> OnBuyNewSpell;
-        public static event Action<string, float, float, float, float, statusEffectType, bool> OnEnhanceSpell;
+        public static event Action<string, float, float, float, int, statusEffectType, bool> OnEnhanceSpell;
         public static event Action<string, Sprite, int, float, float, areaOfEffect> OnChangeSpellParameters;
 
         private void Start()
@@ -99,7 +99,7 @@ namespace Zer0
             }
         }
         
-        private void EnhanceDotSpell(string spellName, float newDuration, float newFrequency, float newMagnitude, float newImpactDamage, statusEffectType newEffect, bool stationary)
+        private void EnhanceDotSpell(string spellName, float newDuration, float newFrequency, float newMagnitude, int newImpactDamage, statusEffectType newEffect, bool stationary)
         {
             if (_baseDotCost % 3 == 0)
             {

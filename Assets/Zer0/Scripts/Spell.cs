@@ -1,4 +1,5 @@
 using System;
+using EmeraldAI;
 using UnityEngine;
 
 namespace Zer0
@@ -12,7 +13,7 @@ namespace Zer0
         [SerializeField, Tooltip("The effect that will be displayed when the spell strikes a target")]
         private GameObject visualEffect;
         [SerializeField, Tooltip("The damage the spell does on impact. (set to 0 if no damage is desired)")]
-        private float impactDamage;
+        private int impactDamage;
         [SerializeField, Tooltip("The number of Spell Points used to cast this spell.")]
         private int cost;
         [SerializeField, Tooltip("The amount of time in seconds all spells will be unavailable after casting this spell.")]
@@ -109,8 +110,8 @@ namespace Zer0
         {
             if (collision.gameObject.TryGetComponent(out StatusEffects sTarget))
                 ApplyStatusEffects(sTarget);
-            if (collision.gameObject.TryGetComponent(out IDamagable dTarget))
-                dTarget.TakeDamage(impactDamage);
+            if (collision.gameObject.TryGetComponent(out EmeraldAISystem dTarget))
+                dTarget.Damage(impactDamage, EmeraldAISystem.TargetType.Player, transform, 400);
         }
         
         private void OnTriggerStay(Collider other)
@@ -161,7 +162,7 @@ namespace Zer0
             if (newAoe != areaOfEffect.None) aoe = newAoe;
         }
 
-        public void SetSpellEffect(float newDuration, float newFrequency, float newMagnitude, float newImpactDamage, statusEffectType newEffect, bool stationary)
+        public void SetSpellEffect(float newDuration, float newFrequency, float newMagnitude, int newImpactDamage, statusEffectType newEffect, bool stationary)
         {
             effectStationary = stationary;
             duration += newDuration;

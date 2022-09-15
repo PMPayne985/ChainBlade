@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 namespace Zer0
 {
@@ -11,11 +12,11 @@ namespace Zer0
         private void IncrementCollected(int increment) 
             => NumCollected += increment;
 
-        public override void Collect()
+        public override void Collect(Collider other)
         {
             IncrementCollected(1);
             OnCollectedLink?.Invoke(this);
-            base.Collect();
+            base.Collect(other);
         }
     }
 }

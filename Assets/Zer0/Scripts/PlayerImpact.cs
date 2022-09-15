@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using EmeraldAI;
+using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace Zer0
@@ -8,7 +9,7 @@ namespace Zer0
         [SerializeField, Tooltip("Force applied to objects struck")]
         private float force = 1f;
         [SerializeField] 
-        private float damage = 1;
+        private int damage = 1;
         [SerializeField, Tooltip("The maximum number of abilities this weapon can have.")]
         private int maxAbilities = 1;
         [SerializeField, Tooltip("The type of this weapon.")]
@@ -31,20 +32,19 @@ namespace Zer0
         private Player _player;
         private AudioSource _audio;
         
-        private statusEffectType[] effects;
-        private float[] durations;
-        private float[] frequencies;
-        private float[] magnitudes;
+        private statusEffectType[] _effects;
+        private float[] _durations;
+        private float[] _frequencies;
+        private float[] _magnitudes;
 
         private void Awake()
         {
-            _player = transform.root.GetComponent<Player>();
             _audio = GetComponent<AudioSource>();
 
-            effects = new statusEffectType[maxAbilities];
-            durations = new float[maxAbilities];
-            frequencies = new float[maxAbilities];
-            magnitudes = new float[maxAbilities];
+            _effects = new statusEffectType[maxAbilities];
+            _durations = new float[maxAbilities];
+            _frequencies = new float[maxAbilities];
+            _magnitudes = new float[maxAbilities];
         }
 
         private void Start()
@@ -56,9 +56,11 @@ namespace Zer0
 
         }
 
-        public void SetChainKnife(ChainKnife newKnife)
+        public void SetChainKnifeDependencies(ChainKnife newKnife)
         {
             chainKnife = newKnife;
+            
+            _player = chainKnife.transform.root.GetComponent<Player>();
         }
 
         public void ChangeDrag(weaponType checkType, bool status)
@@ -70,7 +72,7 @@ namespace Zer0
         public void ChangePush(bool status) => canPush = status;
 
         
-        public void ChangeDamage(bool status, float startingDamage)
+        public void ChangeDamage(bool status, int startingDamage)
         {
             canDamage = status;
             damage = startingDamage;
@@ -81,9 +83,9 @@ namespace Zer0
             if (type != weapon) return;
             
             var isKnown = false;
-            for (var i = 0; i < effects.Length; i++)
+            for (var i = 0; i < _effects.Length; i++)
             {
-                if (effects[i] == newEffectType)
+                if (_effects[i] == newEffectType)
                 {
                     isKnown = true;
                     break;
@@ -92,10 +94,10 @@ namespace Zer0
             
             if (isKnown) return;
 
-            for (var i = 0; i < effects.Length; i++)
+            for (var i = 0; i < _effects.Length; i++)
             {
-                if (effects[i] == statusEffectType.None)
-                    effects[i] = newEffectType;
+                if (_effects[i] == statusEffectType.None)
+                    _effects[i] = newEffectType;
             }
         }
 
@@ -103,40 +105,38 @@ namespace Zer0
         {
             if (type != weapon) return;
             
-            for (int i = 0; i < effects.Length; i++)
+            for (int i = 0; i < _effects.Length; i++)
             {
-                if (effects[i] == effectTypeToChange)
+                if (_effects[i] == effectTypeToChange)
                 {
-                    durations[i] += duration;
-                    frequencies[i] += frequency;
-                    magnitudes[i]  += magnitude;
+                    _durations[i] += duration;
+                    _frequencies[i] += frequency;
+                    _magnitudes[i]  += magnitude;
                 }
             }
         }
         
         private void OnTriggerEnter(Collider col)
         {
-            if (col.CompareTag("Player")) return;
-         
+            if (!col.TryGetComponent(out EmeraldAISystem ai)) return;
+
             PlayImpactSound();
             chainKnife.EndExtension();
             smokeSystem.Play();
 
             if (canPush && col.TryGetComponent(out IPushable pushable))
-                pushable.Push(transform, force);
-            else if (canDrag && col.TryGetComponent(out IDraggable draggable))
-                draggable.Drag(transform);
-            
-            if (canDamage && col.TryGetComponent(out IDamagable target))
             {
-                if (_player)
-                    _player.EndAttack();
-                
-                target.TakeDamage(damage);
+                pushable.Push(transform, force);
+            }
+            else if (canDrag && col.TryGetComponent(out IDraggable draggable))
+            {
+                draggable.Drag(transform);
             }
             
-            if (col.TryGetComponent(out StatusEffects affected))
-                ApplyStatusEffectOnImpact(affected);
+            if (canDamage)
+            {
+                ai.Damage(damage, EmeraldAISystem.TargetType.Player, transform, 400);
+            }
         }
 
         private void PlayImpactSound()
@@ -146,7 +146,7 @@ namespace Zer0
             _audio.PlayOneShot(impactSounds[random]);
         }
         
-        private void UpgradeDamage(weaponType weapon, float newDamage)
+        private void UpgradeDamage(weaponType weapon, int newDamage)
         {
             if (weapon == type)
             {
@@ -156,9 +156,9 @@ namespace Zer0
 
         private void ApplyStatusEffectOnImpact(StatusEffects affected)
         {
-            for (var i = 0; i < effects.Length; i++)
+            for (var i = 0; i < _effects.Length; i++)
             {
-                affected.AddActiveEffect(effects[i], durations[i], frequencies[i], magnitudes[i]);
+                affected.AddActiveEffect(_effects[i], _durations[i], _frequencies[i], _magnitudes[i]);
             }
         }
     }

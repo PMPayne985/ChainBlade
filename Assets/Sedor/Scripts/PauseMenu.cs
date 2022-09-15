@@ -18,13 +18,12 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider sfxSlider;
     
-    private CharacterAnimatorController _player;
+    
     public static bool Paused { get; private set; }
     private bool _optionsBool;
 
     private void Awake()
     {
-        _player = FindObjectOfType<CharacterAnimatorController>();
         OpenAllMenus();
     }
 
@@ -33,8 +32,7 @@ public class PauseMenu : MonoBehaviour
         masterSlider.onValueChanged.AddListener(delegate {MasterVolume(); });
         musicSlider.onValueChanged.AddListener(delegate {MusicVolume(); });
         sfxSlider.onValueChanged.AddListener(delegate {SFXVolume(); });
-        rotationSlider.onValueChanged.AddListener(delegate {SpeedSlider(); });
-        
+
         masterSlider.value = PlayerPrefs.GetFloat("MasterVolume", .5f);
         musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", .5f);
         sfxSlider.value = PlayerPrefs.GetFloat("SFXVolume", .5f);
@@ -54,12 +52,6 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
-    private void SpeedSlider()
-    {
-        _player.SetRotationSettings(rotationSlider.value);
-        PlayerPrefs.SetFloat("RotationSpeed", rotationSlider.value);
-    }
-    
     public void TogglePause()
     {
         if (ChainUpgrade.EnhancementOpen) return;

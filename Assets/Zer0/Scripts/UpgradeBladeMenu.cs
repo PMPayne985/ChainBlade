@@ -42,7 +42,7 @@ namespace Zer0
         private int _totalPoints;
         private bool _chainPullAdded;
 
-        public static event Action<weaponType, float> OnDamageUpgrade;
+        public static event Action<weaponType, int> OnDamageUpgrade;
         public static event Action<statusEffectType, weaponType, float, float, float> OnAddStatusEffect;
         public static event Action<int> OnChainLengthUpgrade;
         public static event Action<weaponType, bool> OnChainPullUpgrade;
