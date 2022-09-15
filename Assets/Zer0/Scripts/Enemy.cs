@@ -35,7 +35,6 @@ namespace Zer0
         public void SetSpawner(EnemySpawner spawner)
         {
             _spawner = spawner;
-            print(spawner.gameObject.name);
         }
         
         public void Drag(Transform dragger)

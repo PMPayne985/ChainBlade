@@ -63,8 +63,8 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - Map
+  - Skybox
   - PostProcess
   m_SortingLayers:
   - name: Default
