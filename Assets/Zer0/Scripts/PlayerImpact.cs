@@ -118,24 +118,25 @@ namespace Zer0
         
         private void OnTriggerEnter(Collider col)
         {
-            if (!col.TryGetComponent(out EmeraldAISystem ai)) return;
-
             PlayImpactSound();
             chainKnife.EndExtension();
             smokeSystem.Play();
 
             if (canPush && col.TryGetComponent(out IPushable pushable))
-            {
+            { 
                 pushable.Push(transform, force);
             }
             else if (canDrag && col.TryGetComponent(out IDraggable draggable))
-            {
+            { 
                 draggable.Drag(transform);
             }
-            
-            if (canDamage)
+
+            if (col.TryGetComponent(out EmeraldAISystem ai))
             {
-                ai.Damage(damage, EmeraldAISystem.TargetType.Player, transform, 400);
+                if (canDamage)
+                {
+                    ai.Damage(damage, EmeraldAISystem.TargetType.Player, transform, 400);
+                }
             }
         }
 
