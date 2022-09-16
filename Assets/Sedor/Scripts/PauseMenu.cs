@@ -13,8 +13,7 @@ public class PauseMenu : MonoBehaviour
     
     [SerializeField] private AudioMixer audioMixer;
     [SerializeField] private AudioMixer footStepMixer;
-
-    [SerializeField] private Slider rotationSlider;
+    
     [SerializeField] private Slider masterSlider;
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider sfxSlider;
@@ -37,8 +36,7 @@ public class PauseMenu : MonoBehaviour
         masterSlider.value = PlayerPrefs.GetFloat("MasterVolume", .5f);
         musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", .5f);
         sfxSlider.value = PlayerPrefs.GetFloat("SFXVolume", .5f);
-        rotationSlider.value = PlayerPrefs.GetFloat("RotationSpeed", .5f);
-        
+
         CloseAllMenus();
     }
 

@@ -45,11 +45,16 @@ namespace Zer0
             
             EnhancementOpen = !EnhancementOpen;
 
+            var knives = FindObjectsOfType<ChainKnife>();
+            
             if (EnhancementOpen)
             {
                 Cursor.lockState = CursorLockMode.Confined;
                 Cursor.visible = true;
-                FindObjectOfType<ChainKnife>().WakeUpAllKnives();
+                foreach (var knife in knives)
+                {
+                    knife.WakeUpAllKnives();
+                }
                 OpenTopMenu();
                 screenDarken.SetActive(true);
                 Time.timeScale = 0;
@@ -59,7 +64,10 @@ namespace Zer0
                 Time.timeScale = 1;
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
-                FindObjectOfType<ChainKnife>().ResetAllBlades();
+                foreach (var knife in knives)
+                {
+                    knife.ResetAllBlades();
+                }
                 screenDarken.SetActive(false);
                 CloseAllMenus();
             }
