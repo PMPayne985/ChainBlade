@@ -40,7 +40,8 @@ namespace Zer0
         public void ToggleUpgradeMenu()
         {
             if (PauseMenu.Paused) return;
-            if (DebugMenu.Instance.MenuOn) return;
+            if (DebugMenu.Instance)
+                if (DebugMenu.Instance.MenuOn) return;
             
             EnhancementOpen = !EnhancementOpen;
 

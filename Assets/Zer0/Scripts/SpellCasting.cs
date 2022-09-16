@@ -8,7 +8,7 @@ namespace Zer0
     {
         private List<Spell> _spells;
         private Animator _animator;
-        //private UISetUp _ui;
+        private UISetUp _ui;
 
         private float _coolDownCounter;
         private bool _onCoolDown;
@@ -19,7 +19,6 @@ namespace Zer0
 
         [SerializeField] private float maxSpellPoints = 10;
         private float _spellPoints;
-        [SerializeField] private Slider magicSlider;
         [SerializeField] private float spellRechargeRate = 0.1f;
         [SerializeField] private Transform launchPoint;
         
@@ -29,14 +28,13 @@ namespace Zer0
         {
             _animator = GetComponent<Animator>();
             if (!_animator) Debug.LogError("SpellCasting is missing an Animator Component.");
-            //_ui = FindObjectOfType<UISetUp>();
+            _ui = FindObjectOfType<UISetUp>();
         }
 
         private void Start()
         {
             _spells = new List<Spell>();
             _spellPoints = maxSpellPoints;
-            //_ui.SetSpellPointDisplay(_spellPoints, maxSpellPoints);
 
             DebugMenu.OnRefillSpellPointsCommand += RecoverSpellPoints;
             UpgradeSpellMenu.OnBuyNewSpell += AddSpell;
@@ -45,8 +43,8 @@ namespace Zer0
             
             AddSpell(testSpell);
             
-            UpdateMagicSlider();
-            magicSlider.maxValue = maxSpellPoints;
+            _ui.UpdateMagicSlider(maxSpellPoints, _spellPoints);
+            _ui.SetSliderMax(maxSpellPoints);
         }
 
         private void Update()
@@ -54,24 +52,24 @@ namespace Zer0
             if (_onCoolDown)
             {
                 _coolDownCounter -= Time.deltaTime;
-                //_ui.SetSpellCoolDown($"{_coolDownCounter}");
+                _ui.SetSpellCoolDown($"{_coolDownCounter}");
                 if (_coolDownCounter <= 0)
                 {
                     _onCoolDown = false;
-                    //_ui.SetSpellCoolDown(string.Empty);
+                    _ui.SetSpellCoolDown(string.Empty);
                 }
             }
 
             if (_spellPoints < maxSpellPoints)
             {
                 _spellPoints += (spellRechargeRate * Time.deltaTime);
-                UpdateMagicSlider();
+                
 
                 if (_spellPoints > maxSpellPoints)
                 {
                     _spellPoints = maxSpellPoints;
-                    UpdateMagicSlider();
                 }
+                _ui.UpdateMagicSlider(maxSpellPoints, _spellPoints);
             }
 
             if (PlayerInput.CastSpell() && CanCast())
@@ -143,7 +141,7 @@ namespace Zer0
                 _activeSpellIndex = 0;
 
             _activeSpell = _spells[_activeSpellIndex];
-            //_ui.SetCurrentSpellInfo(_activeSpell.Name, _activeSpell.Icon);
+            _ui.SetCurrentSpellInfo(_activeSpell.Name, _activeSpell.Icon);
         }
         
         public void CastSpell()
@@ -152,22 +150,11 @@ namespace Zer0
             _coolDownCounter = _activeSpell.CoolDown;
 
             _spellPoints -= _activeSpell.Cost;
-            //_ui.SetSpellPointDisplay(_spellPoints, maxSpellPoints);
-            
+
             var cast = Instantiate(_activeSpell, launchPoint.position, launchPoint.rotation);
             cast.GetComponent<Rigidbody>().AddForce(launchPoint.forward * 5, ForceMode.Impulse);
             
-            UpdateMagicSlider();
-        }
-
-        public void UpdateMagicSlider()
-        {
-            if (maxSpellPoints != magicSlider.maxValue)
-            {
-                magicSlider.maxValue = Mathf.Lerp(magicSlider.maxValue, maxSpellPoints, 2f * Time.fixedDeltaTime);
-                magicSlider.onValueChanged.Invoke(magicSlider.value);
-            }
-            magicSlider.value = _spellPoints;
+            _ui.UpdateMagicSlider(maxSpellPoints, _spellPoints);
         }
 
         public bool CanCast()

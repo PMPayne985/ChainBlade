@@ -18,8 +18,8 @@ MonoBehaviour:
     forward: -1
     right: 0
     defaultDistance: 14
-    maxDistance: 14
-    minDistance: 5
+    maxDistance: 25
+    minDistance: 10
     height: 1
     smooth: 10
     smoothDamp: 0

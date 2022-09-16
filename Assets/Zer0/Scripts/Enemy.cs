@@ -13,6 +13,7 @@ namespace Zer0
         private Transform _target;
         private EmeraldAISystem _aiSystem;
         private ScoreUI _scoreUI;
+        [SerializeField] private GameObject mapMarker;
 
         private EnemySpawner _spawner;
 
@@ -62,6 +63,7 @@ namespace Zer0
         private void RegisterDeath()
         {
             _spawner.DespawnEnemy(this);
+            mapMarker.SetActive(false);
             UpdateScore();
         }
 
