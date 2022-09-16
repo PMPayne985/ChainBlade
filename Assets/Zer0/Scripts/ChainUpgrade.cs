@@ -48,6 +48,7 @@ namespace Zer0
             if (EnhancementOpen)
             {
                 Cursor.lockState = CursorLockMode.Confined;
+                Cursor.visible = true;
                 FindObjectOfType<ChainKnife>().WakeUpAllKnives();
                 OpenTopMenu();
                 screenDarken.SetActive(true);
@@ -57,6 +58,7 @@ namespace Zer0
             {
                 Time.timeScale = 1;
                 Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
                 FindObjectOfType<ChainKnife>().ResetAllBlades();
                 screenDarken.SetActive(false);
                 CloseAllMenus();

@@ -142,6 +142,8 @@ namespace Zer0
 
         private void PlayImpactSound()
         {
+            if (impactSounds.Length < 1) return;
+            
             var random = Random.Range(0, impactSounds.Length);
             
             _audio.PlayOneShot(impactSounds[random]);

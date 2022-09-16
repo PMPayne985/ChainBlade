@@ -11,7 +11,8 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject optionsPause;
     [SerializeField] private ChainUpgrade enhancementMenu;
     
-    [SerializeField] private AudioMixer testMixer;
+    [SerializeField] private AudioMixer audioMixer;
+    [SerializeField] private AudioMixer footStepMixer;
 
     [SerializeField] private Slider rotationSlider;
     [SerializeField] private Slider masterSlider;
@@ -55,7 +56,8 @@ public class PauseMenu : MonoBehaviour
     public void TogglePause()
     {
         if (ChainUpgrade.EnhancementOpen) return;
-        if (DebugMenu.Instance.MenuOn) return;
+        if (DebugMenu.Instance)
+            if (DebugMenu.Instance.MenuOn) return;
         
         Paused = !Paused;
         
@@ -66,6 +68,7 @@ public class PauseMenu : MonoBehaviour
             optionsPause.SetActive(false);
             Time.timeScale = 0;
             Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
         }
         else
         {
@@ -75,6 +78,7 @@ public class PauseMenu : MonoBehaviour
             _optionsBool = false;
             Time.timeScale = 1;
             Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
     }
 
@@ -108,19 +112,20 @@ public class PauseMenu : MonoBehaviour
     
     private void MasterVolume()
     {
-        testMixer.SetFloat("Master", Mathf.Log10(masterSlider.value) * 20);
+        audioMixer.SetFloat("Master", Mathf.Log10(masterSlider.value) * 20);
         PlayerPrefs.SetFloat("MasterVolume", masterSlider.value);
     }
 
     private void MusicVolume()
     {
-        testMixer.SetFloat("Music", Mathf.Log10(musicSlider.value) * 20);
+        audioMixer.SetFloat("Music", Mathf.Log10(musicSlider.value) * 20);
         PlayerPrefs.SetFloat("MusicVolume", musicSlider.value);
     }
 
     private void SFXVolume()
     {
-        testMixer.SetFloat("SFX", Mathf.Log10(sfxSlider.value) * 20);
+        audioMixer.SetFloat("SFX", Mathf.Log10(sfxSlider.value) * 20);
+        footStepMixer.SetFloat("Master",Mathf.Log10(sfxSlider.value) * 20);
         PlayerPrefs.SetFloat("SFXVolume", sfxSlider.value);
     }
 
