@@ -12,7 +12,7 @@ namespace Zer0
 
         public static bool UpgradeMenu() => Input.GetButtonUp("Upgrade");
         public static bool NextSpell() => Input.GetButtonUp("NextSpell");
-        public static bool CastSpell() => Input.GetButtonUp("CastSpell");
+        public static bool CastSpell() => Input.GetKeyUp(KeyCode.Space);
 
         public static bool Debug() => Input.GetButtonUp("Debug");
     }

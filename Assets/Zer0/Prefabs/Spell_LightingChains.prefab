@@ -55,7 +55,7 @@ MonoBehaviour:
   visualEffect: {fileID: 4631079980008022893, guid: dd789709a8d62f04c900cb9ab2416655, type: 3}
   impactDamage: 1
   cost: 2
-  coolDown: 1.5
+  coolDown: 3
   range: 100
   aoe: 1
   explosionSpeed: 1
