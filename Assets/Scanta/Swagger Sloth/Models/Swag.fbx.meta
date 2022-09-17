@@ -1,0 +1,2775 @@
+fileFormatVersion: 2
+guid: 49aeaae89854240f4b771c857e19c439
+ModelImporter:
+  serializedVersion: 26
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: GLASES_STICK
+  - first:
+      1: 100002
+    second: glass_grp
+  - first:
+      1: 100004
+    second: GLASSES
+  - first:
+      1: 100006
+    second: GLASSES1
+  - first:
+      1: 100008
+    second: polySurface1
+  - first:
+      1: 100010
+    second: polySurface316
+  - first:
+      1: 100012
+    second: polySurface617
+  - first:
+      1: 100014
+    second: polySurface878
+  - first:
+      1: 100016
+    second: //RootNode
+  - first:
+      1: 100018
+    second: sloth_rig_0005:AimEye
+  - first:
+      1: 100020
+    second: sloth_rig_0005:AimFollowEye
+  - first:
+      1: 100022
+    second: sloth_rig_0005:AimFollowOffEye
+  - first:
+      1: 100024
+    second: sloth_rig_0005:AimFollowOnEye
+  - first:
+      1: 100026
+    second: sloth_rig_0005:AimOffsetEye
+  - first:
+      1: 100028
+    second: sloth_rig_0005:AimSystem
+  - first:
+      1: 100030
+    second: sloth_rig_0005:Ankle_L
+  - first:
+      1: 100032
+    second: sloth_rig_0005:Ankle_R
+  - first:
+      1: 100034
+    second: sloth_rig_0005:BendSystem
+  - first:
+      1: 100036
+    second: sloth_rig_0005:Chest_M
+  - first:
+      1: 100038
+    second: sloth_rig_0005:ConstraintSystem
+  - first:
+      1: 100040
+    second: sloth_rig_0005:DeformationSystem
+  - first:
+      1: 100042
+    second: sloth_rig_0005:DrivingSystem
+  - first:
+      1: 100044
+    second: sloth_rig_0005:DynamicSystem
+  - first:
+      1: 100046
+    second: sloth_rig_0005:Elbow_L
+  - first:
+      1: 100048
+    second: sloth_rig_0005:Elbow_R
+  - first:
+      1: 100050
+    second: sloth_rig_0005:FitSkeleton
+  - first:
+      1: 100052
+    second: sloth_rig_0005:FKExtraHip_L
+  - first:
+      1: 100054
+    second: sloth_rig_0005:FKExtraHip_R
+  - first:
+      1: 100056
+    second: sloth_rig_0005:FKExtraIndexFinger1_L
+  - first:
+      1: 100058
+    second: sloth_rig_0005:FKExtraIndexFinger1_R
+  - first:
+      1: 100060
+    second: sloth_rig_0005:FKExtraMiddleFinger1_L
+  - first:
+      1: 100062
+    second: sloth_rig_0005:FKExtraMiddleFinger1_R
+  - first:
+      1: 100064
+    second: sloth_rig_0005:FKExtraNeck_M
+  - first:
+      1: 100066
+    second: sloth_rig_0005:FKExtraPinkyFinger1_L
+  - first:
+      1: 100068
+    second: sloth_rig_0005:FKExtraPinkyFinger1_R
+  - first:
+      1: 100070
+    second: sloth_rig_0005:FKExtraRingFinger1_L
+  - first:
+      1: 100072
+    second: sloth_rig_0005:FKExtraRingFinger1_R
+  - first:
+      1: 100074
+    second: sloth_rig_0005:FKExtraRoot_M
+  - first:
+      1: 100076
+    second: sloth_rig_0005:FKExtraScapula_L
+  - first:
+      1: 100078
+    second: sloth_rig_0005:FKExtraScapula_R
+  - first:
+      1: 100080
+    second: sloth_rig_0005:FKExtraShoulder_L
+  - first:
+      1: 100082
+    second: sloth_rig_0005:FKExtraShoulder_R
+  - first:
+      1: 100084
+    second: sloth_rig_0005:FKExtraThumbFinger1_R
+  - first:
+      1: 100086
+    second: sloth_rig_0005:FKIKMixElbow_L
+  - first:
+      1: 100088
+    second: sloth_rig_0005:FKIKMixElbow_R
+  - first:
+      1: 100090
+    second: sloth_rig_0005:FKIKParentConstraintArm_L
+  - first:
+      1: 100092
+    second: sloth_rig_0005:FKIKParentConstraintArm_R
+  - first:
+      1: 100094
+    second: sloth_rig_0005:FKIKParentConstraintLeg_L
+  - first:
+      1: 100096
+    second: sloth_rig_0005:FKIKParentConstraintLeg_R
+  - first:
+      1: 100098
+    second: sloth_rig_0005:FKIKParentConstraintSpine_M
+  - first:
+      1: 100100
+    second: sloth_rig_0005:FKIKSystem
+  - first:
+      1: 100102
+    second: sloth_rig_0005:FKOffsetHip_L
+  - first:
+      1: 100104
+    second: sloth_rig_0005:FKOffsetHip_R
+  - first:
+      1: 100106
+    second: sloth_rig_0005:FKOffsetIndexFinger1_L
+  - first:
+      1: 100108
+    second: sloth_rig_0005:FKOffsetIndexFinger1_R
+  - first:
+      1: 100110
+    second: sloth_rig_0005:FKOffsetMiddleFinger1_L
+  - first:
+      1: 100112
+    second: sloth_rig_0005:FKOffsetMiddleFinger1_R
+  - first:
+      1: 100114
+    second: sloth_rig_0005:FKOffsetNeck_M
+  - first:
+      1: 100116
+    second: sloth_rig_0005:FKOffsetPinkyFinger1_L
+  - first:
+      1: 100118
+    second: sloth_rig_0005:FKOffsetPinkyFinger1_R
+  - first:
+      1: 100120
+    second: sloth_rig_0005:FKOffsetRingFinger1_L
+  - first:
+      1: 100122
+    second: sloth_rig_0005:FKOffsetRingFinger1_R
+  - first:
+      1: 100124
+    second: sloth_rig_0005:FKOffsetRoot_M
+  - first:
+      1: 100126
+    second: sloth_rig_0005:FKOffsetScapula_L
+  - first:
+      1: 100128
+    second: sloth_rig_0005:FKOffsetScapula_R
+  - first:
+      1: 100130
+    second: sloth_rig_0005:FKOffsetShoulder_L
+  - first:
+      1: 100132
+    second: sloth_rig_0005:FKOffsetShoulder_R
+  - first:
+      1: 100134
+    second: sloth_rig_0005:FKOffsetThumbFinger1_L
+  - first:
+      1: 100136
+    second: sloth_rig_0005:FKOffsetThumbFinger1_R
+  - first:
+      1: 100138
+    second: sloth_rig_0005:FKParentConstraintToChest_M
+  - first:
+      1: 100140
+    second: sloth_rig_0005:FKParentConstraintToRoot_M
+  - first:
+      1: 100142
+    second: sloth_rig_0005:FKParentConstraintToScapula_L
+  - first:
+      1: 100144
+    second: sloth_rig_0005:FKParentConstraintToScapula_R
+  - first:
+      1: 100146
+    second: sloth_rig_0005:FKParentConstraintToWrist_L
+  - first:
+      1: 100148
+    second: sloth_rig_0005:FKParentConstraintToWrist_R
+  - first:
+      1: 100150
+    second: sloth_rig_0005:FKSystem
+  - first:
+      1: 100152
+    second: sloth_rig_0005:FULL_FINAL_2:polySurface1
+  - first:
+      1: 100154
+    second: sloth_rig_0005:geo
+  - first:
+      1: 100156
+    second: sloth_rig_0005:GlobalHead_M
+  - first:
+      1: 100158
+    second: sloth_rig_0005:GlobalOffsetHead_M
+  - first:
+      1: 100160
+    second: sloth_rig_0005:GlobalSystem
+  - first:
+      1: 100162
+    second: sloth_rig_0005:Group
+  - first:
+      1: 100164
+    second: sloth_rig_0005:Head_M
+  - first:
+      1: 100166
+    second: sloth_rig_0005:HeadEnd_M
+  - first:
+      1: 100168
+    second: sloth_rig_0005:Hip_L
+  - first:
+      1: 100170
+    second: sloth_rig_0005:Hip_R
+  - first:
+      1: 100172
+    second: sloth_rig_0005:IKCurve
+  - first:
+      1: 100174
+    second: sloth_rig_0005:IKdistanceArm_L
+  - first:
+      1: 100176
+    second: sloth_rig_0005:IKdistanceArm_R
+  - first:
+      1: 100178
+    second: sloth_rig_0005:IKdistanceLeg_L
+  - first:
+      1: 100180
+    second: sloth_rig_0005:IKdistanceLeg_R
+  - first:
+      1: 100182
+    second: sloth_rig_0005:IKExtraArm_L
+  - first:
+      1: 100184
+    second: sloth_rig_0005:IKExtraArm_R
+  - first:
+      1: 100186
+    second: sloth_rig_0005:IKExtraLeg_L
+  - first:
+      1: 100188
+    second: sloth_rig_0005:IKExtraLeg_R
+  - first:
+      1: 100190
+    second: sloth_rig_0005:IKExtraSpine1_M
+  - first:
+      1: 100192
+    second: sloth_rig_0005:IKExtraSpine2_M
+  - first:
+      1: 100194
+    second: sloth_rig_0005:IKfake0Spine_M
+  - first:
+      1: 100196
+    second: sloth_rig_0005:IKfake1Spine_M
+  - first:
+      1: 100198
+    second: sloth_rig_0005:IKFake1UpLocSpine_M
+  - first:
+      1: 100200
+    second: sloth_rig_0005:IKfake2Spine_M
+  - first:
+      1: 100202
+    second: sloth_rig_0005:IKfake3Spine_M
+  - first:
+      1: 100204
+    second: sloth_rig_0005:IKFollow
+  - first:
+      1: 100206
+    second: sloth_rig_0005:IKHandle
+  - first:
+      1: 100208
+    second: sloth_rig_0005:IKJoints
+  - first:
+      1: 100210
+    second: sloth_rig_0005:IKMessure
+  - first:
+      1: 100212
+    second: sloth_rig_0005:IKMessureFromHip_L
+  - first:
+      1: 100214
+    second: sloth_rig_0005:IKMessureFromHip_R
+  - first:
+      1: 100216
+    second: sloth_rig_0005:IKMessureFromShoulder_L
+  - first:
+      1: 100218
+    second: sloth_rig_0005:IKMessureFromShoulder_R
+  - first:
+      1: 100220
+    second: sloth_rig_0005:IKmessureLoc1Arm_L
+  - first:
+      1: 100222
+    second: sloth_rig_0005:IKmessureLoc1Arm_R
+  - first:
+      1: 100224
+    second: sloth_rig_0005:IKmessureLoc1Leg_L
+  - first:
+      1: 100226
+    second: sloth_rig_0005:IKmessureLoc1Leg_R
+  - first:
+      1: 100228
+    second: sloth_rig_0005:IKmessureLoc2Arm_L
+  - first:
+      1: 100230
+    second: sloth_rig_0005:IKmessureLoc2Arm_R
+  - first:
+      1: 100232
+    second: sloth_rig_0005:IKmessureLoc2Leg_L
+  - first:
+      1: 100234
+    second: sloth_rig_0005:IKmessureLoc2Leg_R
+  - first:
+      1: 100236
+    second: sloth_rig_0005:IKOffsetArm_L
+  - first:
+      1: 100238
+    second: sloth_rig_0005:IKOffsetArm_LFollow
+  - first:
+      1: 100240
+    second: sloth_rig_0005:IKOffsetArm_LFollowNoScale
+  - first:
+      1: 100242
+    second: sloth_rig_0005:IKOffsetArm_LStatic
+  - first:
+      1: 100244
+    second: sloth_rig_0005:IKOffsetArm_R
+  - first:
+      1: 100246
+    second: sloth_rig_0005:IKOffsetArm_RFollow
+  - first:
+      1: 100248
+    second: sloth_rig_0005:IKOffsetArm_RFollowNoScale
+  - first:
+      1: 100250
+    second: sloth_rig_0005:IKOffsetArm_RStatic
+  - first:
+      1: 100252
+    second: sloth_rig_0005:IKOffsetLeg_L
+  - first:
+      1: 100254
+    second: sloth_rig_0005:IKOffsetLeg_R
+  - first:
+      1: 100256
+    second: sloth_rig_0005:IKOffsetSpine1_M
+  - first:
+      1: 100258
+    second: sloth_rig_0005:IKOffsetSpine2_M
+  - first:
+      1: 100260
+    second: sloth_rig_0005:IKParentConstraintHip_L
+  - first:
+      1: 100262
+    second: sloth_rig_0005:IKParentConstraintHip_R
+  - first:
+      1: 100264
+    second: sloth_rig_0005:IKParentConstraintRoot_M
+  - first:
+      1: 100266
+    second: sloth_rig_0005:IKParentConstraintShoulder_L
+  - first:
+      1: 100268
+    second: sloth_rig_0005:IKParentConstraintShoulder_R
+  - first:
+      1: 100270
+    second: sloth_rig_0005:IKRootConstraint
+  - first:
+      1: 100272
+    second: sloth_rig_0005:IKScalerChest_M
+  - first:
+      1: 100274
+    second: sloth_rig_0005:IKScalerRoot_M
+  - first:
+      1: 100276
+    second: sloth_rig_0005:IKScalerSpine1_M
+  - first:
+      1: 100278
+    second: sloth_rig_0005:IKSpChest_M
+  - first:
+      1: 100280
+    second: sloth_rig_0005:IKSpChestFollowOffset_M
+  - first:
+      1: 100282
+    second: sloth_rig_0005:IKSpine0AlignTo_M
+  - first:
+      1: 100284
+    second: sloth_rig_0005:IKSpine1_M
+  - first:
+      1: 100286
+    second: sloth_rig_0005:IKSpine2_M
+  - first:
+      1: 100288
+    second: sloth_rig_0005:IKSpine2AlignTo_M
+  - first:
+      1: 100290
+    second: sloth_rig_0005:IKSpine2AlignUnIKTwistTo_M
+  - first:
+      1: 100292
+    second: sloth_rig_0005:IKSpine2AlignUnIKTwistToOffset_M
+  - first:
+      1: 100294
+    second: sloth_rig_0005:IKSpineCurve_M
+  - first:
+      1: 100296
+    second: sloth_rig_0005:IKSpineHandle_M
+  - first:
+      1: 100298
+    second: sloth_rig_0005:IKSpineLocator0_M
+  - first:
+      1: 100300
+    second: sloth_rig_0005:IKSpineLocator1_M
+  - first:
+      1: 100302
+    second: sloth_rig_0005:IKSpineLocator2_M
+  - first:
+      1: 100304
+    second: sloth_rig_0005:IKSpineLocator3_M
+  - first:
+      1: 100306
+    second: sloth_rig_0005:IKSpRoot_M
+  - first:
+      1: 100308
+    second: sloth_rig_0005:IKSpRootFollowOffset_M
+  - first:
+      1: 100310
+    second: sloth_rig_0005:IKSpSpine1_M
+  - first:
+      1: 100312
+    second: sloth_rig_0005:IKSpSpine1FollowOffset_M
+  - first:
+      1: 100314
+    second: sloth_rig_0005:IKSpSpineOffset_M
+  - first:
+      1: 100316
+    second: sloth_rig_0005:IKStatic
+  - first:
+      1: 100318
+    second: sloth_rig_0005:IKStiffOrientSpine1_M
+  - first:
+      1: 100320
+    second: sloth_rig_0005:IKStiffOrientSpine2_M
+  - first:
+      1: 100322
+    second: sloth_rig_0005:IKSystem
+  - first:
+      1: 100324
+    second: sloth_rig_0005:IKX2Chest_M
+  - first:
+      1: 100326
+    second: sloth_rig_0005:IKX2Elbow_L
+  - first:
+      1: 100328
+    second: sloth_rig_0005:IKX2Elbow_R
+  - first:
+      1: 100330
+    second: sloth_rig_0005:IKX2Root_M
+  - first:
+      1: 100332
+    second: sloth_rig_0005:IKX2Shoulder_L
+  - first:
+      1: 100334
+    second: sloth_rig_0005:IKX2Shoulder_R
+  - first:
+      1: 100336
+    second: sloth_rig_0005:IKX2Spine1_M
+  - first:
+      1: 100338
+    second: sloth_rig_0005:IKX2Wrist_L
+  - first:
+      1: 100340
+    second: sloth_rig_0005:IKX2Wrist_R
+  - first:
+      1: 100342
+    second: sloth_rig_0005:IKXChest_M
+  - first:
+      1: 100344
+    second: sloth_rig_0005:IKXElbow_L
+  - first:
+      1: 100346
+    second: sloth_rig_0005:IKXElbow_R
+  - first:
+      1: 100348
+    second: sloth_rig_0005:IKXOffsetHip_L
+  - first:
+      1: 100350
+    second: sloth_rig_0005:IKXOffsetHip_R
+  - first:
+      1: 100352
+    second: sloth_rig_0005:IKXOffsetRoot_M
+  - first:
+      1: 100354
+    second: sloth_rig_0005:IKXOffsetShoulder_L
+  - first:
+      1: 100356
+    second: sloth_rig_0005:IKXOffsetShoulder_R
+  - first:
+      1: 100358
+    second: sloth_rig_0005:IKXRoot_M
+  - first:
+      1: 100360
+    second: sloth_rig_0005:IKXShoulder_L
+  - first:
+      1: 100362
+    second: sloth_rig_0005:IKXShoulder_R
+  - first:
+      1: 100364
+    second: sloth_rig_0005:IKXSpine1_M
+  - first:
+      1: 100366
+    second: sloth_rig_0005:IKXWrist_L
+  - first:
+      1: 100368
+    second: sloth_rig_0005:IKXWrist_R
+  - first:
+      1: 100370
+    second: sloth_rig_0005:IndexFinger1_L
+  - first:
+      1: 100372
+    second: sloth_rig_0005:IndexFinger1_R
+  - first:
+      1: 100374
+    second: sloth_rig_0005:Jaw_M
+  - first:
+      1: 100376
+    second: sloth_rig_0005:JawEnd_M
+  - first:
+      1: 100378
+    second: sloth_rig_0005:jnt_L_eye
+  - first:
+      1: 100380
+    second: sloth_rig_0005:jnt_R_eye
+  - first:
+      1: 100382
+    second: sloth_rig_0005:Knee_L
+  - first:
+      1: 100384
+    second: sloth_rig_0005:Knee_R
+  - first:
+      1: 100386
+    second: sloth_rig_0005:L_nails
+  - first:
+      1: 100388
+    second: sloth_rig_0005:LegLockConstrained
+  - first:
+      1: 100390
+    second: sloth_rig_0005:Main
+  - first:
+      1: 100392
+    second: sloth_rig_0005:MiddleFinger1_L
+  - first:
+      1: 100394
+    second: sloth_rig_0005:MiddleFinger1_R
+  - first:
+      1: 100396
+    second: sloth_rig_0005:MotionSystem
+  - first:
+      1: 100398
+    second: sloth_rig_0005:nail_L_leg
+  - first:
+      1: 100400
+    second: sloth_rig_0005:Neck_M
+  - first:
+      1: 100402
+    second: sloth_rig_0005:PinkyFinger1_L
+  - first:
+      1: 100404
+    second: sloth_rig_0005:PinkyFinger1_R
+  - first:
+      1: 100406
+    second: sloth_rig_0005:PoleAimLeg_L
+  - first:
+      1: 100408
+    second: sloth_rig_0005:PoleAimLeg_R
+  - first:
+      1: 100410
+    second: sloth_rig_0005:PoleAnnotationArm_L
+  - first:
+      1: 100412
+    second: sloth_rig_0005:PoleAnnotationArm_R
+  - first:
+      1: 100414
+    second: sloth_rig_0005:PoleArm_R
+  - first:
+      1: 100416
+    second: sloth_rig_0005:PoleExtraArm_L
+  - first:
+      1: 100418
+    second: sloth_rig_0005:PoleExtraArm_R
+  - first:
+      1: 100420
+    second: sloth_rig_0005:PoleExtraLeg_L
+  - first:
+      1: 100422
+    second: sloth_rig_0005:PoleExtraLeg_R
+  - first:
+      1: 100424
+    second: sloth_rig_0005:PoleOffsetArm_L
+  - first:
+      1: 100426
+    second: sloth_rig_0005:PoleOffsetArm_LStatic
+  - first:
+      1: 100428
+    second: sloth_rig_0005:PoleOffsetArm_R
+  - first:
+      1: 100430
+    second: sloth_rig_0005:PoleOffsetArm_RStatic
+  - first:
+      1: 100432
+    second: sloth_rig_0005:PoleOffsetLeg_L
+  - first:
+      1: 100434
+    second: sloth_rig_0005:PoleOffsetLeg_LFollow
+  - first:
+      1: 100436
+    second: sloth_rig_0005:PoleOffsetLeg_LFollowNoScale
+  - first:
+      1: 100438
+    second: sloth_rig_0005:PoleOffsetLeg_LStatic
+  - first:
+      1: 100440
+    second: sloth_rig_0005:PoleOffsetLeg_R
+  - first:
+      1: 100442
+    second: sloth_rig_0005:PoleOffsetLeg_RFollow
+  - first:
+      1: 100444
+    second: sloth_rig_0005:PoleOffsetLeg_RFollowNoScale
+  - first:
+      1: 100446
+    second: sloth_rig_0005:PoleOffsetLeg_RStatic
+  - first:
+      1: 100448
+    second: sloth_rig_0005:polySurface1
+  - first:
+      1: 100450
+    second: sloth_rig_0005:polySurface54
+  - first:
+      1: 100452
+    second: sloth_rig_0005:polySurface55
+  - first:
+      1: 100454
+    second: sloth_rig_0005:R_leg
+  - first:
+      1: 100456
+    second: sloth_rig_0005:R_nails
+  - first:
+      1: 100458
+    second: sloth_rig_0005:Root_M
+  - first:
+      1: 100460
+    second: sloth_rig_0005:RootExtraX_M
+  - first:
+      1: 100462
+    second: sloth_rig_0005:RootOffsetX_M
+  - first:
+      1: 100464
+    second: sloth_rig_0005:RootSystem
+  - first:
+      1: 100466
+    second: sloth_rig_0005:Scapula_L
+  - first:
+      1: 100468
+    second: sloth_rig_0005:Scapula_R
+  - first:
+      1: 100470
+    second: sloth_rig_0005:SDK1FKIndexFinger1_L
+  - first:
+      1: 100472
+    second: sloth_rig_0005:SDK1FKIndexFinger1_R
+  - first:
+      1: 100474
+    second: sloth_rig_0005:SDK1FKMiddleFinger1_L
+  - first:
+      1: 100476
+    second: sloth_rig_0005:SDK1FKMiddleFinger1_R
+  - first:
+      1: 100478
+    second: sloth_rig_0005:SDK1FKPinkyFinger1_L
+  - first:
+      1: 100480
+    second: sloth_rig_0005:SDK1FKPinkyFinger1_R
+  - first:
+      1: 100482
+    second: sloth_rig_0005:SDK1FKRingFinger1_L
+  - first:
+      1: 100484
+    second: sloth_rig_0005:SDK1FKRingFinger1_R
+  - first:
+      1: 100486
+    second: sloth_rig_0005:SDK2FKIndexFinger1_L
+  - first:
+      1: 100488
+    second: sloth_rig_0005:SDK2FKIndexFinger1_R
+  - first:
+      1: 100490
+    second: sloth_rig_0005:SDK2FKPinkyFinger1_L
+  - first:
+      1: 100492
+    second: sloth_rig_0005:SDK2FKPinkyFinger1_R
+  - first:
+      1: 100494
+    second: sloth_rig_0005:SDK2FKRingFinger1_L
+  - first:
+      1: 100496
+    second: sloth_rig_0005:SDK2FKRingFinger1_R
+  - first:
+      1: 100498
+    second: sloth_rig_0005:Shoulder_L
+  - first:
+      1: 100500
+    second: sloth_rig_0005:Shoulder_R
+  - first:
+      1: 100502
+    second: sloth_rig_0005:ShoulderPart1_L
+  - first:
+      1: 100504
+    second: sloth_rig_0005:ShoulderPart1_R
+  - first:
+      1: 100506
+    second: sloth_rig_0005:ShoulderPart2_L
+  - first:
+      1: 100508
+    second: sloth_rig_0005:ShoulderPart2_R
+  - first:
+      1: 100510
+    second: sloth_rig_0005:Spine1_M
+  - first:
+      1: 100512
+    second: sloth_rig_0005:teeth_down
+  - first:
+      1: 100514
+    second: sloth_rig_0005:ThumbFinger1_L
+  - first:
+      1: 100516
+    second: sloth_rig_0005:ThumbFinger1_R
+  - first:
+      1: 100518
+    second: sloth_rig_0005:Toes_L
+  - first:
+      1: 100520
+    second: sloth_rig_0005:Toes_R
+  - first:
+      1: 100522
+    second: sloth_rig_0005:ToesEnd_L
+  - first:
+      1: 100524
+    second: sloth_rig_0005:ToesEnd_R
+  - first:
+      1: 100526
+    second: sloth_rig_0005:transform1
+  - first:
+      1: 100528
+    second: sloth_rig_0005:TwistBalancerChest_M
+  - first:
+      1: 100530
+    second: sloth_rig_0005:TwistBalancerElbow_L
+  - first:
+      1: 100532
+    second: sloth_rig_0005:TwistBalancerElbow_R
+  - first:
+      1: 100534
+    second: sloth_rig_0005:TwistBalancerShoulder_L
+  - first:
+      1: 100536
+    second: sloth_rig_0005:TwistBalancerShoulder_R
+  - first:
+      1: 100538
+    second: sloth_rig_0005:TwisterElbow0_L
+  - first:
+      1: 100540
+    second: sloth_rig_0005:TwisterElbow0_R
+  - first:
+      1: 100542
+    second: sloth_rig_0005:TwisterElbow1_L
+  - first:
+      1: 100544
+    second: sloth_rig_0005:TwisterElbow1_R
+  - first:
+      1: 100546
+    second: sloth_rig_0005:TwisterElbow2_L
+  - first:
+      1: 100548
+    second: sloth_rig_0005:TwisterElbow2_R
+  - first:
+      1: 100550
+    second: sloth_rig_0005:TwisterShoulder0_L
+  - first:
+      1: 100552
+    second: sloth_rig_0005:TwisterShoulder0_R
+  - first:
+      1: 100554
+    second: sloth_rig_0005:TwisterShoulder1_L
+  - first:
+      1: 100556
+    second: sloth_rig_0005:TwisterShoulder1_R
+  - first:
+      1: 100558
+    second: sloth_rig_0005:TwisterShoulder2_L
+  - first:
+      1: 100560
+    second: sloth_rig_0005:TwisterShoulder2_R
+  - first:
+      1: 100562
+    second: sloth_rig_0005:TwistFollowChest_M
+  - first:
+      1: 100564
+    second: sloth_rig_0005:TwistFollowElbow_L
+  - first:
+      1: 100566
+    second: sloth_rig_0005:TwistFollowElbow_R
+  - first:
+      1: 100568
+    second: sloth_rig_0005:TwistFollowOffsetChest_M
+  - first:
+      1: 100570
+    second: sloth_rig_0005:TwistFollowOffsetElbow_L
+  - first:
+      1: 100572
+    second: sloth_rig_0005:TwistFollowOffsetElbow_R
+  - first:
+      1: 100574
+    second: sloth_rig_0005:TwistFollowOffsetShoulder_L
+  - first:
+      1: 100576
+    second: sloth_rig_0005:TwistFollowOffsetShoulder_R
+  - first:
+      1: 100578
+    second: sloth_rig_0005:TwistFollowParentChest_M
+  - first:
+      1: 100580
+    second: sloth_rig_0005:TwistFollowParentElbow_L
+  - first:
+      1: 100582
+    second: sloth_rig_0005:TwistFollowParentElbow_R
+  - first:
+      1: 100584
+    second: sloth_rig_0005:TwistFollowParentOffsetChest_M
+  - first:
+      1: 100586
+    second: sloth_rig_0005:TwistFollowParentOffsetElbow_L
+  - first:
+      1: 100588
+    second: sloth_rig_0005:TwistFollowParentOffsetElbow_R
+  - first:
+      1: 100590
+    second: sloth_rig_0005:TwistFollowParentOffsetShoulder_L
+  - first:
+      1: 100592
+    second: sloth_rig_0005:TwistFollowParentOffsetShoulder_R
+  - first:
+      1: 100594
+    second: sloth_rig_0005:TwistFollowParentShoulder_L
+  - first:
+      1: 100596
+    second: sloth_rig_0005:TwistFollowParentShoulder_R
+  - first:
+      1: 100598
+    second: sloth_rig_0005:TwistFollowShoulder_L
+  - first:
+      1: 100600
+    second: sloth_rig_0005:TwistFollowShoulder_R
+  - first:
+      1: 100602
+    second: sloth_rig_0005:TwistSystem
+  - first:
+      1: 100604
+    second: sloth_rig_0005:UnTwistChest_M
+  - first:
+      1: 100606
+    second: sloth_rig_0005:UnTwistElbow_L
+  - first:
+      1: 100608
+    second: sloth_rig_0005:UnTwistElbow_R
+  - first:
+      1: 100610
+    second: sloth_rig_0005:UnTwistEndChest_M
+  - first:
+      1: 100612
+    second: sloth_rig_0005:UnTwistEndElbow_L
+  - first:
+      1: 100614
+    second: sloth_rig_0005:UnTwistEndElbow_R
+  - first:
+      1: 100616
+    second: sloth_rig_0005:UnTwistEndShoulder_L
+  - first:
+      1: 100618
+    second: sloth_rig_0005:UnTwistEndShoulder_R
+  - first:
+      1: 100620
+    second: sloth_rig_0005:UnTwistIKChest_M
+  - first:
+      1: 100622
+    second: sloth_rig_0005:UnTwistIKElbow_L
+  - first:
+      1: 100624
+    second: sloth_rig_0005:UnTwistIKElbow_R
+  - first:
+      1: 100626
+    second: sloth_rig_0005:UnTwistIKShoulder_L
+  - first:
+      1: 100628
+    second: sloth_rig_0005:UnTwistIKShoulder_R
+  - first:
+      1: 100630
+    second: sloth_rig_0005:UnTwistShoulder_L
+  - first:
+      1: 100632
+    second: sloth_rig_0005:UnTwistShoulder_R
+  - first:
+      1: 100634
+    second: sloth_rig_0005:Wrist_L
+  - first:
+      1: 100636
+    second: sloth_rig_0005:Wrist_R
+  - first:
+      4: 400000
+    second: GLASES_STICK
+  - first:
+      4: 400002
+    second: glass_grp
+  - first:
+      4: 400004
+    second: GLASSES
+  - first:
+      4: 400006
+    second: GLASSES1
+  - first:
+      4: 400008
+    second: polySurface1
+  - first:
+      4: 400010
+    second: polySurface316
+  - first:
+      4: 400012
+    second: polySurface617
+  - first:
+      4: 400014
+    second: polySurface878
+  - first:
+      4: 400016
+    second: //RootNode
+  - first:
+      4: 400018
+    second: sloth_rig_0005:AimEye
+  - first:
+      4: 400020
+    second: sloth_rig_0005:AimFollowEye
+  - first:
+      4: 400022
+    second: sloth_rig_0005:AimFollowOffEye
+  - first:
+      4: 400024
+    second: sloth_rig_0005:AimFollowOnEye
+  - first:
+      4: 400026
+    second: sloth_rig_0005:AimOffsetEye
+  - first:
+      4: 400028
+    second: sloth_rig_0005:AimSystem
+  - first:
+      4: 400030
+    second: sloth_rig_0005:Ankle_L
+  - first:
+      4: 400032
+    second: sloth_rig_0005:Ankle_R
+  - first:
+      4: 400034
+    second: sloth_rig_0005:BendSystem
+  - first:
+      4: 400036
+    second: sloth_rig_0005:Chest_M
+  - first:
+      4: 400038
+    second: sloth_rig_0005:ConstraintSystem
+  - first:
+      4: 400040
+    second: sloth_rig_0005:DeformationSystem
+  - first:
+      4: 400042
+    second: sloth_rig_0005:DrivingSystem
+  - first:
+      4: 400044
+    second: sloth_rig_0005:DynamicSystem
+  - first:
+      4: 400046
+    second: sloth_rig_0005:Elbow_L
+  - first:
+      4: 400048
+    second: sloth_rig_0005:Elbow_R
+  - first:
+      4: 400050
+    second: sloth_rig_0005:FitSkeleton
+  - first:
+      4: 400052
+    second: sloth_rig_0005:FKExtraHip_L
+  - first:
+      4: 400054
+    second: sloth_rig_0005:FKExtraHip_R
+  - first:
+      4: 400056
+    second: sloth_rig_0005:FKExtraIndexFinger1_L
+  - first:
+      4: 400058
+    second: sloth_rig_0005:FKExtraIndexFinger1_R
+  - first:
+      4: 400060
+    second: sloth_rig_0005:FKExtraMiddleFinger1_L
+  - first:
+      4: 400062
+    second: sloth_rig_0005:FKExtraMiddleFinger1_R
+  - first:
+      4: 400064
+    second: sloth_rig_0005:FKExtraNeck_M
+  - first:
+      4: 400066
+    second: sloth_rig_0005:FKExtraPinkyFinger1_L
+  - first:
+      4: 400068
+    second: sloth_rig_0005:FKExtraPinkyFinger1_R
+  - first:
+      4: 400070
+    second: sloth_rig_0005:FKExtraRingFinger1_L
+  - first:
+      4: 400072
+    second: sloth_rig_0005:FKExtraRingFinger1_R
+  - first:
+      4: 400074
+    second: sloth_rig_0005:FKExtraRoot_M
+  - first:
+      4: 400076
+    second: sloth_rig_0005:FKExtraScapula_L
+  - first:
+      4: 400078
+    second: sloth_rig_0005:FKExtraScapula_R
+  - first:
+      4: 400080
+    second: sloth_rig_0005:FKExtraShoulder_L
+  - first:
+      4: 400082
+    second: sloth_rig_0005:FKExtraShoulder_R
+  - first:
+      4: 400084
+    second: sloth_rig_0005:FKExtraThumbFinger1_R
+  - first:
+      4: 400086
+    second: sloth_rig_0005:FKIKMixElbow_L
+  - first:
+      4: 400088
+    second: sloth_rig_0005:FKIKMixElbow_R
+  - first:
+      4: 400090
+    second: sloth_rig_0005:FKIKParentConstraintArm_L
+  - first:
+      4: 400092
+    second: sloth_rig_0005:FKIKParentConstraintArm_R
+  - first:
+      4: 400094
+    second: sloth_rig_0005:FKIKParentConstraintLeg_L
+  - first:
+      4: 400096
+    second: sloth_rig_0005:FKIKParentConstraintLeg_R
+  - first:
+      4: 400098
+    second: sloth_rig_0005:FKIKParentConstraintSpine_M
+  - first:
+      4: 400100
+    second: sloth_rig_0005:FKIKSystem
+  - first:
+      4: 400102
+    second: sloth_rig_0005:FKOffsetHip_L
+  - first:
+      4: 400104
+    second: sloth_rig_0005:FKOffsetHip_R
+  - first:
+      4: 400106
+    second: sloth_rig_0005:FKOffsetIndexFinger1_L
+  - first:
+      4: 400108
+    second: sloth_rig_0005:FKOffsetIndexFinger1_R
+  - first:
+      4: 400110
+    second: sloth_rig_0005:FKOffsetMiddleFinger1_L
+  - first:
+      4: 400112
+    second: sloth_rig_0005:FKOffsetMiddleFinger1_R
+  - first:
+      4: 400114
+    second: sloth_rig_0005:FKOffsetNeck_M
+  - first:
+      4: 400116
+    second: sloth_rig_0005:FKOffsetPinkyFinger1_L
+  - first:
+      4: 400118
+    second: sloth_rig_0005:FKOffsetPinkyFinger1_R
+  - first:
+      4: 400120
+    second: sloth_rig_0005:FKOffsetRingFinger1_L
+  - first:
+      4: 400122
+    second: sloth_rig_0005:FKOffsetRingFinger1_R
+  - first:
+      4: 400124
+    second: sloth_rig_0005:FKOffsetRoot_M
+  - first:
+      4: 400126
+    second: sloth_rig_0005:FKOffsetScapula_L
+  - first:
+      4: 400128
+    second: sloth_rig_0005:FKOffsetScapula_R
+  - first:
+      4: 400130
+    second: sloth_rig_0005:FKOffsetShoulder_L
+  - first:
+      4: 400132
+    second: sloth_rig_0005:FKOffsetShoulder_R
+  - first:
+      4: 400134
+    second: sloth_rig_0005:FKOffsetThumbFinger1_L
+  - first:
+      4: 400136
+    second: sloth_rig_0005:FKOffsetThumbFinger1_R
+  - first:
+      4: 400138
+    second: sloth_rig_0005:FKParentConstraintToChest_M
+  - first:
+      4: 400140
+    second: sloth_rig_0005:FKParentConstraintToRoot_M
+  - first:
+      4: 400142
+    second: sloth_rig_0005:FKParentConstraintToScapula_L
+  - first:
+      4: 400144
+    second: sloth_rig_0005:FKParentConstraintToScapula_R
+  - first:
+      4: 400146
+    second: sloth_rig_0005:FKParentConstraintToWrist_L
+  - first:
+      4: 400148
+    second: sloth_rig_0005:FKParentConstraintToWrist_R
+  - first:
+      4: 400150
+    second: sloth_rig_0005:FKSystem
+  - first:
+      4: 400152
+    second: sloth_rig_0005:FULL_FINAL_2:polySurface1
+  - first:
+      4: 400154
+    second: sloth_rig_0005:geo
+  - first:
+      4: 400156
+    second: sloth_rig_0005:GlobalHead_M
+  - first:
+      4: 400158
+    second: sloth_rig_0005:GlobalOffsetHead_M
+  - first:
+      4: 400160
+    second: sloth_rig_0005:GlobalSystem
+  - first:
+      4: 400162
+    second: sloth_rig_0005:Group
+  - first:
+      4: 400164
+    second: sloth_rig_0005:Head_M
+  - first:
+      4: 400166
+    second: sloth_rig_0005:HeadEnd_M
+  - first:
+      4: 400168
+    second: sloth_rig_0005:Hip_L
+  - first:
+      4: 400170
+    second: sloth_rig_0005:Hip_R
+  - first:
+      4: 400172
+    second: sloth_rig_0005:IKCurve
+  - first:
+      4: 400174
+    second: sloth_rig_0005:IKdistanceArm_L
+  - first:
+      4: 400176
+    second: sloth_rig_0005:IKdistanceArm_R
+  - first:
+      4: 400178
+    second: sloth_rig_0005:IKdistanceLeg_L
+  - first:
+      4: 400180
+    second: sloth_rig_0005:IKdistanceLeg_R
+  - first:
+      4: 400182
+    second: sloth_rig_0005:IKExtraArm_L
+  - first:
+      4: 400184
+    second: sloth_rig_0005:IKExtraArm_R
+  - first:
+      4: 400186
+    second: sloth_rig_0005:IKExtraLeg_L
+  - first:
+      4: 400188
+    second: sloth_rig_0005:IKExtraLeg_R
+  - first:
+      4: 400190
+    second: sloth_rig_0005:IKExtraSpine1_M
+  - first:
+      4: 400192
+    second: sloth_rig_0005:IKExtraSpine2_M
+  - first:
+      4: 400194
+    second: sloth_rig_0005:IKfake0Spine_M
+  - first:
+      4: 400196
+    second: sloth_rig_0005:IKfake1Spine_M
+  - first:
+      4: 400198
+    second: sloth_rig_0005:IKFake1UpLocSpine_M
+  - first:
+      4: 400200
+    second: sloth_rig_0005:IKfake2Spine_M
+  - first:
+      4: 400202
+    second: sloth_rig_0005:IKfake3Spine_M
+  - first:
+      4: 400204
+    second: sloth_rig_0005:IKFollow
+  - first:
+      4: 400206
+    second: sloth_rig_0005:IKHandle
+  - first:
+      4: 400208
+    second: sloth_rig_0005:IKJoints
+  - first:
+      4: 400210
+    second: sloth_rig_0005:IKMessure
+  - first:
+      4: 400212
+    second: sloth_rig_0005:IKMessureFromHip_L
+  - first:
+      4: 400214
+    second: sloth_rig_0005:IKMessureFromHip_R
+  - first:
+      4: 400216
+    second: sloth_rig_0005:IKMessureFromShoulder_L
+  - first:
+      4: 400218
+    second: sloth_rig_0005:IKMessureFromShoulder_R
+  - first:
+      4: 400220
+    second: sloth_rig_0005:IKmessureLoc1Arm_L
+  - first:
+      4: 400222
+    second: sloth_rig_0005:IKmessureLoc1Arm_R
+  - first:
+      4: 400224
+    second: sloth_rig_0005:IKmessureLoc1Leg_L
+  - first:
+      4: 400226
+    second: sloth_rig_0005:IKmessureLoc1Leg_R
+  - first:
+      4: 400228
+    second: sloth_rig_0005:IKmessureLoc2Arm_L
+  - first:
+      4: 400230
+    second: sloth_rig_0005:IKmessureLoc2Arm_R
+  - first:
+      4: 400232
+    second: sloth_rig_0005:IKmessureLoc2Leg_L
+  - first:
+      4: 400234
+    second: sloth_rig_0005:IKmessureLoc2Leg_R
+  - first:
+      4: 400236
+    second: sloth_rig_0005:IKOffsetArm_L
+  - first:
+      4: 400238
+    second: sloth_rig_0005:IKOffsetArm_LFollow
+  - first:
+      4: 400240
+    second: sloth_rig_0005:IKOffsetArm_LFollowNoScale
+  - first:
+      4: 400242
+    second: sloth_rig_0005:IKOffsetArm_LStatic
+  - first:
+      4: 400244
+    second: sloth_rig_0005:IKOffsetArm_R
+  - first:
+      4: 400246
+    second: sloth_rig_0005:IKOffsetArm_RFollow
+  - first:
+      4: 400248
+    second: sloth_rig_0005:IKOffsetArm_RFollowNoScale
+  - first:
+      4: 400250
+    second: sloth_rig_0005:IKOffsetArm_RStatic
+  - first:
+      4: 400252
+    second: sloth_rig_0005:IKOffsetLeg_L
+  - first:
+      4: 400254
+    second: sloth_rig_0005:IKOffsetLeg_R
+  - first:
+      4: 400256
+    second: sloth_rig_0005:IKOffsetSpine1_M
+  - first:
+      4: 400258
+    second: sloth_rig_0005:IKOffsetSpine2_M
+  - first:
+      4: 400260
+    second: sloth_rig_0005:IKParentConstraintHip_L
+  - first:
+      4: 400262
+    second: sloth_rig_0005:IKParentConstraintHip_R
+  - first:
+      4: 400264
+    second: sloth_rig_0005:IKParentConstraintRoot_M
+  - first:
+      4: 400266
+    second: sloth_rig_0005:IKParentConstraintShoulder_L
+  - first:
+      4: 400268
+    second: sloth_rig_0005:IKParentConstraintShoulder_R
+  - first:
+      4: 400270
+    second: sloth_rig_0005:IKRootConstraint
+  - first:
+      4: 400272
+    second: sloth_rig_0005:IKScalerChest_M
+  - first:
+      4: 400274
+    second: sloth_rig_0005:IKScalerRoot_M
+  - first:
+      4: 400276
+    second: sloth_rig_0005:IKScalerSpine1_M
+  - first:
+      4: 400278
+    second: sloth_rig_0005:IKSpChest_M
+  - first:
+      4: 400280
+    second: sloth_rig_0005:IKSpChestFollowOffset_M
+  - first:
+      4: 400282
+    second: sloth_rig_0005:IKSpine0AlignTo_M
+  - first:
+      4: 400284
+    second: sloth_rig_0005:IKSpine1_M
+  - first:
+      4: 400286
+    second: sloth_rig_0005:IKSpine2_M
+  - first:
+      4: 400288
+    second: sloth_rig_0005:IKSpine2AlignTo_M
+  - first:
+      4: 400290
+    second: sloth_rig_0005:IKSpine2AlignUnIKTwistTo_M
+  - first:
+      4: 400292
+    second: sloth_rig_0005:IKSpine2AlignUnIKTwistToOffset_M
+  - first:
+      4: 400294
+    second: sloth_rig_0005:IKSpineCurve_M
+  - first:
+      4: 400296
+    second: sloth_rig_0005:IKSpineHandle_M
+  - first:
+      4: 400298
+    second: sloth_rig_0005:IKSpineLocator0_M
+  - first:
+      4: 400300
+    second: sloth_rig_0005:IKSpineLocator1_M
+  - first:
+      4: 400302
+    second: sloth_rig_0005:IKSpineLocator2_M
+  - first:
+      4: 400304
+    second: sloth_rig_0005:IKSpineLocator3_M
+  - first:
+      4: 400306
+    second: sloth_rig_0005:IKSpRoot_M
+  - first:
+      4: 400308
+    second: sloth_rig_0005:IKSpRootFollowOffset_M
+  - first:
+      4: 400310
+    second: sloth_rig_0005:IKSpSpine1_M
+  - first:
+      4: 400312
+    second: sloth_rig_0005:IKSpSpine1FollowOffset_M
+  - first:
+      4: 400314
+    second: sloth_rig_0005:IKSpSpineOffset_M
+  - first:
+      4: 400316
+    second: sloth_rig_0005:IKStatic
+  - first:
+      4: 400318
+    second: sloth_rig_0005:IKStiffOrientSpine1_M
+  - first:
+      4: 400320
+    second: sloth_rig_0005:IKStiffOrientSpine2_M
+  - first:
+      4: 400322
+    second: sloth_rig_0005:IKSystem
+  - first:
+      4: 400324
+    second: sloth_rig_0005:IKX2Chest_M
+  - first:
+      4: 400326
+    second: sloth_rig_0005:IKX2Elbow_L
+  - first:
+      4: 400328
+    second: sloth_rig_0005:IKX2Elbow_R
+  - first:
+      4: 400330
+    second: sloth_rig_0005:IKX2Root_M
+  - first:
+      4: 400332
+    second: sloth_rig_0005:IKX2Shoulder_L
+  - first:
+      4: 400334
+    second: sloth_rig_0005:IKX2Shoulder_R
+  - first:
+      4: 400336
+    second: sloth_rig_0005:IKX2Spine1_M
+  - first:
+      4: 400338
+    second: sloth_rig_0005:IKX2Wrist_L
+  - first:
+      4: 400340
+    second: sloth_rig_0005:IKX2Wrist_R
+  - first:
+      4: 400342
+    second: sloth_rig_0005:IKXChest_M
+  - first:
+      4: 400344
+    second: sloth_rig_0005:IKXElbow_L
+  - first:
+      4: 400346
+    second: sloth_rig_0005:IKXElbow_R
+  - first:
+      4: 400348
+    second: sloth_rig_0005:IKXOffsetHip_L
+  - first:
+      4: 400350
+    second: sloth_rig_0005:IKXOffsetHip_R
+  - first:
+      4: 400352
+    second: sloth_rig_0005:IKXOffsetRoot_M
+  - first:
+      4: 400354
+    second: sloth_rig_0005:IKXOffsetShoulder_L
+  - first:
+      4: 400356
+    second: sloth_rig_0005:IKXOffsetShoulder_R
+  - first:
+      4: 400358
+    second: sloth_rig_0005:IKXRoot_M
+  - first:
+      4: 400360
+    second: sloth_rig_0005:IKXShoulder_L
+  - first:
+      4: 400362
+    second: sloth_rig_0005:IKXShoulder_R
+  - first:
+      4: 400364
+    second: sloth_rig_0005:IKXSpine1_M
+  - first:
+      4: 400366
+    second: sloth_rig_0005:IKXWrist_L
+  - first:
+      4: 400368
+    second: sloth_rig_0005:IKXWrist_R
+  - first:
+      4: 400370
+    second: sloth_rig_0005:IndexFinger1_L
+  - first:
+      4: 400372
+    second: sloth_rig_0005:IndexFinger1_R
+  - first:
+      4: 400374
+    second: sloth_rig_0005:Jaw_M
+  - first:
+      4: 400376
+    second: sloth_rig_0005:JawEnd_M
+  - first:
+      4: 400378
+    second: sloth_rig_0005:jnt_L_eye
+  - first:
+      4: 400380
+    second: sloth_rig_0005:jnt_R_eye
+  - first:
+      4: 400382
+    second: sloth_rig_0005:Knee_L
+  - first:
+      4: 400384
+    second: sloth_rig_0005:Knee_R
+  - first:
+      4: 400386
+    second: sloth_rig_0005:L_nails
+  - first:
+      4: 400388
+    second: sloth_rig_0005:LegLockConstrained
+  - first:
+      4: 400390
+    second: sloth_rig_0005:Main
+  - first:
+      4: 400392
+    second: sloth_rig_0005:MiddleFinger1_L
+  - first:
+      4: 400394
+    second: sloth_rig_0005:MiddleFinger1_R
+  - first:
+      4: 400396
+    second: sloth_rig_0005:MotionSystem
+  - first:
+      4: 400398
+    second: sloth_rig_0005:nail_L_leg
+  - first:
+      4: 400400
+    second: sloth_rig_0005:Neck_M
+  - first:
+      4: 400402
+    second: sloth_rig_0005:PinkyFinger1_L
+  - first:
+      4: 400404
+    second: sloth_rig_0005:PinkyFinger1_R
+  - first:
+      4: 400406
+    second: sloth_rig_0005:PoleAimLeg_L
+  - first:
+      4: 400408
+    second: sloth_rig_0005:PoleAimLeg_R
+  - first:
+      4: 400410
+    second: sloth_rig_0005:PoleAnnotationArm_L
+  - first:
+      4: 400412
+    second: sloth_rig_0005:PoleAnnotationArm_R
+  - first:
+      4: 400414
+    second: sloth_rig_0005:PoleArm_R
+  - first:
+      4: 400416
+    second: sloth_rig_0005:PoleExtraArm_L
+  - first:
+      4: 400418
+    second: sloth_rig_0005:PoleExtraArm_R
+  - first:
+      4: 400420
+    second: sloth_rig_0005:PoleExtraLeg_L
+  - first:
+      4: 400422
+    second: sloth_rig_0005:PoleExtraLeg_R
+  - first:
+      4: 400424
+    second: sloth_rig_0005:PoleOffsetArm_L
+  - first:
+      4: 400426
+    second: sloth_rig_0005:PoleOffsetArm_LStatic
+  - first:
+      4: 400428
+    second: sloth_rig_0005:PoleOffsetArm_R
+  - first:
+      4: 400430
+    second: sloth_rig_0005:PoleOffsetArm_RStatic
+  - first:
+      4: 400432
+    second: sloth_rig_0005:PoleOffsetLeg_L
+  - first:
+      4: 400434
+    second: sloth_rig_0005:PoleOffsetLeg_LFollow
+  - first:
+      4: 400436
+    second: sloth_rig_0005:PoleOffsetLeg_LFollowNoScale
+  - first:
+      4: 400438
+    second: sloth_rig_0005:PoleOffsetLeg_LStatic
+  - first:
+      4: 400440
+    second: sloth_rig_0005:PoleOffsetLeg_R
+  - first:
+      4: 400442
+    second: sloth_rig_0005:PoleOffsetLeg_RFollow
+  - first:
+      4: 400444
+    second: sloth_rig_0005:PoleOffsetLeg_RFollowNoScale
+  - first:
+      4: 400446
+    second: sloth_rig_0005:PoleOffsetLeg_RStatic
+  - first:
+      4: 400448
+    second: sloth_rig_0005:polySurface1
+  - first:
+      4: 400450
+    second: sloth_rig_0005:polySurface54
+  - first:
+      4: 400452
+    second: sloth_rig_0005:polySurface55
+  - first:
+      4: 400454
+    second: sloth_rig_0005:R_leg
+  - first:
+      4: 400456
+    second: sloth_rig_0005:R_nails
+  - first:
+      4: 400458
+    second: sloth_rig_0005:Root_M
+  - first:
+      4: 400460
+    second: sloth_rig_0005:RootExtraX_M
+  - first:
+      4: 400462
+    second: sloth_rig_0005:RootOffsetX_M
+  - first:
+      4: 400464
+    second: sloth_rig_0005:RootSystem
+  - first:
+      4: 400466
+    second: sloth_rig_0005:Scapula_L
+  - first:
+      4: 400468
+    second: sloth_rig_0005:Scapula_R
+  - first:
+      4: 400470
+    second: sloth_rig_0005:SDK1FKIndexFinger1_L
+  - first:
+      4: 400472
+    second: sloth_rig_0005:SDK1FKIndexFinger1_R
+  - first:
+      4: 400474
+    second: sloth_rig_0005:SDK1FKMiddleFinger1_L
+  - first:
+      4: 400476
+    second: sloth_rig_0005:SDK1FKMiddleFinger1_R
+  - first:
+      4: 400478
+    second: sloth_rig_0005:SDK1FKPinkyFinger1_L
+  - first:
+      4: 400480
+    second: sloth_rig_0005:SDK1FKPinkyFinger1_R
+  - first:
+      4: 400482
+    second: sloth_rig_0005:SDK1FKRingFinger1_L
+  - first:
+      4: 400484
+    second: sloth_rig_0005:SDK1FKRingFinger1_R
+  - first:
+      4: 400486
+    second: sloth_rig_0005:SDK2FKIndexFinger1_L
+  - first:
+      4: 400488
+    second: sloth_rig_0005:SDK2FKIndexFinger1_R
+  - first:
+      4: 400490
+    second: sloth_rig_0005:SDK2FKPinkyFinger1_L
+  - first:
+      4: 400492
+    second: sloth_rig_0005:SDK2FKPinkyFinger1_R
+  - first:
+      4: 400494
+    second: sloth_rig_0005:SDK2FKRingFinger1_L
+  - first:
+      4: 400496
+    second: sloth_rig_0005:SDK2FKRingFinger1_R
+  - first:
+      4: 400498
+    second: sloth_rig_0005:Shoulder_L
+  - first:
+      4: 400500
+    second: sloth_rig_0005:Shoulder_R
+  - first:
+      4: 400502
+    second: sloth_rig_0005:ShoulderPart1_L
+  - first:
+      4: 400504
+    second: sloth_rig_0005:ShoulderPart1_R
+  - first:
+      4: 400506
+    second: sloth_rig_0005:ShoulderPart2_L
+  - first:
+      4: 400508
+    second: sloth_rig_0005:ShoulderPart2_R
+  - first:
+      4: 400510
+    second: sloth_rig_0005:Spine1_M
+  - first:
+      4: 400512
+    second: sloth_rig_0005:teeth_down
+  - first:
+      4: 400514
+    second: sloth_rig_0005:ThumbFinger1_L
+  - first:
+      4: 400516
+    second: sloth_rig_0005:ThumbFinger1_R
+  - first:
+      4: 400518
+    second: sloth_rig_0005:Toes_L
+  - first:
+      4: 400520
+    second: sloth_rig_0005:Toes_R
+  - first:
+      4: 400522
+    second: sloth_rig_0005:ToesEnd_L
+  - first:
+      4: 400524
+    second: sloth_rig_0005:ToesEnd_R
+  - first:
+      4: 400526
+    second: sloth_rig_0005:transform1
+  - first:
+      4: 400528
+    second: sloth_rig_0005:TwistBalancerChest_M
+  - first:
+      4: 400530
+    second: sloth_rig_0005:TwistBalancerElbow_L
+  - first:
+      4: 400532
+    second: sloth_rig_0005:TwistBalancerElbow_R
+  - first:
+      4: 400534
+    second: sloth_rig_0005:TwistBalancerShoulder_L
+  - first:
+      4: 400536
+    second: sloth_rig_0005:TwistBalancerShoulder_R
+  - first:
+      4: 400538
+    second: sloth_rig_0005:TwisterElbow0_L
+  - first:
+      4: 400540
+    second: sloth_rig_0005:TwisterElbow0_R
+  - first:
+      4: 400542
+    second: sloth_rig_0005:TwisterElbow1_L
+  - first:
+      4: 400544
+    second: sloth_rig_0005:TwisterElbow1_R
+  - first:
+      4: 400546
+    second: sloth_rig_0005:TwisterElbow2_L
+  - first:
+      4: 400548
+    second: sloth_rig_0005:TwisterElbow2_R
+  - first:
+      4: 400550
+    second: sloth_rig_0005:TwisterShoulder0_L
+  - first:
+      4: 400552
+    second: sloth_rig_0005:TwisterShoulder0_R
+  - first:
+      4: 400554
+    second: sloth_rig_0005:TwisterShoulder1_L
+  - first:
+      4: 400556
+    second: sloth_rig_0005:TwisterShoulder1_R
+  - first:
+      4: 400558
+    second: sloth_rig_0005:TwisterShoulder2_L
+  - first:
+      4: 400560
+    second: sloth_rig_0005:TwisterShoulder2_R
+  - first:
+      4: 400562
+    second: sloth_rig_0005:TwistFollowChest_M
+  - first:
+      4: 400564
+    second: sloth_rig_0005:TwistFollowElbow_L
+  - first:
+      4: 400566
+    second: sloth_rig_0005:TwistFollowElbow_R
+  - first:
+      4: 400568
+    second: sloth_rig_0005:TwistFollowOffsetChest_M
+  - first:
+      4: 400570
+    second: sloth_rig_0005:TwistFollowOffsetElbow_L
+  - first:
+      4: 400572
+    second: sloth_rig_0005:TwistFollowOffsetElbow_R
+  - first:
+      4: 400574
+    second: sloth_rig_0005:TwistFollowOffsetShoulder_L
+  - first:
+      4: 400576
+    second: sloth_rig_0005:TwistFollowOffsetShoulder_R
+  - first:
+      4: 400578
+    second: sloth_rig_0005:TwistFollowParentChest_M
+  - first:
+      4: 400580
+    second: sloth_rig_0005:TwistFollowParentElbow_L
+  - first:
+      4: 400582
+    second: sloth_rig_0005:TwistFollowParentElbow_R
+  - first:
+      4: 400584
+    second: sloth_rig_0005:TwistFollowParentOffsetChest_M
+  - first:
+      4: 400586
+    second: sloth_rig_0005:TwistFollowParentOffsetElbow_L
+  - first:
+      4: 400588
+    second: sloth_rig_0005:TwistFollowParentOffsetElbow_R
+  - first:
+      4: 400590
+    second: sloth_rig_0005:TwistFollowParentOffsetShoulder_L
+  - first:
+      4: 400592
+    second: sloth_rig_0005:TwistFollowParentOffsetShoulder_R
+  - first:
+      4: 400594
+    second: sloth_rig_0005:TwistFollowParentShoulder_L
+  - first:
+      4: 400596
+    second: sloth_rig_0005:TwistFollowParentShoulder_R
+  - first:
+      4: 400598
+    second: sloth_rig_0005:TwistFollowShoulder_L
+  - first:
+      4: 400600
+    second: sloth_rig_0005:TwistFollowShoulder_R
+  - first:
+      4: 400602
+    second: sloth_rig_0005:TwistSystem
+  - first:
+      4: 400604
+    second: sloth_rig_0005:UnTwistChest_M
+  - first:
+      4: 400606
+    second: sloth_rig_0005:UnTwistElbow_L
+  - first:
+      4: 400608
+    second: sloth_rig_0005:UnTwistElbow_R
+  - first:
+      4: 400610
+    second: sloth_rig_0005:UnTwistEndChest_M
+  - first:
+      4: 400612
+    second: sloth_rig_0005:UnTwistEndElbow_L
+  - first:
+      4: 400614
+    second: sloth_rig_0005:UnTwistEndElbow_R
+  - first:
+      4: 400616
+    second: sloth_rig_0005:UnTwistEndShoulder_L
+  - first:
+      4: 400618
+    second: sloth_rig_0005:UnTwistEndShoulder_R
+  - first:
+      4: 400620
+    second: sloth_rig_0005:UnTwistIKChest_M
+  - first:
+      4: 400622
+    second: sloth_rig_0005:UnTwistIKElbow_L
+  - first:
+      4: 400624
+    second: sloth_rig_0005:UnTwistIKElbow_R
+  - first:
+      4: 400626
+    second: sloth_rig_0005:UnTwistIKShoulder_L
+  - first:
+      4: 400628
+    second: sloth_rig_0005:UnTwistIKShoulder_R
+  - first:
+      4: 400630
+    second: sloth_rig_0005:UnTwistShoulder_L
+  - first:
+      4: 400632
+    second: sloth_rig_0005:UnTwistShoulder_R
+  - first:
+      4: 400634
+    second: sloth_rig_0005:Wrist_L
+  - first:
+      4: 400636
+    second: sloth_rig_0005:Wrist_R
+  - first:
+      23: 2300000
+    second: GLASES_STICK
+  - first:
+      23: 2300002
+    second: GLASSES
+  - first:
+      23: 2300004
+    second: GLASSES1
+  - first:
+      23: 2300006
+    second: sloth_rig_0005:teeth_down
+  - first:
+      33: 3300000
+    second: GLASES_STICK
+  - first:
+      33: 3300002
+    second: GLASSES
+  - first:
+      33: 3300004
+    second: GLASSES1
+  - first:
+      33: 3300006
+    second: sloth_rig_0005:teeth_down
+  - first:
+      43: 4300000
+    second: GLASSES1
+  - first:
+      43: 4300002
+    second: GLASSES
+  - first:
+      43: 4300004
+    second: GLASES_STICK
+  - first:
+      43: 4300006
+    second: sloth_rig_0005:polySurface1
+  - first:
+      43: 4300008
+    second: sloth_rig_0005:polySurface54
+  - first:
+      43: 4300010
+    second: sloth_rig_0005:polySurface55
+  - first:
+      43: 4300012
+    second: sloth_rig_0005:teeth_down
+  - first:
+      43: 4300014
+    second: sloth_rig_0005:L_nails
+  - first:
+      43: 4300016
+    second: sloth_rig_0005:R_nails
+  - first:
+      43: 4300018
+    second: sloth_rig_0005:nail_L_leg
+  - first:
+      43: 4300020
+    second: sloth_rig_0005:R_leg
+  - first:
+      74: 7400000
+    second: swag
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: sloth_rig_0005:L_nails
+  - first:
+      137: 13700002
+    second: sloth_rig_0005:nail_L_leg
+  - first:
+      137: 13700004
+    second: sloth_rig_0005:polySurface1
+  - first:
+      137: 13700006
+    second: sloth_rig_0005:polySurface54
+  - first:
+      137: 13700008
+    second: sloth_rig_0005:polySurface55
+  - first:
+      137: 13700010
+    second: sloth_rig_0005:R_leg
+  - first:
+      137: 13700012
+    second: sloth_rig_0005:R_nails
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert2
+    second: {fileID: 2100000, guid: 40a1409c2d5da4b1781d823dd90d5718, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert3
+    second: {fileID: 2100000, guid: d325054d4cb3346f39aee630e9787829, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sloth_rig_0005_lambert2
+    second: {fileID: 2100000, guid: 28b81d5bf93f743569e277ad63481a33, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: swag
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 1
+      lastFrame: 190
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: glass_grp
+        weight: 1
+      - path: glass_grp/polySurface1
+        weight: 1
+      - path: glass_grp/polySurface1/polySurface316
+        weight: 1
+      - path: glass_grp/polySurface1/polySurface316/polySurface617
+        weight: 1
+      - path: glass_grp/polySurface1/polySurface316/polySurface617/polySurface878
+        weight: 1
+      - path: glass_grp/polySurface1/polySurface316/polySurface617/polySurface878/GLASES_STICK
+        weight: 1
+      - path: glass_grp/polySurface1/polySurface316/polySurface617/polySurface878/GLASSES
+        weight: 1
+      - path: glass_grp/polySurface1/polySurface316/polySurface617/polySurface878/GLASSES1
+        weight: 1
+      - path: sloth_rig_0005:geo
+        weight: 1
+      - path: sloth_rig_0005:geo/sloth_rig_0005:FULL_FINAL_2:polySurface1
+        weight: 1
+      - path: sloth_rig_0005:geo/sloth_rig_0005:FULL_FINAL_2:polySurface1/sloth_rig_0005:polySurface1
+        weight: 1
+      - path: sloth_rig_0005:geo/sloth_rig_0005:FULL_FINAL_2:polySurface1/sloth_rig_0005:polySurface54
+        weight: 1
+      - path: sloth_rig_0005:geo/sloth_rig_0005:FULL_FINAL_2:polySurface1/sloth_rig_0005:polySurface55
+        weight: 1
+      - path: sloth_rig_0005:geo/sloth_rig_0005:FULL_FINAL_2:polySurface1/sloth_rig_0005:transform1
+        weight: 1
+      - path: sloth_rig_0005:Group
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:DeformationSystem
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:DeformationSystem/sloth_rig_0005:Root_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:DeformationSystem/sloth_rig_0005:Root_M/sloth_rig_0005:Hip_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:DeformationSystem/sloth_rig_0005:Root_M/sloth_rig_0005:Hip_L/sloth_rig_0005:Knee_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:DeformationSystem/sloth_rig_0005:Root_M/sloth_rig_0005:Hip_L/sloth_rig_0005:Knee_L/sloth_rig_0005:Ankle_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:DeformationSystem/sloth_rig_0005:Root_M/sloth_rig_0005:Hip_L/sloth_rig_0005:Knee_L/sloth_rig_0005:Ankle_L/sloth_rig_0005:Toes_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:DeformationSystem/sloth_rig_0005:Root_M/sloth_rig_0005:Hip_L/sloth_rig_0005:Knee_L/sloth_rig_0005:Ankle_L/sloth_rig_0005:Toes_L/sloth_rig_0005:ToesEnd_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:DeformationSystem/sloth_rig_0005:Root_M/sloth_rig_0005:Hip_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:DeformationSystem/sloth_rig_0005:Root_M/sloth_rig_0005:Hip_R/sloth_rig_0005:Knee_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:DeformationSystem/sloth_rig_0005:Root_M/sloth_rig_0005:Hip_R/sloth_rig_0005:Knee_R/sloth_rig_0005:Ankle_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:DeformationSystem/sloth_rig_0005:Root_M/sloth_rig_0005:Hip_R/sloth_rig_0005:Knee_R/sloth_rig_0005:Ankle_R/sloth_rig_0005:Toes_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:DeformationSystem/sloth_rig_0005:Root_M/sloth_rig_0005:Hip_R/sloth_rig_0005:Knee_R/sloth_rig_0005:Ankle_R/sloth_rig_0005:Toes_R/sloth_rig_0005:ToesEnd_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:DeformationSystem/sloth_rig_0005:Root_M/sloth_rig_0005:Spine1_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:DeformationSystem/sloth_rig_0005:Root_M/sloth_rig_0005:Spine1_M/sloth_rig_0005:Chest_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:DeformationSystem/sloth_rig_0005:Root_M/sloth_rig_0005:Spine1_M/sloth_rig_0005:Chest_M/sloth_rig_0005:Neck_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:DeformationSystem/sloth_rig_0005:Root_M/sloth_rig_0005:Spine1_M/sloth_rig_0005:Chest_M/sloth_rig_0005:Neck_M/sloth_rig_0005:Head_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:DeformationSystem/sloth_rig_0005:Root_M/sloth_rig_0005:Spine1_M/sloth_rig_0005:Chest_M/sloth_rig_0005:Neck_M/sloth_rig_0005:Head_M/sloth_rig_0005:HeadEnd_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:DeformationSystem/sloth_rig_0005:Root_M/sloth_rig_0005:Spine1_M/sloth_rig_0005:Chest_M/sloth_rig_0005:Neck_M/sloth_rig_0005:Head_M/sloth_rig_0005:Jaw_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:DeformationSystem/sloth_rig_0005:Root_M/sloth_rig_0005:Spine1_M/sloth_rig_0005:Chest_M/sloth_rig_0005:Neck_M/sloth_rig_0005:Head_M/sloth_rig_0005:Jaw_M/sloth_rig_0005:JawEnd_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:DeformationSystem/sloth_rig_0005:Root_M/sloth_rig_0005:Spine1_M/sloth_rig_0005:Chest_M/sloth_rig_0005:Neck_M/sloth_rig_0005:Head_M/sloth_rig_0005:Jaw_M/sloth_rig_0005:teeth_down
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:DeformationSystem/sloth_rig_0005:Root_M/sloth_rig_0005:Spine1_M/sloth_rig_0005:Chest_M/sloth_rig_0005:Neck_M/sloth_rig_0005:Head_M/sloth_rig_0005:jnt_L_eye
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:DeformationSystem/sloth_rig_0005:Root_M/sloth_rig_0005:Spine1_M/sloth_rig_0005:Chest_M/sloth_rig_0005:Neck_M/sloth_rig_0005:Head_M/sloth_rig_0005:jnt_R_eye
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:DeformationSystem/sloth_rig_0005:Root_M/sloth_rig_0005:Spine1_M/sloth_rig_0005:Chest_M/sloth_rig_0005:Scapula_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:DeformationSystem/sloth_rig_0005:Root_M/sloth_rig_0005:Spine1_M/sloth_rig_0005:Chest_M/sloth_rig_0005:Scapula_L/sloth_rig_0005:Shoulder_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:DeformationSystem/sloth_rig_0005:Root_M/sloth_rig_0005:Spine1_M/sloth_rig_0005:Chest_M/sloth_rig_0005:Scapula_L/sloth_rig_0005:Shoulder_L/sloth_rig_0005:ShoulderPart1_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:DeformationSystem/sloth_rig_0005:Root_M/sloth_rig_0005:Spine1_M/sloth_rig_0005:Chest_M/sloth_rig_0005:Scapula_L/sloth_rig_0005:Shoulder_L/sloth_rig_0005:ShoulderPart1_L/sloth_rig_0005:ShoulderPart2_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:DeformationSystem/sloth_rig_0005:Root_M/sloth_rig_0005:Spine1_M/sloth_rig_0005:Chest_M/sloth_rig_0005:Scapula_L/sloth_rig_0005:Shoulder_L/sloth_rig_0005:ShoulderPart1_L/sloth_rig_0005:ShoulderPart2_L/sloth_rig_0005:Elbow_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:DeformationSystem/sloth_rig_0005:Root_M/sloth_rig_0005:Spine1_M/sloth_rig_0005:Chest_M/sloth_rig_0005:Scapula_L/sloth_rig_0005:Shoulder_L/sloth_rig_0005:ShoulderPart1_L/sloth_rig_0005:ShoulderPart2_L/sloth_rig_0005:Elbow_L/sloth_rig_0005:Wrist_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:DeformationSystem/sloth_rig_0005:Root_M/sloth_rig_0005:Spine1_M/sloth_rig_0005:Chest_M/sloth_rig_0005:Scapula_L/sloth_rig_0005:Shoulder_L/sloth_rig_0005:ShoulderPart1_L/sloth_rig_0005:ShoulderPart2_L/sloth_rig_0005:Elbow_L/sloth_rig_0005:Wrist_L/sloth_rig_0005:IndexFinger1_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:DeformationSystem/sloth_rig_0005:Root_M/sloth_rig_0005:Spine1_M/sloth_rig_0005:Chest_M/sloth_rig_0005:Scapula_L/sloth_rig_0005:Shoulder_L/sloth_rig_0005:ShoulderPart1_L/sloth_rig_0005:ShoulderPart2_L/sloth_rig_0005:Elbow_L/sloth_rig_0005:Wrist_L/sloth_rig_0005:MiddleFinger1_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:DeformationSystem/sloth_rig_0005:Root_M/sloth_rig_0005:Spine1_M/sloth_rig_0005:Chest_M/sloth_rig_0005:Scapula_L/sloth_rig_0005:Shoulder_L/sloth_rig_0005:ShoulderPart1_L/sloth_rig_0005:ShoulderPart2_L/sloth_rig_0005:Elbow_L/sloth_rig_0005:Wrist_L/sloth_rig_0005:PinkyFinger1_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:DeformationSystem/sloth_rig_0005:Root_M/sloth_rig_0005:Spine1_M/sloth_rig_0005:Chest_M/sloth_rig_0005:Scapula_L/sloth_rig_0005:Shoulder_L/sloth_rig_0005:ShoulderPart1_L/sloth_rig_0005:ShoulderPart2_L/sloth_rig_0005:Elbow_L/sloth_rig_0005:Wrist_L/sloth_rig_0005:ThumbFinger1_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:DeformationSystem/sloth_rig_0005:Root_M/sloth_rig_0005:Spine1_M/sloth_rig_0005:Chest_M/sloth_rig_0005:Scapula_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:DeformationSystem/sloth_rig_0005:Root_M/sloth_rig_0005:Spine1_M/sloth_rig_0005:Chest_M/sloth_rig_0005:Scapula_R/sloth_rig_0005:Shoulder_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:DeformationSystem/sloth_rig_0005:Root_M/sloth_rig_0005:Spine1_M/sloth_rig_0005:Chest_M/sloth_rig_0005:Scapula_R/sloth_rig_0005:Shoulder_R/sloth_rig_0005:ShoulderPart1_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:DeformationSystem/sloth_rig_0005:Root_M/sloth_rig_0005:Spine1_M/sloth_rig_0005:Chest_M/sloth_rig_0005:Scapula_R/sloth_rig_0005:Shoulder_R/sloth_rig_0005:ShoulderPart1_R/sloth_rig_0005:ShoulderPart2_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:DeformationSystem/sloth_rig_0005:Root_M/sloth_rig_0005:Spine1_M/sloth_rig_0005:Chest_M/sloth_rig_0005:Scapula_R/sloth_rig_0005:Shoulder_R/sloth_rig_0005:ShoulderPart1_R/sloth_rig_0005:ShoulderPart2_R/sloth_rig_0005:Elbow_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:DeformationSystem/sloth_rig_0005:Root_M/sloth_rig_0005:Spine1_M/sloth_rig_0005:Chest_M/sloth_rig_0005:Scapula_R/sloth_rig_0005:Shoulder_R/sloth_rig_0005:ShoulderPart1_R/sloth_rig_0005:ShoulderPart2_R/sloth_rig_0005:Elbow_R/sloth_rig_0005:Wrist_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:DeformationSystem/sloth_rig_0005:Root_M/sloth_rig_0005:Spine1_M/sloth_rig_0005:Chest_M/sloth_rig_0005:Scapula_R/sloth_rig_0005:Shoulder_R/sloth_rig_0005:ShoulderPart1_R/sloth_rig_0005:ShoulderPart2_R/sloth_rig_0005:Elbow_R/sloth_rig_0005:Wrist_R/sloth_rig_0005:IndexFinger1_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:DeformationSystem/sloth_rig_0005:Root_M/sloth_rig_0005:Spine1_M/sloth_rig_0005:Chest_M/sloth_rig_0005:Scapula_R/sloth_rig_0005:Shoulder_R/sloth_rig_0005:ShoulderPart1_R/sloth_rig_0005:ShoulderPart2_R/sloth_rig_0005:Elbow_R/sloth_rig_0005:Wrist_R/sloth_rig_0005:MiddleFinger1_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:DeformationSystem/sloth_rig_0005:Root_M/sloth_rig_0005:Spine1_M/sloth_rig_0005:Chest_M/sloth_rig_0005:Scapula_R/sloth_rig_0005:Shoulder_R/sloth_rig_0005:ShoulderPart1_R/sloth_rig_0005:ShoulderPart2_R/sloth_rig_0005:Elbow_R/sloth_rig_0005:Wrist_R/sloth_rig_0005:PinkyFinger1_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:DeformationSystem/sloth_rig_0005:Root_M/sloth_rig_0005:Spine1_M/sloth_rig_0005:Chest_M/sloth_rig_0005:Scapula_R/sloth_rig_0005:Shoulder_R/sloth_rig_0005:ShoulderPart1_R/sloth_rig_0005:ShoulderPart2_R/sloth_rig_0005:Elbow_R/sloth_rig_0005:Wrist_R/sloth_rig_0005:ThumbFinger1_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:FitSkeleton
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:AimSystem
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:AimSystem/sloth_rig_0005:AimEye
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:AimSystem/sloth_rig_0005:AimEye/sloth_rig_0005:AimOffsetEye
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:AimSystem/sloth_rig_0005:AimEye/sloth_rig_0005:AimOffsetEye/sloth_rig_0005:AimFollowEye
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:AimSystem/sloth_rig_0005:AimEye/sloth_rig_0005:AimOffsetEye/sloth_rig_0005:AimFollowOffEye
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:AimSystem/sloth_rig_0005:AimEye/sloth_rig_0005:AimOffsetEye/sloth_rig_0005:AimFollowOnEye
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:BendSystem
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:ConstraintSystem
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:DrivingSystem
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:DynamicSystem
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKIKSystem
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKIKSystem/sloth_rig_0005:FKIKParentConstraintArm_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKIKSystem/sloth_rig_0005:FKIKParentConstraintArm_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKIKSystem/sloth_rig_0005:FKIKParentConstraintLeg_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKIKSystem/sloth_rig_0005:FKIKParentConstraintLeg_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKIKSystem/sloth_rig_0005:FKIKParentConstraintSpine_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKOffsetRoot_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKOffsetRoot_M/sloth_rig_0005:FKExtraRoot_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToChest_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToChest_M/sloth_rig_0005:FKOffsetNeck_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToChest_M/sloth_rig_0005:FKOffsetNeck_M/sloth_rig_0005:FKExtraNeck_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToChest_M/sloth_rig_0005:FKOffsetScapula_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToChest_M/sloth_rig_0005:FKOffsetScapula_L/sloth_rig_0005:FKExtraScapula_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToChest_M/sloth_rig_0005:FKOffsetScapula_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToChest_M/sloth_rig_0005:FKOffsetScapula_R/sloth_rig_0005:FKExtraScapula_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToRoot_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToRoot_M/sloth_rig_0005:FKOffsetHip_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToRoot_M/sloth_rig_0005:FKOffsetHip_L/sloth_rig_0005:FKExtraHip_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToRoot_M/sloth_rig_0005:FKOffsetHip_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToRoot_M/sloth_rig_0005:FKOffsetHip_R/sloth_rig_0005:FKExtraHip_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToScapula_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToScapula_L/sloth_rig_0005:FKOffsetShoulder_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToScapula_L/sloth_rig_0005:FKOffsetShoulder_L/sloth_rig_0005:FKExtraShoulder_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToScapula_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToScapula_R/sloth_rig_0005:FKOffsetShoulder_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToScapula_R/sloth_rig_0005:FKOffsetShoulder_R/sloth_rig_0005:FKExtraShoulder_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToWrist_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToWrist_L/sloth_rig_0005:FKOffsetIndexFinger1_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToWrist_L/sloth_rig_0005:FKOffsetIndexFinger1_L/sloth_rig_0005:SDK1FKIndexFinger1_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToWrist_L/sloth_rig_0005:FKOffsetIndexFinger1_L/sloth_rig_0005:SDK1FKIndexFinger1_L/sloth_rig_0005:SDK2FKIndexFinger1_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToWrist_L/sloth_rig_0005:FKOffsetIndexFinger1_L/sloth_rig_0005:SDK1FKIndexFinger1_L/sloth_rig_0005:SDK2FKIndexFinger1_L/sloth_rig_0005:FKExtraIndexFinger1_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToWrist_L/sloth_rig_0005:FKOffsetMiddleFinger1_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToWrist_L/sloth_rig_0005:FKOffsetMiddleFinger1_L/sloth_rig_0005:SDK1FKMiddleFinger1_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToWrist_L/sloth_rig_0005:FKOffsetMiddleFinger1_L/sloth_rig_0005:SDK1FKMiddleFinger1_L/sloth_rig_0005:FKExtraMiddleFinger1_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToWrist_L/sloth_rig_0005:FKOffsetPinkyFinger1_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToWrist_L/sloth_rig_0005:FKOffsetPinkyFinger1_L/sloth_rig_0005:SDK1FKPinkyFinger1_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToWrist_L/sloth_rig_0005:FKOffsetPinkyFinger1_L/sloth_rig_0005:SDK1FKPinkyFinger1_L/sloth_rig_0005:SDK2FKPinkyFinger1_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToWrist_L/sloth_rig_0005:FKOffsetPinkyFinger1_L/sloth_rig_0005:SDK1FKPinkyFinger1_L/sloth_rig_0005:SDK2FKPinkyFinger1_L/sloth_rig_0005:FKExtraPinkyFinger1_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToWrist_L/sloth_rig_0005:FKOffsetRingFinger1_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToWrist_L/sloth_rig_0005:FKOffsetRingFinger1_L/sloth_rig_0005:SDK1FKRingFinger1_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToWrist_L/sloth_rig_0005:FKOffsetRingFinger1_L/sloth_rig_0005:SDK1FKRingFinger1_L/sloth_rig_0005:SDK2FKRingFinger1_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToWrist_L/sloth_rig_0005:FKOffsetRingFinger1_L/sloth_rig_0005:SDK1FKRingFinger1_L/sloth_rig_0005:SDK2FKRingFinger1_L/sloth_rig_0005:FKExtraRingFinger1_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToWrist_L/sloth_rig_0005:FKOffsetThumbFinger1_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToWrist_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToWrist_R/sloth_rig_0005:FKOffsetIndexFinger1_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToWrist_R/sloth_rig_0005:FKOffsetIndexFinger1_R/sloth_rig_0005:SDK1FKIndexFinger1_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToWrist_R/sloth_rig_0005:FKOffsetIndexFinger1_R/sloth_rig_0005:SDK1FKIndexFinger1_R/sloth_rig_0005:SDK2FKIndexFinger1_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToWrist_R/sloth_rig_0005:FKOffsetIndexFinger1_R/sloth_rig_0005:SDK1FKIndexFinger1_R/sloth_rig_0005:SDK2FKIndexFinger1_R/sloth_rig_0005:FKExtraIndexFinger1_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToWrist_R/sloth_rig_0005:FKOffsetMiddleFinger1_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToWrist_R/sloth_rig_0005:FKOffsetMiddleFinger1_R/sloth_rig_0005:SDK1FKMiddleFinger1_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToWrist_R/sloth_rig_0005:FKOffsetMiddleFinger1_R/sloth_rig_0005:SDK1FKMiddleFinger1_R/sloth_rig_0005:FKExtraMiddleFinger1_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToWrist_R/sloth_rig_0005:FKOffsetPinkyFinger1_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToWrist_R/sloth_rig_0005:FKOffsetPinkyFinger1_R/sloth_rig_0005:SDK1FKPinkyFinger1_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToWrist_R/sloth_rig_0005:FKOffsetPinkyFinger1_R/sloth_rig_0005:SDK1FKPinkyFinger1_R/sloth_rig_0005:SDK2FKPinkyFinger1_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToWrist_R/sloth_rig_0005:FKOffsetPinkyFinger1_R/sloth_rig_0005:SDK1FKPinkyFinger1_R/sloth_rig_0005:SDK2FKPinkyFinger1_R/sloth_rig_0005:FKExtraPinkyFinger1_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToWrist_R/sloth_rig_0005:FKOffsetRingFinger1_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToWrist_R/sloth_rig_0005:FKOffsetRingFinger1_R/sloth_rig_0005:SDK1FKRingFinger1_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToWrist_R/sloth_rig_0005:FKOffsetRingFinger1_R/sloth_rig_0005:SDK1FKRingFinger1_R/sloth_rig_0005:SDK2FKRingFinger1_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToWrist_R/sloth_rig_0005:FKOffsetRingFinger1_R/sloth_rig_0005:SDK1FKRingFinger1_R/sloth_rig_0005:SDK2FKRingFinger1_R/sloth_rig_0005:FKExtraRingFinger1_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToWrist_R/sloth_rig_0005:FKOffsetThumbFinger1_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:FKSystem/sloth_rig_0005:FKParentConstraintToWrist_R/sloth_rig_0005:FKOffsetThumbFinger1_R/sloth_rig_0005:FKExtraThumbFinger1_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:GlobalSystem
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:GlobalSystem/sloth_rig_0005:GlobalOffsetHead_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:GlobalSystem/sloth_rig_0005:GlobalOffsetHead_M/sloth_rig_0005:GlobalHead_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKCurve
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKCurve/sloth_rig_0005:IKSpineCurve_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKFollow
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKFollow/sloth_rig_0005:IKOffsetArm_LFollow
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKFollow/sloth_rig_0005:IKOffsetArm_LFollowNoScale
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKFollow/sloth_rig_0005:IKOffsetArm_RFollow
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKFollow/sloth_rig_0005:IKOffsetArm_RFollowNoScale
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKFollow/sloth_rig_0005:PoleOffsetLeg_LFollow
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKFollow/sloth_rig_0005:PoleOffsetLeg_LFollowNoScale
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKFollow/sloth_rig_0005:PoleOffsetLeg_RFollow
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKFollow/sloth_rig_0005:PoleOffsetLeg_RFollowNoScale
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKHandle
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKHandle/sloth_rig_0005:IKOffsetArm_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKHandle/sloth_rig_0005:IKOffsetArm_L/sloth_rig_0005:IKExtraArm_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKHandle/sloth_rig_0005:IKOffsetArm_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKHandle/sloth_rig_0005:IKOffsetArm_R/sloth_rig_0005:IKExtraArm_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKHandle/sloth_rig_0005:IKOffsetLeg_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKHandle/sloth_rig_0005:IKOffsetLeg_L/sloth_rig_0005:IKExtraLeg_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKHandle/sloth_rig_0005:IKOffsetLeg_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKHandle/sloth_rig_0005:IKOffsetLeg_R/sloth_rig_0005:IKExtraLeg_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKHandle/sloth_rig_0005:IKRootConstraint
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKHandle/sloth_rig_0005:IKRootConstraint/sloth_rig_0005:IKOffsetSpine1_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKHandle/sloth_rig_0005:IKRootConstraint/sloth_rig_0005:IKOffsetSpine1_M/sloth_rig_0005:IKExtraSpine1_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKHandle/sloth_rig_0005:IKRootConstraint/sloth_rig_0005:IKOffsetSpine1_M/sloth_rig_0005:IKExtraSpine1_M/sloth_rig_0005:IKSpine1_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKHandle/sloth_rig_0005:IKRootConstraint/sloth_rig_0005:IKOffsetSpine1_M/sloth_rig_0005:IKExtraSpine1_M/sloth_rig_0005:IKSpine1_M/sloth_rig_0005:IKSpine0AlignTo_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKHandle/sloth_rig_0005:IKRootConstraint/sloth_rig_0005:IKOffsetSpine1_M/sloth_rig_0005:IKExtraSpine1_M/sloth_rig_0005:IKSpine1_M/sloth_rig_0005:IKSpineLocator0_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKHandle/sloth_rig_0005:IKRootConstraint/sloth_rig_0005:IKOffsetSpine1_M/sloth_rig_0005:IKExtraSpine1_M/sloth_rig_0005:IKSpine1_M/sloth_rig_0005:IKStiffOrientSpine1_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKHandle/sloth_rig_0005:IKRootConstraint/sloth_rig_0005:IKOffsetSpine1_M/sloth_rig_0005:IKExtraSpine1_M/sloth_rig_0005:IKSpine1_M/sloth_rig_0005:IKStiffOrientSpine1_M/sloth_rig_0005:IKSpineLocator1_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKHandle/sloth_rig_0005:IKRootConstraint/sloth_rig_0005:IKOffsetSpine2_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKHandle/sloth_rig_0005:IKRootConstraint/sloth_rig_0005:IKOffsetSpine2_M/sloth_rig_0005:IKExtraSpine2_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKHandle/sloth_rig_0005:IKRootConstraint/sloth_rig_0005:IKOffsetSpine2_M/sloth_rig_0005:IKExtraSpine2_M/sloth_rig_0005:IKSpine2_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKHandle/sloth_rig_0005:IKRootConstraint/sloth_rig_0005:IKOffsetSpine2_M/sloth_rig_0005:IKExtraSpine2_M/sloth_rig_0005:IKSpine2_M/sloth_rig_0005:IKSpine2AlignTo_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKHandle/sloth_rig_0005:IKRootConstraint/sloth_rig_0005:IKOffsetSpine2_M/sloth_rig_0005:IKExtraSpine2_M/sloth_rig_0005:IKSpine2_M/sloth_rig_0005:IKSpine2AlignUnIKTwistToOffset_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKHandle/sloth_rig_0005:IKRootConstraint/sloth_rig_0005:IKOffsetSpine2_M/sloth_rig_0005:IKExtraSpine2_M/sloth_rig_0005:IKSpine2_M/sloth_rig_0005:IKSpine2AlignUnIKTwistToOffset_M/sloth_rig_0005:IKSpine2AlignUnIKTwistTo_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKHandle/sloth_rig_0005:IKRootConstraint/sloth_rig_0005:IKOffsetSpine2_M/sloth_rig_0005:IKExtraSpine2_M/sloth_rig_0005:IKSpine2_M/sloth_rig_0005:IKSpineLocator3_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKHandle/sloth_rig_0005:IKRootConstraint/sloth_rig_0005:IKOffsetSpine2_M/sloth_rig_0005:IKExtraSpine2_M/sloth_rig_0005:IKSpine2_M/sloth_rig_0005:IKStiffOrientSpine2_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKHandle/sloth_rig_0005:IKRootConstraint/sloth_rig_0005:IKOffsetSpine2_M/sloth_rig_0005:IKExtraSpine2_M/sloth_rig_0005:IKSpine2_M/sloth_rig_0005:IKStiffOrientSpine2_M/sloth_rig_0005:IKSpineLocator2_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKHandle/sloth_rig_0005:IKScalerChest_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKHandle/sloth_rig_0005:IKScalerRoot_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKHandle/sloth_rig_0005:IKScalerSpine1_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKHandle/sloth_rig_0005:IKSpineHandle_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKHandle/sloth_rig_0005:PoleAimLeg_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKHandle/sloth_rig_0005:PoleAimLeg_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKHandle/sloth_rig_0005:PoleOffsetArm_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKHandle/sloth_rig_0005:PoleOffsetArm_L/sloth_rig_0005:PoleExtraArm_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKHandle/sloth_rig_0005:PoleOffsetArm_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKHandle/sloth_rig_0005:PoleOffsetArm_R/sloth_rig_0005:PoleExtraArm_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKHandle/sloth_rig_0005:PoleOffsetArm_R/sloth_rig_0005:PoleExtraArm_R/sloth_rig_0005:PoleArm_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKHandle/sloth_rig_0005:PoleOffsetLeg_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKHandle/sloth_rig_0005:PoleOffsetLeg_L/sloth_rig_0005:PoleExtraLeg_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKHandle/sloth_rig_0005:PoleOffsetLeg_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKHandle/sloth_rig_0005:PoleOffsetLeg_R/sloth_rig_0005:PoleExtraLeg_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKJoints
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKJoints/sloth_rig_0005:IKParentConstraintHip_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKJoints/sloth_rig_0005:IKParentConstraintHip_L/sloth_rig_0005:IKMessureFromHip_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKJoints/sloth_rig_0005:IKParentConstraintHip_L/sloth_rig_0005:IKXOffsetHip_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKJoints/sloth_rig_0005:IKParentConstraintHip_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKJoints/sloth_rig_0005:IKParentConstraintHip_R/sloth_rig_0005:IKMessureFromHip_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKJoints/sloth_rig_0005:IKParentConstraintHip_R/sloth_rig_0005:IKXOffsetHip_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKJoints/sloth_rig_0005:IKParentConstraintRoot_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKJoints/sloth_rig_0005:IKParentConstraintRoot_M/sloth_rig_0005:IKfake0Spine_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKJoints/sloth_rig_0005:IKParentConstraintRoot_M/sloth_rig_0005:IKfake0Spine_M/sloth_rig_0005:IKfake1Spine_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKJoints/sloth_rig_0005:IKParentConstraintRoot_M/sloth_rig_0005:IKfake0Spine_M/sloth_rig_0005:IKfake1Spine_M/sloth_rig_0005:IKFake1UpLocSpine_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKJoints/sloth_rig_0005:IKParentConstraintRoot_M/sloth_rig_0005:IKfake0Spine_M/sloth_rig_0005:IKfake1Spine_M/sloth_rig_0005:IKfake2Spine_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKJoints/sloth_rig_0005:IKParentConstraintRoot_M/sloth_rig_0005:IKfake0Spine_M/sloth_rig_0005:IKfake1Spine_M/sloth_rig_0005:IKfake2Spine_M/sloth_rig_0005:IKfake3Spine_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKJoints/sloth_rig_0005:IKParentConstraintRoot_M/sloth_rig_0005:IKfake0Spine_M/sloth_rig_0005:IKSpSpine1_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKJoints/sloth_rig_0005:IKParentConstraintRoot_M/sloth_rig_0005:IKfake0Spine_M/sloth_rig_0005:IKSpSpine1_M/sloth_rig_0005:IKSpChest_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKJoints/sloth_rig_0005:IKParentConstraintRoot_M/sloth_rig_0005:IKfake0Spine_M/sloth_rig_0005:IKSpSpine1_M/sloth_rig_0005:IKSpChest_M/sloth_rig_0005:IKSpChestFollowOffset_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKJoints/sloth_rig_0005:IKParentConstraintRoot_M/sloth_rig_0005:IKfake0Spine_M/sloth_rig_0005:IKSpSpine1_M/sloth_rig_0005:IKSpSpine1FollowOffset_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKJoints/sloth_rig_0005:IKParentConstraintRoot_M/sloth_rig_0005:IKXOffsetRoot_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKJoints/sloth_rig_0005:IKParentConstraintRoot_M/sloth_rig_0005:IKXOffsetRoot_M/sloth_rig_0005:IKXRoot_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKJoints/sloth_rig_0005:IKParentConstraintRoot_M/sloth_rig_0005:IKXOffsetRoot_M/sloth_rig_0005:IKXRoot_M/sloth_rig_0005:IKX2Root_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKJoints/sloth_rig_0005:IKParentConstraintRoot_M/sloth_rig_0005:IKXOffsetRoot_M/sloth_rig_0005:IKXRoot_M/sloth_rig_0005:IKXSpine1_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKJoints/sloth_rig_0005:IKParentConstraintRoot_M/sloth_rig_0005:IKXOffsetRoot_M/sloth_rig_0005:IKXRoot_M/sloth_rig_0005:IKXSpine1_M/sloth_rig_0005:IKX2Spine1_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKJoints/sloth_rig_0005:IKParentConstraintRoot_M/sloth_rig_0005:IKXOffsetRoot_M/sloth_rig_0005:IKXRoot_M/sloth_rig_0005:IKXSpine1_M/sloth_rig_0005:IKXChest_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKJoints/sloth_rig_0005:IKParentConstraintRoot_M/sloth_rig_0005:IKXOffsetRoot_M/sloth_rig_0005:IKXRoot_M/sloth_rig_0005:IKXSpine1_M/sloth_rig_0005:IKXChest_M/sloth_rig_0005:IKX2Chest_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKJoints/sloth_rig_0005:IKParentConstraintShoulder_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKJoints/sloth_rig_0005:IKParentConstraintShoulder_L/sloth_rig_0005:IKMessureFromShoulder_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKJoints/sloth_rig_0005:IKParentConstraintShoulder_L/sloth_rig_0005:IKXOffsetShoulder_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKJoints/sloth_rig_0005:IKParentConstraintShoulder_L/sloth_rig_0005:IKXOffsetShoulder_L/sloth_rig_0005:IKXShoulder_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKJoints/sloth_rig_0005:IKParentConstraintShoulder_L/sloth_rig_0005:IKXOffsetShoulder_L/sloth_rig_0005:IKXShoulder_L/sloth_rig_0005:IKX2Shoulder_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKJoints/sloth_rig_0005:IKParentConstraintShoulder_L/sloth_rig_0005:IKXOffsetShoulder_L/sloth_rig_0005:IKXShoulder_L/sloth_rig_0005:IKXElbow_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKJoints/sloth_rig_0005:IKParentConstraintShoulder_L/sloth_rig_0005:IKXOffsetShoulder_L/sloth_rig_0005:IKXShoulder_L/sloth_rig_0005:IKXElbow_L/sloth_rig_0005:IKX2Elbow_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKJoints/sloth_rig_0005:IKParentConstraintShoulder_L/sloth_rig_0005:IKXOffsetShoulder_L/sloth_rig_0005:IKXShoulder_L/sloth_rig_0005:IKXElbow_L/sloth_rig_0005:IKXWrist_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKJoints/sloth_rig_0005:IKParentConstraintShoulder_L/sloth_rig_0005:IKXOffsetShoulder_L/sloth_rig_0005:IKXShoulder_L/sloth_rig_0005:IKXElbow_L/sloth_rig_0005:IKXWrist_L/sloth_rig_0005:IKX2Wrist_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKJoints/sloth_rig_0005:IKParentConstraintShoulder_L/sloth_rig_0005:IKXOffsetShoulder_L/sloth_rig_0005:IKXShoulder_L/sloth_rig_0005:IKXElbow_L/sloth_rig_0005:PoleAnnotationArm_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKJoints/sloth_rig_0005:IKParentConstraintShoulder_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKJoints/sloth_rig_0005:IKParentConstraintShoulder_R/sloth_rig_0005:IKMessureFromShoulder_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKJoints/sloth_rig_0005:IKParentConstraintShoulder_R/sloth_rig_0005:IKXOffsetShoulder_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKJoints/sloth_rig_0005:IKParentConstraintShoulder_R/sloth_rig_0005:IKXOffsetShoulder_R/sloth_rig_0005:IKXShoulder_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKJoints/sloth_rig_0005:IKParentConstraintShoulder_R/sloth_rig_0005:IKXOffsetShoulder_R/sloth_rig_0005:IKXShoulder_R/sloth_rig_0005:IKX2Shoulder_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKJoints/sloth_rig_0005:IKParentConstraintShoulder_R/sloth_rig_0005:IKXOffsetShoulder_R/sloth_rig_0005:IKXShoulder_R/sloth_rig_0005:IKXElbow_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKJoints/sloth_rig_0005:IKParentConstraintShoulder_R/sloth_rig_0005:IKXOffsetShoulder_R/sloth_rig_0005:IKXShoulder_R/sloth_rig_0005:IKXElbow_R/sloth_rig_0005:IKX2Elbow_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKJoints/sloth_rig_0005:IKParentConstraintShoulder_R/sloth_rig_0005:IKXOffsetShoulder_R/sloth_rig_0005:IKXShoulder_R/sloth_rig_0005:IKXElbow_R/sloth_rig_0005:IKXWrist_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKJoints/sloth_rig_0005:IKParentConstraintShoulder_R/sloth_rig_0005:IKXOffsetShoulder_R/sloth_rig_0005:IKXShoulder_R/sloth_rig_0005:IKXElbow_R/sloth_rig_0005:IKXWrist_R/sloth_rig_0005:IKX2Wrist_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKJoints/sloth_rig_0005:IKParentConstraintShoulder_R/sloth_rig_0005:IKXOffsetShoulder_R/sloth_rig_0005:IKXShoulder_R/sloth_rig_0005:IKXElbow_R/sloth_rig_0005:PoleAnnotationArm_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKJoints/sloth_rig_0005:IKSpSpineOffset_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKJoints/sloth_rig_0005:IKSpSpineOffset_M/sloth_rig_0005:IKSpRoot_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKJoints/sloth_rig_0005:IKSpSpineOffset_M/sloth_rig_0005:IKSpRoot_M/sloth_rig_0005:IKSpRootFollowOffset_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKMessure
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKMessure/sloth_rig_0005:IKdistanceArm_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKMessure/sloth_rig_0005:IKdistanceArm_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKMessure/sloth_rig_0005:IKdistanceLeg_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKMessure/sloth_rig_0005:IKdistanceLeg_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKMessure/sloth_rig_0005:IKmessureLoc1Arm_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKMessure/sloth_rig_0005:IKmessureLoc1Arm_L/sloth_rig_0005:IKmessureLoc2Arm_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKMessure/sloth_rig_0005:IKmessureLoc1Arm_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKMessure/sloth_rig_0005:IKmessureLoc1Arm_R/sloth_rig_0005:IKmessureLoc2Arm_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKMessure/sloth_rig_0005:IKmessureLoc1Leg_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKMessure/sloth_rig_0005:IKmessureLoc1Leg_L/sloth_rig_0005:IKmessureLoc2Leg_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKMessure/sloth_rig_0005:IKmessureLoc1Leg_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKMessure/sloth_rig_0005:IKmessureLoc1Leg_R/sloth_rig_0005:IKmessureLoc2Leg_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKStatic
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKStatic/sloth_rig_0005:IKOffsetArm_LStatic
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKStatic/sloth_rig_0005:IKOffsetArm_RStatic
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKStatic/sloth_rig_0005:PoleOffsetArm_LStatic
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKStatic/sloth_rig_0005:PoleOffsetArm_RStatic
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKStatic/sloth_rig_0005:PoleOffsetLeg_LStatic
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:IKSystem/sloth_rig_0005:IKStatic/sloth_rig_0005:PoleOffsetLeg_RStatic
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:RootSystem
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:RootSystem/sloth_rig_0005:LegLockConstrained
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:RootSystem/sloth_rig_0005:RootOffsetX_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:RootSystem/sloth_rig_0005:RootOffsetX_M/sloth_rig_0005:RootExtraX_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:FKIKMixElbow_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:FKIKMixElbow_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowOffsetChest_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowOffsetChest_M/sloth_rig_0005:TwistFollowChest_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowOffsetChest_M/sloth_rig_0005:TwistFollowChest_M/sloth_rig_0005:UnTwistIKChest_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowOffsetElbow_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowOffsetElbow_L/sloth_rig_0005:TwistFollowElbow_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowOffsetElbow_L/sloth_rig_0005:TwistFollowElbow_L/sloth_rig_0005:UnTwistIKElbow_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowOffsetElbow_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowOffsetElbow_R/sloth_rig_0005:TwistFollowElbow_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowOffsetElbow_R/sloth_rig_0005:TwistFollowElbow_R/sloth_rig_0005:UnTwistIKElbow_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowOffsetShoulder_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowOffsetShoulder_L/sloth_rig_0005:TwistFollowShoulder_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowOffsetShoulder_L/sloth_rig_0005:TwistFollowShoulder_L/sloth_rig_0005:UnTwistIKShoulder_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowOffsetShoulder_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowOffsetShoulder_R/sloth_rig_0005:TwistFollowShoulder_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowOffsetShoulder_R/sloth_rig_0005:TwistFollowShoulder_R/sloth_rig_0005:UnTwistIKShoulder_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowParentOffsetChest_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowParentOffsetChest_M/sloth_rig_0005:TwistFollowParentChest_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowParentOffsetChest_M/sloth_rig_0005:TwistFollowParentChest_M/sloth_rig_0005:UnTwistChest_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowParentOffsetChest_M/sloth_rig_0005:TwistFollowParentChest_M/sloth_rig_0005:UnTwistChest_M/sloth_rig_0005:TwistBalancerChest_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowParentOffsetChest_M/sloth_rig_0005:TwistFollowParentChest_M/sloth_rig_0005:UnTwistChest_M/sloth_rig_0005:UnTwistEndChest_M
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowParentOffsetElbow_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowParentOffsetElbow_L/sloth_rig_0005:TwistFollowParentElbow_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowParentOffsetElbow_L/sloth_rig_0005:TwistFollowParentElbow_L/sloth_rig_0005:UnTwistElbow_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowParentOffsetElbow_L/sloth_rig_0005:TwistFollowParentElbow_L/sloth_rig_0005:UnTwistElbow_L/sloth_rig_0005:TwistBalancerElbow_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowParentOffsetElbow_L/sloth_rig_0005:TwistFollowParentElbow_L/sloth_rig_0005:UnTwistElbow_L/sloth_rig_0005:TwisterElbow0_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowParentOffsetElbow_L/sloth_rig_0005:TwistFollowParentElbow_L/sloth_rig_0005:UnTwistElbow_L/sloth_rig_0005:TwisterElbow1_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowParentOffsetElbow_L/sloth_rig_0005:TwistFollowParentElbow_L/sloth_rig_0005:UnTwistElbow_L/sloth_rig_0005:TwisterElbow2_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowParentOffsetElbow_L/sloth_rig_0005:TwistFollowParentElbow_L/sloth_rig_0005:UnTwistElbow_L/sloth_rig_0005:UnTwistEndElbow_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowParentOffsetElbow_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowParentOffsetElbow_R/sloth_rig_0005:TwistFollowParentElbow_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowParentOffsetElbow_R/sloth_rig_0005:TwistFollowParentElbow_R/sloth_rig_0005:UnTwistElbow_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowParentOffsetElbow_R/sloth_rig_0005:TwistFollowParentElbow_R/sloth_rig_0005:UnTwistElbow_R/sloth_rig_0005:TwistBalancerElbow_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowParentOffsetElbow_R/sloth_rig_0005:TwistFollowParentElbow_R/sloth_rig_0005:UnTwistElbow_R/sloth_rig_0005:TwisterElbow0_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowParentOffsetElbow_R/sloth_rig_0005:TwistFollowParentElbow_R/sloth_rig_0005:UnTwistElbow_R/sloth_rig_0005:TwisterElbow1_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowParentOffsetElbow_R/sloth_rig_0005:TwistFollowParentElbow_R/sloth_rig_0005:UnTwistElbow_R/sloth_rig_0005:TwisterElbow2_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowParentOffsetElbow_R/sloth_rig_0005:TwistFollowParentElbow_R/sloth_rig_0005:UnTwistElbow_R/sloth_rig_0005:UnTwistEndElbow_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowParentOffsetShoulder_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowParentOffsetShoulder_L/sloth_rig_0005:TwistFollowParentShoulder_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowParentOffsetShoulder_L/sloth_rig_0005:TwistFollowParentShoulder_L/sloth_rig_0005:UnTwistShoulder_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowParentOffsetShoulder_L/sloth_rig_0005:TwistFollowParentShoulder_L/sloth_rig_0005:UnTwistShoulder_L/sloth_rig_0005:TwistBalancerShoulder_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowParentOffsetShoulder_L/sloth_rig_0005:TwistFollowParentShoulder_L/sloth_rig_0005:UnTwistShoulder_L/sloth_rig_0005:TwisterShoulder0_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowParentOffsetShoulder_L/sloth_rig_0005:TwistFollowParentShoulder_L/sloth_rig_0005:UnTwistShoulder_L/sloth_rig_0005:TwisterShoulder1_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowParentOffsetShoulder_L/sloth_rig_0005:TwistFollowParentShoulder_L/sloth_rig_0005:UnTwistShoulder_L/sloth_rig_0005:TwisterShoulder2_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowParentOffsetShoulder_L/sloth_rig_0005:TwistFollowParentShoulder_L/sloth_rig_0005:UnTwistShoulder_L/sloth_rig_0005:UnTwistEndShoulder_L
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowParentOffsetShoulder_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowParentOffsetShoulder_R/sloth_rig_0005:TwistFollowParentShoulder_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowParentOffsetShoulder_R/sloth_rig_0005:TwistFollowParentShoulder_R/sloth_rig_0005:UnTwistShoulder_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowParentOffsetShoulder_R/sloth_rig_0005:TwistFollowParentShoulder_R/sloth_rig_0005:UnTwistShoulder_R/sloth_rig_0005:TwistBalancerShoulder_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowParentOffsetShoulder_R/sloth_rig_0005:TwistFollowParentShoulder_R/sloth_rig_0005:UnTwistShoulder_R/sloth_rig_0005:TwisterShoulder0_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowParentOffsetShoulder_R/sloth_rig_0005:TwistFollowParentShoulder_R/sloth_rig_0005:UnTwistShoulder_R/sloth_rig_0005:TwisterShoulder1_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowParentOffsetShoulder_R/sloth_rig_0005:TwistFollowParentShoulder_R/sloth_rig_0005:UnTwistShoulder_R/sloth_rig_0005:TwisterShoulder2_R
+        weight: 1
+      - path: sloth_rig_0005:Group/sloth_rig_0005:Main/sloth_rig_0005:MotionSystem/sloth_rig_0005:TwistSystem/sloth_rig_0005:TwistFollowParentOffsetShoulder_R/sloth_rig_0005:TwistFollowParentShoulder_R/sloth_rig_0005:UnTwistShoulder_R/sloth_rig_0005:UnTwistEndShoulder_R
+        weight: 1
+      - path: sloth_rig_0005:L_nails
+        weight: 1
+      - path: sloth_rig_0005:nail_L_leg
+        weight: 1
+      - path: sloth_rig_0005:R_leg
+        weight: 1
+      - path: sloth_rig_0005:R_nails
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: sloth
+  assetBundleVariant: 
