@@ -8,10 +8,13 @@ namespace Zer0
         public virtual void Collect(Collider other) 
             => gameObject.SetActive(false);
 
-        private void OnTriggerEnter(Collider other)
+        protected virtual void OnTriggerEnter(Collider other)
         {
-            if (other.TryGetComponent(out Player player)) 
+            if (other.TryGetComponent(out Player player))
+            {
+                print(player);
                 Collect(other);
+            }
         }
     }
 }

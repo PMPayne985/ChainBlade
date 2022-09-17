@@ -34,6 +34,6 @@ MonoBehaviour:
     cullingMinDist: 0.1
     fov: 45
     useZoom: 1
-    fixedAngle: {x: 0, y: 60}
+    fixedAngle: {x: 180, y: 75}
     lookPoints: []
     cameraMode: 1

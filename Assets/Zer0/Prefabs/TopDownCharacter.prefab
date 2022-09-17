@@ -1011,7 +1011,7 @@ Transform:
   m_Children:
   - {fileID: 2361837846338567110}
   m_Father: {fileID: 2725231476981441039}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &283627217131919629
 GameObject:
@@ -1022,7 +1022,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2025640122332869833}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: EmissionPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1053,7 +1053,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2025640120261559433}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: EmissionPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8479,7 +8479,7 @@ Transform:
   - {fileID: 7912233188905708675}
   - {fileID: 6744633475236167555}
   m_Father: {fileID: 2725231476981441039}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2725231475965268197
 GameObject:
@@ -8774,6 +8774,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 5071750429632274980}
   - {fileID: 2725231475449751926}
   - {fileID: 3009501557708284365}
   - {fileID: 630508440287500960}
@@ -10240,7 +10241,7 @@ GameObject:
   - component: {fileID: 4284458963322069123}
   - component: {fileID: 99591061179748224}
   - component: {fileID: 249399076726030966}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Hilt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10323,7 +10324,7 @@ GameObject:
   - component: {fileID: 4284458964321128643}
   - component: {fileID: 99591060048183232}
   - component: {fileID: 249399078394622518}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Hilt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10546,7 +10547,6 @@ MonoBehaviour:
   enhancementMenu: {fileID: 2212177522966208393}
   audioMixer: {fileID: 24100000, guid: 94eb08edb87d07a459d17916cfca9878, type: 2}
   footStepMixer: {fileID: 24100000, guid: a63f18b704a1b874a8dad30baf0939e6, type: 2}
-  rotationSlider: {fileID: 0}
   masterSlider: {fileID: 4064152432935708460}
   musicSlider: {fileID: 4064152433172814754}
   sfxSlider: {fileID: 4064152433339785823}
@@ -17509,7 +17509,7 @@ GameObject:
   - component: {fileID: 4288605247761152578}
   - component: {fileID: 4288605247761152577}
   - component: {fileID: 4288605247761152576}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: dripEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22322,7 +22322,7 @@ GameObject:
   - component: {fileID: 4288605248088984066}
   - component: {fileID: 4288605248088984065}
   - component: {fileID: 4288605248088984064}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: dripEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27507,7 +27507,7 @@ GameObject:
   - component: {fileID: 8846186477623105076}
   - component: {fileID: 8548517719046558896}
   - component: {fileID: 3061423933440526549}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Blade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27715,7 +27715,7 @@ GameObject:
   - component: {fileID: 1054181838443307835}
   - component: {fileID: 3550800633745473536}
   - component: {fileID: 982324524549856583}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Blade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29357,7 +29357,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5071750428025449378
 Transform:
   m_ObjectHideFlags: 0
@@ -29382,7 +29382,7 @@ Camera:
   m_GameObject: {fileID: 5071750428025449383}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 3
+  m_ClearFlags: 4
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -29699,7 +29699,7 @@ Camera:
   m_Depth: 2
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 928
+    m_Bits: 2147999615
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -29769,9 +29769,9 @@ MonoBehaviour:
   _frame: 0
   _frameColor: {r: 1, g: 1, b: 1, a: 0.047}
   _frameMask: {fileID: 0}
-  _lut: 0
+  _lut: 1
   _lutIntensity: 1
-  _lutTexture: {fileID: 0}
+  _lutTexture: {fileID: 2800000, guid: 51a244957fb4c4908b6eb62d6ad38a8e, type: 3}
   _lutTexture3D: {fileID: 0}
   _nightVision: 0
   _nightVisionColor: {r: 0.5, g: 1, b: 0.5, a: 0.5}
@@ -30257,7 +30257,7 @@ GameObject:
   - component: {fileID: 5071750429632274981}
   m_Layer: 29
   m_Name: Map Camera
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30269,14 +30269,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5071750429632274983}
-  m_LocalRotation: {x: 0.2588191, y: 0, z: 0, w: 0.9659258}
-  m_LocalPosition: {x: -0.06, y: 22.11, z: -28.42}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 50, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8591052200273330993}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
+  m_Father: {fileID: 2725231476981441039}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!20 &5071750429632274976
 Camera:
   m_ObjectHideFlags: 0
@@ -34438,7 +34438,7 @@ Transform:
   - {fileID: 8591052200273330993}
   - {fileID: 8591052199621625609}
   m_Father: {fileID: 2725231476981441039}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6101489226481319934
 GameObject:
@@ -35239,7 +35239,7 @@ GameObject:
   - component: {fileID: 6358065608731236236}
   - component: {fileID: 6358065608731236239}
   - component: {fileID: 6358065608731236238}
-  m_Layer: 2
+  m_Layer: 8
   m_Name: hitBox
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -35303,7 +35303,7 @@ GameObject:
   - component: {fileID: 6358065610283821004}
   - component: {fileID: 6358065610283821007}
   - component: {fileID: 6358065610283821006}
-  m_Layer: 2
+  m_Layer: 8
   m_Name: hitBox
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -37460,7 +37460,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2725231476981441039}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!212 &4968141190944398653
 SpriteRenderer:
@@ -38394,7 +38394,7 @@ GameObject:
   - component: {fileID: 8276581916786018372}
   - component: {fileID: 2589899738235044817}
   - component: {fileID: 6617947967072573973}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pooling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43264,7 +43264,7 @@ GameObject:
   - component: {fileID: 8276581915115812868}
   - component: {fileID: 2589899739922510737}
   - component: {fileID: 6617947966344047189}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pooling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54585,7 +54585,6 @@ Transform:
   - {fileID: 5071750428448194642}
   - {fileID: 5071750428025449378}
   - {fileID: 5071750428049619637}
-  - {fileID: 5071750429632274980}
   m_Father: {fileID: 3009501557708284365}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -54609,7 +54608,7 @@ MonoBehaviour:
   joystickSensitivity: 1
   cullingLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
   clipPlaneMargin: 0
   checkHeightRadius: 0
   showGizmos: 0
@@ -54650,7 +54649,7 @@ MonoBehaviour:
     fixedAngle: {x: 0, y: 0}
     lookPoints: []
     cameraMode: 0
-  CameraStateList: {fileID: 11400000, guid: 77e476d6f5332c14fbf0525e160c60e6, type: 2}
+  CameraStateList: {fileID: 11400000, guid: 026ed2280610ee74194cd3af679c75a3, type: 2}
   lockTarget: {fileID: 0}
   movementSpeed: {x: 0, y: 0}
   lerpState:
@@ -54764,7 +54763,7 @@ AudioSource:
   m_GameObject: {fileID: 8592457971978675324}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 9197333314434770939, guid: 94eb08edb87d07a459d17916cfca9878, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -54881,7 +54880,7 @@ Transform:
   m_Children:
   - {fileID: 4883531315459371093}
   m_Father: {fileID: 2725231476981441039}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8616978346945189972
 GameObject:
@@ -55749,7 +55748,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9103652396713422020}
   - component: {fileID: 5445603163334136984}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: ChainKnifeInvector
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -55806,7 +55805,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9103652397710384260}
   - component: {fileID: 5445603164618482904}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: ChainKnifeInvector
   m_TagString: Weapon
   m_Icon: {fileID: 0}
