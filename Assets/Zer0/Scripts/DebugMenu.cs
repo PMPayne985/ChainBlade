@@ -65,7 +65,7 @@ namespace Zer0
                 case "refillspellpoints":
                     RefillSpellPointsCommand(1000);
                     break;
-                case "add100links":
+                case "addlinks":
                     AddOneHundredLinksCommands();
                     break;
                 default:
