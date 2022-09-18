@@ -65,8 +65,8 @@ namespace Zer0
                 case "refillspellpoints":
                     RefillSpellPointsCommand(1000);
                     break;
-                case "addtenlinks":
-                    AddTenLinksCommands();
+                case "add100links":
+                    AddOneHundredLinksCommands();
                     break;
                 default:
                     DebugCommand("Command not recognized.");
@@ -86,10 +86,10 @@ namespace Zer0
             DebugCommand($"{points} spell points restored.");
         }
         
-        private void AddTenLinksCommands()
+        private void AddOneHundredLinksCommands()
         {
-            OnAddLinksCommand?.Invoke(10);
-            DebugCommand($"10 Links added.");
+            OnAddLinksCommand?.Invoke(100);
+            DebugCommand($"100 Links added.");
         }
 
         public void DebugCommand(string command)
