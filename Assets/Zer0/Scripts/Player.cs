@@ -17,6 +17,8 @@ namespace Zer0
             if (_chainKnives.Length <= 0) Debug.LogError("CharacterBehavior is missing a Chain Knife.");
             _caster = GetComponent<SpellCasting>();
             if (!_caster) Debug.LogWarning("CharacterBehavior is missing a Spell Casting Component.");
+            _healthController = GetComponent<vHealthController>();
+            if (!_healthController) Debug.LogError("CharacterBehavior is missing a Health Controller Component.");
         }
 
         private void Start()
