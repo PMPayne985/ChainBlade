@@ -32133,6 +32133,8 @@ MonoBehaviour:
   knifeDamageText: {fileID: 4886835531803225330}
   chainDamageText: {fileID: 2581346178785977363}
   chainLengthText: {fileID: 6289586936726846134}
+  chainDotText: {fileID: 7966842199509301989}
+  chainDragText: {fileID: 7677771309797979238}
   dotMultiplier: 4
   chainStrikeDamageMultiplier: 4
   knifeDamageMultiplier: 2
@@ -32141,6 +32143,7 @@ MonoBehaviour:
   bladeDamageUpgrade: 3
   chainDamageUpgrade: 1
   chainLengthUpgrade: 3
+  chainDotUpgrade: 2
 --- !u!1 &5627266387800338842
 GameObject:
   m_ObjectHideFlags: 0
