@@ -151,7 +151,7 @@ namespace Zer0
         
         private void UpgradeDamage(weaponType weapon, int newDamage)
         {
-            if (weapon == type)
+            if (weapon == type && canDamage)
             {
                 damage += newDamage;
             }

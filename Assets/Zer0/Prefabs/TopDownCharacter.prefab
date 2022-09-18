@@ -9728,8 +9728,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ad6f3bd7d93c84989de1e292299a46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testSpell: {fileID: 3011070413910585228, guid: c80205adc775acb42be152592504e64a, type: 3}
   maxSpellPoints: 10
+  _spellPoints: 0
   spellRechargeRate: 0.1
   launchPoint: {fileID: 6744633475236167555}
 --- !u!114 &992541359
@@ -32130,11 +32130,17 @@ MonoBehaviour:
   lengthCostText: {fileID: 2643567462569127854}
   currentPointsText: {fileID: 5802244156543834642}
   totalPointsText: {fileID: 7357491407588467599}
+  knifeDamageText: {fileID: 4886835531803225330}
+  chainDamageText: {fileID: 2581346178785977363}
+  chainLengthText: {fileID: 6289586936726846134}
   dotMultiplier: 4
   chainStrikeDamageMultiplier: 4
   knifeDamageMultiplier: 2
   lengthMultiplier: 1
   chainPullMultiplier: 1
+  bladeDamageUpgrade: 3
+  chainDamageUpgrade: 1
+  chainLengthUpgrade: 3
 --- !u!1 &5627266387800338842
 GameObject:
   m_ObjectHideFlags: 0
@@ -48361,7 +48367,7 @@ MonoBehaviour:
   healthCostText: {fileID: 3414753305225510961}
   currentPointsText: {fileID: 5848842366234207615}
   totalPointsText: {fileID: 3533479841786376788}
-  healthToAdd: 2
+  healthToAdd: 5
   healthMultiplier: 2
 --- !u!1 &7611148030060982649
 GameObject:

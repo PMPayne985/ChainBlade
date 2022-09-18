@@ -1,3 +1,5 @@
+using Invector;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Zer0
@@ -7,6 +9,8 @@ namespace Zer0
         private ChainKnife[] _chainKnives;
         private SpellCasting _caster;
 
+        private vHealthController _healthController;
+
         private void Awake()
         {
             _chainKnives = GetComponentsInChildren<ChainKnife>();
@@ -15,17 +19,20 @@ namespace Zer0
             if (!_caster) Debug.LogWarning("CharacterBehavior is missing a Spell Casting Component.");
         }
 
+        private void Start()
+        {
+            if (DebugMenu.Instance)
+                DebugMenu.OnRefillHealthCommand += RestoreHealthInvectorPlayer;
+
+            UpgradeArmorMenu.OnMaxHealthUpgrade += IncreaseMaxHealth;
+        }
+        
         public void LaunchChain()
         {
             foreach (var knife in _chainKnives)
             {
                 knife.LaunchChain();   
             }
-        }
-
-        public void CastSpell()
-        {
-            _caster.CastSpell();
         }
 
         public void DamageInvectorPlayer (int DamageAmount, Transform Target)
@@ -57,6 +64,18 @@ namespace Zer0
                 
                 character.TakeDamage(_Damage);
             }
+        }
+
+        public void RestoreHealthInvectorPlayer(int value)
+        {
+            if (!(_healthController.currentHealth < _healthController.maxHealth)) return;
+            
+            _healthController.AddHealth(value);
+        }
+
+        private void IncreaseMaxHealth(int value)
+        {
+            _healthController.ChangeMaxHealth(value);
         }
     }
 }

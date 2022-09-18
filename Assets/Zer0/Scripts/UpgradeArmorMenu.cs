@@ -14,7 +14,7 @@ namespace Zer0
         private TMP_Text totalPointsText;
 
         [SerializeField, Tooltip("The amount of health added to the players max health with each upgrade.")]
-        private float healthToAdd= 2;
+        private int healthToAdd= 2;
         [SerializeField, Tooltip("The cost multiplier for each level of health enhancement")] 
         private int healthMultiplier = 1;
         
@@ -23,7 +23,7 @@ namespace Zer0
         private int _currentPoints;
         private int _totalPoints;
 
-        public static event Action<float> OnMaxHealthUpgrade;
+        public static event Action<int> OnMaxHealthUpgrade;
 
         private void Start()
         {
@@ -50,6 +50,8 @@ namespace Zer0
         
         private void IncrementCollected(UpgradeMenu check, int amount)
         {
+            if (check != this) return;
+            
             _currentPoints += amount;
             _totalPoints += amount;
         }

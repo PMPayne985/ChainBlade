@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Invector.vMelee;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -38,6 +39,7 @@ namespace Zer0
         private GameObject _chainHead;
         private List<GameObject> _chain;
         private Transform _character;
+        private vMeleeWeapon _weapon;
 
         private bool _launched;
 
@@ -48,6 +50,7 @@ namespace Zer0
             _character = transform.root;
             _chainHead = Instantiate(knifePrefab);
             _chainPool = new ObjectPool<GameObject>(CreateLink, OnGetLink, OnReleaseLink, OnDestroyLink, true, 5, 50);
+            _weapon = GetComponentInChildren<vMeleeWeapon>();
         }
 
         private void Start()
@@ -58,6 +61,7 @@ namespace Zer0
             _chain = new List<GameObject>();
 
             UpgradeBladeMenu.OnChainLengthUpgrade += UpgradeChainLength;
+            UpgradeBladeMenu.OnDamageUpgrade += UpgradeDamage;
         }
 
         private void Update()
@@ -249,6 +253,12 @@ namespace Zer0
             maxChainsLength += newLength;
         }
 
+        private void UpgradeDamage(weaponType type, int damage)
+        {
+            if (type == weaponType.knifeBlade)
+                _weapon.damage.damageValue += damage;
+        }
+        
         public void WakeUpAllKnives()
         {
             _chainHead.SetActive(true);

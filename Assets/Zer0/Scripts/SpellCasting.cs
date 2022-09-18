@@ -15,10 +15,8 @@ namespace Zer0
         private Spell _activeSpell;
         private int _activeSpellIndex;
 
-        public Spell testSpell;
-
         [SerializeField] private float maxSpellPoints = 10;
-        private float _spellPoints;
+        [SerializeField] private float _spellPoints;
         [SerializeField] private float spellRechargeRate = 0.1f;
         [SerializeField] private Transform launchPoint;
         
@@ -40,9 +38,7 @@ namespace Zer0
             UpgradeSpellMenu.OnBuyNewSpell += AddSpell;
             UpgradeSpellMenu.OnEnhanceSpell += EnhanceSpell;
             UpgradeSpellMenu.OnChangeSpellParameters += ChangeSpellParams;
-            
-            AddSpell(testSpell);
-            
+
             _ui.UpdateMagicSlider(maxSpellPoints, _spellPoints);
             _ui.SetSliderMax(maxSpellPoints);
         }
@@ -146,9 +142,14 @@ namespace Zer0
         
         public void CastSpell()
         {
+            Casting();
+        }
+        
+        private void Casting()
+        {
             _onCoolDown = true;
             _coolDownCounter = _activeSpell.CoolDown;
-
+            
             _spellPoints -= _activeSpell.Cost;
 
             var cast = Instantiate(_activeSpell, launchPoint.position, launchPoint.rotation);

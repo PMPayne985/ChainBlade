@@ -36,7 +36,8 @@ namespace Zer0
         private void Start()
         {
             LinkCollectible.OnCollectedLink += IncrementCollected;
-            DebugMenu.OnAddLinksCommand += AddLinksWithoutCollectible;
+            if (DebugMenu.Instance)
+                DebugMenu.OnAddLinksCommand += AddLinksWithoutCollectible;
             gameObject.SetActive(false);
         }
         

@@ -45,10 +45,15 @@ namespace Zer0
         {
             currentPointsText.text = $"{_currentPoints}";
             totalPointsText.text = $"{_totalPoints}";
+            
+            dotDurationCostText.text = $"{_baseDotCost * dotDurationCostMultiplier}";
+            dotDamageCostText.text = $"{_baseDotCost * dotDamageCostMultiplier}";
         }
         
         private void IncrementCollected(UpgradeMenu check, int amount)
         {
+            if (check != this) return;
+
             _currentPoints += amount;
             _totalPoints += amount;
         }

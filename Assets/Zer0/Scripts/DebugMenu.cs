@@ -29,7 +29,7 @@ namespace Zer0
         private bool _menuOn;
         public bool MenuOn => _menuOn;
 
-        public static event Action<float> OnRefillHealthCommand;
+        public static event Action<int> OnRefillHealthCommand;
         public static event Action<int> OnAddLinksCommand;
         public static event Action<float> OnRefillSpellPointsCommand;
 
