@@ -67,6 +67,11 @@ namespace Zer0
             UpdateScore();
         }
 
+        public override void TakeDamage(int damage, Transform attacker)
+        {
+            _aiSystem.Damage(damage, EmeraldAISystem.TargetType.AI, attacker, 400, false);
+        }
+
         public void ResetEnemy()
         {
             

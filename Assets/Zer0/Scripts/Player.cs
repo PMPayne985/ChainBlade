@@ -37,13 +37,13 @@ namespace Zer0
             }
         }
 
-        public void DamageInvectorPlayer (int DamageAmount, Transform Target)
+        public override void TakeDamage (int DamageAmount, Transform attacker)
         {
             if (TryGetComponent(out Invector.vCharacterController.vCharacter character))
             {
                 var _Damage = new Invector.vDamage(DamageAmount);
-                _Damage.sender = Target;
-                _Damage.hitPosition = Target.position;
+                _Damage.sender = attacker;
+                _Damage.hitPosition = attacker.position;
                 
                 //Applies damage to Invector and allows its melee weapons to block incoming Emerald AI damage.
                 if (TryGetComponent(out Invector.vCharacterController.vMeleeCombatInput PlayerInput))

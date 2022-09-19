@@ -19,7 +19,6 @@ namespace Zer0
         private Character _character;
         private Animator _animator;
         private EmeraldAISystem _enemy;
-        private Player _player;
         private List<statusEffectInfo> _activeEffects;
 
         private bool _incapacitated;
@@ -36,11 +35,6 @@ namespace Zer0
             _character = GetComponent<Character>();
             _animator = GetComponent<Animator>();
             _activeEffects = new List<statusEffectInfo>();
-
-            if (TryGetComponent(out EmeraldAISystem enemy))
-                _enemy = enemy;
-            else if (TryGetComponent(out Player player))
-                _player = player;
 
         }
 
@@ -144,8 +138,7 @@ namespace Zer0
 
             if (effect.tick <= 0)
             {
-                if (_player)
-                    _player.DamageInvectorPlayer((int)effect.magnitude, transform);
+                _character.TakeDamage((int)effect.magnitude, transform);
                 
                 effect.tick = effect.frequency;
             }

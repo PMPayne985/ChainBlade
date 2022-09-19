@@ -1211,6 +1211,7 @@ GameObject:
   - component: {fileID: 6015042292725550223}
   - component: {fileID: 6015042292725550222}
   - component: {fileID: 9463290755709907}
+  - component: {fileID: 5619964018174700816}
   m_Layer: 9
   m_Name: Skeleton
   m_TagString: Enemy
@@ -2307,6 +2308,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapMarker: {fileID: 6013492191184059810}
+--- !u!114 &5619964018174700816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5921864477040674955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7cf14f848bb9d748a2f86a7d1f949f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dotEffect: {fileID: 0}
+  hotEffect: {fileID: 0}
+  disarmEffect: {fileID: 0}
+  protectEffect: {fileID: 0}
+  slowEffect: {fileID: 0}
+  stunEffect: {fileID: 0}
 --- !u!1 &5921877864256031885
 GameObject:
   m_ObjectHideFlags: 0

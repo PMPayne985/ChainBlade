@@ -6,16 +6,9 @@ namespace Zer0
 {
     public class Character : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
+        public virtual void TakeDamage(int damage, Transform attacker)
         {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
+            
         }
     }
 }

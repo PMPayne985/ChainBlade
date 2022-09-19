@@ -8755,6 +8755,7 @@ GameObject:
   - component: {fileID: 2725231476981441038}
   - component: {fileID: 7247820895826822765}
   - component: {fileID: 992541359}
+  - component: {fileID: 444490304}
   m_Layer: 8
   m_Name: TopDownCharacter
   m_TagString: Player
@@ -9744,6 +9745,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 881a85181663fe84eaf42fedc1c3625e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &444490304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2725231476981441055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7cf14f848bb9d748a2f86a7d1f949f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dotEffect: {fileID: 0}
+  hotEffect: {fileID: 0}
+  disarmEffect: {fileID: 0}
+  protectEffect: {fileID: 0}
+  slowEffect: {fileID: 0}
+  stunEffect: {fileID: 0}
 --- !u!1 &2733490899678168505
 GameObject:
   m_ObjectHideFlags: 0
@@ -32016,7 +32035,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5573759829771796560}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
