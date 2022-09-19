@@ -1,11 +1,15 @@
+using System.Collections;
 using Invector;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Zer0
 {
     public class Player : Character
     {
+        [SerializeField, Tooltip("Delay before reload after the character dies.")]
+        private float deathDelay = 5;
+        
         private ChainKnife[] _chainKnives;
         private SpellCasting _caster;
 
@@ -78,6 +82,17 @@ namespace Zer0
         private void IncreaseMaxHealth(int value)
         {
             _healthController.ChangeMaxHealth(value);
+        }
+
+        public void Death()
+        {
+            StartCoroutine(DieAfterSeconds(deathDelay));
+        }
+
+        private IEnumerator DieAfterSeconds(float seconds)
+        {
+            yield return new WaitForSeconds(seconds);
+            SceneManager.LoadScene(0);
         }
     }
 }

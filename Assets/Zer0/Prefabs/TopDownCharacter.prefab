@@ -8848,7 +8848,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openCloseEvents: 0
   openCloseWindow: 1
-  selectedToolbar: 5
+  selectedToolbar: 8
   _isDead: 0
   _currentHealth: 0
   isImmortal: 0
@@ -8866,7 +8866,19 @@ MonoBehaviour:
       m_Calls: []
   _onDead:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2725231476981441038}
+        m_TargetAssemblyTypeName: Zer0.Player, Assembly-CSharp
+        m_MethodName: Death
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onChangeHealth:
     m_PersistentCalls:
       m_Calls: []
@@ -9717,6 +9729,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27198bcb3654b8948b147ac9663a5ef3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathDelay: 5
 --- !u!114 &7247820895826822765
 MonoBehaviour:
   m_ObjectHideFlags: 0

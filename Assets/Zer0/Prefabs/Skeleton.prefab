@@ -1736,10 +1736,10 @@ MonoBehaviour:
   AngleNeededToTurn: 10
   AngleNeededToTurnRunning: 30
   TooCloseDistance: 1
-  MeleeTooCloseDistance: 1
+  MeleeTooCloseDistance: 0.5
   RangedTooCloseDistance: 5
   AttackDistance: 2.5
-  MeleeAttackDistance: 2.5
+  MeleeAttackDistance: 1.5
   RangedAttackDistance: 25
   RunAttackDistance: 3
   CautiousSeconds: 8
