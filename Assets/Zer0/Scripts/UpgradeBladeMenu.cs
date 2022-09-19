@@ -81,7 +81,7 @@ namespace Zer0
         {
             DescriptionText();
             
-            chainStrikeDamageCostText.text = $"{knifeDamageMultiplier * _baseKnifeDamageCost}";
+            chainStrikeDamageCostText.text = $"{chainStrikeDamageMultiplier * _baseKnifeDamageCost}";
             chainStrikeDotCostText.text = $"{_baseChainStrikeDotCost * dotMultiplier}";
             knifeDamageCostText.text = $"{knifeDamageMultiplier * _baseKnifeDamageCost}";
             lengthCostText.text = $"{lengthMultiplier * _baseLengthCost}";
@@ -158,11 +158,9 @@ namespace Zer0
             {
                 OnChainPullUpgrade?.Invoke(weaponType.chainEnd, true);
                 _baseChainPullCost = 100000;
+                _chainPullAdded = true;
                 
-                if (_chainPullAdded)
-                    chainStrikeAddChainPull.text = "Max";
-                else
-                    chainStrikeAddChainPull.text = $"{_baseChainPullCost * chainPullMultiplier}";
+                chainStrikeAddChainPull.text = _chainPullAdded ? "Max" : $"{_baseChainPullCost * chainPullMultiplier}";
             }
         }
         
