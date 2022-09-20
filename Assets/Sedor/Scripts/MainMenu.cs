@@ -12,8 +12,6 @@ public class MainMenu : MonoBehaviour
     [SerializeField, Tooltip("The Panel that contains the Options Menu buttons.")]
     private GameObject optionsMain;
     [SerializeField, Tooltip("Slider that controls the player adjustable mouse rotation speed.")]
-    private Slider rotationSlider;
-    [SerializeField, Tooltip("Slider to control Music volume.")]
     private Slider musicSlider;
     [SerializeField, Tooltip("Slider to control Sound Effects volume.")]
     private Slider sfxSlider;
@@ -27,12 +25,10 @@ public class MainMenu : MonoBehaviour
         masterSlider.onValueChanged.AddListener(delegate {MasterVolume(); });
         musicSlider.onValueChanged.AddListener(delegate {MusicVolume(); });
         sfxSlider.onValueChanged.AddListener(delegate {SFXVolume(); });
-        rotationSlider.onValueChanged.AddListener(delegate {SpeedSlider(); });
 
         masterSlider.value = PlayerPrefs.GetFloat("MasterVolume", .5f);
         musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", .5f);
         sfxSlider.value = PlayerPrefs.GetFloat("SFXVolume", .5f);
-        rotationSlider.value = PlayerPrefs.GetFloat("RotationSpeed", .5f);
     }
 
     public void GameRun()
@@ -82,10 +78,5 @@ public class MainMenu : MonoBehaviour
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #endif        
-    }
-
-    private void SpeedSlider()
-    {
-        PlayerPrefs.SetFloat("RotationSpeed", rotationSlider.value);
     }
 }
