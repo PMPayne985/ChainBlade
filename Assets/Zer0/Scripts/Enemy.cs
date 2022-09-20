@@ -27,7 +27,7 @@ namespace Zer0
         private void Start()
         {
             _aiSystem.DeathEvent.AddListener(RegisterDeath);
-            _health = _aiSystem.StartingHealth;
+            _health = _aiSystem.CurrentHealth;
         }
         
         private void Awake()
