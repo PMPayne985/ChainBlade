@@ -12,10 +12,14 @@ namespace Zer0
         private NavMeshAgent _agent;
         private Transform _target;
         private EmeraldAISystem _aiSystem;
+        private EmeraldAIEventsManager _aiEventsManager;
         private ScoreUI _scoreUI;
+        private StatusEffects _statusEffects;
+        private int _health;
         [SerializeField] private GameObject mapMarker;
 
         private EnemySpawner _spawner;
+        [SerializeField] private GameObject weapon;
 
         private static int _score;
         private bool _resetThis;
@@ -23,6 +27,7 @@ namespace Zer0
         private void Start()
         {
             _aiSystem.DeathEvent.AddListener(RegisterDeath);
+            _health = _aiSystem.StartingHealth;
         }
         
         private void Awake()
@@ -31,6 +36,8 @@ namespace Zer0
             _agent = GetComponent<NavMeshAgent>();
             _aiSystem = GetComponent<EmeraldAISystem>();
             _scoreUI = FindObjectOfType<ScoreUI>();
+            _statusEffects = GetComponent<StatusEffects>();
+            _aiEventsManager = GetComponent<EmeraldAIEventsManager>();
         }
 
         public void SetSpawner(EnemySpawner spawner)
@@ -64,12 +71,43 @@ namespace Zer0
         {
             _spawner.DespawnEnemy(this);
             mapMarker.SetActive(false);
+            _statusEffects.SetDeathStatus(true);
             UpdateScore();
         }
 
         public override void TakeDamage(int damage, Transform attacker)
         {
             _aiSystem.Damage(damage, EmeraldAISystem.TargetType.AI, attacker, 400, false);
+        }
+
+        public override void RestoreHealth(int value)
+        {
+            _aiEventsManager.UpdateHealth(_health, _aiSystem.CurrentHealth + value);
+        }
+
+        public void IncreaseAIStats(int healthValue, int damageValue, int levelValue)
+        {
+            foreach (var attack in _aiSystem.MeleeAttacks)
+            {
+                attack.MaxDamage += damageValue;
+                attack.MinDamage += damageValue;
+            }
+            _health += healthValue;
+            _aiEventsManager.UpdateHealth(_health, _aiSystem.CurrentHealth + healthValue);
+            _aiSystem.AILevel += levelValue;
+        }
+        
+        public override void Disarm(int value)
+        {
+            _aiEventsManager.ClearTarget();
+            _aiEventsManager.UpdateAIMeleeAttackSpeed(100,100);
+            weapon.SetActive(false);
+        }
+
+        public override void RemoveDisarm()
+        {
+            _aiEventsManager.UpdateAIMeleeAttackSpeed(0,0);
+            weapon.SetActive(true);
         }
 
         public void ResetEnemy()

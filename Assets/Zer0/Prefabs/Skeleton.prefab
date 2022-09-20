@@ -2308,6 +2308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapMarker: {fileID: 6013492191184059810}
+  weapon: {fileID: 4342911956550535728}
 --- !u!114 &5619964018174700816
 MonoBehaviour:
   m_ObjectHideFlags: 0

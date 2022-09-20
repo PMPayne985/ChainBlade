@@ -20,6 +20,7 @@ namespace Zer0
         private Animator _animator;
         private EmeraldAISystem _enemy;
         private List<statusEffectInfo> _activeEffects;
+        private List<GameObject> weapons;
 
         private bool _incapacitated;
         private bool _slowed;
@@ -35,6 +36,7 @@ namespace Zer0
             _character = GetComponent<Character>();
             _animator = GetComponent<Animator>();
             _activeEffects = new List<statusEffectInfo>();
+            weapons = new List<GameObject>();
 
         }
 
@@ -159,7 +161,7 @@ namespace Zer0
             {
                 _incapacitated = true;
                 if (stunEffect) stunEffect.SetActive(true);
-                _animator.SetBool(StunAnim, true);
+                _animator.speed = 0;
             }
             
 
@@ -167,7 +169,7 @@ namespace Zer0
             {
                 _incapacitated = false;
                 if (stunEffect) stunEffect.SetActive(false);
-                _animator.SetBool(StunAnim, false);
+                _animator.speed = 1;
                 _activeEffects.Remove(effect);
             }
         }
@@ -195,7 +197,23 @@ namespace Zer0
         
         private void Disarm(statusEffectInfo effect)
         {
+            effect.duration -= Time.deltaTime;
             
+            if (!_disarmed)
+
+            {
+                _disarmed = true;
+                _character.Disarm((int)effect.duration);
+                if (disarmEffect) disarmEffect.SetActive(true);
+            }
+
+            if (effect.duration <= 0)
+            {
+                _disarmed = false;
+                _character.RemoveDisarm();
+                if (slowEffect) slowEffect.SetActive(false);
+                _activeEffects.Remove(effect);
+            }
         }
 
         private void Protect(statusEffectInfo effect)
@@ -216,6 +234,7 @@ namespace Zer0
             
             if (effect.tick <= 0)
             {
+                _character.RestoreHealth((int)effect.magnitude);
                 effect.tick = effect.frequency;
             }
 

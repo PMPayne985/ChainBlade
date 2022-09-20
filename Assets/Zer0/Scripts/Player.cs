@@ -1,4 +1,5 @@
 using System.Collections;
+using EmeraldAI;
 using Invector;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -28,7 +29,7 @@ namespace Zer0
         private void Start()
         {
             if (DebugMenu.Instance)
-                DebugMenu.OnRefillHealthCommand += RestoreHealthInvectorPlayer;
+                DebugMenu.OnRefillHealthCommand += RestoreHealth;
 
             UpgradeArmorMenu.OnMaxHealthUpgrade += IncreaseMaxHealth;
         }
@@ -72,7 +73,7 @@ namespace Zer0
             }
         }
 
-        public void RestoreHealthInvectorPlayer(int value)
+        public override void RestoreHealth(int value)
         {
             if (!(_healthController.currentHealth < _healthController.maxHealth)) return;
             
@@ -87,12 +88,21 @@ namespace Zer0
         public void Death()
         {
             StartCoroutine(DieAfterSeconds(deathDelay));
+
+            var allEnemies = FindObjectsOfType<EmeraldAISystem>();
+            foreach (var enemy in allEnemies)
+            {
+                enemy.GetComponent<EmeraldAIEventsManager>().ClearTarget();
+                enemy.MinMeleeAttackSpeed = 100;
+                enemy.MaxMeleeAttackSpeed = 100;
+            }
         }
 
         private IEnumerator DieAfterSeconds(float seconds)
         {
             yield return new WaitForSeconds(seconds);
-            SceneManager.LoadScene(0);
+            var thisScene = SceneManager.GetActiveScene().buildIndex;
+            SceneManager.LoadScene(thisScene);
         }
     }
 }

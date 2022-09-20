@@ -1040,6 +1040,8 @@ namespace EmeraldAI
         public void UpdateHealth(int MaxHealth, int CurrentHealth)
         {
             EmeraldComponent.CurrentHealth = CurrentHealth;
+            if (EmeraldComponent.CurrentHealth > EmeraldComponent.StartingHealth)
+                EmeraldComponent.CurrentHealth = EmeraldComponent.StartingHealth;
             EmeraldComponent.StartingHealth = MaxHealth;
         }
 
