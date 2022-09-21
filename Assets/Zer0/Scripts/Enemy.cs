@@ -15,7 +15,6 @@ namespace Zer0
         private EmeraldAIEventsManager _aiEventsManager;
         private ScoreUI _scoreUI;
         private StatusEffects _statusEffects;
-        private int _health;
         [SerializeField] private GameObject mapMarker;
 
         private EnemySpawner _spawner;
@@ -27,7 +26,6 @@ namespace Zer0
         private void Start()
         {
             _aiSystem.DeathEvent.AddListener(RegisterDeath);
-            _health = _aiSystem.CurrentHealth;
         }
         
         private void Awake()
@@ -82,7 +80,7 @@ namespace Zer0
 
         public override void RestoreHealth(int value)
         {
-            _aiEventsManager.UpdateHealth(_health, _aiSystem.CurrentHealth + value);
+            _aiEventsManager.UpdateHealth(_aiSystem.StartingHealth, _aiSystem.CurrentHealth + value);
         }
 
         public void IncreaseAIStats(int healthValue, int damageValue, int levelValue)
@@ -92,8 +90,8 @@ namespace Zer0
                 attack.MaxDamage += damageValue;
                 attack.MinDamage += damageValue;
             }
-            _health += healthValue;
-            _aiEventsManager.UpdateHealth(_health, _aiSystem.CurrentHealth + healthValue);
+            
+            _aiEventsManager.UpdateHealth(_aiSystem.CurrentHealth + healthValue, _aiSystem.CurrentHealth + healthValue);
             _aiSystem.AILevel += levelValue;
         }
         
