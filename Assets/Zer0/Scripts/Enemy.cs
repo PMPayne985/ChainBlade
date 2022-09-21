@@ -1,4 +1,5 @@
 using EmeraldAI;
+using EmeraldAI.Utility;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -92,7 +93,9 @@ namespace Zer0
             }
             
             _aiEventsManager.UpdateHealth(_aiSystem.CurrentHealth + healthValue, _aiSystem.CurrentHealth + healthValue);
+            _aiEventsManager.InstantlyRefillAIHealth();
             _aiSystem.AILevel += levelValue;
+            _aiSystem.AILevelUI.text = $"   {_aiSystem.AILevel}";
         }
         
         public override void Disarm(int value)

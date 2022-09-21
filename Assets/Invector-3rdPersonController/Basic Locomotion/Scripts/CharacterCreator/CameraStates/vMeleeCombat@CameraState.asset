@@ -29,7 +29,7 @@ MonoBehaviour:
     yMaxLimit: 75
     xMinLimit: -360
     xMaxLimit: 360
-    rotationOffSet: {x: 0, y: 0, z: 0}
+    rotationOffSet: {x: -20, y: 0, z: 0}
     cullingHeight: 1.8
     cullingMinDist: 0.01
     fov: 60
@@ -66,24 +66,24 @@ MonoBehaviour:
     cameraMode: 0
   - Name: Strafing
     forward: -1
-    right: 0.82
-    defaultDistance: 1.35
-    maxDistance: 1.5
-    minDistance: 0.25
-    height: 1.6
+    right: 0
+    defaultDistance: 0
+    maxDistance: 14
+    minDistance: 5
+    height: 4
     smooth: 10
     smoothDamp: 6
     xMouseSensitivity: 1
-    yMouseSensitivity: 1
+    yMouseSensitivity: 0
     yMinLimit: -40
     yMaxLimit: 80
     xMinLimit: -360
     xMaxLimit: 360
-    rotationOffSet: {x: 0, y: 0, z: 0}
+    rotationOffSet: {x: -22.54, y: 0, z: 0}
     cullingHeight: 1.5
     cullingMinDist: 0.1
-    fov: 71.1
-    useZoom: 0
+    fov: 60
+    useZoom: 1
     fixedAngle: {x: 0, y: 0}
     lookPoints: []
     cameraMode: 0
