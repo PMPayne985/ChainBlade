@@ -14,10 +14,20 @@ namespace Zer0
         private int maxEnemies = 10;
         [SerializeField, Tooltip("The prefab that will be used for this enemy spawner.")]
         private GameObject enemyPrefab;
+        
+        [Header("Spawn Limiting Options")]
         [SerializeField, Tooltip("Check this if this spawner should spawn up to its max enemies only once. Leave unchecked to spawn endlessly.")]
         private bool spawnOnlyOnce;
-        [SerializeField, Tooltip("Tick this if you want the first spawn to happen as soon as the spawner come online instead of after the first spawn time delay.")]
+        [SerializeField, Tooltip("Check this if this spawner should spawn an enemy as soon as the spawner comes online instead of after the first spawn increment.")]
         private bool spawnOnEnable;
+        [SerializeField, Tooltip("Check this if this spawner should wait until a specific kill count is reached before activating")]
+        private bool spawnAfterKillCount;
+        [SerializeField, Tooltip("The number of kills required before spawning starts.")]
+        private int killSpawnDelay = 10;
+        [SerializeField, Tooltip("Check this if this spawner should wait until a specific time has elapsed before activating")]
+        private bool spawnAfterTime;
+        [SerializeField, Tooltip("The time that must pass before spawning starts.")]
+        private float spawnTimeDelay = 30;
 
         [Header("Enemy Wave Options")]
         [SerializeField, Tooltip("Increase AI Stats after this spawner has reached this number of spawned enemies.")]
@@ -45,11 +55,16 @@ namespace Zer0
         private void Update()
         {
             if (_stopSpawning) return;
+            if (spawnAfterKillCount && Enemy.Score < killSpawnDelay) return;
 
                 _timer += Time.deltaTime;
-
+                
+            if (spawnAfterTime && _timer < spawnTimeDelay) return;
+                
+                
             if (_timer >= spawnTime)
             {
+                if (spawnAfterTime) spawnAfterTime = false;
                 _timer = 0;
                 SpawnEnemy();
             }

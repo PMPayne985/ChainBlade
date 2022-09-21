@@ -21,7 +21,7 @@ namespace Zer0
         private EnemySpawner _spawner;
         [SerializeField] private GameObject weapon;
 
-        private static int _score;
+        public static int Score { get; private set; }
         private bool _resetThis;
 
         private void Start()
@@ -63,7 +63,7 @@ namespace Zer0
 
         public static void ResetScore()
         {
-            _score = 0;
+            Score = 0;
         }
 
         private void RegisterDeath()
@@ -89,7 +89,7 @@ namespace Zer0
             foreach (var attack in _aiSystem.MeleeAttacks)
             {
                 attack.MaxDamage += damageValue;
-                attack.MinDamage += damageValue;
+                attack.MinDamage += damageValue / 2;
             }
             
             _aiEventsManager.UpdateHealth(_aiSystem.CurrentHealth + healthValue, _aiSystem.CurrentHealth + healthValue);
@@ -120,8 +120,8 @@ namespace Zer0
         {
             if (!_scoreUI) return;
             
-            _score++;
-            _scoreUI.SetScore(_score);
+            Score++;
+            _scoreUI.SetScore(Score);
         }
     }
 }
