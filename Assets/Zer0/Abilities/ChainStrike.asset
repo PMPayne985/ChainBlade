@@ -16,8 +16,8 @@ MonoBehaviour:
   AbilityDescription: Launch a magic chain at the target dealing a small amount of
     damage on impact
   AbilityDamage: 5
-  MinAbilityDamage: 5
-  MaxAbilityDamage: 10
+  MinAbilityDamage: 6
+  MaxAbilityDamage: 12
   AbilityDamagePerIncrement: 5
   CriticalHitOdds: 6.25
   CriticalHitMultiplierMin: 1.1
@@ -72,4 +72,4 @@ MonoBehaviour:
   UseCriticalHits: 1
   UseCustomAbilityIcon: 1
   UseCreateEffect: 1
-  AbilityEditorTabs: 2
+  AbilityEditorTabs: 0
