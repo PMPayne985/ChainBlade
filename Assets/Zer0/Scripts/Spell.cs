@@ -39,18 +39,29 @@ namespace Zer0
         private float magnitude;
         [SerializeField, Tooltip("Status effect to be applied to an affected target.")]
         private statusEffectType effectToAdd;
-        [SerializeField, Tooltip("The area that will be affected by this spell once it strikes a target or reaches is maximum range. \n" +
-                                 "(This should be set as a trigger.)")]
-        private SphereCollider areaOfEffectTriggerField;
-        [SerializeField, Tooltip("The collider used to start the spells effect.")]
-        private SphereCollider collisionDetection;
+        [Tooltip("The area that will be affected by this spell once it strikes a target or reaches is maximum range. \n" +
+                 "(This should be set as a trigger.)")]
+        public SphereCollider areaOfEffectTriggerField;
+        [Tooltip("The collider used to start the spells effect.")]
+        public SphereCollider collisionDetection;
         [SerializeField, Tooltip("Check this if the effect should stay in place and not stay with the target struck.")]
         private bool effectStationary;
+        public GameObject trailEffect;
         
         public string Name => spellName;
         public Sprite Icon => icon;
+        public GameObject VisualEffect => visualEffect;
+        public int ImpactDamage => impactDamage;
         public int Cost => cost;
         public float CoolDown => coolDown;
+        public float Range => range;
+        public areaOfEffect AOE => aoe;
+        public float ExplosionSpeed => explosionSpeed;
+        public float Duration => duration;
+        public float Frequency => frequency;
+        public float Magnitude => magnitude;
+        public statusEffectType EffectToAdd => effectToAdd;
+        public bool EffectStationary => effectStationary;
 
 
         private float _maxSize;
@@ -81,14 +92,18 @@ namespace Zer0
             _explode = true;
             
             Transform thisParent = null;
+            transform.parent = null;
             if (!effectStationary)
             {
                 transform.parent = collision.transform;
                 thisParent = collision.transform;
             }
-            
-            var visual = Instantiate(visualEffect, collision.contacts[0].point, Quaternion.identity, thisParent);
-            visual.GetComponent<DestroyAfterTime>().SetDecay(duration);
+
+            if (visualEffect)
+            {
+                var visual = Instantiate(visualEffect, collision.contacts[0].point, Quaternion.identity, thisParent);
+                visual.GetComponent<DestroyAfterTime>().SetDecay(duration);
+            }
             collisionDetection.enabled = false;
             areaOfEffectTriggerField.enabled = true;
         }
@@ -170,6 +185,12 @@ namespace Zer0
             magnitude += newMagnitude;
             impactDamage += newImpactDamage;
             if (newEffect != statusEffectType.None) effectToAdd = newEffect;
+        }
+
+        public void SetSpellParams(GameObject newVisualEffect, float newExplosionSpeed)
+        {
+            visualEffect = newVisualEffect;
+            explosionSpeed = newExplosionSpeed;
         }
     }
 }

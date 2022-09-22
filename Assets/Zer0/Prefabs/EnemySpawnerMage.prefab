@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8415437733691671284
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8415437733691671286}
+  - component: {fileID: 8415437733691671285}
+  m_Layer: 0
+  m_Name: EnemySpawnerMage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8415437733691671286
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8415437733691671284}
+  m_LocalRotation: {x: -0, y: -0.6583425, z: -0, w: 0.75271857}
+  m_LocalPosition: {x: 16.86, y: 0.62, z: -14.97}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -82.347, z: 0}
+--- !u!114 &8415437733691671285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8415437733691671284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c0531408f0de2f4daba994e9c8a74f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnTime: 10
+  maxEnemies: 1
+  enemyPrefab: {fileID: 4568055471520680811, guid: d43f909b8f684b94b8b374aaf997bf6a, type: 3}
+  spawnOnlyOnce: 0
+  spawnOnEnable: 0
+  spawnAfterKillCount: 1
+  killSpawnDelay: 20
+  spawnAfterTime: 0
+  spawnTimeDelay: 0
+  waveSize: 10
+  healthIncrease: 2
+  damageIncrease: 4
+  abilities:
+  - {fileID: 11400000, guid: 5a20a26825802d348a395e4f31ac13b8, type: 2}

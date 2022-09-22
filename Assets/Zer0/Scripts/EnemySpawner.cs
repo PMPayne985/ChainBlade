@@ -36,6 +36,8 @@ namespace Zer0
         private int healthIncrease = 5;
         [SerializeField, Tooltip("Increase AI damage by this amount per wave.")]
         private int damageIncrease = 3;
+        [SerializeField, Tooltip("All of the AI abilities that this spawner should effect the damage on.")]
+        private EmeraldAIAbility[] abilities;
         
         private bool _stopSpawning;
         private float _timer;
@@ -93,6 +95,14 @@ namespace Zer0
                 _currentLevelBoost++;
                 _currentDamageBoost += damageIncrease;
                 _currentHealthBoost += healthIncrease;
+                
+                if (abilities.Length <= 0) return;
+
+                foreach (var ability in abilities)
+                {
+                    ability.MinAbilityDamage += damageIncrease / 2;
+                    ability.MaxAbilityDamage += damageIncrease;
+                }
             }
         }
 

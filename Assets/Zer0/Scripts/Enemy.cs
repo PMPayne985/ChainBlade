@@ -68,7 +68,7 @@ namespace Zer0
 
         private void RegisterDeath()
         {
-            _spawner.DespawnEnemy(this);
+            if (_spawner) _spawner.DespawnEnemy(this);
             mapMarker.SetActive(false);
             _statusEffects.SetDeathStatus(true);
             UpdateScore();

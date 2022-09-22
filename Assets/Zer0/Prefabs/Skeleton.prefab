@@ -1375,7 +1375,7 @@ MonoBehaviour:
   BlockOdds: 80
   GeneratedBlockOdds: 0
   m_AnimationsChanged: 0
-  m_LastAnimatorType: 1
+  m_LastAnimatorType: 0
   BackupOdds: 50
   GeneratedBackupOdds: 0
   BackupDistance: 12
@@ -1698,8 +1698,8 @@ MonoBehaviour:
   CurrentDamageAmount: 5
   DamageAmountRun: 5
   WanderRadius: 25
-  TabNumber: 4
-  TemperamentTabNumber: 5
+  TabNumber: 1
+  TemperamentTabNumber: 1
   DetectionTagsTabNumber: 1
   AnimationTabNumber: 0
   SoundTabNumber: 1
@@ -1873,7 +1873,7 @@ MonoBehaviour:
   StartingWeaponTypeRef: 0
   AvoidanceQualityRef: 2
   TargetObstructedActionRef: 0
-  AnimatorType: 1
+  AnimatorType: 0
   StartingMovementState: 1
   CurrentMovementState: 0
   CurrentBlockingState: 1

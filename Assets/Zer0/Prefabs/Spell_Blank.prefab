@@ -53,6 +53,7 @@ MonoBehaviour:
   spellName: Blank
   icon: {fileID: 21300000, guid: 291d2e65d6bc7a34ba915b4e6ddee394, type: 3}
   visualEffect: {fileID: 4631079980008022893, guid: dd789709a8d62f04c900cb9ab2416655, type: 3}
+  impactDamage: 0
   cost: 1
   coolDown: 1.5
   range: 100
@@ -64,6 +65,8 @@ MonoBehaviour:
   effectToAdd: 0
   areaOfEffectTriggerField: {fileID: 3011070413910585229}
   collisionDetection: {fileID: 3011070413910585230}
+  effectStationary: 0
+  trailEffect: {fileID: 6310851099846120188}
 --- !u!135 &3011070413910585229
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -264,5 +267,10 @@ PrefabInstance:
 --- !u!4 &6310851099845810432 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 442878, guid: b274c02253f9fa245a4cf4ea742b575f, type: 3}
+  m_PrefabInstance: {fileID: 6310851099846220030}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6310851099846120188 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100866, guid: b274c02253f9fa245a4cf4ea742b575f, type: 3}
   m_PrefabInstance: {fileID: 6310851099846220030}
   m_PrefabAsset: {fileID: 0}

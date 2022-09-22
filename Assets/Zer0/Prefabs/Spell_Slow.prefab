@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4306978217419987247}
   - component: {fileID: 8995027239887486098}
   m_Layer: 0
-  m_Name: Spell_LightingChains
+  m_Name: Spell_Slow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,19 +50,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5a863d0a1042d44a8b44c9f36f928bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellName: Lightning Chains
-  icon: {fileID: 21300000, guid: 33d2e28416d37144b8a32c7e4a52a6e7, type: 3}
-  visualEffect: {fileID: 4631079980008022893, guid: dd789709a8d62f04c900cb9ab2416655, type: 3}
-  impactDamage: 4
-  cost: 2
-  coolDown: 3
-  range: 100
+  spellName: Slow
+  icon: {fileID: 21300000, guid: 9602a1256f701d748b0f79737ee2fdab, type: 3}
+  visualEffect: {fileID: 0}
+  impactDamage: 0
+  cost: 4
+  coolDown: 6
+  range: 400
   aoe: 1
   explosionSpeed: 1
-  duration: 4.5
-  frequency: 1
-  magnitude: 4
-  effectToAdd: 1
+  duration: 20
+  frequency: 4
+  magnitude: 0.3
+  effectToAdd: 3
   areaOfEffectTriggerField: {fileID: 3011070413910585229}
   collisionDetection: {fileID: 3011070413910585230}
   effectStationary: 0
@@ -170,10 +170,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChainsTrail1_1
       objectReference: {fileID: 0}
-    - target: {fileID: 124242, guid: b274c02253f9fa245a4cf4ea742b575f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 442878, guid: b274c02253f9fa245a4cf4ea742b575f, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -248,15 +244,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 480308, guid: b274c02253f9fa245a4cf4ea742b575f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.75
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 480308, guid: b274c02253f9fa245a4cf4ea742b575f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.75
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 480308, guid: b274c02253f9fa245a4cf4ea742b575f, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.75
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 480308, guid: b274c02253f9fa245a4cf4ea742b575f, type: 3}
       propertyPath: m_LocalPosition.x

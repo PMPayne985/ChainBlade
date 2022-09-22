@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Zer0;
 
 namespace EmeraldAI
 {
@@ -50,6 +51,7 @@ namespace EmeraldAI
         public List<AudioClip> CollisionSoundsList = new List<AudioClip>();
         public AudioClip SummonSound;
         public List<AudioClip> CreateSoundsList = new List<AudioClip>();
+        public GameObject Spell;
 
         public AbilityTypeEnum AbilityType;
         public enum AbilityTypeEnum
@@ -81,6 +83,7 @@ namespace EmeraldAI
         public Yes_No CollisionEffectOnTargets = Yes_No.Yes;
         public Yes_No ArrowProjectileRef = Yes_No.No;
         public Yes_No UseGravity = Yes_No.No;
+        public Yes_No UseZer0Spell = Yes_No.No;
         public Yes_No UseRandomizedDamage = Yes_No.No;
         public Yes_No AbilityStacksRef = Yes_No.No;
         public Yes_No UseDamageOverTimeEffectRef = Yes_No.No;

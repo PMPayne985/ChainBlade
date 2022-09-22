@@ -5,6 +5,7 @@ using UnityEngine.AI;
 using System.Collections;
 using UnityEngine.Events;
 using EmeraldAI.Utility;
+using Zer0;
 
 namespace EmeraldAI
 {
@@ -2081,6 +2082,8 @@ namespace EmeraldAI
         void InitializeAbility (EmeraldAIProjectile CurrentlyCreatedAbility, EmeraldAIAbility m_EmeraldAIAbility)
         {
             CurrentlyCreatedAbility.EmeraldComponent = this;
+            if (m_EmeraldAIAbility.UseZer0Spell == EmeraldAIAbility.Yes_No.Yes)
+                CurrentlyCreatedAbility.Caster = GetComponent<SpellCasting>();
         }
        
         /// <summary>

@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using EmeraldAI;
+using Invector.vCharacterController;
+using Invector.vMelee;
 using UnityEngine;
 
 namespace Zer0
@@ -182,6 +184,10 @@ namespace Zer0
             {
                 _slowed = true;
                 _animator.speed -= effect.magnitude;
+                if (_character.isPlayer)
+                {
+                    GetComponent<vThirdPersonController>().speedMultiplier -= effect.magnitude;
+                }
                 if (slowEffect) slowEffect.SetActive(true);
             }
             
@@ -190,6 +196,10 @@ namespace Zer0
             {
                 _slowed = false;
                 _animator.speed += effect.magnitude;
+                if (_character.isPlayer)
+                {
+                    GetComponent<vThirdPersonController>().speedMultiplier += effect.magnitude;
+                }
                 if (slowEffect) slowEffect.SetActive(false);
                 _activeEffects.Remove(effect);
             }

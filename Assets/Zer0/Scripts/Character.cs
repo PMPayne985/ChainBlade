@@ -11,5 +11,7 @@ namespace Zer0
         public virtual void Disarm(int value) { }
         
         public virtual void RemoveDisarm() {}
+
+        public bool isPlayer;
     }
 }

@@ -9,6 +9,7 @@ namespace Zer0
         private List<Spell> _spells;
         private Animator _animator;
         private UISetUp _ui;
+        private Character _character;
 
         private float _coolDownCounter;
         private bool _onCoolDown;
@@ -19,7 +20,7 @@ namespace Zer0
         [SerializeField] private float _spellPoints;
         [SerializeField] private float spellRechargeRate = 0.1f;
         [SerializeField] private Transform launchPoint;
-        
+
         private static readonly int Cast = Animator.StringToHash("CastSpell");
 
         private void Awake()
@@ -27,6 +28,7 @@ namespace Zer0
             _animator = GetComponent<Animator>();
             if (!_animator) Debug.LogError("SpellCasting is missing an Animator Component.");
             _ui = FindObjectOfType<UISetUp>();
+            _character = GetComponent<Character>();
         }
 
         private void Start()
@@ -44,6 +46,12 @@ namespace Zer0
         }
 
         private void Update()
+        {
+            if (_character.isPlayer)
+                PlayerCasting();
+        }
+
+        private void PlayerCasting()
         {
             if (_onCoolDown)
             {
@@ -67,13 +75,13 @@ namespace Zer0
                 }
                 _ui.UpdateMagicSlider(maxSpellPoints, _spellPoints);
             }
-
+            
             if (PlayerInput.CastSpell() && CanCast())
             {
                 _animator.SetTrigger(Cast);
             }
         }
-
+        
         public void AddSpell(Spell newSpell)
         {
             _spells.Add(newSpell);
@@ -142,7 +150,8 @@ namespace Zer0
         
         public void CastSpell()
         {
-            Casting();
+            if (_character.isPlayer)
+                Casting();
         }
         
         private void Casting()

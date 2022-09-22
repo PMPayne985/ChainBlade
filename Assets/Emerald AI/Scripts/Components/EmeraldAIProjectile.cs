@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Zer0;
 
 namespace EmeraldAI.Utility
 {
@@ -45,6 +46,10 @@ namespace EmeraldAI.Utility
         public EmeraldAISystem.TargetType TargetTypeRef = EmeraldAISystem.TargetType.Player;
         [HideInInspector]
         public GameObject ObjectToDisableOnCollision;
+        [HideInInspector]
+        public SpellCasting Caster;
+        [HideInInspector]
+        public Spell spell;
 
         Vector3 AdjustTargetPosition;       
         GameObject SpawnedEffect;
@@ -175,6 +180,13 @@ namespace EmeraldAI.Utility
             {
                 CriticalHit = false;
                 Damage = AbilityDamage;
+            }
+
+            if (ProjectileData.UseZer0Spell == EmeraldAIAbility.Yes_No.Yes)
+            {
+                var ahead = new Vector3(transform.position.x, transform.position.y, transform.position.z + 0.4f);
+                spell = Instantiate(ProjectileData.Spell.GetComponent<Spell>(),ahead, transform.rotation, transform);
+                spell.trailEffect.SetActive(false);
             }
         }
 

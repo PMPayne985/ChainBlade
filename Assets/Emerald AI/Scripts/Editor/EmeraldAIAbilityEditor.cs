@@ -5,6 +5,7 @@ using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine.SceneManagement;
 using UnityEditorInternal;
+using Zer0;
 
 namespace EmeraldAI.Utility
 {
@@ -441,6 +442,21 @@ namespace EmeraldAI.Utility
 
                         EditorGUILayout.EndHorizontal();
                         EditorGUILayout.EndVertical();
+                    }
+                    
+                    EditorGUILayout.Space();
+                    self.UseZer0Spell = (EmeraldAIAbility.Yes_No)EditorGUILayout.EnumPopup("Use Zer0 Spell", self.UseZer0Spell);
+                    GUI.backgroundColor = new Color(0.1f, 0.1f, 0.1f, 0.19f);
+                    EditorGUILayout.LabelField("Controls whether or not this projectile will use a spell component from the Zer0 namespace.", EditorStyles.helpBox);
+                    GUI.backgroundColor = Color.white;
+                    
+                    if (self.UseZer0Spell == EmeraldAIAbility.Yes_No.Yes)
+                    {
+                        EditorGUILayout.Space();
+                        self.Spell = (GameObject)EditorGUILayout.ObjectField("Spell", self.Spell, typeof(GameObject), false);
+                        GUI.backgroundColor = new Color(.1f, .1f, .1f, .19f);
+                        EditorGUILayout.LabelField("The game object that contains the Spell Component that will be used for this ability.", EditorStyles.helpBox);
+                        GUI.backgroundColor = Color.white;
                     }
                 }
 
