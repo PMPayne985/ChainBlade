@@ -53,7 +53,7 @@ MonoBehaviour:
   killSpawnDelay: 10
   spawnAfterTime: 0
   spawnTimeDelay: 0
-  waveSize: 10
+  waveSize: 6
   healthIncrease: 2
   damageIncrease: 4
   abilities:
