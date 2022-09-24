@@ -76,10 +76,9 @@ namespace Zer0
                 _ui.UpdateMagicSlider(maxSpellPoints, _spellPoints);
             }
             
-            if (PlayerInput.CastSpell() && CanCast())
-            {
-                _animator.SetTrigger(Cast);
-            }
+            if (PlayerInput.CastSpell() && CanCast()) _animator.SetTrigger(Cast);
+
+            if (PlayerInput.NextSpell()) NextSpell();
         }
         
         public void AddSpell(SpellData newSpell)

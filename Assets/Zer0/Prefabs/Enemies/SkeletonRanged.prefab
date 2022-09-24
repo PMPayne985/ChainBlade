@@ -1177,17 +1177,17 @@ MonoBehaviour:
   AttackTimer: 0
   HasTarget: 0
   SwitchWeaponTypeTriggered: 0
-  TotalIdleAnimations: 1
-  TotalHitAnimations: 1
+  TotalIdleAnimations: 5
+  TotalHitAnimations: 2
   TotalCombatHitAnimations: 1
-  TotalRangedCombatHitAnimations: 1
+  TotalRangedCombatHitAnimations: 2
   TotalEmoteAnimations: 1
   TotalAttackAnimations: 1
   TotalRangedAttackAnimations: 1
   TotalRunAttackAnimations: 1
   TotalRangedRunAttackAnimations: 1
   TotalDeathAnimations: 3
-  TotalRangedDeathAnimations: 1
+  TotalRangedDeathAnimations: 4
   m_IdleAnimaionIndexOverride: 0
   MirrorWalkLeft: 0
   MirrorWalkRight: 0
@@ -1324,7 +1324,15 @@ MonoBehaviour:
   EmoteAnimationList: []
   IdleAnimationList:
   - AnimationSpeed: 1
-    AnimationClip: {fileID: 7400000, guid: f8c2d6a0ce3bc2d40b090cd67dd23862, type: 3}
+    AnimationClip: {fileID: 7400000, guid: 872ce46a1facd3848854067c95bf09b9, type: 3}
+  - AnimationSpeed: 1
+    AnimationClip: {fileID: 7400002, guid: 872ce46a1facd3848854067c95bf09b9, type: 3}
+  - AnimationSpeed: 1
+    AnimationClip: {fileID: 7400004, guid: 872ce46a1facd3848854067c95bf09b9, type: 3}
+  - AnimationSpeed: 1
+    AnimationClip: {fileID: 7400002, guid: 3ab63509e29fdc74a88310301635f388, type: 3}
+  - AnimationSpeed: 1
+    AnimationClip: {fileID: 7400004, guid: 3ab63509e29fdc74a88310301635f388, type: 3}
   AttackAnimationList:
   - AnimationSpeed: 1
     AnimationClip: {fileID: 7400000, guid: f8813e465a453f543ab89a87de65d5a3, type: 3}
@@ -1343,17 +1351,27 @@ MonoBehaviour:
     AnimationClip: {fileID: 7400000, guid: b02430a054524da49b8a1b7470eb4b58, type: 3}
   HitAnimationList:
   - AnimationSpeed: 1
-    AnimationClip: {fileID: 7400000, guid: b02430a054524da49b8a1b7470eb4b58, type: 3}
+    AnimationClip: {fileID: 7400000, guid: edd3c9576ff5e114c88b3e266ae59356, type: 3}
+  - AnimationSpeed: 1
+    AnimationClip: {fileID: 7400000, guid: a4e12da373435c64882ab73a1e19c31e, type: 3}
   RangedAttackAnimationList:
   - AnimationSpeed: 1
     AnimationClip: {fileID: -203655887218126122, guid: 8ad10d59388306546961607610e7886b, type: 3}
   RangedCombatHitAnimationList:
   - AnimationSpeed: 1
-    AnimationClip: {fileID: 7400000, guid: b02430a054524da49b8a1b7470eb4b58, type: 3}
+    AnimationClip: {fileID: 7400000, guid: edd3c9576ff5e114c88b3e266ae59356, type: 3}
+  - AnimationSpeed: 1
+    AnimationClip: {fileID: 7400000, guid: a4e12da373435c64882ab73a1e19c31e, type: 3}
   RangedRunAttackAnimationList: []
   RangedDeathAnimationList:
   - AnimationSpeed: 1
-    AnimationClip: {fileID: 7400002, guid: 0a205e82d4075b346b912ccfe0a0bfd2, type: 3}
+    AnimationClip: {fileID: 7400000, guid: 2aa6425304362004296c6d44882256c7, type: 3}
+  - AnimationSpeed: 1
+    AnimationClip: {fileID: 7400002, guid: 2aa6425304362004296c6d44882256c7, type: 3}
+  - AnimationSpeed: 1
+    AnimationClip: {fileID: 7400000, guid: ca5bb49b6d59a704b9bea94e95fc0740, type: 3}
+  - AnimationSpeed: 1
+    AnimationClip: {fileID: 7400002, guid: ca5bb49b6d59a704b9bea94e95fc0740, type: 3}
   Attack1Animation: {fileID: 7400000, guid: f8813e465a453f543ab89a87de65d5a3, type: 3}
   Attack2Animation: {fileID: 0}
   Attack3Animation: {fileID: 0}
@@ -1363,24 +1381,24 @@ MonoBehaviour:
   RunAttack1Animation: {fileID: 0}
   RunAttack2Animation: {fileID: 0}
   RunAttack3Animation: {fileID: 0}
-  Idle1Animation: {fileID: 7400000, guid: f8c2d6a0ce3bc2d40b090cd67dd23862, type: 3}
-  Idle2Animation: {fileID: 0}
-  Idle3Animation: {fileID: 0}
-  Idle4Animation: {fileID: 0}
-  Idle5Animation: {fileID: 0}
+  Idle1Animation: {fileID: 7400000, guid: 872ce46a1facd3848854067c95bf09b9, type: 3}
+  Idle2Animation: {fileID: 7400002, guid: 872ce46a1facd3848854067c95bf09b9, type: 3}
+  Idle3Animation: {fileID: 7400004, guid: 872ce46a1facd3848854067c95bf09b9, type: 3}
+  Idle4Animation: {fileID: 7400002, guid: 3ab63509e29fdc74a88310301635f388, type: 3}
+  Idle5Animation: {fileID: 7400004, guid: 3ab63509e29fdc74a88310301635f388, type: 3}
   Idle6Animation: {fileID: 0}
   IdleWarningAnimation: {fileID: 0}
-  NonCombatTurnLeftAnimation: {fileID: 7400002, guid: 5fe51830c6e12034892d1041e85357b6, type: 3}
-  NonCombatTurnRightAnimation: {fileID: 7400004, guid: 5fe51830c6e12034892d1041e85357b6, type: 3}
-  CombatTurnLeftAnimation: {fileID: 7400002, guid: 5fe51830c6e12034892d1041e85357b6, type: 3}
-  CombatTurnRightAnimation: {fileID: 7400004, guid: 5fe51830c6e12034892d1041e85357b6, type: 3}
-  NonCombatIdleAnimation: {fileID: 7400000, guid: f8c2d6a0ce3bc2d40b090cd67dd23862, type: 3}
-  WalkLeftAnimation: {fileID: 7400006, guid: df74f516f8958a24bab217e3603c71cd, type: 3}
-  WalkStraightAnimation: {fileID: 7400016, guid: df74f516f8958a24bab217e3603c71cd, type: 3}
-  WalkRightAnimation: {fileID: 7400008, guid: df74f516f8958a24bab217e3603c71cd, type: 3}
-  RunLeftAnimation: {fileID: 7400006, guid: 5fe51830c6e12034892d1041e85357b6, type: 3}
-  RunStraightAnimation: {fileID: 7400016, guid: 5fe51830c6e12034892d1041e85357b6, type: 3}
-  RunRightAnimation: {fileID: 7400008, guid: 5fe51830c6e12034892d1041e85357b6, type: 3}
+  NonCombatTurnLeftAnimation: {fileID: 7400002, guid: f45b1f4a3a1a56a4abdf6cebc25d939c, type: 3}
+  NonCombatTurnRightAnimation: {fileID: 7400004, guid: f45b1f4a3a1a56a4abdf6cebc25d939c, type: 3}
+  CombatTurnLeftAnimation: {fileID: 7400002, guid: f45b1f4a3a1a56a4abdf6cebc25d939c, type: 3}
+  CombatTurnRightAnimation: {fileID: 7400004, guid: f45b1f4a3a1a56a4abdf6cebc25d939c, type: 3}
+  NonCombatIdleAnimation: {fileID: 7400000, guid: 872ce46a1facd3848854067c95bf09b9, type: 3}
+  WalkLeftAnimation: {fileID: 7400054, guid: bd1c2e9064da28e4fb0fe4a3f6ff4e33, type: 3}
+  WalkStraightAnimation: {fileID: 7400048, guid: bd1c2e9064da28e4fb0fe4a3f6ff4e33, type: 3}
+  WalkRightAnimation: {fileID: 7400056, guid: bd1c2e9064da28e4fb0fe4a3f6ff4e33, type: 3}
+  RunLeftAnimation: {fileID: 7400038, guid: 154a724602422044c91070a5f3c67c11, type: 3}
+  RunStraightAnimation: {fileID: 7400032, guid: 154a724602422044c91070a5f3c67c11, type: 3}
+  RunRightAnimation: {fileID: 7400040, guid: 154a724602422044c91070a5f3c67c11, type: 3}
   Emote1Animation: {fileID: 0}
   Emote2Animation: {fileID: 0}
   Emote3Animation: {fileID: 0}
@@ -1392,15 +1410,15 @@ MonoBehaviour:
   Emote9Animation: {fileID: 0}
   Emote10Animation: {fileID: 0}
   CombatIdleAnimation: {fileID: 7400000, guid: f8c2d6a0ce3bc2d40b090cd67dd23862, type: 3}
-  CombatWalkLeftAnimation: {fileID: 7400006, guid: df74f516f8958a24bab217e3603c71cd, type: 3}
-  CombatWalkStraightAnimation: {fileID: 7400016, guid: df74f516f8958a24bab217e3603c71cd, type: 3}
-  CombatWalkBackAnimation: {fileID: 7400016, guid: df74f516f8958a24bab217e3603c71cd, type: 3}
-  CombatWalkRightAnimation: {fileID: 7400008, guid: df74f516f8958a24bab217e3603c71cd, type: 3}
-  CombatRunLeftAnimation: {fileID: 7400006, guid: 5fe51830c6e12034892d1041e85357b6, type: 3}
-  CombatRunStraightAnimation: {fileID: 7400016, guid: 5fe51830c6e12034892d1041e85357b6, type: 3}
-  CombatRunRightAnimation: {fileID: 7400008, guid: 5fe51830c6e12034892d1041e85357b6, type: 3}
-  Hit1Animation: {fileID: 7400000, guid: b02430a054524da49b8a1b7470eb4b58, type: 3}
-  Hit2Animation: {fileID: 0}
+  CombatWalkLeftAnimation: {fileID: 7400054, guid: bd1c2e9064da28e4fb0fe4a3f6ff4e33, type: 3}
+  CombatWalkStraightAnimation: {fileID: 7400048, guid: bd1c2e9064da28e4fb0fe4a3f6ff4e33, type: 3}
+  CombatWalkBackAnimation: {fileID: 7400048, guid: bd1c2e9064da28e4fb0fe4a3f6ff4e33, type: 3}
+  CombatWalkRightAnimation: {fileID: 7400056, guid: bd1c2e9064da28e4fb0fe4a3f6ff4e33, type: 3}
+  CombatRunLeftAnimation: {fileID: 7400038, guid: 154a724602422044c91070a5f3c67c11, type: 3}
+  CombatRunStraightAnimation: {fileID: 7400032, guid: 154a724602422044c91070a5f3c67c11, type: 3}
+  CombatRunRightAnimation: {fileID: 7400040, guid: 154a724602422044c91070a5f3c67c11, type: 3}
+  Hit1Animation: {fileID: 7400000, guid: edd3c9576ff5e114c88b3e266ae59356, type: 3}
+  Hit2Animation: {fileID: 7400000, guid: a4e12da373435c64882ab73a1e19c31e, type: 3}
   Hit3Animation: {fileID: 0}
   Hit4Animation: {fileID: 0}
   Hit5Animation: {fileID: 0}
@@ -1421,14 +1439,14 @@ MonoBehaviour:
   Death4Animation: {fileID: 0}
   Death5Animation: {fileID: 0}
   Death6Animation: {fileID: 0}
-  RangedCombatIdleAnimation: {fileID: 7400000, guid: f8c2d6a0ce3bc2d40b090cd67dd23862, type: 3}
-  RangedCombatWalkLeftAnimation: {fileID: 7400006, guid: df74f516f8958a24bab217e3603c71cd, type: 3}
-  RangedCombatWalkStraightAnimation: {fileID: 7400016, guid: df74f516f8958a24bab217e3603c71cd, type: 3}
-  RangedCombatWalkBackAnimation: {fileID: 7400016, guid: df74f516f8958a24bab217e3603c71cd, type: 3}
-  RangedCombatWalkRightAnimation: {fileID: 7400008, guid: df74f516f8958a24bab217e3603c71cd, type: 3}
-  RangedCombatRunLeftAnimation: {fileID: 7400006, guid: 5fe51830c6e12034892d1041e85357b6, type: 3}
-  RangedCombatRunStraightAnimation: {fileID: 7400016, guid: 5fe51830c6e12034892d1041e85357b6, type: 3}
-  RangedCombatRunRightAnimation: {fileID: 7400008, guid: 5fe51830c6e12034892d1041e85357b6, type: 3}
+  RangedCombatIdleAnimation: {fileID: 7400002, guid: 3ab63509e29fdc74a88310301635f388, type: 3}
+  RangedCombatWalkLeftAnimation: {fileID: 7400054, guid: bd1c2e9064da28e4fb0fe4a3f6ff4e33, type: 3}
+  RangedCombatWalkStraightAnimation: {fileID: 7400048, guid: bd1c2e9064da28e4fb0fe4a3f6ff4e33, type: 3}
+  RangedCombatWalkBackAnimation: {fileID: 7400048, guid: bd1c2e9064da28e4fb0fe4a3f6ff4e33, type: 3}
+  RangedCombatWalkRightAnimation: {fileID: 7400056, guid: bd1c2e9064da28e4fb0fe4a3f6ff4e33, type: 3}
+  RangedCombatRunLeftAnimation: {fileID: 7400038, guid: 154a724602422044c91070a5f3c67c11, type: 3}
+  RangedCombatRunStraightAnimation: {fileID: 7400032, guid: 154a724602422044c91070a5f3c67c11, type: 3}
+  RangedCombatRunRightAnimation: {fileID: 7400040, guid: 154a724602422044c91070a5f3c67c11, type: 3}
   RangedIdleWarningAnimation: {fileID: 0}
   RangedPutAwayWeaponAnimation: {fileID: 0}
   RangedPullOutWeaponAnimation: {fileID: 0}
@@ -1441,18 +1459,18 @@ MonoBehaviour:
   RangedRunAttack1Animation: {fileID: 0}
   RangedRunAttack2Animation: {fileID: 0}
   RangedRunAttack3Animation: {fileID: 0}
-  RangedCombatHit1Animation: {fileID: 7400000, guid: b02430a054524da49b8a1b7470eb4b58, type: 3}
-  RangedCombatHit2Animation: {fileID: 0}
+  RangedCombatHit1Animation: {fileID: 7400000, guid: edd3c9576ff5e114c88b3e266ae59356, type: 3}
+  RangedCombatHit2Animation: {fileID: 7400000, guid: a4e12da373435c64882ab73a1e19c31e, type: 3}
   RangedCombatHit3Animation: {fileID: 0}
   RangedCombatHit4Animation: {fileID: 0}
   RangedCombatHit5Animation: {fileID: 0}
   RangedCombatHit6Animation: {fileID: 0}
-  RangedCombatTurnLeftAnimation: {fileID: 7400002, guid: 5fe51830c6e12034892d1041e85357b6, type: 3}
-  RangedCombatTurnRightAnimation: {fileID: 7400004, guid: 5fe51830c6e12034892d1041e85357b6, type: 3}
-  RangedDeath1Animation: {fileID: 7400002, guid: 0a205e82d4075b346b912ccfe0a0bfd2, type: 3}
-  RangedDeath2Animation: {fileID: 0}
-  RangedDeath3Animation: {fileID: 0}
-  RangedDeath4Animation: {fileID: 0}
+  RangedCombatTurnLeftAnimation: {fileID: 7400002, guid: f45b1f4a3a1a56a4abdf6cebc25d939c, type: 3}
+  RangedCombatTurnRightAnimation: {fileID: 7400004, guid: f45b1f4a3a1a56a4abdf6cebc25d939c, type: 3}
+  RangedDeath1Animation: {fileID: 7400000, guid: 2aa6425304362004296c6d44882256c7, type: 3}
+  RangedDeath2Animation: {fileID: 7400002, guid: 2aa6425304362004296c6d44882256c7, type: 3}
+  RangedDeath3Animation: {fileID: 7400000, guid: ca5bb49b6d59a704b9bea94e95fc0740, type: 3}
+  RangedDeath4Animation: {fileID: 7400002, guid: ca5bb49b6d59a704b9bea94e95fc0740, type: 3}
   RangedDeath5Animation: {fileID: 0}
   RangedDeath6Animation: {fileID: 0}
   AnimatorControllerGenerated: 1
@@ -1472,12 +1490,12 @@ MonoBehaviour:
   CurrentDamageAmount: 5
   DamageAmountRun: 5
   WanderRadius: 25
-  TabNumber: 1
+  TabNumber: 6
   TemperamentTabNumber: 2
   DetectionTagsTabNumber: 2
-  AnimationTabNumber: 2
+  AnimationTabNumber: 3
   SoundTabNumber: 1
-  MovementTabNumber: 0
+  MovementTabNumber: 1
   WeaponTypeTabNumber: 0
   WeaponTypeCombatTabNumber: 0
   WeaponTypeControlTabNumber: 0

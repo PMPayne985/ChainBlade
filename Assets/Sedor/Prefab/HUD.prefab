@@ -4453,7 +4453,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6999581095636138242}
         m_TargetAssemblyTypeName: Zer0.UpgradeSpellMenu, Assembly-CSharp
-        m_MethodName: BuyDotSpell
+        m_MethodName: BuyLightningChainsSpell
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

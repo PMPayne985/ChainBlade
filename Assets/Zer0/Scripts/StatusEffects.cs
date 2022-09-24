@@ -183,7 +183,10 @@ namespace Zer0
             if (!_slowed)
             {
                 _slowed = true;
-                _animator.speed -= effect.magnitude;
+                var newSpeed = effect.magnitude - 1;
+                if (newSpeed > .7f)
+                    newSpeed = .7f;
+                _animator.speed -= newSpeed;
                 if (_character.isPlayer)
                 {
                     GetComponent<vThirdPersonController>().speedMultiplier -= effect.magnitude;
@@ -192,10 +195,13 @@ namespace Zer0
             }
             
 
-            if (effect.duration <= 0)
+            if (effect.duration <= 0 && _slowed)
             {
                 _slowed = false;
-                _animator.speed += effect.magnitude;
+                var newSpeed = effect.magnitude - 1;
+                if (newSpeed > .7f)
+                    newSpeed = .7f;
+                _animator.speed += newSpeed;
                 if (_character.isPlayer)
                 {
                     GetComponent<vThirdPersonController>().speedMultiplier += effect.magnitude;

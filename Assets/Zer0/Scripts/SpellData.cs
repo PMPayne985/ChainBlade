@@ -63,8 +63,7 @@ namespace Zer0
         private void Awake()
         {
             if (!PrebuiltSpell) return;
-            print("Spell Setup");
-            
+
             Name = spellName;
             Icon = icon;
             VisualEffect = visualEffect;

@@ -34,7 +34,7 @@ MonoBehaviour:
   ProjectileGravity: 0.5
   TimeoutTime: 4.5
   CollisionTime: 0.1
-  HeatSeekingSeconds: 5
+  HeatSeekingSeconds: 1.5
   CastEffectTimeoutSeconds: 2
   AbilityEffectTimeoutSeconds: 6
   SummonEffectTimeoutSeconds: 3
@@ -61,7 +61,7 @@ MonoBehaviour:
   SupportType: 0
   HighQualityCollisions: 0
   SoundOnCollisionRef: 1
-  HeatSeekingRef: 0
+  HeatSeekingRef: 1
   EffectOnCollisionRef: 1
   CollisionEffectOnTargets: 1
   ArrowProjectileRef: 0
@@ -75,4 +75,4 @@ MonoBehaviour:
   UseCriticalHits: 1
   UseCustomAbilityIcon: 1
   UseCreateEffect: 1
-  AbilityEditorTabs: 1
+  AbilityEditorTabs: 0
