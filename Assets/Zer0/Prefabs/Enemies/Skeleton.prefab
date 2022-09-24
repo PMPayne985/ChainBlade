@@ -1699,7 +1699,7 @@ MonoBehaviour:
   DamageAmountRun: 5
   WanderRadius: 25
   TabNumber: 1
-  TemperamentTabNumber: 1
+  TemperamentTabNumber: 2
   DetectionTagsTabNumber: 1
   AnimationTabNumber: 0
   SoundTabNumber: 1
@@ -2307,6 +2307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1072521f5618fe3489ff43fc0bc4dfb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlayer: 0
   mapMarker: {fileID: 6013492191184059810}
   weapon: {fileID: 4342911956550535728}
 --- !u!114 &5619964018174700816

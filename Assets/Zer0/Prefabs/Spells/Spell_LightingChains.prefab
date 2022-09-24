@@ -53,15 +53,15 @@ MonoBehaviour:
   spellName: Lightning Chains
   icon: {fileID: 21300000, guid: 33d2e28416d37144b8a32c7e4a52a6e7, type: 3}
   visualEffect: {fileID: 4631079980008022893, guid: dd789709a8d62f04c900cb9ab2416655, type: 3}
-  impactDamage: 0
+  impactDamage: 6
   cost: 2
   coolDown: 3
   range: 100
   aoe: 1
   explosionSpeed: 1
   duration: 4.5
-  frequency: 2
-  magnitude: 0
+  frequency: 1
+  magnitude: 6
   effectToAdd: 1
   areaOfEffectTriggerField: {fileID: 3011070413910585229}
   collisionDetection: {fileID: 3011070413910585230}

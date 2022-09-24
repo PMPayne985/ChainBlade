@@ -2116,7 +2116,6 @@ MonoBehaviour:
   _spellPoints: 0
   spellRechargeRate: 0.1
   launchPoint: {fileID: 0}
-  aiSpell: {fileID: 0}
 --- !u!1 &4568082641584848467
 GameObject:
   m_ObjectHideFlags: 0

@@ -43665,6 +43665,10 @@ PrefabInstance:
       propertyPath: strafeSpeed.rotateWithCamera
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2725231476981441038, guid: 0692e1281770f974ba109c828994d220, type: 3}
+      propertyPath: isPlayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2725231476981441039, guid: 0692e1281770f974ba109c828994d220, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -43707,6 +43711,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2725231476981441039, guid: 0692e1281770f974ba109c828994d220, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2725231476981441044, guid: 0692e1281770f974ba109c828994d220, type: 3}
+      propertyPath: rollInput.useInput
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2725231476981441045, guid: 0692e1281770f974ba109c828994d220, type: 3}

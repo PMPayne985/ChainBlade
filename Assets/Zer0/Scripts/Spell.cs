@@ -187,10 +187,11 @@ namespace Zer0
             if (newEffect != statusEffectType.None) effectToAdd = newEffect;
         }
 
-        public void SetSpellParams(GameObject newVisualEffect, float newExplosionSpeed)
+        public void SetSpellParams(GameObject newVisualEffect, float newExplosionSpeed, GameObject trail)
         {
             visualEffect = newVisualEffect;
             explosionSpeed = newExplosionSpeed;
+            trailEffect = trail;
         }
     }
 }
