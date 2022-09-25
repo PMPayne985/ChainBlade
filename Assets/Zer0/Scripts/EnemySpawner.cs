@@ -14,6 +14,13 @@ namespace Zer0
         private int maxEnemies = 10;
         [SerializeField, Tooltip("The prefab that will be used for this enemy spawner.")]
         private GameObject enemyPrefab;
+
+        [Header("Spawner Features")] [SerializeField, Tooltip("The method in which enemies will spawn.")]
+        private SpawnOrder spawnOrder = SpawnOrder.SingleSpawner;
+        [SerializeField, Tooltip("List of all spawners enemies may spawn from.")]
+        private Transform[] spawnPoints;
+        [SerializeField, Tooltip("The color of the wireframe that marks where this is situated.")]
+        private Color gizmoColor = Color.red;
         
         [Header("Spawn Limiting Options")]
         [SerializeField, Tooltip("Check this if this spawner should spawn up to its max enemies only once. Leave unchecked to spawn endlessly.")]
@@ -43,10 +50,18 @@ namespace Zer0
         private float _timer;
         private int _activeEnemies;
         private int _totalEnemies;
+        private int _spawnIndex;
 
         private int _currentHealthBoost;
         private int _currentDamageBoost;
         private int _currentLevelBoost;
+        
+        private enum SpawnOrder
+        {
+            SingleSpawner,
+            InOrder,
+            Random,
+        }
 
         private void OnEnable()
         {
@@ -81,7 +96,22 @@ namespace Zer0
             
             if (_activeEnemies >= maxEnemies) return;
 
-            var newEnemy = Instantiate(enemyPrefab, transform.position, transform.rotation, transform);
+            var spawnPoint = transform;
+            if (spawnOrder == SpawnOrder.InOrder)
+            {
+                spawnPoint = spawnPoints[_spawnIndex];
+
+                _spawnIndex++;
+                if (_spawnIndex >= spawnPoints.Length)
+                    _spawnIndex = 0;
+            }
+            else if (spawnOrder == SpawnOrder.Random)
+            {
+                var spawnAt = Random.Range(0, spawnPoints.Length);
+                spawnPoint = spawnPoints[spawnAt];
+            }
+            
+            var newEnemy = Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation, transform);
 
             var stats = newEnemy.GetComponent<Enemy>();
             stats.SetSpawner(this);
@@ -114,7 +144,7 @@ namespace Zer0
 #if UNITY_EDITOR
         private void OnDrawGizmos()
         {
-            Gizmos.color = Color.red;
+            Gizmos.color = gizmoColor;
             Gizmos.DrawWireSphere(transform.position, 1);
         }
 #endif
