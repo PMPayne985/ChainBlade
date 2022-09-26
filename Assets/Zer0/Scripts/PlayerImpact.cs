@@ -22,12 +22,15 @@ namespace Zer0
         private bool canDrag;
         [SerializeField, Tooltip("Check if this weapon should deal damage to damagable objects.")]
         private bool canDamage;
+        [SerializeField] 
+        private bool lifeLeech;
         [SerializeField, Tooltip("The Chain Knife script that will be used with this blade.")]
         private ChainKnife chainKnife;
         [SerializeField, Tooltip("A list of sounds that can play on impact")]
         private AudioClip[] impactSounds;
 
         private int _enhancmentStep;
+        private int _lifeStealAmount;
 
         private Player _player;
         private AudioSource _audio;
@@ -53,6 +56,7 @@ namespace Zer0
             UpgradeBladeMenu.OnAddStatusEffect += SetStatusEffects;
             UpgradeBladeMenu.OnAddStatusEffect += SetEffectParameters;
             UpgradeBladeMenu.OnChainPullUpgrade += ChangeDrag;
+            UpgradeBladeMenu.OnUpgradeLifeLeech += SetLifeLeech;
 
         }
 
@@ -69,6 +73,21 @@ namespace Zer0
                 canDrag = status;
         }
 
+        public void StealHealth()
+        {
+            if (lifeLeech)
+                _player.RestoreHealth(_lifeStealAmount);
+        }
+
+        public void SetLifeLeech(weaponType typeWeapon, bool canLeech, int leechValue)
+        {
+            if (type == typeWeapon)
+            {
+                lifeLeech = canLeech;
+                _lifeStealAmount = leechValue;
+            }
+        }
+        
         public void ChangePush(bool status) => canPush = status;
 
         

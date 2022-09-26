@@ -5047,7 +5047,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Chain Dot
+  m_text: Life Leech
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: f2dcf029949142e28b974630369c8b4e, type: 2}
@@ -12811,7 +12811,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5a332bd33b937d949b1184f3175cb2e5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b016e709ed3184943872f39ca02608ba, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -28121,6 +28121,7 @@ MonoBehaviour:
   canPush: 1
   canDrag: 0
   canDamage: 0
+  lifeLeech: 0
   chainKnife: {fileID: 5445603164618482904}
   impactSounds: []
 --- !u!1 &4615537716260141955
@@ -28329,6 +28330,7 @@ MonoBehaviour:
   canPush: 1
   canDrag: 0
   canDamage: 0
+  lifeLeech: 0
   chainKnife: {fileID: 5445603163334136984}
   impactSounds: []
 --- !u!1 &4698267479767585808
@@ -28531,7 +28533,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3837174134983024938}
         m_TargetAssemblyTypeName: Zer0.UpgradeBladeMenu, Assembly-CSharp
-        m_MethodName: AddDotEffect
+        m_MethodName: UpgradeLifeLeech
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -32548,26 +32550,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knifeDamageCostText: {fileID: 6436620058928580690}
-  chainStrikeDamageCostText: {fileID: 2721566516001728645}
-  chainStrikeDotCostText: {fileID: 6847884008531406836}
-  chainStrikeAddChainPull: {fileID: 1790932063075652692}
+  chainDamageCostText: {fileID: 2721566516001728645}
+  knifeLifeLeechCostText: {fileID: 6847884008531406836}
+  chainPullCostText: {fileID: 1790932063075652692}
   lengthCostText: {fileID: 2643567462569127854}
   currentPointsText: {fileID: 5802244156543834642}
   totalPointsText: {fileID: 7357491407588467599}
   knifeDamageText: {fileID: 4886835531803225330}
   chainDamageText: {fileID: 2581346178785977363}
+  knifeLifeLeechText: {fileID: 7966842199509301989}
   chainLengthText: {fileID: 6289586936726846134}
-  chainDotText: {fileID: 7966842199509301989}
   chainDragText: {fileID: 7677771309797979238}
-  dotMultiplier: 4
-  chainStrikeDamageMultiplier: 4
-  knifeDamageMultiplier: 2
+  knifeDamageMultiplier: 1
+  knifeDamageAddition: 1
+  chainDamageMultiplier: 1
+  chainDamageAddition: 1
+  knifeLifeLeechMultiplier: 1
+  knifeLifeLeechAddition: 1
   lengthMultiplier: 1
+  lengthAddition: 1
   chainPullMultiplier: 1
+  chainPullAddition: 1
   bladeDamageUpgrade: 3
   chainDamageUpgrade: 1
+  knifeLifeLeechUpgrade: 1
   chainLengthUpgrade: 3
-  chainDotUpgrade: 2
 --- !u!1 &5627266387800338842
 GameObject:
   m_ObjectHideFlags: 0
@@ -33520,7 +33527,7 @@ GameObject:
   - component: {fileID: 1105812412607756525}
   - component: {fileID: 7046824732238082461}
   m_Layer: 5
-  m_Name: ChainDot
+  m_Name: LifeLeech
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
