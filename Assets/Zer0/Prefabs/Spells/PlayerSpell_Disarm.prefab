@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellName: Disarm
-  icon: {fileID: 21300000, guid: 87b278d022d9f694795fb5ee8dc350b3, type: 3}
+  icon: {fileID: 21300000, guid: 386f42106c171b24abd102016e186410, type: 3}
   visualEffect: {fileID: 0}
   castOnSelf: 0
   impactDamage: 0
@@ -56,7 +56,7 @@ MonoBehaviour:
   explosionSpeed: 1
   duration: 3
   frequency: 0
-  magnitude: 0.35
+  magnitude: 0
   effectToAdd: 4
   effectStationary: 0
   trailEffect: {fileID: 467560020017858227, guid: 8563a8bc5b37f154593b8efa0b7aed49, type: 3}

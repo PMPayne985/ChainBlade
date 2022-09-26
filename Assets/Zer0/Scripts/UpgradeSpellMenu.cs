@@ -13,25 +13,49 @@ namespace Zer0
         [SerializeField, Tooltip("Text field to display the total number of points invested.")]
         private TMP_Text totalPointsText;
         [SerializeField, Tooltip("Text field to display the cost of the next Lightning Chains enhancement.")] 
-        private TMP_Text lightningChainscostText;
+        private TMP_Text lightningChainsCostText;
         [SerializeField, Tooltip("Text field to display the cost of the next Slow spell enhancement.")]
-        private TMP_Text slowCostText;
+        private TMP_Text shacklesCostText;
+        [SerializeField, Tooltip("Text field to display the cost of the next Shackles enhancement.")]
+        private TMP_Text disarmCostText;
+        [SerializeField, Tooltip("Text field to display the cost of the next Refresh enhancement.")]
+        private TMP_Text refreshCostText;
+        [SerializeField, Tooltip("Text field to display the cost of the next Iron Web spell enhancement.")]
+        private TMP_Text ironWebCostText;
 
         [Header("Description Text Fields")]
         [SerializeField, Tooltip("Text field to display the description for the Lightning Chains Spell.")]
         private TMP_Text lightingChainsDescriptionText;
         [SerializeField, Tooltip("Text field to display the description for the Slow Spell.")]
-        private TMP_Text slowDescriptionText;
+        private TMP_Text shacklesDescriptionText;
+        [SerializeField, Tooltip("Text field to display the description for the Shackles Spell.")]
+        private TMP_Text disarmDescriptionText;
+        [SerializeField, Tooltip("Text field to display the description for the Refresh Spell.")]
+        private TMP_Text refreshDescriptionText;
+        [SerializeField, Tooltip("Text field to display the description for the Iron Web Spell.")]
+        private TMP_Text ironWebDescriptionText;
 
         [Header("Spell Cost Fields")]
         [SerializeField, Tooltip("The cost multiplier for each level of Lightning Chains enhancement.")]
         private float lightningChainsCostMultiplier = 1;
         [SerializeField, Tooltip("This number will be added to the Lightning Chains cost after the multiplier is applied.")]
         private int lightningChainsCostAddition = 1;
-        [SerializeField, Tooltip("The cost multiplier for each level of the Slow enhancement.")]
-        private float slowCostMultiplier = 1;
-        [SerializeField, Tooltip("This number will be added to the Slow cost after the multiplier is applied.")]
-        private int slowCostAddition = 1;
+        [SerializeField, Tooltip("The cost multiplier for each level of the Shackles enhancement.")]
+        private float shacklesCostMultiplier = 1;
+        [SerializeField, Tooltip("This number will be added to the Shackles cost after the multiplier is applied.")]
+        private int shacklesCostAddition = 1;
+        [SerializeField, Tooltip("The cost multiplier for each level of the Disarm enhancement.")]
+        private float disarmCostMultiplier = 1;
+        [SerializeField, Tooltip("This number will be added to the Refresh cost after the multiplier is applied.")]
+        private int disarmCostAddition = 1;
+        [SerializeField, Tooltip("The cost multiplier for each level of the Refresh enhancement.")]
+        private float refreshCostMultiplier = 1;
+        [SerializeField, Tooltip("This number will be added to the Refresh cost after the multiplier is applied.")]
+        private int refreshCostAddition = 1;
+        [SerializeField, Tooltip("The cost multiplier for each level of the Iron Web enhancement.")]
+        private float ironWebCostMultiplier = 1;
+        [SerializeField, Tooltip("This number will be added to the Iron Web cost after the multiplier is applied.")]
+        private int ironWebCostAddition = 1;
 
         [Header("Spell Value Fields")]
         [SerializeField, Tooltip("The time in seconds each upgrade will increase Lightning Chains duration.")]
@@ -39,9 +63,19 @@ namespace Zer0
         [SerializeField, Tooltip("The amount each 3rd upgrade will increase Lightning Chains damage.")]
         private int lightningChainsDamageValue = 3;
         [SerializeField, Tooltip("The time in seconds each upgrade will increase Slow duration.")]
-        private float slowDurationValue = 1;
+        private float shacklesDurationValue = 1;
         [SerializeField, Tooltip("The amount each 3rd upgrade will decrease the speed of a slowed target.")]
-        private float slowMagnitudeValue = 0.5f;
+        private float shacklesMagnitudeValue = 0.5f;
+        [SerializeField, Tooltip("The time in seconds each upgrade will increase the Disarm Spell's duration.")]
+        private float disarmDurationValue;
+        [SerializeField, Tooltip("The time in seconds each upgrade will increase Refreshes duration.")]
+        private float refreshDurationValue = 2;
+        [SerializeField, Tooltip("The amount each 3rd upgrade will increase Refreshes healing value.")]
+        private int refreshHealingValue = 3;
+        [SerializeField, Tooltip("The time in seconds each upgrade will increase Iron Webs duration.")]
+        private int ironWebDuration = 1;
+        [SerializeField, Tooltip("The percent of damage the Iron Web spell reduces each attack by.")]
+        private int ironWebProtectionRate = 5;
         
 
         [Header("Activate / Deactivate Game Objects")]
@@ -50,17 +84,33 @@ namespace Zer0
         [SerializeField, Tooltip("Buttons that will be activated once the spell Lightning Chains is purchased.")] 
         private GameObject[] enhanceLightningChainsButtons;
         [SerializeField, Tooltip("Buttons that will be deactivated once the Slow spell is purchased.")] 
-        private GameObject[] buySlowButtons;
+        private GameObject[] buyShacklesButtons;
         [SerializeField, Tooltip("Buttons that will be activated once the Slow spell is purchased.")] 
-        private GameObject[] enhanceSlowButtons;
+        private GameObject[] enhanceShacklesButtons;
+        [SerializeField, Tooltip("Buttons that will be deactivated once the Disarm spell is purchased.")] 
+        private GameObject[] buyDisarmButtons;
+        [SerializeField, Tooltip("Buttons that will be activated once the Disarm spell is purchased.")] 
+        private GameObject[] enhanceDisarmButtons;
+        [SerializeField, Tooltip("Buttons that will be deactivated once the Refresh spell is purchased.")] 
+        private GameObject[] buyRefreshButtons;
+        [SerializeField, Tooltip("Buttons that will be activated once the Refresh spell is purchased.")] 
+        private GameObject[] enhanceRefreshButtons;
+        [SerializeField, Tooltip("Buttons that will be deactivated once the Iron Web spell is purchased.")] 
+        private GameObject[] buyIronWebButtons;
+        [SerializeField, Tooltip("Buttons that will be activated once the Iron Web spell is purchased.")] 
+        private GameObject[] enhanceIronWebButtons;
         
+        [Header("Spells")]
         [SerializeField, Tooltip("A list of all spells that can be purchased by the player")]
         private GameObject[] spellList;
         
         private int _currentPoints;
         private int _totalPoints;
         private int _baseLightningChainsCost = 1;
-        private int _baseSlowCost = 1;
+        private int _baseShacklesCost = 1;
+        private int _baseDisarmCost = 1;
+        private int _baseRefreshCost = 1;
+        private int _baseIronWebCost = 1;
 
         public static event Action<SpellData> OnBuyNewSpell;
         public static event Action<string, float, float, float, int, statusEffectType, bool> OnEnhanceSpell;
@@ -81,7 +131,7 @@ namespace Zer0
             var lcCost = Mathf.RoundToInt(_baseLightningChainsCost * lightningChainsCostMultiplier);
             lcCost += lightningChainsCostAddition;
 
-            lightningChainscostText.text = $"{lcCost}";
+            lightningChainsCostText.text = $"{lcCost}";
 
             lightingChainsDescriptionText.text = $"A struck target is assaulted by chains for {spellList[0].GetComponent<SpellData>().Magnitude} damage every second for " +
                                                  $"{spellList[0].GetComponent<SpellData>().Duration} seconds. " +
@@ -89,19 +139,63 @@ namespace Zer0
                                                  $"Every 3rd enhancements increases damage by {lightningChainsDamageValue} and the spells cost by 1.";
 #endregion
 
-            #region Slow
+            #region Shackles
 
-            var sCost = Mathf.RoundToInt(_baseSlowCost * slowCostMultiplier);
-            sCost += slowCostAddition;
+            var sCost = Mathf.RoundToInt(_baseShacklesCost * shacklesCostMultiplier);
+            sCost += shacklesCostAddition;
 
-            slowCostText.text = $"{sCost}";
+            shacklesCostText.text = $"{sCost}";
 
-            slowDescriptionText.text = $"The Target's move and attack speed is reduced by {spellList[1].GetComponent<SpellData>().Magnitude * 100}%" +
-                                       $" for {spellList[1].GetComponent<SpellData>().Duration} seconds" + 
-                                       $"Each point of enhancement increase duration by {slowDurationValue} seconds. " +
-                                       $"Every 3rd enhancements increase the speed penalty by {slowMagnitudeValue * 100}% and the spells cost by 1.";
+            shacklesDescriptionText.text = $"The Target's move and attack speed is reduced by {spellList[1].GetComponent<SpellData>().Magnitude * 100}% " +
+                                       $"for {spellList[1].GetComponent<SpellData>().Duration} seconds " + 
+                                       $"Each point of enhancement increase duration by {shacklesDurationValue} seconds. " +
+                                       $"Every 3rd enhancements increase the speed penalty by {shacklesMagnitudeValue * 100}% and the spells cost by 1.";
 
-#endregion
+            #endregion
+            
+            #region Disarm
+
+            var dCost = Mathf.RoundToInt(_baseDisarmCost * disarmCostMultiplier);
+            dCost += disarmCostAddition;
+
+            disarmCostText.text = $"{dCost}";
+
+            disarmDescriptionText.text = $"The target's weapon is bound making it unable to deal damage " +
+                                           $"for {spellList[2].GetComponent<SpellData>().Duration} seconds " + 
+                                           $"Each point of enhancement increase duration by {disarmDurationValue} seconds. " +
+                                           $"Every 3rd enhancements increase the spells cost by 1.";
+
+            #endregion
+            
+            #region Refresh
+
+            var rCost = Mathf.RoundToInt(_baseRefreshCost * refreshCostMultiplier);
+            rCost += refreshCostAddition;
+
+            refreshCostText.text = $"{rCost}";
+
+            var rData = spellList[3].GetComponent<SpellData>();
+            refreshDescriptionText.text =$"Heal yourself {rData.Duration * rData.Magnitude} Health Points " +
+                                         $"over {rData.Duration} seconds " + 
+                                         $"Each point of enhancement increase duration by {refreshDurationValue} seconds. " +
+                                         $"Every 3rd enhancements increases the healing done per second by {refreshHealingValue} and the spells cost by 1.";
+
+            #endregion
+            
+            #region Iron Web
+
+            var iCost = Mathf.RoundToInt(_baseIronWebCost * ironWebCostMultiplier);
+            iCost += ironWebCostAddition;
+
+            ironWebCostText.text = $"{iCost}";
+
+            var iData = spellList[4].GetComponent<SpellData>();
+            refreshDescriptionText.text =$"Surround yourself in a protection field reducing damage you receive by {iData.Duration * iData.Magnitude}% " +
+                                         $"for {iData.Duration} seconds " + 
+                                         $"Each point of enhancement increase duration by {ironWebDuration} seconds. " +
+                                         $"Every 3rd enhancements increases the damage reduction by {ironWebProtectionRate}% and the spells cost by 1.";
+
+            #endregion
         }
         
         private void IncrementCollected(UpgradeMenu check, int amount)
@@ -112,19 +206,6 @@ namespace Zer0
             _totalPoints += amount;
         }
         
-        private bool CheckCanUpgrade(int upgradeCost, float upgradeMultiplier, int upgradeAddition)
-        {
-            var upgradeFinalCost = Mathf.RoundToInt(upgradeCost * upgradeMultiplier);
-            upgradeFinalCost += upgradeAddition;
-            
-            if (_currentPoints >= upgradeFinalCost)
-            {
-                _currentPoints -= upgradeFinalCost;
-                currentPointsText.text = $"{_currentPoints}";
-                return true;
-            }
-            return false;
-        }
         
         #region Lightning Chains
         
@@ -133,7 +214,7 @@ namespace Zer0
             var cost = Mathf.RoundToInt(_baseLightningChainsCost * lightningChainsCostMultiplier);
             cost += lightningChainsCostAddition;
             
-            lightningChainscostText.text = $"{cost}";
+            lightningChainsCostText.text = $"{cost}";
             
             if (CheckCanUpgrade(_baseLightningChainsCost, lightningChainsCostMultiplier, lightningChainsCostAddition))
             {
@@ -150,7 +231,7 @@ namespace Zer0
             var cost = Mathf.RoundToInt(_baseLightningChainsCost * lightningChainsCostMultiplier);
             cost += lightningChainsCostAddition;
             
-            lightningChainscostText.text = $"{cost}";
+            lightningChainsCostText.text = $"{cost}";
             
             if (CheckCanUpgrade(_baseLightningChainsCost, lightningChainsCostMultiplier, lightningChainsCostAddition))
             {
@@ -168,56 +249,210 @@ namespace Zer0
             var costAfter = _baseLightningChainsCost * lightningChainsCostMultiplier;
             costAfter += lightningChainsCostAddition;
             
-            lightningChainscostText.text = $"{costAfter}";
+            lightningChainsCostText.text = $"{costAfter}";
         }
         
         #endregion
 
-        #region Slow
+        #region Shackles
 
-        public void BuySlowSpell()
+        public void BuyShacklesSpell()
         {
-            var sCost = Mathf.RoundToInt(_baseSlowCost * slowCostMultiplier);
-            sCost += slowCostAddition;
+            var sCost = Mathf.RoundToInt(_baseShacklesCost * shacklesCostMultiplier);
+            sCost += shacklesCostAddition;
 
-            slowCostText.text = $"{sCost}";
+            shacklesCostText.text = $"{sCost}";
             
-            if (CheckCanUpgrade(_baseSlowCost, slowCostMultiplier, slowCostAddition))
+            if (CheckCanUpgrade(_baseShacklesCost, shacklesCostMultiplier, shacklesCostAddition))
             {
                 OnBuyNewSpell?.Invoke(spellList[1].GetComponent<SpellData>());
-                _baseSlowCost++;
+                _baseShacklesCost++;
 
-                foreach (var button in buySlowButtons) button.SetActive(false);
-                foreach (var button in enhanceSlowButtons) button.SetActive(true);
+                foreach (var button in buyShacklesButtons) button.SetActive(false);
+                foreach (var button in enhanceShacklesButtons) button.SetActive(true);
             }
         }
         
-        public void SlowUpgrade()
+        public void ShacklesUpgrade()
         {
-            var sCost = Mathf.RoundToInt(_baseSlowCost * slowCostMultiplier);
-            sCost += slowCostAddition;
+            var sCost = Mathf.RoundToInt(_baseShacklesCost * shacklesCostMultiplier);
+            sCost += shacklesCostAddition;
 
-            slowCostText.text = $"{sCost}";
+            shacklesCostText.text = $"{sCost}";
             
-            if (CheckCanUpgrade(_baseSlowCost, slowCostMultiplier, slowCostAddition))
+            if (CheckCanUpgrade(_baseShacklesCost, shacklesCostMultiplier, shacklesCostAddition))
             {
-                OnEnhanceSpell?.Invoke("Slow",slowDurationValue, 0, 0, 0, statusEffectType.Dot, false);
+                OnEnhanceSpell?.Invoke("Shackles",shacklesDurationValue, 0, 0, 0, statusEffectType.Slow, false);
+                
+                if (_baseShacklesCost % 3 == 0)
+                {
+                    OnChangeSpellParameters?.Invoke("Shackles", null, 1, 0, 0, areaOfEffect.Target);
+                    OnEnhanceSpell?.Invoke("Shackles",0, 0, shacklesMagnitudeValue, 0, statusEffectType.Slow, false);
+                }
+                
+                _baseShacklesCost++;
+            }
+
+            var costAfter = Mathf.RoundToInt(_baseShacklesCost * shacklesCostMultiplier);
+            costAfter += shacklesCostAddition;
+
+            shacklesCostText.text = $"{costAfter}";
+        }
+
+        #endregion
+        
+        #region Disarm
+
+        public void BuyDisarmSpell()
+        {
+            var dCost = Mathf.RoundToInt(_baseDisarmCost * disarmCostMultiplier);
+            dCost += disarmCostAddition;
+
+            disarmCostText.text = $"{dCost}";
+            
+            if (CheckCanUpgrade(_baseDisarmCost, disarmCostMultiplier, disarmCostAddition))
+            {
+                OnBuyNewSpell?.Invoke(spellList[2].GetComponent<SpellData>());
+                _baseDisarmCost++;
+
+                foreach (var button in buyDisarmButtons) button.SetActive(false);
+                foreach (var button in enhanceDisarmButtons) button.SetActive(true);
+            }
+        }
+        
+        public void DisarmUpgrade()
+        {
+            var dCost = Mathf.RoundToInt(_baseDisarmCost * disarmCostMultiplier);
+            dCost += disarmCostAddition;
+
+            disarmCostText.text = $"{dCost}";
+            
+            if (CheckCanUpgrade(_baseDisarmCost, disarmCostMultiplier, disarmCostAddition))
+            {
+                OnEnhanceSpell?.Invoke("Disarm",disarmDurationValue, 0, 0, 0, statusEffectType.Disarm, false);
+                
+                if (_baseDisarmCost % 3 == 0)
+                {
+                    OnChangeSpellParameters?.Invoke("Disarm", null, 1, 0, 0, areaOfEffect.Target);
+                }
+                
+                _baseDisarmCost++;
+            }
+
+            dCost = Mathf.RoundToInt(_baseDisarmCost * disarmCostMultiplier);
+            dCost += disarmCostAddition;
+
+            disarmCostText.text = $"{dCost}";
+        }
+
+        #endregion
+        
+        #region Refresh
+
+        public void BuyRefreshSpell()
+        {
+            var rCost = Mathf.RoundToInt(_baseRefreshCost * refreshCostMultiplier);
+            rCost += refreshCostAddition;
+
+            refreshCostText.text = $"{rCost}";
+            
+            if (CheckCanUpgrade(_baseRefreshCost, refreshCostMultiplier, refreshCostAddition))
+            {
+                OnBuyNewSpell?.Invoke(spellList[3].GetComponent<SpellData>());
+                _baseRefreshCost++;
+
+                foreach (var button in buyRefreshButtons) button.SetActive(false);
+                foreach (var button in enhanceRefreshButtons) button.SetActive(true);
+            }
+        }
+        
+        public void RefreshUpgrade()
+        {
+            var rCost = Mathf.RoundToInt(_baseRefreshCost * refreshCostMultiplier);
+            rCost += refreshCostAddition;
+
+            refreshDescriptionText.text = $"{rCost}";
+            
+            if (CheckCanUpgrade(_baseRefreshCost, refreshCostMultiplier, refreshCostAddition))
+            {
+                OnEnhanceSpell?.Invoke("Refresh",refreshDurationValue, 0, 0, 0, statusEffectType.Hot, false);
                 
                 if (_baseLightningChainsCost % 3 == 0)
                 {
-                    OnChangeSpellParameters?.Invoke("Slow", null, 1, 0, 0, areaOfEffect.Target);
-                    OnEnhanceSpell?.Invoke("Slow",0, 0, slowMagnitudeValue, 0, statusEffectType.Dot, false);
+                    OnChangeSpellParameters?.Invoke("Refresh", null, 1, 0, 0, areaOfEffect.None);
+                    OnEnhanceSpell?.Invoke("Refresh",0, 0, refreshHealingValue, 0, statusEffectType.Hot, false);
                 }
                 
-                _baseSlowCost++;
+                _baseRefreshCost++;
             }
 
-            var costAfter = Mathf.RoundToInt(_baseSlowCost * slowCostMultiplier);
-            costAfter += slowCostAddition;
+            rCost = Mathf.RoundToInt(_baseRefreshCost * refreshCostMultiplier);
+            rCost += refreshCostAddition;
 
-            slowCostText.text = $"{costAfter}";
+            refreshCostText.text = $"{rCost}";
         }
 
         #endregion
+        
+        #region Iron Web
+
+        public void BuyIronWebSpell()
+        {
+            var iCost = Mathf.RoundToInt(_baseIronWebCost * ironWebCostMultiplier);
+            iCost += ironWebCostAddition;
+
+            ironWebCostText.text = $"{iCost}";
+            
+            if (CheckCanUpgrade(_baseIronWebCost, ironWebCostMultiplier, ironWebCostAddition))
+            {
+                OnBuyNewSpell?.Invoke(spellList[4].GetComponent<SpellData>());
+                _baseIronWebCost++;
+
+                foreach (var button in buyIronWebButtons) button.SetActive(false);
+                foreach (var button in enhanceIronWebButtons) button.SetActive(true);
+            }
+        }
+        
+        public void IronWebUpgrade()
+        {
+            var iCost = Mathf.RoundToInt(_baseIronWebCost * ironWebCostMultiplier);
+            iCost += ironWebCostAddition;
+
+            ironWebCostText.text = $"{iCost}";
+            
+            if (CheckCanUpgrade(_baseIronWebCost, ironWebCostMultiplier, ironWebCostAddition))
+            {
+                OnEnhanceSpell?.Invoke("Iron Web",ironWebDuration, 0, 0, 0, statusEffectType.Protect, false);
+                
+                if (_baseLightningChainsCost % 3 == 0)
+                {
+                    OnChangeSpellParameters?.Invoke("Iron Web", null, 1, 0, 0, areaOfEffect.None);
+                    OnEnhanceSpell?.Invoke("Iron Web",0, 0, ironWebProtectionRate, 0, statusEffectType.Protect, false);
+                }
+                
+                _baseIronWebCost++;
+            }
+
+            iCost = Mathf.RoundToInt(_baseIronWebCost * ironWebCostMultiplier);
+            iCost += ironWebCostAddition;
+
+            ironWebCostText.text = $"{iCost}";
+        }
+
+        #endregion
+        
+        private bool CheckCanUpgrade(int upgradeCost, float upgradeMultiplier, int upgradeAddition)
+        {
+            var upgradeFinalCost = Mathf.RoundToInt(upgradeCost * upgradeMultiplier);
+            upgradeFinalCost += upgradeAddition;
+            
+            if (_currentPoints >= upgradeFinalCost)
+            {
+                _currentPoints -= upgradeFinalCost;
+                currentPointsText.text = $"{_currentPoints}";
+                return true;
+            }
+            return false;
+        }
     }
 }
