@@ -28015,7 +28015,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ebe2ea9c9ea0544d84d9c27f7470915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openCloseEvents: 0
+  openCloseEvents: 1
   openCloseWindow: 0
   selectedToolbar: 0
   attackObjectName: 
@@ -28043,7 +28043,19 @@ MonoBehaviour:
   canApplyDamage: 0
   onDamageHit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3061423933440526549}
+        m_TargetAssemblyTypeName: Zer0.PlayerImpact, Assembly-CSharp
+        m_MethodName: StealHealth
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onRecoilHit:
     m_PersistentCalls:
       m_Calls: []
@@ -28121,7 +28133,6 @@ MonoBehaviour:
   canPush: 1
   canDrag: 0
   canDamage: 0
-  lifeLeech: 0
   chainKnife: {fileID: 5445603164618482904}
   impactSounds: []
 --- !u!1 &4615537716260141955
@@ -28224,7 +28235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ebe2ea9c9ea0544d84d9c27f7470915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openCloseEvents: 0
+  openCloseEvents: 1
   openCloseWindow: 0
   selectedToolbar: 0
   attackObjectName: 
@@ -28252,7 +28263,19 @@ MonoBehaviour:
   canApplyDamage: 0
   onDamageHit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 982324524549856583}
+        m_TargetAssemblyTypeName: Zer0.PlayerImpact, Assembly-CSharp
+        m_MethodName: StealHealth
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onRecoilHit:
     m_PersistentCalls:
       m_Calls: []
@@ -28330,7 +28353,6 @@ MonoBehaviour:
   canPush: 1
   canDrag: 0
   canDamage: 0
-  lifeLeech: 0
   chainKnife: {fileID: 5445603163334136984}
   impactSounds: []
 --- !u!1 &4698267479767585808
