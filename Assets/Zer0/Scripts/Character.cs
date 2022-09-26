@@ -13,5 +13,7 @@ namespace Zer0
         public virtual void RemoveDisarm() {}
 
         public bool isPlayer;
+        
+        public virtual void ApplyStatusEffects(statusEffectType effectToAdd, float duration, float frequency, float magnitude) { }
     }
 }

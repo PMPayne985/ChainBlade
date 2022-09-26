@@ -147,7 +147,7 @@ namespace Zer0
                 effect.tick = effect.frequency;
             }
 
-            if (effect.duration <= 0)
+            if (effect.duration <= 0 && _dotted)
             {
                 _dotted = false;
                 if (dotEffect) dotEffect.SetActive(false);
@@ -167,7 +167,7 @@ namespace Zer0
             }
             
 
-            if (effect.duration <= 0)
+            if (effect.duration <= 0 && _incapacitated)
             {
                 _incapacitated = false;
                 if (stunEffect) stunEffect.SetActive(false);
@@ -223,7 +223,7 @@ namespace Zer0
                 if (disarmEffect) disarmEffect.SetActive(true);
             }
 
-            if (effect.duration <= 0)
+            if (effect.duration <= 0 && _disarmed)
             {
                 _disarmed = false;
                 _character.RemoveDisarm();
@@ -234,7 +234,20 @@ namespace Zer0
 
         private void Protect(statusEffectInfo effect)
         {
-            
+            effect.duration -= Time.deltaTime;
+
+            if (!_protected)
+            {
+                if (protectEffect) protectEffect.SetActive(true);
+                GetComponent<vMeleeCombatInput>().Protecting((int)effect.magnitude);
+            }
+
+            if (effect.duration <= 0 && _protected)
+            {
+                _protected = false;
+                GetComponent<vMeleeCombatInput>().EndProtecting();
+                if (protectEffect) protectEffect.SetActive(false);
+            }
         }
 
         private void HealOverTime(statusEffectInfo effect)
@@ -254,7 +267,7 @@ namespace Zer0
                 effect.tick = effect.frequency;
             }
 
-            if (effect.duration <= 0)
+            if (effect.duration <= 0 && _hotted)
             {
                 _hotted = false;
                 if (hotEffect) hotEffect.SetActive(false);

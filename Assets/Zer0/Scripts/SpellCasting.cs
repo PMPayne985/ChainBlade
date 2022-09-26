@@ -80,13 +80,13 @@ namespace Zer0
 
             if (PlayerInput.NextSpell()) NextSpell();
         }
-        
+
         public void AddSpell(SpellData newSpell)
         {
             var addSpell = gameObject.AddComponent<SpellData>();
             addSpell.SetSpellEffect(newSpell.Duration, newSpell.Frequency, newSpell.Magnitude, newSpell.ImpactDamage, newSpell.EffectToAdd, newSpell.EffectStationary);
             addSpell.SetSpellVariables(newSpell.Name, newSpell.Icon,newSpell.Cost, newSpell.CoolDown, newSpell.Range, newSpell.AOE);
-            addSpell.SetSpellParams(newSpell.VisualEffect, newSpell.ExplosionSpeed, newSpell.TrailEffect);
+            addSpell.SetSpellParams(newSpell.CastOnSelf, newSpell.VisualEffect, newSpell.ExplosionSpeed, newSpell.TrailEffect);
             _spells.Add(addSpell);
             if (_spells.Count == 1)
                 NextSpell();
@@ -164,8 +164,13 @@ namespace Zer0
             
             _spellPoints -= _activeSpell.Cost;
 
-            var cast = CreateSpell();
-            cast.GetComponent<Rigidbody>().AddForce(launchPoint.forward * 5, ForceMode.Impulse);
+            if (_activeSpell.CastOnSelf)
+                _character.ApplyStatusEffects(_activeSpell.EffectToAdd, _activeSpell.Duration, _activeSpell.Frequency, _activeSpell.Magnitude);
+            else
+            {
+                var cast = CreateSpell();
+                cast.GetComponent<Rigidbody>().AddForce(launchPoint.forward * 5, ForceMode.Impulse);
+            }
             
             _ui.UpdateMagicSlider(maxSpellPoints, _spellPoints);
         }
@@ -176,7 +181,7 @@ namespace Zer0
             var data = cast.GetComponent<Spell>();
             data.SetSpellEffect(_activeSpell.Duration, _activeSpell.Frequency, _activeSpell.Magnitude, _activeSpell.ImpactDamage, _activeSpell.EffectToAdd, _activeSpell.EffectStationary);
             data.SetSpellVariables(_activeSpell.Name, _activeSpell.Icon,_activeSpell.Cost, _activeSpell.CoolDown, _activeSpell.Range, _activeSpell.AOE);
-            data.SetSpellParams(_activeSpell.VisualEffect, _activeSpell.ExplosionSpeed, _activeSpell.TrailEffect);
+            data.SetSpellParams(_activeSpell.CastOnSelf, _activeSpell.VisualEffect, _activeSpell.ExplosionSpeed, _activeSpell.TrailEffect);
             Instantiate(data.trailEffect, cast.transform.position, cast.transform.rotation, cast.transform);
 
             return cast;

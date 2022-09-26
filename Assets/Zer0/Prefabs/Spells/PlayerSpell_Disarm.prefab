@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3011070413910585219}
   - component: {fileID: -7554864425299724057}
   m_Layer: 0
-  m_Name: PlayerSpell_Slow
+  m_Name: PlayerSpell_Disarm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8951ddff6faa95c4c89db2975ca876cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellName: Slow
+  spellName: Disarm
   icon: {fileID: 21300000, guid: 87b278d022d9f694795fb5ee8dc350b3, type: 3}
   visualEffect: {fileID: 0}
   castOnSelf: 0
@@ -54,10 +54,10 @@ MonoBehaviour:
   range: 400
   aoe: 1
   explosionSpeed: 1
-  duration: 6
+  duration: 3
   frequency: 0
   magnitude: 0.35
-  effectToAdd: 3
+  effectToAdd: 4
   effectStationary: 0
   trailEffect: {fileID: 467560020017858227, guid: 8563a8bc5b37f154593b8efa0b7aed49, type: 3}
   prebuiltSpell: 1

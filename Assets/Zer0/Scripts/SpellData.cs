@@ -12,6 +12,8 @@ namespace Zer0
         private Sprite icon;
         [SerializeField, Tooltip("The effect that will be displayed when the spell strikes a target")]
         private GameObject visualEffect;
+        [SerializeField, Tooltip("Check this if this spell should apply to the caster.")]
+        private bool castOnSelf;
         [SerializeField, Tooltip("The damage the spell does on impact. (set to 0 if no damage is desired)")]
         private int impactDamage;
         [SerializeField, Tooltip("The number of Spell Points used to cast this spell.")]
@@ -41,12 +43,15 @@ namespace Zer0
         private statusEffectType effectToAdd;
         [SerializeField, Tooltip("Check this if the effect should stay in place and not stay with the target struck.")]
         private bool effectStationary;
-        public GameObject trailEffect;
-        [SerializeField] private bool PrebuiltSpell;
-        
+        [SerializeField, Tooltip("The particle effect that will trail behind the spell.")]
+        private GameObject trailEffect;
+        [SerializeField, Tooltip("Check this if this is a Spell Data component meant to be added to the players spell inventory via the spellbook.")] 
+        private bool prebuiltSpell;
+
         public string Name { get; private set; }
         public Sprite Icon { get; private set; }
         public GameObject VisualEffect { get; private set; }
+        public bool CastOnSelf { get; private set; }
         public int ImpactDamage { get; private set; }
         public int Cost { get; private set; }
         public float CoolDown { get; private set; }
@@ -62,11 +67,12 @@ namespace Zer0
 
         private void Awake()
         {
-            if (!PrebuiltSpell) return;
+            if (!prebuiltSpell) return;
 
             Name = spellName;
             Icon = icon;
             VisualEffect = visualEffect;
+            CastOnSelf = castOnSelf;
             ImpactDamage = impactDamage;
             Cost = cost;
             CoolDown = coolDown;
@@ -102,8 +108,9 @@ namespace Zer0
             if (newEffect != statusEffectType.None) EffectToAdd = newEffect;
         }
 
-        public void SetSpellParams(GameObject newVisualEffect, float newExplosionSpeed, GameObject newTrail)
+        public void SetSpellParams(bool onSelf, GameObject newVisualEffect, float newExplosionSpeed, GameObject newTrail)
         {
+            CastOnSelf = onSelf;
             VisualEffect = newVisualEffect;
             ExplosionSpeed = newExplosionSpeed;
             TrailEffect = newTrail;

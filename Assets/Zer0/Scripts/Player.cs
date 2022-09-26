@@ -13,6 +13,7 @@ namespace Zer0
         
         private ChainKnife[] _chainKnives;
         private SpellCasting _caster;
+        private StatusEffects _effects;
 
         private vHealthController _healthController;
 
@@ -24,6 +25,7 @@ namespace Zer0
             if (!_caster) Debug.LogWarning("CharacterBehavior is missing a Spell Casting Component.");
             _healthController = GetComponent<vHealthController>();
             if (!_healthController) Debug.LogError("CharacterBehavior is missing a Health Controller Component.");
+            _effects = GetComponent<StatusEffects>();
         }
 
         private void Start()
@@ -71,6 +73,11 @@ namespace Zer0
                 
                 character.TakeDamage(_Damage);
             }
+        }
+
+        public override void ApplyStatusEffects(statusEffectType effectToAdd, float duration, float frequency, float magnitude)
+        {
+            _effects.AddActiveEffect(effectToAdd, duration, frequency, magnitude);
         }
 
         public override void RestoreHealth(int value)

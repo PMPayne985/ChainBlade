@@ -12,6 +12,8 @@ namespace Zer0
         private Sprite icon;
         [SerializeField, Tooltip("The effect that will be displayed when the spell strikes a target")]
         private GameObject visualEffect;
+        [SerializeField, Tooltip("Check this if this spell should apply to the caster.")]
+        private bool castOnSelf;
         [SerializeField, Tooltip("The damage the spell does on impact. (set to 0 if no damage is desired)")]
         private int impactDamage;
         [SerializeField, Tooltip("The number of Spell Points used to cast this spell.")]
@@ -51,6 +53,7 @@ namespace Zer0
         public string Name => spellName;
         public Sprite Icon => icon;
         public GameObject VisualEffect => visualEffect;
+        public bool CastOnSelf => castOnSelf;
         public int ImpactDamage => impactDamage;
         public int Cost => cost;
         public float CoolDown => coolDown;
@@ -187,8 +190,9 @@ namespace Zer0
             if (newEffect != statusEffectType.None) effectToAdd = newEffect;
         }
 
-        public void SetSpellParams(GameObject newVisualEffect, float newExplosionSpeed, GameObject trail)
+        public void SetSpellParams(bool onSelf, GameObject newVisualEffect, float newExplosionSpeed, GameObject trail)
         {
+            castOnSelf = onSelf;
             visualEffect = newVisualEffect;
             explosionSpeed = newExplosionSpeed;
             trailEffect = trail;

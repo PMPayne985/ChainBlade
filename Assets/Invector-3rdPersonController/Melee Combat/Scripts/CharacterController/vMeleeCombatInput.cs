@@ -22,6 +22,7 @@ namespace Invector.vCharacterController
         protected bool _isAttacking;
         public bool isAttacking { get => _isAttacking || cc.IsAnimatorTag("Attack"); protected set { _isAttacking = value; } }
         public bool isBlocking { get; protected set; }
+        public bool isProtected { get; protected set; }
         public bool isArmed { get { return meleeManager != null && (meleeManager.rightWeapon != null || (meleeManager.leftWeapon != null && meleeManager.leftWeapon.meleeType != vMeleeType.OnlyDefense)); } }
         public bool isEquipping { get; protected set; }
 
@@ -152,6 +153,18 @@ namespace Invector.vCharacterController
             isBlocking = blockInput.GetButton() && cc.currentStamina > 0 && !cc.customAction && !isAttacking;
         }
 
+        public virtual void Protecting(int protectionRate)
+        {
+            meleeManager.defaultDefenseRate = protectionRate;
+            meleeManager.defaultDefenseRange = 180;
+            isProtected = true;
+        }
+
+        public virtual void EndProtecting()
+        {
+            isProtected = false;
+        }
+        
         /// <summary>
         /// Override the Sprint method to cancel Sprinting when Attacking
         /// </summary>
@@ -316,22 +329,26 @@ namespace Invector.vCharacterController
         public virtual void OnReceiveAttack(vDamage damage, vIMeleeFighter attacker)
         {
             // character is blocking
-            if (!damage.ignoreDefense && isBlocking && meleeManager != null && meleeManager.CanBlockAttack(damage.sender.position))
+            if (isBlocking || isProtected)
             {
-                var damageReduction = meleeManager.GetDefenseRate();
-                if (damageReduction > 0)
+                if (!damage.ignoreDefense && meleeManager != null &&
+                    meleeManager.CanBlockAttack(damage.sender.position))
                 {
-                    damage.ReduceDamage(damageReduction);
-                }
+                    var damageReduction = meleeManager.GetDefenseRate();
+                    if (damageReduction > 0)
+                    {
+                        damage.ReduceDamage(damageReduction);
+                    }
 
-                if (attacker != null && meleeManager != null && meleeManager.CanBreakAttack())
-                {
-                    attacker.BreakAttack(meleeManager.GetDefenseRecoilID());
-                }
+                    if (attacker != null && meleeManager != null && meleeManager.CanBreakAttack())
+                    {
+                        attacker.BreakAttack(meleeManager.GetDefenseRecoilID());
+                    }
 
-                meleeManager.OnDefense();
-                cc.currentStaminaRecoveryDelay = damage.staminaRecoveryDelay;
-                cc.currentStamina -= damage.staminaBlockCost;
+                    meleeManager.OnDefense();
+                    cc.currentStaminaRecoveryDelay = damage.staminaRecoveryDelay;
+                    cc.currentStamina -= damage.staminaBlockCost;
+                }
             }
             // apply damage
             damage.hitReaction = !isBlocking || damage.ignoreDefense;
