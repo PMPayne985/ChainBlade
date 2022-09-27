@@ -109,6 +109,9 @@ namespace Zer0
             var lnCost = _baseLengthCost * lengthMultiplier;
             lnCost += lengthAddition;
             lengthCostText.text = $"{lnCost}";
+
+            totalPointsText.text = $"{_totalPoints}";
+            currentPointsText.text = $"{_currentPoints}";
         }
 
         private void DescriptionText()
@@ -118,9 +121,9 @@ namespace Zer0
             chainDamageText.text =
                 $"Each enhancement in this category will increase the damage of each knife attack by {chainDamageUpgrade}.";
             knifeLifeLeechText.text = 
-                $"";
+                $"Each enhancement in this category will allow the player to steal {knifeLifeLeechUpgrade} point of health from each attack.";
             chainLengthText.text = 
-                $"";
+                $"Each enhancement in this category will increase the length of chain strikes by {chainLengthUpgrade * 2} links.";
             chainDragText.text =
                 "Add the ability to drag enemies struck by Chain Strike back toward the player.";
         }

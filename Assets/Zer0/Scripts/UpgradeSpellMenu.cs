@@ -190,7 +190,7 @@ namespace Zer0
             ironWebCostText.text = $"{iCost}";
 
             var iData = spellList[4].GetComponent<SpellData>();
-            refreshDescriptionText.text =$"Surround yourself in a protection field reducing damage you receive by {iData.Duration * iData.Magnitude}% " +
+            ironWebDescriptionText.text =$"Surround yourself in a protection field reducing damage you receive by {iData.Duration * iData.Magnitude}% " +
                                          $"for {iData.Duration} seconds " + 
                                          $"Each point of enhancement increase duration by {ironWebDuration} seconds. " +
                                          $"Every 3rd enhancements increases the damage reduction by {ironWebProtectionRate}% and the spells cost by 1.";
@@ -371,7 +371,7 @@ namespace Zer0
             var rCost = Mathf.RoundToInt(_baseRefreshCost * refreshCostMultiplier);
             rCost += refreshCostAddition;
 
-            refreshDescriptionText.text = $"{rCost}";
+            refreshCostText.text = $"{rCost}";
             
             if (CheckCanUpgrade(_baseRefreshCost, refreshCostMultiplier, refreshCostAddition))
             {

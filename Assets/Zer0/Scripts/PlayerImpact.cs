@@ -42,6 +42,7 @@ namespace Zer0
 
         private void Awake()
         {
+            _player = transform.root.GetComponent<Player>();
             _audio = GetComponent<AudioSource>();
 
             _effects = new statusEffectType[maxAbilities];

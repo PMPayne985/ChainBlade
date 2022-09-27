@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 693344759825271914}
   - component: {fileID: 1524178112307873712}
   m_Layer: 5
-  m_Name: CostText
+  m_Name: RCostText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -356,7 +356,7 @@ GameObject:
   - component: {fileID: 8253582656791908315}
   - component: {fileID: 6289586936726846134}
   m_Layer: 5
-  m_Name: DescriptionText
+  m_Name: LengthDescriptionText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -568,7 +568,7 @@ GameObject:
   - component: {fileID: 2589693845767769614}
   - component: {fileID: 2065705039454725598}
   m_Layer: 5
-  m_Name: CostText
+  m_Name: ICostText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2406,7 +2406,7 @@ GameObject:
   - component: {fileID: 5612485334936885870}
   - component: {fileID: 5618736609847512177}
   m_Layer: 5
-  m_Name: EnhanceButton
+  m_Name: LengthEnhanceButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2763,7 +2763,7 @@ GameObject:
   - component: {fileID: 7584416928299526740}
   - component: {fileID: 7660984055590680072}
   m_Layer: 5
-  m_Name: EnhanceButton
+  m_Name: IEnhanceButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2896,7 +2896,7 @@ GameObject:
   - component: {fileID: 7881855204931306739}
   - component: {fileID: 6027854544279837646}
   m_Layer: 5
-  m_Name: BuyButton
+  m_Name: DBuyButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3028,7 +3028,7 @@ GameObject:
   - component: {fileID: 6622563889912041236}
   - component: {fileID: 2721566516001728645}
   m_Layer: 5
-  m_Name: CostText
+  m_Name: CDmgCostText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3379,7 +3379,7 @@ GameObject:
   - component: {fileID: 639805215446349937}
   - component: {fileID: 1790932063075652692}
   m_Layer: 5
-  m_Name: CostText
+  m_Name: PullCostText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3599,7 +3599,7 @@ GameObject:
   - component: {fileID: 9093895193462524091}
   - component: {fileID: 8528229884691309350}
   m_Layer: 5
-  m_Name: BuyButton
+  m_Name: IBuyButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4858,7 +4858,7 @@ GameObject:
   - component: {fileID: 1130706018843244879}
   - component: {fileID: 4886835531803225330}
   m_Layer: 5
-  m_Name: DescriptionText
+  m_Name: DmgDescriptionText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5794,7 +5794,7 @@ GameObject:
   - component: {fileID: 2815619003292067597}
   - component: {fileID: 7677771309797979238}
   m_Layer: 5
-  m_Name: DescriptionText
+  m_Name: PullDescriptionText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6506,7 +6506,7 @@ GameObject:
   - component: {fileID: 687194926675576193}
   - component: {fileID: 5392388339829160320}
   m_Layer: 5
-  m_Name: CostText
+  m_Name: SCostText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6642,7 +6642,7 @@ GameObject:
   - component: {fileID: 4388434845730915964}
   - component: {fileID: 5305968949449244890}
   m_Layer: 5
-  m_Name: UpgradeButton
+  m_Name: LCUpgradeButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8339,7 +8339,7 @@ GameObject:
   - component: {fileID: 4881604452188294545}
   - component: {fileID: 6436620058928580690}
   m_Layer: 5
-  m_Name: CostText
+  m_Name: DmgCostText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11412,7 +11412,7 @@ GameObject:
   - component: {fileID: 8293256026282951170}
   - component: {fileID: 4148188159309989007}
   m_Layer: 5
-  m_Name: DescriptionText
+  m_Name: IDescriptionText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11920,7 +11920,7 @@ GameObject:
   - component: {fileID: 5466223505914240970}
   - component: {fileID: 6167422601623116973}
   m_Layer: 5
-  m_Name: BuyButton
+  m_Name: RBuyButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12053,7 +12053,7 @@ GameObject:
   - component: {fileID: 2918578596124896127}
   - component: {fileID: 2803606605747872379}
   m_Layer: 5
-  m_Name: EnhanceButton
+  m_Name: DmgEnhanceButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13948,7 +13948,7 @@ GameObject:
   - component: {fileID: 404645047738524443}
   - component: {fileID: 28760807800255293}
   m_Layer: 5
-  m_Name: EnhanceButton
+  m_Name: PullEnhanceButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28445,7 +28445,7 @@ GameObject:
   - component: {fileID: 5782464035352357845}
   - component: {fileID: 7143160463381754743}
   m_Layer: 5
-  m_Name: EnhanceButton
+  m_Name: LLEnhanceButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28943,7 +28943,7 @@ GameObject:
   - component: {fileID: 5006815690872461203}
   - component: {fileID: 1252033929360426028}
   m_Layer: 5
-  m_Name: DescriptionText
+  m_Name: LCDescriptionText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29080,7 +29080,7 @@ GameObject:
   - component: {fileID: 1477279266207906697}
   - component: {fileID: 7966842199509301989}
   m_Layer: 5
-  m_Name: DescriptionText
+  m_Name: LLDescriptionText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29426,7 +29426,7 @@ GameObject:
   - component: {fileID: 7880622447075099792}
   - component: {fileID: 325353322915359834}
   m_Layer: 5
-  m_Name: CostText
+  m_Name: DCostText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29593,7 +29593,7 @@ GameObject:
   - component: {fileID: 3366969719301751560}
   - component: {fileID: 4423136496335880567}
   m_Layer: 5
-  m_Name: EnhanceButton
+  m_Name: CDmgEnhanceButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31433,7 +31433,7 @@ GameObject:
   - component: {fileID: 3846467713379762582}
   - component: {fileID: 2643567462569127854}
   m_Layer: 5
-  m_Name: CostText
+  m_Name: LengthCostText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32716,7 +32716,7 @@ GameObject:
   - component: {fileID: 2201379965431116459}
   - component: {fileID: 6847884008531406836}
   m_Layer: 5
-  m_Name: CostText
+  m_Name: LLCostText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33630,7 +33630,7 @@ GameObject:
   - component: {fileID: 2978729607267313343}
   - component: {fileID: 1737894470767292992}
   m_Layer: 5
-  m_Name: CostText
+  m_Name: LCCostText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34038,7 +34038,7 @@ GameObject:
   - component: {fileID: 7350312218579155120}
   - component: {fileID: 6276037947761181579}
   m_Layer: 5
-  m_Name: EnhanceButton
+  m_Name: REnhanceButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35233,7 +35233,7 @@ GameObject:
   - component: {fileID: 8580257077806014447}
   - component: {fileID: 2581346178785977363}
   m_Layer: 5
-  m_Name: DescriptionText
+  m_Name: CDmgDescriptionText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35841,7 +35841,7 @@ GameObject:
   - component: {fileID: 5934512361929277110}
   - component: {fileID: 8777116452555498353}
   m_Layer: 5
-  m_Name: DescriptionText
+  m_Name: SDescriptionText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36188,7 +36188,7 @@ GameObject:
   - component: {fileID: 6362324804433728736}
   - component: {fileID: 272632230292402466}
   m_Layer: 5
-  m_Name: BuyButton
+  m_Name: LCBuyButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37684,7 +37684,7 @@ GameObject:
   - component: {fileID: 3132327722871618972}
   - component: {fileID: 1176337843453089959}
   m_Layer: 5
-  m_Name: EnhanceButton
+  m_Name: DEnhanceButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53046,7 +53046,7 @@ GameObject:
   - component: {fileID: 6337670336348351569}
   - component: {fileID: 4559238013732347855}
   m_Layer: 5
-  m_Name: DescriptionText
+  m_Name: DDescriptionText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55102,7 +55102,7 @@ GameObject:
   - component: {fileID: 4740948314635501114}
   - component: {fileID: 714483595731978988}
   m_Layer: 5
-  m_Name: EnhanceButton
+  m_Name: SEnhanceButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55369,7 +55369,7 @@ GameObject:
   - component: {fileID: 4985807181482433283}
   - component: {fileID: 5312574893796446099}
   m_Layer: 5
-  m_Name: DescriptionText
+  m_Name: RDescriptionText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55963,7 +55963,7 @@ GameObject:
   - component: {fileID: 4863108612120453630}
   - component: {fileID: 2535678169617145944}
   m_Layer: 5
-  m_Name: BuyButton
+  m_Name: SBuyButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
