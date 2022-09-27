@@ -16,6 +16,11 @@ namespace Zer0
         private StatusEffects _effects;
 
         private vHealthController _healthController;
+        private Animator _animator;
+        
+        public bool IsProtected { get; private set; }
+        public float ProtectionRate { get; private set; }
+        public int DefenceRate { get; private set; }
 
         private void Awake()
         {
@@ -26,6 +31,7 @@ namespace Zer0
             _healthController = GetComponent<vHealthController>();
             if (!_healthController) Debug.LogError("CharacterBehavior is missing a Health Controller Component.");
             _effects = GetComponent<StatusEffects>();
+            _animator = GetComponent<Animator>();
         }
 
         private void Start()
@@ -34,6 +40,8 @@ namespace Zer0
                 DebugMenu.OnRefillHealthCommand += RestoreHealth;
 
             UpgradeArmorMenu.OnMaxHealthUpgrade += IncreaseMaxHealth;
+            UpgradeArmorMenu.OnDefenceUpgrade += IncreaseDefence;
+            UpgradeArmorMenu.OnSpeedUpgrade += IncreaseSpeed;
         }
         
         public void LaunchChain()
@@ -90,6 +98,27 @@ namespace Zer0
         private void IncreaseMaxHealth(int value)
         {
             _healthController.ChangeMaxHealth(value);
+        }
+
+        private void IncreaseDefence(int value)
+        {
+            DefenceRate += value;
+        }
+
+        private void IncreaseSpeed(float value)
+        {
+            _animator.speed += value;
+        }
+
+        public void Protecting(float value)
+        {
+            IsProtected = true;
+            ProtectionRate = value;
+        }
+
+        public void EndProtecting()
+        {
+            IsProtected = false;
         }
 
         public void Death()

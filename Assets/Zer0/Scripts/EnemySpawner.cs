@@ -43,6 +43,8 @@ namespace Zer0
         private int healthIncrease = 5;
         [SerializeField, Tooltip("Increase AI damage by this amount per wave.")]
         private int damageIncrease = 3;
+        [SerializeField, Tooltip("")] 
+        private int levelIncrease = 1;
         [SerializeField, Tooltip("All of the AI abilities that this spawner should effect the damage on.")]
         private EmeraldAIAbility[] abilities;
         
@@ -122,7 +124,7 @@ namespace Zer0
 
             if (_totalEnemies % waveSize == 0)
             {
-                _currentLevelBoost++;
+                _currentLevelBoost += levelIncrease;
                 _currentDamageBoost += damageIncrease;
                 _currentHealthBoost += healthIncrease;
                 

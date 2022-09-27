@@ -157,13 +157,14 @@ namespace Zer0
 
         private void Stun(statusEffectInfo effect)
         {
+            var curSpeed = _animator.speed;
             effect.duration -= Time.deltaTime;
             
             if (!_incapacitated)
             {
                 _incapacitated = true;
                 if (stunEffect) stunEffect.SetActive(true);
-                _animator.speed = 0;
+                _animator.speed -= curSpeed;
             }
             
 
@@ -171,7 +172,7 @@ namespace Zer0
             {
                 _incapacitated = false;
                 if (stunEffect) stunEffect.SetActive(false);
-                _animator.speed = 1;
+                _animator.speed += curSpeed;
                 _activeEffects.Remove(effect);
             }
         }
@@ -180,7 +181,7 @@ namespace Zer0
         {
             effect.duration -= Time.deltaTime;
             
-            if (!_slowed)
+            if (!_slowed && !_incapacitated)
             {
                 _slowed = true;
                 var newSpeed = effect.magnitude - 1;
@@ -238,16 +239,23 @@ namespace Zer0
 
             if (!_protected)
             {
-                if (protectEffect) protectEffect.SetActive(true);
-                GetComponent<vMeleeCombatInput>().Protecting((int)effect.magnitude);
+                _protected = true;
+                if (_character.isPlayer)
+                {
+                    if (protectEffect) protectEffect.SetActive(true);
+                    GetComponent<Player>().Protecting((int)effect.magnitude);
+                }
             }
 
             if (effect.duration <= 0 && _protected)
             {
                 _protected = false;
-                GetComponent<vMeleeCombatInput>().EndProtecting();
-                if (protectEffect) protectEffect.SetActive(false);
-            }
+                if (_character.isPlayer)
+                {
+                    GetComponent<Player>().EndProtecting();
+                    if (protectEffect) protectEffect.SetActive(false);
+                }
+                }
         }
 
         private void HealOverTime(statusEffectInfo effect)

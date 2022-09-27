@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Zer0;
 
 namespace Invector
 {
@@ -11,6 +12,8 @@ namespace Invector
     {
         #region Variables
 
+        private Player _character;
+        
         [vEditorToolbar("Health", order = 0)]
         [SerializeField] [vReadOnly] protected bool _isDead;
         [vBarDisplay("maxHealth")] [SerializeField] protected float _currentHealth;
@@ -91,6 +94,7 @@ namespace Invector
 
         protected virtual void Start()
         {
+            _character = GetComponent<Player>();
             if (fillHealthOnStart)
                 currentHealth = maxHealth;
             currentHealthRecoveryDelay = healthRecoveryDelay;
@@ -209,7 +213,15 @@ namespace Invector
         public virtual void TakeDamage(vDamage damage)
         {
             if (damage != null)
-            {             
+            {
+                damage.damageValue -= _character.DefenceRate;
+
+                if (damage.damageValue < 0)
+                    damage.damageValue = 0;
+                
+                if (_character.IsProtected)
+                    damage.damageValue *= _character.ProtectionRate;
+                
                 onStartReceiveDamage.Invoke(damage);
                 currentHealthRecoveryDelay = currentHealth <= 0 ? 0 : healthRecoveryDelay;
 

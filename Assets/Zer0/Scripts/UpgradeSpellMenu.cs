@@ -75,7 +75,7 @@ namespace Zer0
         [SerializeField, Tooltip("The time in seconds each upgrade will increase Iron Webs duration.")]
         private int ironWebDuration = 1;
         [SerializeField, Tooltip("The percent of damage the Iron Web spell reduces each attack by.")]
-        private int ironWebProtectionRate = 5;
+        private float ironWebProtectionRate = 0.5f;
         
 
         [Header("Activate / Deactivate Game Objects")]
@@ -193,7 +193,7 @@ namespace Zer0
             ironWebDescriptionText.text =$"Surround yourself in a protection field reducing damage you receive by {iData.Duration * iData.Magnitude}% " +
                                          $"for {iData.Duration} seconds " + 
                                          $"Each point of enhancement increase duration by {ironWebDuration} seconds. " +
-                                         $"Every 3rd enhancements increases the damage reduction by {ironWebProtectionRate}% and the spells cost by 1.";
+                                         $"Every 3rd enhancements increases the damage reduction by {ironWebProtectionRate * 100}% and the spells cost by 1.";
 
             #endregion
         }

@@ -56,7 +56,7 @@ MonoBehaviour:
   explosionSpeed: 1
   duration: 6
   frequency: 0
-  magnitude: 40
+  magnitude: 0.4
   effectToAdd: 5
   effectStationary: 0
   trailEffect: {fileID: 0}

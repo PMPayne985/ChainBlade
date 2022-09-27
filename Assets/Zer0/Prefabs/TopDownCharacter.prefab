@@ -780,7 +780,7 @@ GameObject:
   - component: {fileID: 4469108163999985916}
   - component: {fileID: 8835320132202827090}
   m_Layer: 5
-  m_Name: CostText
+  m_Name: DCostText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1735,7 +1735,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: a3b7012d62bff7c4d85341ae5dc17d4c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5713,7 +5713,7 @@ GameObject:
   - component: {fileID: 5589462147298766561}
   - component: {fileID: 6059971809608215698}
   m_Layer: 5
-  m_Name: Spell (2)
+  m_Name: SpeedUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5983,7 +5983,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: None
+  m_text: Defence
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: f2dcf029949142e28b974630369c8b4e, type: 2}
@@ -11057,7 +11057,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2985846141149717866}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1540964274677171401}
+        m_TargetAssemblyTypeName: Zer0.UpgradeArmorMenu, Assembly-CSharp
+        m_MethodName: UpgradeSpeed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3077566747478372487
 GameObject:
   m_ObjectHideFlags: 0
@@ -12271,7 +12283,7 @@ GameObject:
   - component: {fileID: 1812392724699472086}
   - component: {fileID: 5199470592075570422}
   m_Layer: 5
-  m_Name: CostText
+  m_Name: SCostText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13599,7 +13611,7 @@ GameObject:
   - component: {fileID: 48261190547373658}
   - component: {fileID: 4064834497744232720}
   m_Layer: 5
-  m_Name: DescriptionText
+  m_Name: DDescriptionText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28651,7 +28663,7 @@ GameObject:
   - component: {fileID: 4751269883690219892}
   - component: {fileID: 1583120039852495968}
   m_Layer: 5
-  m_Name: Spell (1)
+  m_Name: DefenceUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29215,7 +29227,7 @@ GameObject:
   - component: {fileID: 5756457951401254987}
   - component: {fileID: 3414753305225510961}
   m_Layer: 5
-  m_Name: CostText
+  m_Name: HCostText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32196,7 +32208,7 @@ GameObject:
   - component: {fileID: 8716892512612134510}
   - component: {fileID: 3486825829619486604}
   m_Layer: 5
-  m_Name: DescriptionText
+  m_Name: HDescriptionText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32439,7 +32451,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4807339353456787582}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1540964274677171401}
+        m_TargetAssemblyTypeName: Zer0.UpgradeArmorMenu, Assembly-CSharp
+        m_MethodName: UpgradeDefence
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5573759829771796560
 GameObject:
   m_ObjectHideFlags: 0
@@ -33819,7 +33843,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: None
+  m_text: Speed
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: f2dcf029949142e28b974630369c8b4e, type: 2}
@@ -34493,7 +34517,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 1b9c1267245b4c54084f6f36ca1c67ed, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -35368,7 +35392,7 @@ GameObject:
   - component: {fileID: 4150479319040134452}
   - component: {fileID: 8381865729144854911}
   m_Layer: 5
-  m_Name: DescriptionText
+  m_Name: SDescriptionText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37083,7 +37107,7 @@ GameObject:
   - component: {fileID: 5480399385490298145}
   - component: {fileID: 2718583132669286938}
   m_Layer: 5
-  m_Name: EnhanceButton
+  m_Name: HEnhanceButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48444,10 +48468,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthCostText: {fileID: 3414753305225510961}
+  defenceCostText: {fileID: 8835320132202827090}
+  speedCostText: {fileID: 5199470592075570422}
+  healthDescriptionText: {fileID: 3486825829619486604}
+  defenceDescriptionText: {fileID: 4064834497744232720}
+  speedDescriptionText: {fileID: 8381865729144854911}
   currentPointsText: {fileID: 5848842366234207615}
   totalPointsText: {fileID: 3533479841786376788}
+  healthMultiplier: 1
+  healthAddition: 1
+  defenceMultiplier: 1
+  defenceAddition: 1
+  speedMultiplier: 1
+  speedAddition: 1
   healthToAdd: 5
-  healthMultiplier: 2
+  defenceToAdd: 1
+  speedToAdd: 0.05
 --- !u!1 &7611148030060982649
 GameObject:
   m_ObjectHideFlags: 0
