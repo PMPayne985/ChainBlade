@@ -5,6 +5,7 @@ using Invector.vCharacterController;
 using Invector.vMelee;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 namespace Zer0
 {
@@ -23,7 +24,6 @@ namespace Zer0
         private Animator _animator;
         private EmeraldAISystem _enemy;
         private List<statusEffectInfo> _activeEffects;
-        private List<GameObject> weapons;
 
         private bool _incapacitated;
         private bool _slowed;
@@ -33,16 +33,15 @@ namespace Zer0
         private bool _protected;
         private bool _dead;
 
-        public static event Action<bool, Image, float> OnAddStatusEffect; 
+        private int _resistance;
 
-        private static readonly int StunAnim = Animator.StringToHash("Stun");
+        public static event Action<bool, Image, float> OnAddStatusEffect;
 
         private void Awake()
         {
             _character = GetComponent<Character>();
             _animator = GetComponent<Animator>();
             _activeEffects = new List<statusEffectInfo>();
-            weapons = new List<GameObject>();
 
         }
 
@@ -58,6 +57,12 @@ namespace Zer0
 
         public void AddActiveEffect(statusEffectType newEffectType, float duration,float frequency, float magnitude)
         {
+            if (newEffectType != statusEffectType.Dot && newEffectType != statusEffectType.Protect)
+            {
+                var chance = Random.Range(0, 100);
+                if (chance < _resistance) return;
+            }
+            
             if (_activeEffects.Count > 0)
             {
                 foreach (var effect in _activeEffects)
@@ -311,6 +316,11 @@ namespace Zer0
             }
         }
 
+        public void SetResistance(int rate)
+        {
+            _resistance += rate;
+        }
+        
         public void SetDeathStatus(bool deathStatus)
         {
             _dead = deathStatus;

@@ -22,6 +22,8 @@ namespace Zer0
         private TMP_Text refreshCostText;
         [SerializeField, Tooltip("Text field to display the cost of the next Iron Web spell enhancement.")]
         private TMP_Text ironWebCostText;
+        [SerializeField, Tooltip("Text field to display the cost of the next spell point enhancement.")]
+        private TMP_Text spellPointCostText;
 
         [Header("Description Text Fields")]
         [SerializeField, Tooltip("Text field to display the description for the Lightning Chains Spell.")]
@@ -34,6 +36,8 @@ namespace Zer0
         private TMP_Text refreshDescriptionText;
         [SerializeField, Tooltip("Text field to display the description for the Iron Web Spell.")]
         private TMP_Text ironWebDescriptionText;
+        [SerializeField, Tooltip("Text field to display the current maximum spell points for the player.")]
+        private TMP_Text spellPointsMaxText;
 
         [Header("Spell Cost Fields")]
         [SerializeField, Tooltip("The cost multiplier for each level of Lightning Chains enhancement.")]
@@ -56,7 +60,11 @@ namespace Zer0
         private float ironWebCostMultiplier = 1;
         [SerializeField, Tooltip("This number will be added to the Iron Web cost after the multiplier is applied.")]
         private int ironWebCostAddition = 1;
-
+        [SerializeField, Tooltip("The cost multiplier for each level of the spell point enhancement.")]
+        private float spellPointsMultiplier = 1;
+        [SerializeField, Tooltip("This number will be added to the spell point cost after the multiplier is applied.")]
+        private int spellPointsCostAddition = 1;
+        
         [Header("Spell Value Fields")]
         [SerializeField, Tooltip("The time in seconds each upgrade will increase Lightning Chains duration.")]
         private float lightningChainsDurationValue = 2;
@@ -76,6 +84,8 @@ namespace Zer0
         private int ironWebDuration = 1;
         [SerializeField, Tooltip("The percent of damage the Iron Web spell reduces each attack by.")]
         private float ironWebProtectionRate = 0.5f;
+        [SerializeField, Tooltip("The amount to add to max spell points for each enhancement.")]
+        private float pointsToAdd = 2;
         
 
         [Header("Activate / Deactivate Game Objects")]
@@ -111,10 +121,12 @@ namespace Zer0
         private int _baseDisarmCost = 1;
         private int _baseRefreshCost = 1;
         private int _baseIronWebCost = 1;
+        private int _baseSpellPointCost = 1;
 
         public static event Action<SpellData> OnBuyNewSpell;
         public static event Action<string, float, float, float, int, statusEffectType, bool> OnEnhanceSpell;
         public static event Action<string, Sprite, int, float, float, areaOfEffect> OnChangeSpellParameters;
+        public static event Action<float> OnAddSpellPoints;
 
         private void Start()
         {
@@ -196,6 +208,13 @@ namespace Zer0
                                          $"Every 3rd enhancements increases the damage reduction by {ironWebProtectionRate * 100}% and the spells cost by 1.";
 
             #endregion
+
+            var spCost = Mathf.RoundToInt(_baseSpellPointCost * spellPointsMultiplier);
+            spCost += spellPointsCostAddition;
+
+            spellPointCostText.text = $"{spCost}";
+
+            spellPointsMaxText.text = $"Max SP: {(10 - pointsToAdd) + (_baseSpellPointCost * pointsToAdd)}";
         }
         
         private void IncrementCollected(UpgradeMenu check, int amount)
@@ -224,6 +243,11 @@ namespace Zer0
                 foreach (var button in buyLightningChainsButtons) button.SetActive(false);
                 foreach (var button in enhanceLightningChainsButtons) button.SetActive(true);
             }
+            
+            cost = Mathf.RoundToInt(_baseLightningChainsCost * lightningChainsCostMultiplier);
+            cost += lightningChainsCostAddition;
+            
+            lightningChainsCostText.text = $"{cost}";
         }
 
         public void LightningChainsUpgrade()
@@ -271,6 +295,11 @@ namespace Zer0
                 foreach (var button in buyShacklesButtons) button.SetActive(false);
                 foreach (var button in enhanceShacklesButtons) button.SetActive(true);
             }
+            
+            sCost = Mathf.RoundToInt(_baseShacklesCost * shacklesCostMultiplier);
+            sCost += shacklesCostAddition;
+
+            shacklesCostText.text = $"{sCost}";
         }
         
         public void ShacklesUpgrade()
@@ -318,6 +347,11 @@ namespace Zer0
                 foreach (var button in buyDisarmButtons) button.SetActive(false);
                 foreach (var button in enhanceDisarmButtons) button.SetActive(true);
             }
+            
+            dCost = Mathf.RoundToInt(_baseDisarmCost * disarmCostMultiplier);
+            dCost += disarmCostAddition;
+
+            disarmCostText.text = $"{dCost}";
         }
         
         public void DisarmUpgrade()
@@ -364,6 +398,11 @@ namespace Zer0
                 foreach (var button in buyRefreshButtons) button.SetActive(false);
                 foreach (var button in enhanceRefreshButtons) button.SetActive(true);
             }
+            
+            rCost = Mathf.RoundToInt(_baseRefreshCost * refreshCostMultiplier);
+            rCost += refreshCostAddition;
+
+            refreshCostText.text = $"{rCost}";
         }
         
         public void RefreshUpgrade()
@@ -411,6 +450,11 @@ namespace Zer0
                 foreach (var button in buyIronWebButtons) button.SetActive(false);
                 foreach (var button in enhanceIronWebButtons) button.SetActive(true);
             }
+            
+            iCost = Mathf.RoundToInt(_baseIronWebCost * ironWebCostMultiplier);
+            iCost += ironWebCostAddition;
+
+            ironWebCostText.text = $"{iCost}";
         }
         
         public void IronWebUpgrade()
@@ -440,6 +484,27 @@ namespace Zer0
         }
 
         #endregion
+
+        public void IncreaseSpellPoints()
+        {
+            var iCost = Mathf.RoundToInt(_baseSpellPointCost * spellPointsMultiplier);
+            iCost += spellPointsCostAddition;
+
+            spellPointCostText.text = $"{iCost}";
+            spellPointsMaxText.text = $"Max SP: {(10 - pointsToAdd) + (_baseSpellPointCost * pointsToAdd)}";
+            
+            if (CheckCanUpgrade(_baseSpellPointCost, spellPointsMultiplier, spellPointsCostAddition))
+            {
+                OnAddSpellPoints?.Invoke(pointsToAdd);
+                _baseSpellPointCost++;
+            }
+            
+            iCost = Mathf.RoundToInt(_baseSpellPointCost * spellPointsMultiplier);
+            iCost += spellPointsCostAddition;
+
+            spellPointCostText.text = $"{iCost}";
+            spellPointsMaxText.text = $"Max SP: {(10 - pointsToAdd) + (_baseSpellPointCost * pointsToAdd)}";
+        }
         
         private bool CheckCanUpgrade(int upgradeCost, float upgradeMultiplier, int upgradeAddition)
         {

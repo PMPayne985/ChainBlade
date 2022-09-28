@@ -1,6 +1,7 @@
 using System.Collections;
 using EmeraldAI;
 using Invector;
+using Invector.vMelee;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,6 +11,11 @@ namespace Zer0
     {
         [SerializeField, Tooltip("Delay before reload after the character dies.")]
         private float deathDelay = 5;
+        [SerializeField, Tooltip("The max distance a target can be retaliated against.")]
+        private float retaliateRange = 1.5f;
+        
+        private int _retaliateRate = 0;
+        private int _retaliateDamage = 0;
         
         private ChainKnife[] _chainKnives;
         private SpellCasting _caster;
@@ -86,12 +92,30 @@ namespace Zer0
                 character.TakeDamage(_Damage);
             }
         }
-
+        
         public override void ApplyStatusEffects(statusEffectType effectToAdd, float duration, float frequency, float magnitude)
         {
             _effects.AddActiveEffect(effectToAdd, duration, frequency, magnitude);
         }
 
+        public void SetRetaliateValues(int dmg, int chance)
+        {
+            _retaliateDamage += dmg;
+            _retaliateRate += chance;
+        }
+        
+        public void Retaliate(vHitInfo hitInfo)
+        {
+            var chance = Random.Range(0, 100);
+            var attacker = hitInfo.attackObject.damage.sender;
+            var distance = Vector3.Distance(transform.position, attacker.position);
+
+            if (chance < _retaliateRate || distance > retaliateRange) return;
+
+            if (attacker.TryGetComponent(out EmeraldAISystem aiSystem))
+                aiSystem.Damage(_retaliateDamage, EmeraldAISystem.TargetType.Player, transform, 50);
+        }
+        
         public override void RestoreHealth(int value)
         {
             if (!(_healthController.currentHealth < _healthController.maxHealth)) return;

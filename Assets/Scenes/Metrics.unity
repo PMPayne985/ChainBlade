@@ -44155,6 +44155,10 @@ PrefabInstance:
       propertyPath: bMat
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7602181485486618614, guid: 0692e1281770f974ba109c828994d220, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8591052200188128931, guid: 0692e1281770f974ba109c828994d220, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

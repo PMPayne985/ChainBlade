@@ -137,10 +137,20 @@ namespace Zer0
 
         public void RecoverSpellPoints(float amount)
         {
+            if (!_character.isPlayer) return;
+            
             _spellPoints += amount;
             
             if (_spellPoints > maxSpellPoints)
                 _spellPoints = maxSpellPoints;
+        }
+
+        private void IncreaseMaxSpellPoints(float amount)
+        {
+            if (!_character.isPlayer) return;
+            
+            maxSpellPoints += amount;
+            RecoverSpellPoints(amount);
         }
         
         public void NextSpell()
