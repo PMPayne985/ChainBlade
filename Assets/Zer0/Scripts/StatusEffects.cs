@@ -33,7 +33,8 @@ namespace Zer0
         private bool _protected;
         private bool _dead;
 
-        private int _resistance;
+        [SerializeField, Tooltip("The rate at which this unit resists negative status effects.")]
+        private int resistance;
 
         public static event Action<bool, Image, float> OnAddStatusEffect;
 
@@ -60,7 +61,7 @@ namespace Zer0
             if (newEffectType != statusEffectType.Dot && newEffectType != statusEffectType.Protect)
             {
                 var chance = Random.Range(0, 100);
-                if (chance < _resistance) return;
+                if (chance < resistance) return;
             }
             
             if (_activeEffects.Count > 0)
@@ -318,7 +319,7 @@ namespace Zer0
 
         public void SetResistance(int rate)
         {
-            _resistance += rate;
+            resistance += rate;
         }
         
         public void SetDeathStatus(bool deathStatus)
