@@ -220,7 +220,7 @@ namespace Invector
                     damage.damageValue = 0;
                 
                 if (_character.IsProtected)
-                    damage.damageValue *= _character.ProtectionRate;
+                    damage.damageValue *= (1 - _character.ProtectionRate);
                 
                 onStartReceiveDamage.Invoke(damage);
                 currentHealthRecoveryDelay = currentHealth <= 0 ? 0 : healthRecoveryDelay;

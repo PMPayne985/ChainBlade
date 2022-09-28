@@ -13466,6 +13466,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 745001012}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &745270653 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2725231476981441055, guid: 0692e1281770f974ba109c828994d220, type: 3}
+  m_PrefabInstance: {fileID: 8601861593926291205}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &745951450
 GameObject:
   m_ObjectHideFlags: 0
@@ -34008,7 +34013,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh546258
+  m_Name: pb_Mesh29696
   serializedVersion: 10
   m_SubMeshes: []
   m_Shapes:
@@ -39750,7 +39755,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh545362
+  m_Name: pb_Mesh28800
   serializedVersion: 10
   m_SubMeshes: []
   m_Shapes:
@@ -43959,7 +43964,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2725231476981441035, guid: 0692e1281770f974ba109c828994d220, type: 3}
       propertyPath: selectedToolbar
-      value: 1
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2725231476981441035, guid: 0692e1281770f974ba109c828994d220, type: 3}
       propertyPath: useTurnOnSpotAnim
@@ -44048,6 +44053,22 @@ PrefabInstance:
     - target: {fileID: 2725231476981441045, guid: 0692e1281770f974ba109c828994d220, type: 3}
       propertyPath: openCloseWindow
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2725231476981441045, guid: 0692e1281770f974ba109c828994d220, type: 3}
+      propertyPath: onDamageHit.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2725231476981441045, guid: 0692e1281770f974ba109c828994d220, type: 3}
+      propertyPath: onDamageHit.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2725231476981441045, guid: 0692e1281770f974ba109c828994d220, type: 3}
+      propertyPath: onDamageHit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 745270653}
+    - target: {fileID: 2725231476981441045, guid: 0692e1281770f974ba109c828994d220, type: 3}
+      propertyPath: onDamageHit.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2725231476981441055, guid: 0692e1281770f974ba109c828994d220, type: 3}
       propertyPath: m_Name

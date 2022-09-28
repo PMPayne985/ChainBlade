@@ -16,12 +16,13 @@ namespace Zer0
         private int _activeSpellIndex;
 
         [SerializeField] private float maxSpellPoints = 10;
-        [SerializeField] private float _spellPoints;
+        private float _spellPoints;
         [SerializeField] private float spellRechargeRate = 0.1f;
         [SerializeField] private Transform launchPoint;
         [SerializeField] private GameObject spellTemplatePrefab;
 
         private static readonly int Cast = Animator.StringToHash("CastSpell");
+        private static readonly int CastID = Animator.StringToHash("CastID");
 
         private void Awake()
         {
@@ -76,7 +77,11 @@ namespace Zer0
                 _ui.UpdateMagicSlider(maxSpellPoints, _spellPoints);
             }
             
-            if (PlayerInput.CastSpell() && CanCast()) _animator.SetTrigger(Cast);
+            if (PlayerInput.CastSpell() && CanCast())
+            {
+                _animator.SetFloat(CastID, _activeSpell.CastOnSelf ? 1 : 0);
+                _animator.SetTrigger(Cast);
+            }
 
             if (PlayerInput.NextSpell()) NextSpell();
         }
@@ -155,6 +160,7 @@ namespace Zer0
         {
             if (_character.isPlayer)
                 Casting();
+            
         }
         
         private void Casting()
@@ -165,7 +171,10 @@ namespace Zer0
             _spellPoints -= _activeSpell.Cost;
 
             if (_activeSpell.CastOnSelf)
+            {
                 _character.ApplyStatusEffects(_activeSpell.EffectToAdd, _activeSpell.Duration, _activeSpell.Frequency, _activeSpell.Magnitude);
+                if (_activeSpell.VisualEffect) _activeSpell.VisualEffect.SetActive(true);
+            }
             else
             {
                 var cast = CreateSpell();

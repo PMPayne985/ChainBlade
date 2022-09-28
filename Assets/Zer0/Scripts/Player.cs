@@ -37,7 +37,10 @@ namespace Zer0
         private void Start()
         {
             if (DebugMenu.Instance)
+            {
                 DebugMenu.OnRefillHealthCommand += RestoreHealth;
+                DebugMenu.OnDamageSelfCommand += TakeDamage;
+            }
 
             UpgradeArmorMenu.OnMaxHealthUpgrade += IncreaseMaxHealth;
             UpgradeArmorMenu.OnDefenceUpgrade += IncreaseDefence;

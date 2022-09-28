@@ -4,6 +4,7 @@ using EmeraldAI;
 using Invector.vCharacterController;
 using Invector.vMelee;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Zer0
 {
@@ -31,6 +32,9 @@ namespace Zer0
         private bool _disarmed;
         private bool _protected;
         private bool _dead;
+
+        public static event Action<bool, Image, float> OnAddStatusEffect; 
+
         private static readonly int StunAnim = Animator.StringToHash("Stun");
 
         private void Awake()
@@ -137,7 +141,11 @@ namespace Zer0
             if (!_dotted)
             {
                 _dotted = true;
-                if (dotEffect) dotEffect.SetActive(true);
+                if (dotEffect)
+                {
+                    dotEffect.SetActive(true);
+                    OnAddStatusEffect?.Invoke(_character.isPlayer, dotEffect.GetComponent<Image>(), effect.duration);
+                }
             }
 
             if (effect.tick <= 0)
@@ -163,7 +171,11 @@ namespace Zer0
             if (!_incapacitated)
             {
                 _incapacitated = true;
-                if (stunEffect) stunEffect.SetActive(true);
+                if (stunEffect)
+                {
+                    OnAddStatusEffect?.Invoke(_character.isPlayer, stunEffect.GetComponent<Image>(), effect.duration);
+                    stunEffect.SetActive(true);
+                }
                 _animator.speed -= curSpeed;
             }
             
@@ -192,7 +204,11 @@ namespace Zer0
                 {
                     GetComponent<vThirdPersonController>().speedMultiplier -= effect.magnitude;
                 }
-                if (slowEffect) slowEffect.SetActive(true);
+                if (slowEffect)
+                {
+                    OnAddStatusEffect?.Invoke(_character.isPlayer, slowEffect.GetComponent<Image>(), effect.duration);
+                    slowEffect.SetActive(true);
+                }
             }
             
 
@@ -228,7 +244,11 @@ namespace Zer0
             {
                 _disarmed = false;
                 _character.RemoveDisarm();
-                if (slowEffect) slowEffect.SetActive(false);
+                if (slowEffect)
+                {
+                    OnAddStatusEffect?.Invoke(_character.isPlayer, slowEffect.GetComponent<Image>(), effect.duration);
+                    slowEffect.SetActive(false);
+                }
                 _activeEffects.Remove(effect);
             }
         }
@@ -242,7 +262,11 @@ namespace Zer0
                 _protected = true;
                 if (_character.isPlayer)
                 {
-                    if (protectEffect) protectEffect.SetActive(true);
+                    if (protectEffect)
+                    {
+                        OnAddStatusEffect?.Invoke(_character.isPlayer, protectEffect.GetComponent<Image>(), effect.duration);
+                        protectEffect.SetActive(true);
+                    }
                     GetComponent<Player>().Protecting((int)effect.magnitude);
                 }
             }
@@ -255,7 +279,7 @@ namespace Zer0
                     GetComponent<Player>().EndProtecting();
                     if (protectEffect) protectEffect.SetActive(false);
                 }
-                }
+            }
         }
 
         private void HealOverTime(statusEffectInfo effect)
@@ -278,7 +302,11 @@ namespace Zer0
             if (effect.duration <= 0 && _hotted)
             {
                 _hotted = false;
-                if (hotEffect) hotEffect.SetActive(false);
+                if (hotEffect)
+                {
+                    OnAddStatusEffect?.Invoke(_character.isPlayer, hotEffect.GetComponent<Image>(), effect.duration);
+                    hotEffect.SetActive(false);
+                }
                 _activeEffects.Remove(effect);
             }
         }

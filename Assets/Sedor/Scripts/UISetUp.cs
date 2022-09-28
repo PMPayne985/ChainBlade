@@ -1,6 +1,8 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Zer0;
 
 public class UISetUp : MonoBehaviour
 {
@@ -12,7 +14,21 @@ public class UISetUp : MonoBehaviour
     private TMP_Text spellCooldownText;
     [SerializeField, Tooltip("")] 
     private Slider magicSlider;
-    
+    [SerializeField, Tooltip("")] 
+    private Image[] effectImages;
+    [SerializeField]
+    private float[] effectTimers;
+
+    private void Start()
+    {
+        StatusEffects.OnAddStatusEffect += SetEffectImage;
+    }
+
+    private void Update()
+    {
+        RemoveEffectImage();
+    }
+
     public void SetCurrentSpellInfo(string newName, Sprite newIcon)
     {
         spellNameText.text = newName;
@@ -27,6 +43,35 @@ public class UISetUp : MonoBehaviour
     public void SetSliderMax(float value)
     {
         magicSlider.maxValue = value;
+    }
+
+    private void SetEffectImage(bool isPlayer, Image newEffect, float duration)
+    {
+        if (isPlayer)
+        {
+            for (int i =0; i < effectImages.Length; i++)
+            {
+                if (!effectImages[i].sprite)
+                {
+                    effectImages[i].sprite = newEffect.sprite;
+                    effectTimers[i] = duration;
+                    return;
+                }
+            }
+        }
+    }
+
+    private void RemoveEffectImage()
+    {
+        for (int i = 0; i < effectTimers.Length; i++)
+        {
+            if (effectImages[i].sprite)
+            {
+                effectTimers[i] -= Time.deltaTime;
+                if (effectTimers[i] <= 0)
+                    effectImages[i].sprite = null;
+            }
+        }
     }
     
     public void UpdateMagicSlider(float maxSpellPoints, float spellPoints)

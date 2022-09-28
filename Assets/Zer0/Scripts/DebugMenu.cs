@@ -32,6 +32,7 @@ namespace Zer0
         public static event Action<int> OnRefillHealthCommand;
         public static event Action<int> OnAddLinksCommand;
         public static event Action<float> OnRefillSpellPointsCommand;
+        public static event Action <int, Transform> OnDamageSelfCommand;
 
         private void Awake()
         {
@@ -68,6 +69,9 @@ namespace Zer0
                 case "addlinks":
                     AddOneHundredLinksCommands();
                     break;
+                case "damageself":
+                    DamageSelfCommand(10);
+                    break;
                 default:
                     DebugCommand("Command not recognized.");
                     break;
@@ -80,6 +84,12 @@ namespace Zer0
             DebugCommand($"{health} health restored.");
         }
 
+        private void DamageSelfCommand(int damage)
+        {
+            OnDamageSelfCommand?.Invoke(damage, transform);
+            DebugCommand($"{damage} to self");
+        }
+        
         private void RefillSpellPointsCommand(int points)
         {
             OnRefillSpellPointsCommand?.Invoke(points);
