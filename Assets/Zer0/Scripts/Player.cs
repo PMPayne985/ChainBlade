@@ -17,7 +17,8 @@ namespace Zer0
 
         private vHealthController _healthController;
         private Animator _animator;
-        
+        private static readonly int Disarmed = Animator.StringToHash("Disarmed");
+
         public bool IsProtected { get; private set; }
         public float ProtectionRate { get; private set; }
         public int DefenceRate { get; private set; }
@@ -122,6 +123,24 @@ namespace Zer0
         public void EndProtecting()
         {
             IsProtected = false;
+        }
+
+        public override void Disarm(int value)
+        {
+            _animator.SetBool(Disarmed, true);
+            foreach (var knife in _chainKnives)
+            {
+                knife.gameObject.SetActive(false);
+            }
+        }
+
+        public override void RemoveDisarm()
+        {
+            _animator.SetBool(Disarmed, false);
+            foreach (var knife in _chainKnives)
+            {
+                knife.gameObject.SetActive(true);
+            }
         }
 
         public void Death()

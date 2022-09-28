@@ -1422,6 +1422,12 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
+  - m_Name: Disarmed
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -14330,9 +14336,9 @@ AnimatorStateMachine:
   - first: {fileID: 110751810}
     second: []
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: -144, y: -36, z: 0}
-  m_EntryPosition: {x: -144, y: -72, z: 0}
-  m_ExitPosition: {x: -144, y: 12, z: 0}
+  m_AnyStatePosition: {x: -150, y: -40, z: 0}
+  m_EntryPosition: {x: -150, y: -80, z: 0}
+  m_ExitPosition: {x: -150, y: 0, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 110249884}
 --- !u!1107 &110747786
@@ -24151,6 +24157,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: StrongAttack
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: Disarmed
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 1107985014376289562}
   m_DstState: {fileID: 0}
   m_Solo: 0
@@ -27051,6 +27060,9 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 7
     m_ConditionEvent: AttackID
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: Disarmed
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 1107514172158981672}
   m_DstState: {fileID: 0}
@@ -33646,9 +33658,6 @@ AnimatorStateMachine:
   m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions:
-  - first: {fileID: -7407197226212362678}
-    second:
-    - {fileID: -2714231406941906448}
   - first: {fileID: 1107514172158981672}
     second:
     - {fileID: 1109613215090118754}
@@ -33658,6 +33667,9 @@ AnimatorStateMachine:
   - first: {fileID: 1518444311224974740}
     second:
     - {fileID: 6124935248987485494}
+  - first: {fileID: -7407197226212362678}
+    second:
+    - {fileID: -2714231406941906448}
   m_StateMachineBehaviours:
   - {fileID: 114315573217852782}
   m_AnyStatePosition: {x: 84, y: 180, z: 0}
