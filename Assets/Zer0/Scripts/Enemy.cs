@@ -16,6 +16,8 @@ namespace Zer0
         private EmeraldAIEventsManager _aiEventsManager;
         private ScoreUI _scoreUI;
         private StatusEffects _statusEffects;
+        private Animator _animator;
+        
         [SerializeField] private GameObject mapMarker;
 
         private EnemySpawner _spawner;
@@ -23,6 +25,7 @@ namespace Zer0
 
         public static int Score { get; private set; }
         private bool _resetThis;
+        private static readonly int Disarmed = Animator.StringToHash("Disarmed");
 
         private void Start()
         {
@@ -37,6 +40,7 @@ namespace Zer0
             _scoreUI = FindObjectOfType<ScoreUI>();
             _statusEffects = GetComponent<StatusEffects>();
             _aiEventsManager = GetComponent<EmeraldAIEventsManager>();
+            _animator = GetComponent<Animator>();
         }
 
         public void SetSpawner(EnemySpawner spawner)
@@ -100,14 +104,13 @@ namespace Zer0
         
         public override void Disarm(int value)
         {
-            _aiEventsManager.ClearTarget();
-            _aiEventsManager.UpdateAIMeleeAttackSpeed(100,100);
+            _animator.SetBool(Disarmed, true);
             weapon.SetActive(false);
         }
 
         public override void RemoveDisarm()
         {
-            _aiEventsManager.UpdateAIMeleeAttackSpeed(0,0);
+            _animator.SetBool(Disarmed, false);
             weapon.SetActive(true);
         }
 
