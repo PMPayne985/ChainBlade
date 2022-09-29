@@ -46,6 +46,11 @@ namespace Zer0
 
         }
 
+        private void Start()
+        {
+            UpgradeArmorMenu.OnIncreaseResistance += SetResistance;
+        }
+
         private void OnEnable()
         {
             _dead = false;

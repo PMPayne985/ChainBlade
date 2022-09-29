@@ -83,7 +83,7 @@ namespace Zer0
         [SerializeField, Tooltip("The time in seconds each upgrade will increase Iron Webs duration.")]
         private int ironWebDuration = 1;
         [SerializeField, Tooltip("The percent of damage the Iron Web spell reduces each attack by.")]
-        private float ironWebProtectionRate = 0.5f;
+        private float ironWebProtectionRate = 0.05f;
         [SerializeField, Tooltip("The amount to add to max spell points for each enhancement.")]
         private float pointsToAdd = 2;
         

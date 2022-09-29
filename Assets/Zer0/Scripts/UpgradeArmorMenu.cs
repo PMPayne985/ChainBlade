@@ -85,8 +85,7 @@ namespace Zer0
         public static event Action<int> OnDefenceUpgrade;
         public static event Action<float> OnSpeedUpgrade;
         public static event Action<int> OnIncreaseResistance;
-        public static event Action<int> OnIncreaseRetaliationRate;
-        public static event Action<int> OnIncreaseRetaliationDamage;
+        public static event Action<int, int> OnIncreaseRetaliation;
 
         private void Start()
         {
@@ -212,11 +211,11 @@ namespace Zer0
             
             if (CheckCanUpgrade(_baseRetaliationCost, retaliationMultiplier, retaliationAddition))
             {
-                OnIncreaseRetaliationRate?.Invoke(retaliationRate);
+                OnIncreaseRetaliation?.Invoke(0, retaliationRate);
                 _baseRetaliationCost++;
                 
                 if (_baseRetaliationCost % 3 == 0)
-                    OnIncreaseRetaliationDamage?.Invoke(retaliationDamage);
+                    OnIncreaseRetaliation?.Invoke(retaliationDamage, 0);
             }
             
             retCost = Mathf.RoundToInt(_baseRetaliationCost * retaliationMultiplier);
