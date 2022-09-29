@@ -9520,7 +9520,19 @@ MonoBehaviour:
   checkHealthEvents: []
   _onStartReceiveDamage:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2725231476981441038}
+        m_TargetAssemblyTypeName: Zer0.Player, Assembly-CSharp
+        m_MethodName: Retaliate
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _onReceiveDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -9600,7 +9612,7 @@ MonoBehaviour:
   crouchHeadDetect: 0.95
   speedMultiplier: 1
   rotateByWorld: 0
-  locomotionType: 0
+  locomotionType: 1
   freeSpeed:
     movementSmooth: 6
     animationSmooth: 0.05
@@ -9614,16 +9626,16 @@ MonoBehaviour:
   strafeSpeed:
     movementSmooth: 6
     animationSmooth: 0.2
-    rotationSpeed: 10
+    rotationSpeed: 5
     walkByDefault: 0
-    rotateWithCamera: 0
-    walkSpeed: 2
-    runningSpeed: 4
-    sprintSpeed: 6
-    crouchSpeed: 2
+    rotateWithCamera: 1
+    walkSpeed: 0
+    runningSpeed: 0
+    sprintSpeed: 0
+    crouchSpeed: 0
   disableAnimations: 0
-  useRootMotion: 0
-  useLeanMovementAnim: 1
+  useRootMotion: 1
+  useLeanMovementAnim: 0
   leanSmooth: 0.05
   useTurnOnSpotAnim: 1
   randomIdleTime: 0
@@ -9813,7 +9825,7 @@ MonoBehaviour:
     lastTimeTheButtonWasPressed: 0
     inButtomTimer: 0
   rollInput:
-    useInput: 1
+    useInput: 0
     isAxisInUse: 0
     isUnityInput: 0
     keyboard: Q
@@ -10012,19 +10024,7 @@ MonoBehaviour:
   rightWeapon: {fileID: 0}
   onDamageHit:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2725231476981441038}
-        m_TargetAssemblyTypeName: Zer0.Player, Assembly-CSharp
-        m_MethodName: Retaliate
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onRecoilHit:
     m_PersistentCalls:
       m_Calls: []
@@ -10401,7 +10401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27198bcb3654b8948b147ac9663a5ef3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlayer: 0
+  isPlayer: 1
   deathDelay: 5
   retaliateRange: 1.5
 --- !u!114 &7247820895826822765
@@ -10450,6 +10450,7 @@ MonoBehaviour:
   protectEffect: {fileID: 0}
   slowEffect: {fileID: 2281691742638362141}
   stunEffect: {fileID: 7928276694214227936}
+  resistance: 0
 --- !u!1 &2733490899678168505
 GameObject:
   m_ObjectHideFlags: 0
@@ -16935,7 +16936,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000061035156, y: -0.9061279}
+  m_AnchoredPosition: {x: 0, y: -0.9061279}
   m_SizeDelta: {x: 157.70544, y: 91.85327}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4064152433095587825
@@ -17861,7 +17862,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -18.140556, y: 18.000721}
+  m_AnchoredPosition: {x: -18.140503, y: 18.000732}
   m_SizeDelta: {x: 175.00012, y: 175}
   m_Pivot: {x: 1, y: 0}
 --- !u!222 &7530071606131157523
@@ -60338,7 +60339,7 @@ MonoBehaviour:
   behindTargetSmoothRotation: 1
   lockCamera: 0
   offsetMouse: {x: 0, y: 0}
-  indexList: 0
+  indexList: 2
   indexLookPoint: 0
   offSetPlayerPivot: 0
   distance: 5

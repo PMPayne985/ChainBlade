@@ -106,8 +106,21 @@ namespace Zer0
         
         public void Retaliate(vHitInfo hitInfo)
         {
+            print($"Retaliate against {hitInfo.attackObject.damage.damageValue}");
             var chance = Random.Range(0, 100);
             var attacker = hitInfo.attackObject.damage.sender;
+            var distance = Vector3.Distance(transform.position, attacker.position);
+
+            if (chance < _retaliateRate || distance > retaliateRange) return;
+
+            if (attacker.TryGetComponent(out EmeraldAISystem aiSystem))
+                aiSystem.Damage(_retaliateDamage, EmeraldAISystem.TargetType.Player, transform, 50);
+        }
+        
+        public void Retaliate(vDamage damage)
+        {
+            var chance = Random.Range(0, 100);
+            var attacker = damage.sender;
             var distance = Vector3.Distance(transform.position, attacker.position);
 
             if (chance < _retaliateRate || distance > retaliateRange) return;
