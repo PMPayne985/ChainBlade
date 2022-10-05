@@ -14,7 +14,7 @@ namespace Zer0
         [SerializeField, Tooltip("The max distance a target can be retaliated against.")]
         private float retaliateRange = 1.5f;
         
-        private int _retaliateRate = 0;
+        [SerializeField] private int _retaliateRate = 0;
         private int _retaliateDamage = 0;
         
         private ChainKnife[] _chainKnives;
@@ -107,11 +107,13 @@ namespace Zer0
         
         public void Retaliate(vDamage damage)
         {
-            var chance = Random.Range(0, 100);
             var attacker = damage.sender;
-            var distance = Vector3.Distance(transform.position, attacker.position);
 
-            if (chance < _retaliateRate || distance > retaliateRange) return;
+            var distance = Vector3.Distance(transform.position, attacker.position);
+            
+            var chance = Random.Range(0, 100);
+
+            if (chance > _retaliateRate || distance > retaliateRange) return;
 
             if (attacker.TryGetComponent(out EmeraldAISystem aiSystem))
                 aiSystem.Damage(_retaliateDamage, EmeraldAISystem.TargetType.Player, transform, 50);
