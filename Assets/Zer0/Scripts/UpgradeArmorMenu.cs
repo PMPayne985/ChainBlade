@@ -99,22 +99,6 @@ namespace Zer0
             
             currentPointsText.text = $"{_currentPoints}";
             totalPointsText.text = $"{_totalPoints}";
-            
-            var uCost = Mathf.RoundToInt(_baseHealthCost * healthMultiplier);
-            uCost += healthAddition;
-            healthCostText.text = $"{uCost}";
-            var dCost = Mathf.RoundToInt(_baseDefenceCost * defenceMultiplier);
-            dCost += defenceAddition;
-            defenceCostText.text = $"{dCost}";
-            var sCost = Mathf.RoundToInt(_baseSpeedCost * speedMultiplier);
-            sCost += speedAddition;
-            speedCostText.text = $"{sCost}";
-            var resCost = Mathf.RoundToInt(_baseResistanceCost * resistanceMultiplier);
-            resCost += resistanceAddition;
-            resistanceCostText.text = $"{resCost}";
-            var retCost = Mathf.RoundToInt(_baseRetaliationCost * retaliationMultiplier);
-            retCost += retaliationAddition;
-            retaliationCostText.text = $"{retCost}";
         }
 
         private void DescriptionText()
@@ -131,32 +115,40 @@ namespace Zer0
                 $"Increase your chance to deal {retaliationDamage} damage to any attacker within melee range by {retaliationRate}%. " +
                 $"Every 3rd enhancment will increase the retaliation damage by {retaliationDamage}.";
             
+            var uCost = Mathf.RoundToInt(_baseHealthCost * healthMultiplier);
+            uCost += healthAddition;
+            healthCostText.text = $"{uCost}";
+            var dCost = Mathf.RoundToInt(_baseDefenceCost * defenceMultiplier);
+            dCost += defenceAddition;
+            defenceCostText.text = $"{dCost}";
+            var sCost = Mathf.RoundToInt(_baseSpeedCost * speedMultiplier);
+            sCost += speedAddition;
+            speedCostText.text = $"{sCost}";
+            var resCost = Mathf.RoundToInt(_baseResistanceCost * resistanceMultiplier);
+            resCost += resistanceAddition;
+            resistanceCostText.text = $"{resCost}";
+            var retCost = Mathf.RoundToInt(_baseRetaliationCost * retaliationMultiplier);
+            retCost += retaliationAddition;
+            retaliationCostText.text = $"{retCost}";
+            
         }
         
         public void UpgradeMaxHealth()
         {
-            var uCost = Mathf.RoundToInt(_baseHealthCost * healthMultiplier);
-            uCost += healthAddition;
-
-            healthCostText.text = $"{uCost}";
+            DescriptionText();
             
             if (CheckCanUpgrade(_baseHealthCost, healthMultiplier, healthAddition))
             {
                 OnMaxHealthUpgrade?.Invoke(healthToAdd);
                 _baseHealthCost++;
             }
-            
-            uCost = Mathf.RoundToInt(_baseHealthCost * healthMultiplier);
-            uCost += healthAddition;
 
-            healthCostText.text = $"{uCost}";
+            DescriptionText();
         }
         
         public void UpgradeDefence()
         {
-            var dCost = Mathf.RoundToInt(_baseDefenceCost * defenceMultiplier);
-            dCost += defenceAddition;
-            defenceCostText.text = $"{dCost}";
+            DescriptionText();
             
             if (CheckCanUpgrade(_baseDefenceCost, defenceMultiplier, defenceAddition))
             {
@@ -164,16 +156,12 @@ namespace Zer0
                 _baseDefenceCost++;
             }
             
-            dCost = Mathf.RoundToInt(_baseDefenceCost * defenceMultiplier);
-            dCost += defenceAddition;
-            defenceCostText.text = $"{dCost}";
+            DescriptionText();
         }
         
         public void UpgradeSpeed()
         {
-            var sCost = Mathf.RoundToInt(_baseSpeedCost * speedMultiplier);
-            sCost += speedAddition;
-            speedCostText.text = $"{sCost}";
+            DescriptionText();
             
             if (CheckCanUpgrade(_baseSpeedCost, speedMultiplier, speedAddition))
             {
@@ -181,16 +169,12 @@ namespace Zer0
                 _baseSpeedCost++;
             }
             
-            sCost = Mathf.RoundToInt(_baseSpeedCost * speedMultiplier);
-            sCost += speedAddition;
-            speedCostText.text = $"{sCost}";
+            DescriptionText();
         }
         
         public void UpgradeResistance()
         {
-            var resCost = Mathf.RoundToInt(_baseResistanceCost * resistanceMultiplier);
-            resCost += resistanceAddition;
-            resistanceCostText.text = $"{resCost}";
+            DescriptionText();
             
             if (CheckCanUpgrade(_baseResistanceCost, resistanceMultiplier, resistanceAddition))
             {
@@ -198,16 +182,12 @@ namespace Zer0
                 _baseResistanceCost++;
             }
             
-            resCost = Mathf.RoundToInt(_baseResistanceCost * resistanceMultiplier);
-            resCost += resistanceAddition;
-            resistanceCostText.text = $"{resCost}";
+            DescriptionText();
         }
         
         public void UpgradeRetaliation()
         {
-            var retCost = Mathf.RoundToInt(_baseRetaliationCost * retaliationMultiplier);
-            retCost += retaliationAddition;
-            retaliationCostText.text = $"{retCost}";
+            DescriptionText();
             
             if (CheckCanUpgrade(_baseRetaliationCost, retaliationMultiplier, retaliationAddition))
             {
@@ -218,9 +198,7 @@ namespace Zer0
                     OnIncreaseRetaliation?.Invoke(retaliationDamage, 0);
             }
             
-            retCost = Mathf.RoundToInt(_baseRetaliationCost * retaliationMultiplier);
-            retCost += retaliationAddition;
-            retaliationCostText.text = $"{retCost}";
+            DescriptionText();
         }
         
         private void IncrementCollected(UpgradeMenu check, int amount)

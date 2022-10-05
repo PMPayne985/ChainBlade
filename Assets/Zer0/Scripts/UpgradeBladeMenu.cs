@@ -93,22 +93,6 @@ namespace Zer0
         public void OnOpen()
         {
             DescriptionText();
-            
-            var kCost = _baseKnifeDamageCost * knifeDamageMultiplier;
-            kCost += knifeDamageAddition;
-            knifeDamageCostText.text = $"{kCost}";
-            var cCost = _baseChainDamageCost * chainDamageMultiplier;
-            cCost += chainDamageAddition;
-            chainDamageCostText.text = $"{cCost}";
-            var pCost = _baseChainPullCost * chainPullMultiplier;
-            pCost += chainPullAddition;
-            chainPullCostText.text = $"{pCost}";
-            var lCost = _baseLifeLeechCost * knifeLifeLeechMultiplier;
-            lCost += knifeLifeLeechAddition;
-            knifeLifeLeechCostText.text = $"{lCost}";
-            var lnCost = _baseLengthCost * lengthMultiplier;
-            lnCost += lengthAddition;
-            lengthCostText.text = $"{lnCost}";
 
             totalPointsText.text = $"{_totalPoints}";
             currentPointsText.text = $"{_currentPoints}";
@@ -119,21 +103,34 @@ namespace Zer0
             knifeDamageText.text =
                 $"Each enhancement in this category will increase the damage of each knife attack by {bladeDamageUpgrade}.";
             chainDamageText.text =
-                $"Each enhancement in this category will increase the damage of each knife attack by {chainDamageUpgrade}.";
+                $"Each enhancement in this category will increase the damage of each chain strike by {chainDamageUpgrade}.";
             knifeLifeLeechText.text = 
-                $"Each enhancement in this category will allow the player to steal {knifeLifeLeechUpgrade} point of health from each attack.";
+                $"Each enhancement in this category will allow the player to steal {knifeLifeLeechUpgrade} points of health from a struck enemy.";
             chainLengthText.text = 
                 $"Each enhancement in this category will increase the length of chain strikes by {chainLengthUpgrade * 2} links.";
             chainDragText.text =
-                "Add the ability to drag enemies struck by Chain Strike back toward the player.";
+                "Add the ability to drag enemies struck by a chain strike back toward the player.";
+            
+            var kCost = _baseKnifeDamageCost * knifeDamageMultiplier;
+            kCost += knifeDamageAddition;
+            knifeDamageCostText.text = $"{kCost}";
+            var cCost = _baseChainDamageCost * chainDamageMultiplier;
+            cCost += chainDamageAddition;
+            chainDamageCostText.text = $"{cCost}";
+            var pCost = _baseChainPullCost * chainPullMultiplier;
+            pCost += chainPullAddition;
+            chainPullCostText.text = _chainPullAdded ? "Max" : $"{pCost}";
+            var lCost = _baseLifeLeechCost * knifeLifeLeechMultiplier;
+            lCost += knifeLifeLeechAddition;
+            knifeLifeLeechCostText.text = $"{lCost}";
+            var lnCost = _baseLengthCost * lengthMultiplier;
+            lnCost += lengthAddition;
+            lengthCostText.text = $"{lnCost}";
         }
         
         public void UpgradeKnifeDamage()
         {
-            var cost = _baseKnifeDamageCost * knifeDamageMultiplier;
-            cost += knifeDamageAddition;
-
-            knifeDamageCostText.text = $"{cost}";
+            DescriptionText();
             
             if (CheckCanUpgrade(_baseKnifeDamageCost, knifeDamageMultiplier, knifeDamageAddition))
             {
@@ -141,18 +138,12 @@ namespace Zer0
                 _baseKnifeDamageCost++;
             }
             
-            cost = _baseKnifeDamageCost * knifeDamageMultiplier;
-            cost += knifeDamageAddition;
-
-            knifeDamageCostText.text = $"{cost}";
+            DescriptionText();
         }
         
         public void UpgradeChainStrikeDamage()
         {
-            var cost = _baseChainDamageCost * chainDamageMultiplier;
-            cost += chainDamageAddition;
-
-            chainDamageCostText.text = $"{cost}";
+            DescriptionText();
             
             if (CheckCanUpgrade(_baseChainDamageCost, chainDamageMultiplier, chainDamageAddition))
             {
@@ -160,18 +151,12 @@ namespace Zer0
                 _baseChainDamageCost++;
             }
             
-            cost = _baseChainDamageCost * chainDamageMultiplier;
-            cost += chainDamageAddition;
-
-            chainDamageCostText.text = $"{cost}";
+            DescriptionText();
         }
 
         public void UpgradeLifeLeech()
         {
-            var cost = _baseLifeLeechCost * knifeLifeLeechMultiplier;
-            cost += knifeLifeLeechAddition;
-                
-            knifeLifeLeechCostText.text = $"{cost}";
+            DescriptionText();
 
             if (CheckCanUpgrade(_baseLifeLeechCost, knifeLifeLeechMultiplier, knifeLifeLeechAddition))
             {
@@ -179,18 +164,12 @@ namespace Zer0
                 _baseLifeLeechCost++;
             }
             
-            cost = _baseLifeLeechCost * knifeLifeLeechMultiplier;
-            cost += knifeLifeLeechAddition;
-                
-            knifeLifeLeechCostText.text = $"{cost}";
+            DescriptionText();
         }
 
         public void UpgradeChainLength()
         {
-            var cost = _baseLengthCost * lengthMultiplier;
-            cost += lengthAddition;
-                
-            lengthCostText.text = $"{cost}";
+            DescriptionText();
             
             if (CheckCanUpgrade(_baseLengthCost, lengthMultiplier, lengthAddition))
             {
@@ -198,18 +177,12 @@ namespace Zer0
                 _baseLengthCost++;
             }
             
-            cost = _baseLengthCost * lengthMultiplier;
-            cost += lengthAddition;
-                
-            lengthCostText.text = $"{cost}";
+            DescriptionText();
         }
 
         public void AddChainPull()
         {
-            var cost = _baseChainPullCost * chainPullMultiplier;
-            cost += chainPullAddition;
-                
-            chainPullCostText.text = _chainPullAdded ? "Max" : $"{cost}";
+            DescriptionText();
             
             if (CheckCanUpgrade(_baseChainPullCost, chainPullMultiplier, chainPullAddition))
             {
@@ -219,10 +192,7 @@ namespace Zer0
                 _chainPullAdded = true;
             }
             
-            cost = _baseChainPullCost * chainPullMultiplier;
-            cost += chainPullAddition;
-                
-            chainPullCostText.text = _chainPullAdded ? "Max" : $"{cost}";
+            DescriptionText();
         }
         
         private void IncrementCollected(UpgradeMenu check, int amount)
