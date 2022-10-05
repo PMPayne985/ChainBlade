@@ -420,7 +420,8 @@ namespace Zer0
                 if (_baseLightningChainsCost % 3 == 0)
                 {
                     OnChangeSpellParameters?.Invoke("Iron Web", null, 1, 0, 0, areaOfEffect.None);
-                    OnEnhanceSpell?.Invoke("Iron Web",0, 0, ironWebProtectionRate, 0, statusEffectType.Protect, false);
+                    if (spellList[4].GetComponent<SpellData>().Magnitude < 0.9f)
+                        OnEnhanceSpell?.Invoke("Iron Web",0, 0, ironWebProtectionRate, 0, statusEffectType.Protect, false);
                 }
                 
                 _baseIronWebCost++;
