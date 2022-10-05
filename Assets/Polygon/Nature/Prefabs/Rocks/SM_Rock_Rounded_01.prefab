@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 95643246612203758}
   - component: {fileID: 64644046807496982}
   - component: {fileID: 747577437857515637}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SM_Rock_Rounded_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}

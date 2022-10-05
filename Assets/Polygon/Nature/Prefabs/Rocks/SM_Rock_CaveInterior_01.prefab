@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 95423544791047510}
   - component: {fileID: 64694801370973824}
   - component: {fileID: 3809372397747299961}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SM_Rock_CaveInterior_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}

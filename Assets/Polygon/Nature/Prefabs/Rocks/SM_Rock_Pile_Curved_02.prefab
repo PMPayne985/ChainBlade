@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 95722902189864998}
   - component: {fileID: 64551255212994942}
   - component: {fileID: 707970135925300104}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SM_Rock_Pile_Curved_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}

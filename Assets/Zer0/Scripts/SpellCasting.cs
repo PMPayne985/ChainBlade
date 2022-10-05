@@ -41,6 +41,7 @@ namespace Zer0
             UpgradeSpellMenu.OnBuyNewSpell += AddSpell;
             UpgradeSpellMenu.OnEnhanceSpell += EnhanceSpell;
             UpgradeSpellMenu.OnChangeSpellParameters += ChangeSpellParams;
+            UpgradeSpellMenu.OnAddSpellPoints += IncreaseMaxSpellPoints;
 
             _ui.UpdateMagicSlider(maxSpellPoints, _spellPoints);
             _ui.SetSliderMax(maxSpellPoints);

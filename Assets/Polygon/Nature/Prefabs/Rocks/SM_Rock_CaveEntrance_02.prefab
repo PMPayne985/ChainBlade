@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 95199159658436536}
   - component: {fileID: 64366084906867838}
   - component: {fileID: -5439384325685781990}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SM_Rock_CaveEntrance_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}

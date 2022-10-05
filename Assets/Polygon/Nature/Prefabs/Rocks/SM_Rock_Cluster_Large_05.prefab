@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 95821914124385176}
   - component: {fileID: 64126925544920136}
   - component: {fileID: -1333788432592741250}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SM_Rock_Cluster_Large_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}

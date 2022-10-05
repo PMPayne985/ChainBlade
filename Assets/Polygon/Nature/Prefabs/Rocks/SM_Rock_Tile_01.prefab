@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 95836487330032712}
   - component: {fileID: 64672275757714290}
   - component: {fileID: -6621554522333025883}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SM_Rock_Tile_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}

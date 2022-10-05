@@ -278,7 +278,7 @@ namespace Zer0
                         OnAddStatusEffect?.Invoke(_character.isPlayer, protectEffect.GetComponent<Image>(), effect.duration);
                         protectEffect.SetActive(true);
                     }
-                    GetComponent<Player>().Protecting((int)effect.magnitude);
+                    GetComponent<Player>().Protecting(effect.magnitude);
                 }
             }
 

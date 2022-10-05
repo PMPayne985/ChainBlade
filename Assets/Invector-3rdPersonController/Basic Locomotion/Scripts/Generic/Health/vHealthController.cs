@@ -212,26 +212,29 @@ namespace Invector
         /// <param name="damage">damage</param>
         public virtual void TakeDamage(vDamage damage)
         {
-            if (damage != null)
-            {
-                damage.damageValue -= _character.DefenceRate;
 
-                if (damage.damageValue < 0)
-                    damage.damageValue = 0;
-                
+            var inDamage = damage;
+            
+            if (inDamage != null)
+            {
+                inDamage.damageValue -= _character.DefenceRate;
+
                 if (_character.IsProtected)
-                    damage.damageValue *= (1 - _character.ProtectionRate);
+                    inDamage.damageValue *= (1 - _character.ProtectionRate);
+
+                if (inDamage.damageValue < 1)
+                    inDamage.damageValue = 1;
                 
-                onStartReceiveDamage.Invoke(damage);
+                onStartReceiveDamage.Invoke(inDamage);
                 currentHealthRecoveryDelay = currentHealth <= 0 ? 0 : healthRecoveryDelay;
 
                 if (currentHealth > 0 && !isImmortal)
                 {                   
-                    currentHealth -= damage.damageValue;
+                    currentHealth -= inDamage.damageValue;
                 }
 
-                if (damage.damageValue > 0)
-                    onReceiveDamage.Invoke(damage);
+                if (inDamage.damageValue > 0)
+                    onReceiveDamage.Invoke(inDamage);
                 HandleCheckHealthEvents();
             }
         }
