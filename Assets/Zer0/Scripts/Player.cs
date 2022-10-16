@@ -1,13 +1,13 @@
 using System.Collections;
 using EmeraldAI;
 using Invector;
-using Invector.vMelee;
+using Invector.vCharacterController;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Zer0
 {
-    public class Player : Character
+    public class Player : Character, ISaveable
     {
         [SerializeField, Tooltip("Delay before reload after the character dies.")]
         private float deathDelay = 5;
@@ -16,12 +16,17 @@ namespace Zer0
         
         [SerializeField] private int _retaliateRate = 0;
         private int _retaliateDamage = 0;
+
+        [SerializeField, Tooltip("All of the locations the player can enter the current scene from.")]
+        private Transform[] startLocations;
         
         private ChainKnife[] _chainKnives;
         private SpellCasting _caster;
         private StatusEffects _effects;
-
+        
+        private vThirdPersonController vController;
         private vHealthController _healthController;
+        
         private Animator _animator;
         private static readonly int Disarmed = Animator.StringToHash("Disarmed");
 
@@ -39,6 +44,8 @@ namespace Zer0
             if (!_healthController) Debug.LogError("CharacterBehavior is missing a Health Controller Component.");
             _effects = GetComponent<StatusEffects>();
             _animator = GetComponent<Animator>();
+            vController = GetComponent<vThirdPersonController>();
+            
         }
 
         private void Start()
@@ -53,6 +60,34 @@ namespace Zer0
             UpgradeArmorMenu.OnDefenceUpgrade += IncreaseDefence;
             UpgradeArmorMenu.OnSpeedUpgrade += IncreaseSpeed;
             UpgradeArmorMenu.OnIncreaseRetaliation += SetRetaliateValues;
+        }
+
+        public void SetStartingPosition()
+        {
+            if (startLocations.Length <= 0) return;
+            
+            var locationIndex = SavedStats.Instance.linkedIndex;
+            
+            vController.enabled = false;
+            transform.position = startLocations[locationIndex].position;
+            transform.rotation = startLocations[locationIndex].rotation;
+            vController.enabled = true;
+        }
+
+        public void SaveData()
+        {
+            var mHealth = _healthController.MaxHealth;
+            SavedStats.Instance.maxHealth = mHealth;
+            var cHealth = _healthController.currentHealth;
+            SavedStats.Instance.currentHealth = cHealth;
+        }
+
+        public void LoadData()
+        {
+            var mHealth = SavedStats.Instance.maxHealth;
+            _healthController.maxHealth = mHealth;
+            var cHealth = SavedStats.Instance.currentHealth;
+            _healthController.ResetHealth(cHealth);
         }
         
         public void LaunchChain()

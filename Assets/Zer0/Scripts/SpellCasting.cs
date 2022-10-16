@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Zer0
 {
-    public class SpellCasting : MonoBehaviour
+    public class SpellCasting : MonoBehaviour, ISaveable
     {
         private List<SpellData> _spells;
         private Animator _animator;
@@ -228,6 +228,35 @@ namespace Zer0
             }
 
             return true;
+        }
+
+        public void SaveData()
+        {
+            SavedStats.Instance.maxSpellPoints = maxSpellPoints;
+            SavedStats.Instance.currentSpellPoints = _spellPoints;
+
+            SavedStats.Instance.spells.Clear();
+            
+            foreach (var spell in _spells)
+            {
+                SavedStats.Instance.spells.Add(spell);
+            }
+
+            SavedStats.Instance.spellIndex = _activeSpellIndex;
+        }
+
+        public void LoadData()
+        {
+            maxSpellPoints = SavedStats.Instance.maxSpellPoints;
+            _spellPoints = SavedStats.Instance.currentSpellPoints;
+
+            foreach (var spell in SavedStats.Instance.spells)
+            {
+                AddSpell(spell);
+            }
+
+            _activeSpellIndex = SavedStats.Instance.spellIndex;
+            _activeSpell = _spells[_activeSpellIndex];
         }
     }
 }

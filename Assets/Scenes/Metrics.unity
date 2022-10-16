@@ -11443,6 +11443,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 92efc5a6051953a4db45a52f72df44cc, type: 2}
+    - target: {fileID: 8632590011224662561, guid: 75963d06c0d034a04ac7480940a399de, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8725358865776349484, guid: 75963d06c0d034a04ac7480940a399de, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -11473,6 +11477,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75963d06c0d034a04ac7480940a399de, type: 3}
+--- !u!4 &584040412 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6826392511617843293, guid: 75963d06c0d034a04ac7480940a399de, type: 3}
+  m_PrefabInstance: {fileID: 584040411}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &590731811 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4050921528721468, guid: b02415e50456dea469f21d4618a16267, type: 3}
@@ -13194,6 +13203,38 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4642774251413760, guid: a8abb708fd476134d8cc8ba0e0678d00, type: 3}
   m_PrefabInstance: {fileID: 724317790}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &734447501
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 734447502}
+  m_Layer: 8
+  m_Name: WeaponSnap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &734447502
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734447501}
+  m_LocalRotation: {x: 0.5572449, y: -0.81494373, z: -0.054251082, w: -0.14967236}
+  m_LocalPosition: {x: -0.00044, y: 0.00914, z: 0.0024}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1852501072}
+  m_Father: {fileID: 584040412}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: -14.787, y: -190.939, z: -67.304}
 --- !u!1001 &735354172
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33830,6 +33871,80 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1849445998}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1852501071
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 734447502}
+    m_Modifications:
+    - target: {fileID: 115264, guid: 622fc8383c73fb04bbc9754dd1899041, type: 3}
+      propertyPath: m_Name
+      value: SM_Wep_Cutlass_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 476328, guid: 622fc8383c73fb04bbc9754dd1899041, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 476328, guid: 622fc8383c73fb04bbc9754dd1899041, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 476328, guid: 622fc8383c73fb04bbc9754dd1899041, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 476328, guid: 622fc8383c73fb04bbc9754dd1899041, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 476328, guid: 622fc8383c73fb04bbc9754dd1899041, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 476328, guid: 622fc8383c73fb04bbc9754dd1899041, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 476328, guid: 622fc8383c73fb04bbc9754dd1899041, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 476328, guid: 622fc8383c73fb04bbc9754dd1899041, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 476328, guid: 622fc8383c73fb04bbc9754dd1899041, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 476328, guid: 622fc8383c73fb04bbc9754dd1899041, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 476328, guid: 622fc8383c73fb04bbc9754dd1899041, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 476328, guid: 622fc8383c73fb04bbc9754dd1899041, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 476328, guid: 622fc8383c73fb04bbc9754dd1899041, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 476328, guid: 622fc8383c73fb04bbc9754dd1899041, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 622fc8383c73fb04bbc9754dd1899041, type: 3}
+--- !u!4 &1852501072 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 476328, guid: 622fc8383c73fb04bbc9754dd1899041, type: 3}
+  m_PrefabInstance: {fileID: 1852501071}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1868075536
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33997,7 +34112,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh135034
+  m_Name: pb_Mesh29694
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -39877,7 +39992,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh134138
+  m_Name: pb_Mesh28798
   serializedVersion: 10
   m_SubMeshes: []
   m_Shapes:
