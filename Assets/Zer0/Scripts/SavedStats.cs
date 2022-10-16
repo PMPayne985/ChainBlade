@@ -17,6 +17,38 @@ namespace Zer0
         public List<SpellData> spells;
         public int spellIndex;
 
+        public int currentLinks;
+        public int maxLinks;
+        public int armorUpgrade;
+        public int bladeUpgrade;
+        public int spellUpgrade;
+        
+        public int aHealth;
+        public int aDefence;
+        public int aSpeed;
+        public int aResistance;
+        public int aRetaliation;
+        public int aCurrentPoints;
+        public int aTotalPoints;
+        
+        public int bKnifeDamage;
+        public int bChainDamage;
+        public int bLifeLeech;
+        public int bChainPull;
+        public int bLength;
+        public int bCurrentPoints;
+        public int bTotalPoints;
+        public bool bChainPullAdded;
+        
+        public int sCurrentPoints;
+        public int sTotalPoints;
+        public int sLightningChains;
+        public int sShackles;
+        public int sDisarm;
+        public int sRefresh;
+        public int sIronWeb;
+        public int sSpellPoints;
+
         private Player _player;
 
         private void Awake()

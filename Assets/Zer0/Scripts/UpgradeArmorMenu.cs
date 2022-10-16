@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Zer0
 {
-    public class UpgradeArmorMenu : UpgradeMenu
+    public class UpgradeArmorMenu : UpgradeMenu, ISaveable
     {
         [Header("Upgrade Cost Text Fields")]
         [SerializeField, Tooltip("Text field to display the cost of the next health enhancement.")] 
@@ -221,6 +221,28 @@ namespace Zer0
                 return true;
             }
             return false;
+        }
+
+        public void SaveData()
+        {
+            SavedStats.Instance.aDefence = _baseDefenceCost;
+            SavedStats.Instance.aHealth = _baseHealthCost;
+            SavedStats.Instance.aResistance = _baseResistanceCost;
+            SavedStats.Instance.aRetaliation = _baseRetaliationCost;
+            SavedStats.Instance.aSpeed = _baseSpeedCost;
+            SavedStats.Instance.aCurrentPoints = _currentPoints;
+            SavedStats.Instance.aTotalPoints = _totalPoints;
+        }
+
+        public void LoadData()
+        {
+            _baseDefenceCost = SavedStats.Instance.aDefence;
+            _baseHealthCost = SavedStats.Instance.aHealth;
+            _baseResistanceCost = SavedStats.Instance.aResistance;
+            _baseRetaliationCost = SavedStats.Instance.aRetaliation;
+            _baseSpeedCost = SavedStats.Instance.aSpeed;
+            _currentPoints = SavedStats.Instance.aCurrentPoints;
+            _totalPoints = SavedStats.Instance.aTotalPoints;
         }
     }
 }

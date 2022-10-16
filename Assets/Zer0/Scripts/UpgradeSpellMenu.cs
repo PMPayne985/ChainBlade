@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace Zer0
 {
-    public class UpgradeSpellMenu : UpgradeMenu
+    public class UpgradeSpellMenu : UpgradeMenu, ISaveable
     {
         [Header("Point Display Text Fields")]
         [SerializeField, Tooltip("Text field to display the current number of points available.")] 
@@ -465,6 +465,30 @@ namespace Zer0
                 return true;
             }
             return false;
+        }
+
+        public void SaveData()
+        {
+            SavedStats.Instance.sDisarm = _baseDisarmCost;
+            SavedStats.Instance.sRefresh = _baseRefreshCost;
+            SavedStats.Instance.sShackles = _baseShacklesCost;
+            SavedStats.Instance.sCurrentPoints = _currentPoints;
+            SavedStats.Instance.sIronWeb = _baseIronWebCost;
+            SavedStats.Instance.sLightningChains = _baseLightningChainsCost;
+            SavedStats.Instance.sSpellPoints = _baseSpellPointCost;
+            SavedStats.Instance.sTotalPoints = _totalPoints;
+        }
+
+        public void LoadData()
+        {
+            _baseDisarmCost = SavedStats.Instance.sDisarm;
+            _baseRefreshCost = SavedStats.Instance.sRefresh;
+            _baseShacklesCost = SavedStats.Instance.sShackles;
+            _currentPoints = SavedStats.Instance.sCurrentPoints;
+            _baseIronWebCost = SavedStats.Instance.sIronWeb;
+            _baseLightningChainsCost = SavedStats.Instance.sLightningChains;
+            _baseSpellPointCost = SavedStats.Instance.sSpellPoints;
+            _totalPoints = SavedStats.Instance.sTotalPoints;
         }
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Zer0
 {
-    public class UpgradeBladeMenu : UpgradeMenu
+    public class UpgradeBladeMenu : UpgradeMenu, ISaveable
     {
         [Header("Cost Text Fields")]
         [SerializeField, Tooltip("Text field to display the cost of the next knife damage enhancement.")] 
@@ -215,6 +215,30 @@ namespace Zer0
                 return true;
             }
             return false;
+        }
+
+        public void SaveData()
+        {
+            SavedStats.Instance.bLength = _baseLengthCost;
+            SavedStats.Instance.bChainDamage = _baseChainDamageCost;
+            SavedStats.Instance.bChainPull = _baseChainPullCost;
+            SavedStats.Instance.bCurrentPoints = _currentPoints;
+            SavedStats.Instance.bKnifeDamage = _baseKnifeDamageCost;
+            SavedStats.Instance.bLifeLeech = _baseLifeLeechCost;
+            SavedStats.Instance.bTotalPoints = _totalPoints;
+            SavedStats.Instance.bChainPullAdded = _chainPullAdded;
+        }
+
+        public void LoadData()
+        {
+            _baseLengthCost = SavedStats.Instance.bLength;
+            _baseChainDamageCost = SavedStats.Instance.bChainDamage;
+            _baseChainPullCost = SavedStats.Instance.bChainPull;
+            _currentPoints = SavedStats.Instance.bCurrentPoints;
+            _baseKnifeDamageCost = SavedStats.Instance.bKnifeDamage;
+            _baseLifeLeechCost = SavedStats.Instance.bLifeLeech;
+            _totalPoints = SavedStats.Instance.bTotalPoints;
+            _chainPullAdded = SavedStats.Instance.bChainPullAdded;
         }
     }
 }

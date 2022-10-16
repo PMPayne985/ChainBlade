@@ -171,7 +171,6 @@ namespace Zer0
         {
             if (_character.isPlayer)
                 Casting();
-            
         }
         
         private void Casting()

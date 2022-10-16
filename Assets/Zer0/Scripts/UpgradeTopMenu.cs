@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Zer0
 {
-    public class UpgradeTopMenu : UpgradeMenu
+    public class UpgradeTopMenu : UpgradeMenu, ISaveable
     {
         [SerializeField, Tooltip("The 'ChainUpgrade' script that will control this menu.")]
         private ChainUpgrade upgradeMenu;
@@ -112,6 +112,24 @@ namespace Zer0
             
             Logging.LogMessage(errorLevel.Log, Color.black, "Not enough Links!");
             return false;
+        }
+
+        public void SaveData()
+        {
+            SavedStats.Instance.currentLinks = _currentLinks;
+            SavedStats.Instance.maxLinks = _totalLinks;
+            SavedStats.Instance.armorUpgrade = _armorUpgrades;
+            SavedStats.Instance.bladeUpgrade = _bladeUpgrades;
+            SavedStats.Instance.spellUpgrade = _spellUpgrades;
+        }
+
+        public void LoadData()
+        {
+            _currentLinks = SavedStats.Instance.currentLinks;
+            _totalLinks = SavedStats.Instance.maxLinks;
+            _armorUpgrades = SavedStats.Instance.armorUpgrade;
+            _bladeUpgrades = SavedStats.Instance.bladeUpgrade;
+            _spellUpgrades = SavedStats.Instance.spellUpgrade;
         }
     }
 }
