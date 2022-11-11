@@ -37,14 +37,17 @@ namespace Zer0
         private void Awake()
         {
             _chainKnives = GetComponentsInChildren<ChainKnife>();
-            if (_chainKnives.Length <= 0) Debug.LogError("CharacterBehavior is missing a Chain Knife.");
+            if (_chainKnives.Length <= 0) Debug.LogError("Player.cs is missing a Chain Knife.");
             _caster = GetComponent<SpellCasting>();
-            if (!_caster) Debug.LogWarning("CharacterBehavior is missing a Spell Casting Component.");
+            if (!_caster) Debug.LogWarning("Player.cs is missing a Spell Casting Component.");
             _healthController = GetComponent<vHealthController>();
-            if (!_healthController) Debug.LogError("CharacterBehavior is missing a Health Controller Component.");
+            if (!_healthController) Debug.LogError("Player.cs is missing a Health Controller Component.");
             _effects = GetComponent<StatusEffects>();
+            if (!_effects) Debug.LogError("Player.cs is missing a StatusEffects Component.");
             _animator = GetComponent<Animator>();
+            if (!_animator) Debug.LogError("Player.cs is missing an animator Component.");
             vController = GetComponent<vThirdPersonController>();
+            if (!vController) Debug.LogError("Player.cs is missing an Invector vThirdPersonController Component.");
             
         }
 
@@ -74,6 +77,12 @@ namespace Zer0
             vController.enabled = true;
         }
 
+        public void UpdateWeapons()
+        {
+            _chainKnives = GetComponentsInChildren<ChainKnife>();
+            if (_chainKnives.Length <= 0) Debug.LogError("Player.cs is missing a Chain Knife.");
+        }
+        
         public void SaveData()
         {
             var mHealth = _healthController.MaxHealth;
