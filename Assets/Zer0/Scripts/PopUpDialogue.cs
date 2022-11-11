@@ -5,7 +5,7 @@ namespace Zer0
 {
     public class PopUpDialogue : MonoBehaviour
     {
-        [SerializeField] private string boundsText;
+        [SerializeField, TextArea(4, 100)] private string popUpText;
         [SerializeField] private bool deactivateAfterUse;
         private Dialogue _dialogue;
         private bool _open;
@@ -28,7 +28,7 @@ namespace Zer0
             if (other.TryGetComponent(out Player player))
             {
                 _dialogue = FindObjectOfType<Dialogue>();
-                _dialogue.ActivateDialogue(boundsText);
+                _dialogue.ActivateDialogue(popUpText);
                 _open = true;
             }
         }

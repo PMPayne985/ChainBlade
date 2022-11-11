@@ -37,7 +37,7 @@ namespace Zer0
         private void Awake()
         {
             _chainKnives = GetComponentsInChildren<ChainKnife>();
-            if (_chainKnives.Length <= 0) Debug.LogError("Player.cs is missing a Chain Knife.");
+            if (_chainKnives.Length <= 0) Debug.LogWarning("Player.cs is missing a Chain Knife.");
             _caster = GetComponent<SpellCasting>();
             if (!_caster) Debug.LogWarning("Player.cs is missing a Spell Casting Component.");
             _healthController = GetComponent<vHealthController>();
@@ -80,7 +80,7 @@ namespace Zer0
         public void UpdateWeapons()
         {
             _chainKnives = GetComponentsInChildren<ChainKnife>();
-            if (_chainKnives.Length <= 0) Debug.LogError("Player.cs is missing a Chain Knife.");
+            if (_chainKnives.Length <= 0) Debug.LogWarning("Player.cs is missing a Chain Knife.");
         }
         
         public void SaveData()

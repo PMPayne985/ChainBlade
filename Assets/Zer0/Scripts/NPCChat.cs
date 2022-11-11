@@ -4,8 +4,8 @@ namespace Zer0
 {
     public class NPCChat : MonoBehaviour
     {
-        [SerializeField] private string[] chatLines;
-        [SerializeField] private string postInteractionLine;
+        [SerializeField, TextArea(2, 100)] private string[] chatLines;
+        [SerializeField, TextArea(2, 100)] private string postInteractionLine;
         private int _currentChat;
         private Dialogue _dialogue;
         private bool _open;
