@@ -30707,6 +30707,7 @@ GameObject:
   - component: {fileID: 622062617}
   - component: {fileID: 622062616}
   - component: {fileID: 622062615}
+  - component: {fileID: 622062621}
   m_Layer: 0
   m_Name: PickupStick
   m_TagString: Untagged
@@ -30821,6 +30822,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: -169.93, z: 0}
+--- !u!114 &622062621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622062614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c99ddd83cd8cccf4ca4c05d37277ee18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popUpText: 'You Found a Branch!
+
+    (Now I should head south and find whatever
+    scared Marik into the forest)
+
+
+    (You can use this branch to perform a power
+    attack with ''Left Mouse Button'')'
+  deactivateAfterUse: 0
+  startQuest: 0
+  endQuest: 0
+  updateQuest: 1
+  startQuestIndex: 0
+  endQuestIndex: 0
+  updateQuestIndex: 0
+  updateQuestStage: 1
 --- !u!1001 &623073146
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -65601,6 +65630,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 29
       objectReference: {fileID: 0}
+    - target: {fileID: 8128598513615108798, guid: 0692e1281770f974ba109c828994d220, type: 3}
+      propertyPath: quests.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8128598513615108798, guid: 0692e1281770f974ba109c828994d220, type: 3}
+      propertyPath: quests.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 32929a1744a2d914fab979fe83e7d7cf, type: 2}
     - target: {fileID: 8591052200188128931, guid: 0692e1281770f974ba109c828994d220, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -101031,6 +101068,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3245276990557413163, guid: 195f034416b88484db060673ba7b051b, type: 3}
+      propertyPath: startQuest
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245276990557413163, guid: 195f034416b88484db060673ba7b051b, type: 3}
       propertyPath: postInteractionLine
       value: "Sherri: \nSomeone just has to save him!"
       objectReference: {fileID: 0}
@@ -101059,8 +101100,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3245276990557413163, guid: 195f034416b88484db060673ba7b051b, type: 3}
       propertyPath: chatLines.Array.data[4]
-      value: (There's no time to run back to the villiage! I will have to go after
+      value: '(There''s no time to run back to the villiage! I will have to go after
         him myself.)
+
+        You now have a quest objective. Hit ''J'' to open the
+        Journal to view it.'
       objectReference: {fileID: 0}
     - target: {fileID: 7198323598383763832, guid: 195f034416b88484db060673ba7b051b, type: 3}
       propertyPath: m_Name
