@@ -19,6 +19,7 @@ namespace Zer0
         {
             if (!other.TryGetComponent(out Player player)) return;
             
+            
             if (startQuest)
                 FindObjectOfType<QuestLog>().StartQuest(startQuestIndex);
             if (endQuest)

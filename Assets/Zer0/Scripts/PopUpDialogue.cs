@@ -23,10 +23,6 @@ namespace Zer0
             {
                 if (Input.GetKeyUp(KeyCode.E))
                 {
-                    _dialogue.EndDialogue();
-                    _open = false;
-                    if (deactivateAfterUse) gameObject.SetActive(false);
-
                     if (startQuest)
                         FindObjectOfType<QuestLog>().StartQuest(startQuestIndex);
                     if (endQuest)
@@ -37,6 +33,10 @@ namespace Zer0
                     startQuest = false;
                     endQuest = false;
                     updateQuest = false;
+                    
+                    _dialogue.EndDialogue();
+                    _open = false;
+                    if (deactivateAfterUse) gameObject.SetActive(false);
                 }
             }
         }

@@ -23,8 +23,6 @@ namespace Zer0
                 }
                 
                 player.UpdateWeapons();
-                
-                gameObject.SetActive(false);
             }
         }
     }
