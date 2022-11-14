@@ -13,6 +13,8 @@ namespace Zer0
         [SerializeField] private int endQuestIndex;
         [SerializeField] private int updateQuestIndex;
         [SerializeField] private int updateQuestStage;
+        [SerializeField] private GameObject[] activateObjects;
+        [SerializeField] private GameObject[] deactivateObjects;
         private int _currentChat;
         private Dialogue _dialogue;
         private bool _open;
@@ -54,6 +56,22 @@ namespace Zer0
                 startQuest = false;
                 endQuest = false;
                 updateQuest = false;
+                
+                if (activateObjects.Length > 0)
+                {
+                    foreach (var obj in activateObjects)
+                    {
+                        obj.SetActive(true);
+                    }
+                }
+
+                if (deactivateObjects.Length > 0)
+                {
+                    foreach (var obj in deactivateObjects)
+                    {
+                        obj.SetActive(false);
+                    }
+                }
             }
             else
             {

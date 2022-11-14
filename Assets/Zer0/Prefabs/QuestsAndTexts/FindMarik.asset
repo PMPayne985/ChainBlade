@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16460f0efdb34ab4690a346bc7e63ad2, type: 3}
   m_Name: FindMarik
   m_EditorClassIdentifier: 
-  questIndex: 0
+  questStage: 1
+  questCount: 0
+  questCountRequired: 1
   questStageDescriptions:
   - 'Find A Weapon:
 
@@ -21,6 +23,12 @@ MonoBehaviour:
   - 'Find Marik:
 
     Search in the south for Marik'
+  - 'Kill The Wolf:
+
+    Defeat the wolf that has attacked Marik.'
+  - 'Talk To Marik:
+
+    Make sure Marik is ok after his ordeal.'
   - 'Return To Sherri:
 
     Report your success to Sherri at the loading platform.'

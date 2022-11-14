@@ -1,3 +1,4 @@
+using System;
 using EmeraldAI;
 using EmeraldAI.Utility;
 using UnityEngine;
@@ -23,6 +24,8 @@ namespace Zer0
         private EnemySpawner _spawner;
         [SerializeField] private GameObject weapon;
 
+        public static event Action<string> OnDeathQuestUpdate;
+        
         public static int Score { get; private set; }
         private bool _resetThis;
         private static readonly int Disarmed = Animator.StringToHash("Disarmed");
@@ -75,6 +78,7 @@ namespace Zer0
             if (_spawner) _spawner.DespawnEnemy(this);
             mapMarker.SetActive(false);
             _statusEffects.SetDeathStatus(true);
+            OnDeathQuestUpdate.Invoke(_aiSystem.AIName);
             UpdateScore();
         }
 

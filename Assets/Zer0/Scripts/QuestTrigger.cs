@@ -14,6 +14,8 @@ namespace Zer0
         [SerializeField] private int endQuestIndex;
         [SerializeField] private int updateQuestIndex;
         [SerializeField] private int updateQuestStage;
+        [SerializeField] private GameObject[] activateObjects;
+        [SerializeField] private GameObject[] deactivateObjects;
 
         private void OnTriggerEnter(Collider other)
         {
@@ -26,6 +28,22 @@ namespace Zer0
                 FindObjectOfType<QuestLog>().EndQuest(endQuestIndex);
             if (updateQuest)
                 FindObjectOfType<QuestLog>().UpdateQuestStage(updateQuestIndex, updateQuestStage);
+            
+            if (activateObjects.Length > 0)
+            {
+                foreach (var obj in activateObjects)
+                {
+                    obj.SetActive(true);
+                }
+            }
+
+            if (deactivateObjects.Length > 0)
+            {
+                foreach (var obj in deactivateObjects)
+                {
+                    obj.SetActive(false);
+                }
+            }
         }
     }
 }

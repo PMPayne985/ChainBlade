@@ -1699,7 +1699,7 @@ MonoBehaviour:
   DamageAmountRun: 5
   WanderRadius: 25
   TabNumber: 1
-  TemperamentTabNumber: 2
+  TemperamentTabNumber: 0
   DetectionTagsTabNumber: 1
   AnimationTabNumber: 0
   SoundTabNumber: 1
@@ -2328,6 +2328,7 @@ MonoBehaviour:
   protectEffect: {fileID: 0}
   slowEffect: {fileID: 0}
   stunEffect: {fileID: 0}
+  resistance: 0
 --- !u!1 &5921877864256031885
 GameObject:
   m_ObjectHideFlags: 0

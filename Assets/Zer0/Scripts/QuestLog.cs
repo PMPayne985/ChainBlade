@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +6,7 @@ namespace Zer0
 {
     public class QuestLog : MonoBehaviour
     {
+        [SerializeField] private int levelIndex;
         [SerializeField] private GameObject journalPanel;
         [SerializeField] private Text[] journalBoxes;
         [SerializeField] private Quest[] quests;
@@ -39,6 +38,8 @@ namespace Zer0
         {
             journalBoxes[index].gameObject.SetActive(true);
             UpdateQuestDescription(index);
+            quests[index].questStage = 0;
+            quests[index].questCountRequired = 0;
         }
 
         public void EndQuest(int index)
